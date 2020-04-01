@@ -1,0 +1,295 @@
+SQL> show user
+USER is "BCE18259"
+SQL> password
+Changing password for BCE18259
+Password changed
+SQL> select * from tab
+  2  
+SQL> show table
+SP2-0158: unknown SHOW option "table"
+SQL> show tables
+SP2-0158: unknown SHOW option "tables"
+SQL> select * from tab;
+
+no rows selected
+
+SQL> create table (roll_no char(8), name varchar(25), sem number(12));
+create table (roll_no char(8), name varchar(25), sem number(12))
+             *
+ERROR at line 1:
+ORA-00903: invalid table name 
+
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* create table student (roll_no char(8), name varchar(25), sem number(12))
+SQL> select * from tab;
+
+no rows selected
+
+SQL> select * from student;
+select * from student
+              *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+SQL> select * from tab;
+
+no rows selected
+
+SQL> create table student (roll_no char(8), name varchar(25), sem number(12));
+
+Table created.
+
+SQL> select * from tab;
+
+TNAME                          TABTYPE CLUSTERID                                                    
+------------------------------ ------- ---------                                                    
+STUDENT                        TABLE                                                                
+
+SQL> insert into student('Shrey Viradiya','18BCE259','4');
+insert into student('Shrey Viradiya','18BCE259','4')
+                    *
+ERROR at line 1:
+ORA-00928: missing SELECT keyword 
+
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* insert into student('Roll No','Name','Semester');
+SQL> desc
+Usage: DESCRIBE [schema.]object[@db_link]
+SQL> desc student
+ Name                                                  Null?    Type
+ ----------------------------------------------------- -------- ------------------------------------
+ ROLL_NO                                                        CHAR(8)
+ NAME                                                           VARCHAR2(25)
+ SEM                                                            NUMBER(12)
+
+SQL> insert into student('18BCE259','Shrey Viradiya',4);
+insert into student('18BCE259','Shrey Viradiya',4)
+                    *
+ERROR at line 1:
+ORA-00928: missing SELECT keyword 
+
+
+SQL> insert into student(name,roll_no,sem)values('Shrey Viradiya','18BCE259',4)
+  2  ;
+
+1 row created.
+
+SQL> desc student
+ Name                                                  Null?    Type
+ ----------------------------------------------------- -------- ------------------------------------
+ ROLL_NO                                                        CHAR(8)
+ NAME                                                           VARCHAR2(25)
+ SEM                                                            NUMBER(12)
+
+SQL> alter table student modify (sem number(1));
+alter table student modify (sem number(1))
+                            *
+ERROR at line 1:
+ORA-01440: column to be modified must be empty to decrease precision or scale 
+
+
+SQL> select * from tab;
+
+TNAME                          TABTYPE CLUSTERID                                                    
+------------------------------ ------- ---------                                                    
+STUDENT                        TABLE                                                                
+
+SQL> select * from student;
+
+ROLL_NO  NAME                            SEM                                                        
+-------- ------------------------- ---------                                                        
+18BCE259 Shrey Viradiya                    4                                                        
+
+SQL> alter table student drop(sem)
+  2  ;
+
+Table altered.
+
+SQL> select * from student;
+
+ROLL_NO  NAME                                                                                       
+-------- -------------------------                                                                  
+18BCE259 Shrey Viradiya                                                                             
+
+SQL> alter table student add(sem number(1));
+
+Table altered.
+
+SQL> select * from student;
+
+ROLL_NO  NAME                            SEM                                                        
+-------- ------------------------- ---------                                                        
+18BCE259 Shrey Viradiya                                                                             
+
+SQL> insert into student(name,roll_no,sem)values('Yash Chelani','18BCE263',4);
+
+1 row created.
+
+SQL> select * from student;
+
+ROLL_NO  NAME                            SEM                                                        
+-------- ------------------------- ---------                                                        
+18BCE259 Shrey Viradiya                                                                             
+18BCE263 Yash Chelani                      4                                                        
+
+SQL> insert into student(name,roll_no,sem)values('Vishva Patel','18BCE260',4);
+
+1 row created.
+
+SQL> select * from student;
+
+ROLL_NO  NAME                            SEM                                                        
+-------- ------------------------- ---------                                                        
+18BCE259 Shrey Viradiya                                                                             
+18BCE263 Yash Chelani                      4                                                        
+18BCE260 Vishva Patel                      4                                                        
+
+SQL> insert into student values('18BCE258','Dhvanik Viradiya',4);
+
+1 row created.
+
+SQL> select * from student
+  2  ;
+
+ROLL_NO  NAME                            SEM                                                        
+-------- ------------------------- ---------                                                        
+18BCE259 Shrey Viradiya                                                                             
+18BCE263 Yash Chelani                      4                                                        
+18BCE260 Vishva Patel                      4                                                        
+18BCE258 Dhvanik Viradiya                  4                                                        
+
+SQL> help update
+SP2-0172: No HELP available.
+SQL> update student set sem=4 where roll_no = '18BCE259'
+  2  ;
+
+1 row updated.
+
+SQL> select * from student;
+
+ROLL_NO  NAME                            SEM                                                        
+-------- ------------------------- ---------                                                        
+18BCE259 Shrey Viradiya                    4                                                        
+18BCE263 Yash Chelani                      4                                                        
+18BCE260 Vishva Patel                      4                                                        
+18BCE258 Dhvanik Viradiya                  4                                                        
+
+SQL> alter table student add(mobile number(10));
+
+Table altered.
+
+SQL> select * from student;
+
+ROLL_NO  NAME                            SEM    MOBILE                                              
+-------- ------------------------- --------- ---------                                              
+18BCE259 Shrey Viradiya                    4                                                        
+18BCE263 Yash Chelani                      4                                                        
+18BCE260 Vishva Patel                      4                                                        
+18BCE258 Dhvanik Viradiya                  4                                                        
+
+SQL> alter table student drop(mobile);
+
+Table altered.
+
+SQL> select * from student;
+
+ROLL_NO  NAME                            SEM                                                        
+-------- ------------------------- ---------                                                        
+18BCE259 Shrey Viradiya                    4                                                        
+18BCE263 Yash Chelani                      4                                                        
+18BCE260 Vishva Patel                      4                                                        
+18BCE258 Dhvanik Viradiya                  4                                                        
+
+SQL> alter table student add( mobile number(10), default = 0000000000);
+alter table student add( mobile number(10), default = 0000000000)
+                                            *
+ERROR at line 1:
+ORA-00904: : invalid identifier 
+
+
+SQL> alter table student add( mobile number(10)) default = 0000000000l;
+alter table student add( mobile number(10)) default = 0000000000l
+                                                    *
+ERROR at line 1:
+ORA-30649: missing DIRECTORY keyword 
+
+
+SQL>  alter table student add( mobile number(10));
+
+Table altered.
+
+SQL> update student set mobile = 1111111111;
+
+4 rows updated.
+
+SQL> select * from student;
+
+ROLL_NO  NAME                            SEM    MOBILE                                              
+-------- ------------------------- --------- ---------                                              
+18BCE259 Shrey Viradiya                    4 1.111E+09                                              
+18BCE263 Yash Chelani                      4 1.111E+09                                              
+18BCE260 Vishva Patel                      4 1.111E+09                                              
+18BCE258 Dhvanik Viradiya                  4 1.111E+09                                              
+
+SQL> 
+SQL> commit
+  2  ;
+
+Commit complete.
+
+SQL> #
+SQL> # commit is used for saving the db
+  2  ;
+ commit is used for saving the db
+        *
+ERROR at line 1:
+ORA-02185: a token other than WORK follows COMMIT 
+
+
+SQL> alter table modify mobile(char(10));
+alter table modify mobile(char(10))
+            *
+ERROR at line 1:
+ORA-00903: invalid table name 
+
+
+SQL> alter table student modify(char(10));
+alter table student modify(char(10))
+                           *
+ERROR at line 1:
+ORA-00904: : invalid identifier 
+
+
+SQL> alter table student modify(mobile char(10));
+alter table student modify(mobile char(10))
+                           *
+ERROR at line 1:
+ORA-01439: column to be modified must be empty to change datatype 
+
+
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> commit;
+
+Commit complete.
+
+SQL> select * from student;
+
+ROLL_NO  NAME                            SEM    MOBILE                                              
+-------- ------------------------- --------- ---------                                              
+18BCE259 Shrey Viradiya                    4 1.111E+09                                              
+18BCE263 Yash Chelani                      4 1.111E+09                                              
+18BCE260 Vishva Patel                      4 1.111E+09                                              
+18BCE258 Dhvanik Viradiya                  4 1.111E+09                                              
+
+SQL> spool off

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS</title>
+    <style>
+        /* a:link{
+            color: aquamarine;
+        }
+
+        a:visited {
+            color: red;
+        }
+
+        a:hover{
+            color: green;
+        }
+
+        a:active{
+            color: yellow;
+        }
+
+        div {
+            width: 300px;
+            height: 100px;
+            background-color: yellow;
+            border: 1px solid black;
+            transition-duration: 0.5s;
+            /* transform: scale(2, 3); */
+           /*  } */
+
+        /* div:hover {
+            width: 300px;
+            height: 100px;
+            background-color: yellow;
+            border: 1px solid black;
+            transform: scale(2,2) translate(150px, 100px) skewX(20deg) rotateZ(180deg);
+            scale: (0.5, 0.5);
+        } */ 
+
+        .background .water {
+            position: absolute;
+            background-image: url("sea-map.png");
+            background-size: cover;
+            top:0;
+            left:0;
+            height: 100%;
+            width: 100%;
+            filter: url("#turbulence");
+
+            }
+
+        .background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            width: 100vw;
+            background-image: url("sea.jpg");
+            background-size: cover;
+            }
+
+        
+
+        
+    </style>
+</head>
+<body>
+    <!-- <a href="https://www.google.co.in">Search in the google</a>
+    <div>
+        <p>
+            Hello
+        </p>
+    </div> -->
+
+    <div class="background">
+        <div class="water"></div>
+      </div>
+
+      <svg>
+        <filter id="turbulence" x="0" y="0" width="100%" height="100%">
+          <feTurbulence id="sea-filter" numOctaves="3" seed="2" baseFrequency="0.02 0.05"></feTurbulence>
+          <feDisplacementMap scale="20" in="SourceGraphic"></feDisplacementMap>
+          <animate xlink:href="#sea-filter" attributeName="baseFrequency" dur="60s" keyTimes="0;0.5;1" values="0.02 0.06;0.04 0.08;0.02 0.06" repeatCount="indefinite"/>
+        </filter>
+      </svg>
+
+      
+</body>
+</html>

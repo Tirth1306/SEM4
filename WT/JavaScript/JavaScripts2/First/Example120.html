@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>local vs global</title>
+</head>
+<body>
+<p>Counting with a local variable.</p>
+
+<button type="button" onclick="myFunction()">Count!</button>
+<p id="demo">0</p>
+<script>
+    function add() {
+        var counter = 0;
+        return counter += 1;
+    }
+
+    function myFunction(){
+        document.getElementById("demo").innerHTML = add();
+    }
+</script>
+
+<br/><br/><br/><br/>
+<p>Counting with a global variable.</p>
+
+<button type="button" onclick="myFunction1()">Count!</button>
+
+<p id="demo1">0</p>
+
+<script>
+    var counter1 = 0;
+
+    function add1() {
+        return counter1 += 1;
+    }
+
+    function myFunction1(){
+        document.getElementById("demo1").innerHTML = add1();
+    }
+</script>
+</body>
+</html>

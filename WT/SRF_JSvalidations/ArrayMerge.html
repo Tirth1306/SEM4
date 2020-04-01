@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>
+        Merge 2 Array
+    </title>
+</head>
+
+
+
+<body style = "text-align:center; background-color: green">
+
+    <h1 style = "color:white;" style="font-size: 100px">
+        Welcome To Array Merger!
+    </h1>
+
+	<input type="text" placeholder="Array 1!" id="arr1">
+	<button onclick = "add1();"> ADD </button>
+	<br>
+	<input type="number" placeholder="Array 2!" id="arr2">
+	<button onclick = "add2();"> ADD </button>
+	<br>
+	<button onclick = "display_array();"> DISPLAY </button>
+
+	<div id="Result"></div>
+	<div id="Result2"></div>
+	<div id="Result3"></div>
+
+
+    <script>
+		var x=0;
+		var t=0;
+    var arr1 = Array();
+		var arr2 = Array();
+
+		function add1()
+		{
+			arr1[x] = document.getElementById("arr1").value;
+ 			alert("Element: " + arr1[x] + " Added at index " + x);
+ 			x++;
+		}
+
+		function add2()
+		{
+			arr2[t] = document.getElementById("arr2").value;
+ 			alert("Element: " + arr2[t] + " Added at index " + t);
+ 			t++;
+		}
+
+		function display_array()
+		{
+		   var e = "<hr>";
+
+
+		   for (var y=0; y<arr1.length; y++)
+		   {
+			 e += "Element (Array 1) " + y + " = " + arr1[y] + "<br/>";
+		   }
+
+		   document.getElementById("Result").innerHTML = e;
+
+			var s = "<hr>";
+			for (var y=0; y<arr2.length; y++)
+		   {
+			 s += "Element (Array 2) " + y + " = " + arr2[y] + "<br/>";
+		   }
+
+		   document.getElementById("Result2").innerHTML = s+"<hr>";
+
+		   uniq = [...new Set(arr1.concat(arr2))];
+
+		   document.getElementById("Result3").innerHTML = "Merged Array : " + uniq + "<hr>";
+
+		}
+    </script>
+</body>
+
+</html>

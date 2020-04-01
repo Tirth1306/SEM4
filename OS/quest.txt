@@ -1,0 +1,80 @@
+Let the time taken to switch from user mode to kernel mode of execution be T1 while time taken to
+switch between two user processes be T2 . Which of the following is correct?
+A. T1 > T2
+B. T1 = T2
+C. T1 < T2
+D. Nothing can be said about the relation between T1 and T2.
+ANSWER: C
+
+A process executes the following segment of code :
+for(i = 1; i <= n; i++)
+{fork ();}
+The number of child processes created is
+A. n
+B. ((n(n+1)/2))
+C. (2^n)-1
+D. (3^n)-1
+ANSWER: C
+
+Consider the following code fragment:
+if (fork() == 0)
+{
+a = a + 5;
+printf("%d, %p n", a, &a);
+}
+else
+{
+a = a - 5;
+printf ("%d, %p n", a,& a);
+}
+Let u,v be the values printed by the parent process and x,y be the values printed by the child process. Which one of the following is TRUE?
+A. u=x+10 and v=y
+B. u=x+10 and v!=y
+C. u+10=x and v=y
+D. u+10=x and v!=y
+ANSWER: D
+
+A processor needs software interrupt to
+A. test the interrupt system of the processor
+B. implement co-routines
+C. obtain system services which need execution of privileged instructions
+
+D. return from subroutine
+ANSWER: C
+
+System calls are usually invoked by using
+A. a software interrupt
+B. polling
+C. an indirect jump
+D. a privileged instruction
+ANSWER: A
+
+Which combination of the following features will suffice to characterize an OS as a multiprogrammed
+OS?
+a. More than one program may be loaded into main memory at the same time for execution
+b. If a program waits for certain events such as I/O, another program is immediately scheduled for
+execution
+c. If the execution of a program terminates, another program is immediately scheduled for
+execution.
+A. (a)
+B. (a) and (b)
+C. (a) and (c)
+D. (a), (b) and (c)
+ANSWER: B
+
+A scheduling algorithm assigns priority proportional to the waiting time of a process. Every process
+starts with zero (the lowest priority). The scheduler re-evaluates the process priorities every time
+units and decides the next process to schedule. Which one of the following is TRUE if the processes
+have no I/O operations and all arrive at time zero?
+A. This algorithm is equivalent to the first-come-first-serve algorithm.
+B. This algorithm is equivalent to the round-robin algorithm.
+C. This algorithm is equivalent to the shortest-job-first algorithm.
+D. This algorithm is equivalent to the shortest-remaining-time-first algorithm.
+ANSWER: B
+
+A critical section is a program segment
+A. which should run in a certain amount of time
+B. which avoids deadlocks
+C. where shared resources are accessed
+D. which should be executed without preemption
+ANSWER: C

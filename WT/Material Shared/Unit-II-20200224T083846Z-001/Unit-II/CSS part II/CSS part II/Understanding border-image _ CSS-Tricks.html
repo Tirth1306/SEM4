@@ -1,0 +1,1765 @@
+<!DOCTYPE html>
+<!-- saved from url=(0050)https://css-tricks.com/understanding-border-image/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+	
+
+	<meta name="viewport" content="width=device-width">
+
+	
+	<title>Understanding&nbsp;border-image | CSS-Tricks</title>
+
+	<link rel="apple-touch-icon" href="https://cdn.css-tricks.com/apple-touch-icon.png">
+  <meta name="msapplication-TileColor" content="#00aba9">
+  <meta name="msapplication-TileImage" content="https://cdn.css-tricks.com/mstile-144x144.png">
+
+  <meta property="fb:pages" content="124436167285">
+
+	<link rel="search" type="application/opensearchdescription+xml" href="https://cdn.css-tricks.com/opensearch.xml" title="CSS-Tricks Search">
+
+	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://feeds.feedburner.com/CssTricks">
+
+  <!--[if !IE]><!-->
+  <link rel="stylesheet" href="./Understanding border-image _ CSS-Tricks_files/style.css">
+  <!--<![endif]-->
+  <!--[if lt IE 9]>
+  <link rel="stylesheet" href="https://cdn.css-tricks.com/wp-content/themes/CSS-Tricks-14/css/oldie.css">
+  <![endif]-->
+  <!--[if IE 9]>
+  <link rel="stylesheet" href="https://cdn.css-tricks.com/wp-content/themes/CSS-Tricks-14/style.css?v=3.5>
+  <![endif]-->
+  
+  
+    
+  
+<!-- This site is optimized with the Yoast SEO plugin v3.4.2 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="The new CSS3 property border-image is a little tricky, but it can allow you to create flexible boxes with custom borders (or drop shadows, if that&#39;s your t">
+<meta name="robots" content="noodp">
+<link rel="canonical" href="https://css-tricks.com/understanding-border-image/">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Understanding border-image | CSS-Tricks">
+<meta property="og:description" content="The new CSS3 property border-image is a little tricky, but it can allow you to create flexible boxes with custom borders (or drop shadows, if that&#39;s your t">
+<meta property="og:url" content="https://css-tricks.com/understanding-border-image/">
+<meta property="og:site_name" content="CSS-Tricks">
+<meta property="article:publisher" content="https://www.facebook.com/CSSTricks">
+<meta property="article:section" content="Advanced">
+<meta property="article:published_time" content="2010-07-21T06:40:53+00:00">
+<meta property="article:modified_time" content="2015-04-01T19:32:41+00:00">
+<meta property="og:updated_time" content="2015-04-01T19:32:41+00:00">
+<meta property="og:image" content="//css-tricks.com/wp-content/uploads/2010/07/borderimagecss.png">
+<meta property="og:image" content="//css-tricks.com/wp-content/uploads/2010/07/border-image.png">
+<meta property="og:image" content="//css-tricks.com/wp-content/uploads/2010/07/border-image-marked1.png">
+<meta property="og:image" content="//css-tricks.com/wp-content/uploads/2010/07/exampleoneimage.png">
+<meta property="og:image" content="//css-tricks.com/wp-content/uploads/2010/07/exampletwoimage.png">
+<meta property="og:image" content="//css-tricks.com/wp-content/uploads/2010/07/example-three-image.png">
+<meta property="og:image" content="//css-tricks.com/wp-content/uploads/2010/07/interactiveborderradiustool.jpg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:description" content="The new CSS3 property border-image is a little tricky, but it can allow you to create flexible boxes with custom borders (or drop shadows, if that&#39;s your t">
+<meta name="twitter:title" content="Understanding border-image | CSS-Tricks">
+<meta name="twitter:site" content="@Real_CSS_Tricks">
+<meta name="twitter:image" content="//css-tricks.com/wp-content/uploads/2010/07/borderimagecss.png">
+<meta name="twitter:creator" content="@Real_CSS_Tricks">
+<!-- / Yoast SEO plugin. -->
+
+<link rel="dns-prefetch" href="https://code.jquery.com/">
+<link rel="alternate" type="application/rss+xml" title="CSS-Tricks » Understanding border-image Comments Feed" href="https://css-tricks.com/understanding-border-image/feed/">
+<script async="" src="./Understanding border-image _ CSS-Tricks_files/analytics.js"></script><script type="text/javascript" src="./Understanding border-image _ CSS-Tricks_files/minqueue-ca14aaa7-9be6b636.js"></script>
+<link rel="https://api.w.org/" href="https://css-tricks.com/wp-json/">
+<link rel="shortlink" href="https://css-tricks.com/?p=6883">
+<link rel="alternate" type="application/json+oembed" href="https://css-tricks.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fcss-tricks.com%2Funderstanding-border-image%2F">
+<link rel="alternate" type="text/xml+oembed" href="https://css-tricks.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fcss-tricks.com%2Funderstanding-border-image%2F&amp;format=xml">
+<!-- Better Art Direction Styles -->
+<style type="text/css" media="screen">
+#example-three { border-color:orange; border-style:double; border-width:25px 30px 10px 20px; -moz-border-image:url("http://css-tricks.com/wp-content/uploads/2010/07/border-image-marked.png") 25 30 10 20 repeat; -webkit-border-image:url("http://css-tricks.com/wp-content/uploads/2010/07/border-image-marked.png") 25 30 10 20 repeat; border-image:url("http://css-tricks.com/wp-content/uploads/2010/07/border-image-marked.png") 25 30 10 20 repeat; display: block !important; margin: 0 0 15px 0; }
+#example-two {
+	border:50px double orange;
+	-moz-border-image:url("http://css-tricks.com/wp-content/uploads/2010/07/border-image-marked.png") 25 30 10 20 repeat;
+	-webkit-border-image:url("http://css-tricks.com/wp-content/uploads/2010/07/border-image-marked.png") 25 30 10 20 repeat;
+	border-image:url("http://css-tricks.com/wp-content/uploads/2010/07/border-image-marked.png") 25 30 10 20 repeat; display: block !important; margin: 0 0 15px 0; 
+}
+#example-one {
+	border-width:25px 30px 10px 20px;
+	-moz-border-image:url("http://css-tricks.com/wp-content/uploads/2010/07/border-image-marked.png") 25 30 10 20 repeat stretch;
+	-webkit-border-image:url("http://css-tricks.com/wp-content/uploads/2010/07/border-image-marked.png") 25 30 10 20 repeat stretch;
+	border-image:url("http://css-tricks.com/wp-content/uploads/2010/07/border-image-marked.png") 25 30 10 20 repeat stretch; display: block !important; margin: 0 0 15px 0; }
+</style>
+
+
+<link rel="dns-prefetch" href="https://v0.wordpress.com/">
+<style type="text/css">img#wpstats{display:none}</style><link rel="amphtml" href="https://css-tricks.com/understanding-border-image/amp/">  
+<script async="" src="./Understanding border-image _ CSS-Tricks_files/bsa.js"></script><script type="text/javascript" id="_bsap_js_3469a2a501a9e18091036aa0c89f9dcb" src="./Understanding border-image _ CSS-Tricks_files/s_3469a2a501a9e18091036aa0c89f9dcb.js" async="async"></script><script type="text/javascript" src="./Understanding border-image _ CSS-Tricks_files/pro.js" id="_bsap_premium_pro"></script><script type="text/javascript" id="_bsaPRO_js" src="./Understanding border-image _ CSS-Tricks_files/saved_resource" async="async"></script><style id="fit-vids-style">.fluid-width-video-wrapper{width:100%;position:relative;padding:0;}.fluid-width-video-wrapper iframe,.fluid-width-video-wrapper object,.fluid-width-video-wrapper embed,.fluid-width-video-wrapper video {position:absolute;top:0;left:0;width:100%;height:100%;}</style></head>
+
+<body class="single single-post postid-6883 single-format-standard">
+
+  <script>
+    (function(){
+      var bsa = document.createElement('script');
+         bsa.async = true;
+         bsa.src = "//s3.buysellads.com/ac/bsa.js";
+      (document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(bsa);
+    })();
+  </script>
+
+  <header id="top" class="top">
+
+  <a href="https://css-tricks.com/" class="logo-link ready-to-animate">
+    <svg class="logomorph" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="256 -32 620 180" width="300" height="85">
+  <g>
+    <path id="dash" d="M488.3 65.8h15.1c2.6 0 4.7-2.2 4.7-4.7 0-2.7-2.2-4.8-4.7-4.8h-15.1c-2.6 0-4.7 2.2-4.7 4.8-.1 2.5 2.1 4.7 4.7 4.7z"></path>
+    <path id="k" d="M703.4 81.1c0 2.7 2.2 4.9 5 4.9 2.7 0 4.9-2.2 4.9-4.9V69.4l9.2-8.9 18.1 23.1c1 1.4 2.3 2.3 4.2 2.3 2.8 0 5-2.1 5-4.8 0-1.5-.6-2.5-1.4-3.5l-19-23.6 17.5-16.9c1.1-1 1.8-2.2 1.8-3.7 0-2.4-1.8-4.6-4.6-4.6-1.8 0-3 .6-4.1 1.9l-26.7 26.9V33.8c0-2.7-2.2-4.9-4.9-4.9-2.8 0-5 2.2-5 4.9v47.3z"></path>
+    <path id="halfstar" class="st0" d="M733 64l-17.2-6.6 17.2-6.7c2.1-.9 4-2.6 4-5.3 0-3.1-2.6-5.7-5.7-5.7-1.6 0-2.8.5-4.3 1.7l-14.9 9.5 1.7-15.5c.5-3.6-1.9-6.4-5.3-6.4s-5.9 2.9-5.3 6.6v44c-.5 3.6 1.9 6.4 5.3 6.4 3.5 0 5.9-2.9 5.3-6.6L712.1 64l14.9 9.5c1.6 1 2.8 1.7 4.1 1.7 3.1 0 5.9-2.6 5.9-5.7 0-2.7-1.9-4.6-4-5.5z"></path>
+    <path id="s2" class="st0" d="M457.8 53c-10.9-2.6-13.4-4.5-13.4-8.9v-.2c0-3.7 3.4-6.7 9.2-6.7 4.4 0 8.6 1.4 13 4.3.8.5 1.6.7 2.6.7 2.6 0 4.7-2 4.7-4.6 0-1.9-1-3.3-2.2-3.9-5.1-3.4-10.8-5.2-17.9-5.2-11.2 0-19.2 6.7-19.2 16.3v.2c0 10.4 6.8 13.9 18.7 16.8 10.5 2.4 12.7 4.6 12.7 8.6v.2c0 4.2-3.9 7.1-10 7.1s-11.1-2.1-15.8-5.8c-.6-.5-1.5-.9-2.9-.9-2.6 0-4.7 2-4.7 4.6 0 1.6.8 3 1.9 3.8 6.3 4.7 13.5 7.1 21.2 7.1 11.8 0 20.1-6.3 20.1-16.8v-.2c0-9.4-6.1-13.6-18-16.5z"></path>
+    <path id="c1" class="st0" d="M371.1 70.9c-1.2 0-2.3.5-3 1.1-4.1 3.5-8.1 5.4-14.1 5.4-10.8 0-18.6-8.9-18.6-20v-.2c0-11 7.9-19.9 18.6-19.9 5.4 0 9.6 1.9 13.4 5.1.6.5 1.6 1 3 1 2.7 0 4.9-2.1 4.9-4.8 0-1.8-.9-3.1-1.9-3.9-4.9-3.8-10.6-6.4-19.3-6.4-17.1 0-29 13.1-29 29.1v.2c0 16.2 12.2 29 28.6 29 9.1 0 15.1-2.9 20.4-7.6.9-.8 1.6-2 1.6-3.5 0-2.5-2.1-4.6-4.6-4.6z"></path>
+    <path id="s1" class="st0" d="M407.9 53c-10.9-2.6-13.4-4.5-13.4-8.9v-.2c0-3.7 3.4-6.7 9.2-6.7 4.4 0 8.6 1.4 13 4.3.8.5 1.6.7 2.6.7 2.6 0 4.7-2 4.7-4.6 0-1.9-1-3.3-2.2-3.9-5.1-3.4-10.8-5.2-17.9-5.2-11.2 0-19.2 6.7-19.2 16.3v.2c0 10.4 6.8 13.9 18.7 16.8 10.5 2.4 12.7 4.6 12.7 8.6v.2c0 4.2-3.9 7.1-10 7.1s-11.1-2.1-15.8-5.8c-.6-.5-1.5-.9-2.9-.9-2.6 0-4.7 2-4.7 4.6 0 1.6.8 3 1.9 3.8 6.3 4.7 13.5 7.1 21.2 7.1 11.8 0 20.1-6.3 20.1-16.8v-.2c0-9.4-6.1-13.6-18-16.5z"></path>
+    <path id="t" class="st0" d="M549 29.3h-37.4c-2.6 0-4.6 2.1-4.6 4.6s2 4.6 4.6 4.6h13.7v42.6c0 2.7 2.3 4.9 5 4.9s5-2.2 5-4.9V38.5H549c2.5 0 4.5-2.1 4.5-4.6s-2-4.6-4.5-4.6z"></path>
+    <path id="c2" class="st0" d="M688.4 70.9c-1.2 0-2.3.5-3 1.1-4.1 3.5-8.1 5.4-14.1 5.4-10.8 0-18.6-8.9-18.6-20v-.2c0-11 7.9-19.9 18.6-19.9 5.4 0 9.6 1.9 13.4 5.1.6.5 1.6 1 3 1 2.7 0 4.9-2.1 4.9-4.8 0-1.8-.9-3.1-1.9-3.9-4.9-3.8-10.6-6.4-19.3-6.4-17.1 0-29 13.1-29 29.1v.2c0 16.2 12.2 29 28.6 29 9.1 0 15.1-2.9 20.4-7.6.9-.8 1.6-2 1.6-3.5 0-2.5-2.1-4.6-4.6-4.6z"></path>
+    <path id="r" class="st0" d="M587.9 29.3h-20.1c-2.8 0-5 2.2-5 5v46.8c0 2.7 2.2 4.9 5 4.9 2.7 0 4.9-2.2 4.9-4.9V66h12.5l13.7 17.5c1.1 1.5 2.6 2.6 4.8 2.6 2.4 0 4.7-1.9 4.7-4.6 0-1.5-.6-2.6-1.6-3.8L596 64.1c7.6-2.3 12.8-7.8 12.8-16.8v-.2c0-4.9-1.7-9.1-4.7-12.1-3.6-3.6-9.1-5.7-16.2-5.7zm10.8 18.5c0 5.7-4.5 9.4-11.6 9.4h-14.5V38.3H587c7.3 0 11.7 3.3 11.7 9.3v.2z"></path>
+    <path id="i" class="st0" d="M625.7 28.9c-2.8 0-5 2.2-5 4.9v47.3c0 2.7 2.2 4.9 5 4.9 2.7 0 4.9-2.2 4.9-4.9V33.8c0-2.7-2.2-4.9-4.9-4.9z"></path>
+    <path id="i2" class="st0" d="M625.7 28.9c-2.8 0-5 2.2-5 4.9v47.3c0 2.7 2.2 4.9 5 4.9 2.7 0 4.9-2.2 4.9-4.9V33.8c0-2.7-2.2-4.9-4.9-4.9z"></path>
+  </g>
+  <g id="newer">
+    <g id="saturn">
+      <g id="satbody">
+        <circle id="body" class="st1" cx="672.1" cy="57.7" r="28.9"></circle>
+        <path id="shadow" class="st2" d="M672.1 86.6c-24.2-3.9-33.6-29.9-21.8-47.9-4.4 5.1-7.1 11.7-7.1 19 0 15.9 13 28.9 28.9 28.9z" data-svg-origin="655.3000183105469 62.64999771118164" style="visibility: visible; transform-origin: 0px 0px 0px; opacity: 0; transform: matrix(0, 0, 0, 0, 655.3, 62.65);"></path>
+        <path id="highlight" class="st3" d="M672.1 28.8c-6.3 0-12.1 2-16.8 5.4 3.3-1.3 6.9-2 10.6-2 16 0 28.9 12.9 28.9 28.9 0 9.7-4.1 19.5-12.1 23.5 10.7-4.2 18.3-14.7 18.3-26.9 0-16-12.9-28.9-28.9-28.9z" data-svg-origin="678.1499938964844 56.69999885559082" style="visibility: visible; transform-origin: 0px 0px 0px; opacity: 0; transform: matrix(0, 0, 0, 0, 678.15, 56.7);"></path>
+      </g>
+      <g id="rings" style="visibility: visible;">
+        <path id="ringB" class="st4" d="M618 80.9c1.4 2.8 24.6-2.5 57-14.9 7.1-2.7 54.2-22.1 51.9-26.9-.8-1.6-9.8-.3-28.3 5.3.5 1.1.9 2.2 1 2.4 8.7-2.6 13.3-3.5 13.7-2.6 1 2.7-24.1 13.4-41.7 19.7-23.8 8.4-43.3 14.1-43.9 12.4-.4-1 5.7-4.3 16.5-9-.2-.5-.4-1.2-.6-2-3.3 1.5-27.2 12.4-25.6 15.6z" data-svg-origin="672.8000183105469 60.60000228881836" style="transform-origin: 0px 0px 0px; opacity: 0; transform: matrix(0, 0, 0, 0, 672.8, 60.6);"></path>
+        <path id="ringN" class="st5" d="M736.7 36.5c-1.2-3.3-16.6-.7-39.1 6.3.3.4.6 1.1.9 1.7l-.2-.5c10.3-3.1 31.4-9.3 32.9-6.2 2.8 5.6-50.1 26.5-56.1 28.8-6.8 2.6-57.8 21.2-60.5 15.7-1.9-3.8 24.8-15.8 28.7-17.6l.1.6c-.2-.7-.3-1.5-.4-2-21.2 9.4-34.7 17.7-33.5 20.9 1.7 4.5 31.5-2 66.6-15.2 35.2-13.2 62.3-28 60.6-32.5z" data-svg-origin="673.3500366210938 60.94999885559082" style="transform-origin: 0px 0px 0px; opacity: 0; transform: matrix(0, 0, 0, 0, 673.35, 60.95);"></path>
+      </g>
+    </g>
+    <g id="burst" style="visibility: visible; opacity: 0;">
+      <path id="l1" stroke-linecap="round" class="st6" d="M729.5 8.3v24.5" data-svg-origin="729.5 8.300000190734863" style="opacity: 1; stroke-width: 3px; transform: matrix(1, 0, 0, 1, -5, 0); stroke-dashoffset: -12.75; stroke-dasharray: 1e-05px, 35.5px;"></path>
+      <path id="l2" stroke-linecap="round" class="st6" d="M727.5 34l27-15.7" data-svg-origin="727.5 18.299999237060547" style="opacity: 1; stroke-width: 3px; transform: matrix(1, 0, 0, 1, -5, 0); stroke-dashoffset: -16.1164; stroke-dasharray: 1e-05px, 42.2328px;"></path>
+      <path id="l3" stroke-linecap="round" class="st6" d="M729 31.8l22.5 13.5" data-svg-origin="729 31.799999237060547" style="opacity: 1; stroke-width: 3px; transform: matrix(1, 0, 0, 1, -5, 0); stroke-dashoffset: -13.6196; stroke-dasharray: 1e-05px, 37.2393px;"></path>
+      <path id="l4" stroke-linecap="round" class="st6" d="M729.5 31.3v26" data-svg-origin="729.5 31.299999237060547" style="opacity: 1; stroke-width: 3px; transform: matrix(1, 0, 0, 1, -5, 0); stroke-dashoffset: -13.5; stroke-dasharray: 1e-05px, 37px;"></path>
+      <path id="l5" stroke-linecap="round" class="st6" d="M707.5 45.8l24.9-14.5" data-svg-origin="707.5 31.299999237060547" style="opacity: 1; stroke-width: 3px; transform: matrix(1, 0, 0, 1, -5, 0); stroke-dashoffset: -14.9071; stroke-dasharray: 1e-05px, 39.8143px;"></path>
+      <path id="l6" stroke-linecap="round" class="st6" d="M702.5 16.3l30.2 18" data-svg-origin="702.5 16.299999237060547" style="opacity: 1; stroke-width: 3px; transform: matrix(1, 0, 0, 1, -5, 0); stroke-dashoffset: -18.0787; stroke-dasharray: 1e-05px, 46.1574px;"></path>
+    </g>
+    <path id="star" d="M704.8 64l-12.9 9.5c-1.6 1-2.8 1.7-4.3 1.7-3.1 0-5.7-2.8-5.7-5.9 0-2.6 2.1-4.5 4-5.3l15.2-6.6-15.2-6.7c-2.1-.9-4-2.8-4-5.3 0-3.1 2.8-5.7 5.9-5.7 1.6 0 2.6.5 4.1 1.7l12.9 9.5-1.7-15.4c-.5-3.6 1.9-6.6 5.3-6.6 3.5 0 5.9 2.8 5.3 6.4L712 50.8l12.9-9.5c1.6-1.2 2.8-1.7 4.3-1.7 3.1 0 5.7 2.6 5.7 5.7 0 2.8-1.9 4.5-4 5.3l-15.2 6.7 15.2 6.6c2.1.9 4 2.8 4 5.5 0 3.1-2.8 5.7-5.9 5.7-1.4 0-2.6-.7-4.1-1.7L712 63.9l1.7 15.4c.5 3.6-1.9 6.6-5.3 6.6s-5.9-2.8-5.3-6.4l1.7-15.5z"></path>
+    <g id="zg">
+      <path id="lbracket" class="st7" d="M784.8 97.3l-26-12.7c-2.2-1-3.5-2.7-3.5-4.8v-.6c0-2.2 1.3-3.8 3.5-4.8l26-12.7c.7-.4 1.4-.6 2.2-.6 1.9-.1 3.5 1.6 3.5 3.7 0 1.7-.9 2.9-2.4 3.6l-23.7 11.1 23.7 11.2c1.5.7 2.4 2 2.4 3.7 0 2.2-1.7 3.7-3.8 3.7-.6-.2-1.3-.5-1.9-.8z"></path>
+      <path id="rbracket" class="st7" d="M773.8 15.6l25.9 12.7c2.2 1 3.5 2.7 3.5 4.8v.6c0 2.2-1.3 3.8-3.5 4.8l-25.9 12.7c-.7.4-1.4.6-2.2.6-1.9.1-3.5-1.6-3.5-3.7 0-1.7.9-2.9 2.4-3.5l23.7-11.2-23.7-11.2c-1.5-.7-2.4-2-2.4-3.7 0-2.2 1.7-3.7 3.8-3.7.6.2 1.3.5 1.9.8z"></path>
+      <path id="z1" d="M801 37.6c1.2-1.5 1.8-3 1.8-4.7v-.2c0-2.4-2.1-4.5-4.6-4.5H760c-2.4 0-4.5 2.1-4.5 4.6s2.1 4.5 4.5 4.5h29.1l-14.7 17.8 7.7 5.3L801 37.6z"></path>
+      <path id="z2" d="M798.5 77.2h-30.2l14-16.8-7.7-5.3-17.9 21.7c-1.2 1.4-1.9 3-1.9 4.7v.2c0 2.4 2.2 4.5 4.6 4.5h39.2c2.5 0 4.6-2 4.6-4.5s-2.2-4.5-4.7-4.5z"></path>
+    </g>
+    <g id="sg">
+      <path id="sl1" class="st0" d="M767.8 44.1v-.2c0-3.7 3.4-6.7 9.2-6.7 4.4 0 8.6 1.4 13 4.3.8.5 1.6.7 2.6.7 2.6 0 4.7-2 4.7-4.6 0-1.9-1-3.3-2.2-3.9-5.1-3.4-10.8-5.2-17.9-5.2-11.2 0-19.2 6.7-19.2 16.3v.2c0 10.1 6.5 13.7 17.9 16.6l4.8-8.7c-10.5-2.6-12.9-4.5-12.9-8.8z"></path>
+      <path id="sl2" class="st0" d="M781.2 53c-.2 0-.3-.1-.5-.1l-4.8 8.7c.3.1.6.1.8.2 10.5 2.4 12.7 4.6 12.7 8.6v.2c0 4.2-3.9 7.1-10 7.1s-11.1-2.1-15.8-5.8c-.6-.5-1.5-.9-2.9-.9-2.6 0-4.7 2-4.7 4.6 0 1.6.8 3 1.9 3.8 6.3 4.7 13.5 7.1 21.2 7.1 11.8 0 20.1-6.3 20.1-16.8v-.2c0-9.4-6.1-13.6-18-16.5z"></path>
+    </g>
+    <path id="kturn" d="M647.7 51.4c-2.7 0-4.9 2.2-4.9 5 0 2.7 2.2 4.9 4.9 4.9h11.7l8.9 9.2-23 18.2c-1.4 1-2.3 2.3-2.3 4.2 0 2.8 2.1 5 4.8 5 1.5 0 2.5-.6 3.5-1.4l23.5-19.1 16.9 17.5c1 1.1 2.2 1.8 3.7 1.8 2.4 0 4.6-1.8 4.6-4.6 0-1.8-.6-3-1.9-4.1l-27-26.6 23.8-.1c2.7 0 4.9-2.2 4.9-4.9 0-2.8-2.2-5-4.9-5h-47.2z"></path>
+    <path id="bracket" d="M687.5 68.8c-1.1 0-4-.1-5.2-.1-5.3 0-7.6 1.9-7.8 6.8-.1 2.2-1.5 3.6-3.5 3.6-1.9 0-3.3-1.4-3.5-3.6-.1-4.9-2.5-6.8-7.8-6.8-1.2 0-4.1.1-5.2.1-7.1 0-11.5-3-14-14.1-.5-2.2.9-4 3-4 1.7 0 2.7 1.2 3 2.1 2.2 6.9 4.4 7.9 9.3 7.9 1.4 0 3.8-.1 5.3-.1 5.6 0 8.4 2.7 9.9 7.5 1.6-4.8 4.2-7.5 9.9-7.5 1.5 0 3.9.1 5.3.1 4.9 0 7.1-1 9.3-7.9.3-.9 1.2-2.1 3-2.1 2.1 0 3.5 1.7 3 4-2.5 11.1-7 14.1-14 14.1z"></path>
+    <path id="repofill" class="st11" d="M551.4,36.7c0-3.9-3.1-7-7-7c-3.9,0-7,3.1-7,7c0,2.6,1.4,4.9,3.5,6.1v5.8l-10.6,11.7 l-10.6-11.7v-5.8c2.1-1.2,3.5-3.5,3.5-6.1c0-3.9-3.1-7-7-7s-7,3.1-7,7c0,2.6,1.4,4.9,3.5,6.1v8.6l14.1,15.5v6 c-2.1,1.2-3.5,3.5-3.5,6.1c0,3.9,3.1,7,7,7c3.9,0,7-3.1,7-7c0-2.6-1.4-4.9-3.5-6.1v-6l14.1-15.5v-8.6 C550,41.6,551.4,39.4,551.4,36.7z"></path>
+    <path id="repodot3" class="st12" d="M544.7,32.9c1.9,0,3.5,1.6,3.5,3.5c0,1.9-1.6,3.5-3.5,3.5s-3.5-1.6-3.5-3.5 C541.2,34.5,542.8,32.9,544.7,32.9z" data-svg-origin="544.7000122070312 36.400001525878906" style="visibility: visible; transform-origin: 0px 0px 0px; transform: matrix(0, 0, 0, 0, 544.7, 36.4);"></path>
+    <path id="repodot2" class="st12" d="M516.2,33.1c1.9,0,3.5,1.6,3.5,3.5c0,1.9-1.6,3.5-3.5,3.5c-1.9,0-3.5-1.6-3.5-3.5 C512.7,34.7,514.3,33.1,516.2,33.1z" data-svg-origin="516.2000122070312 36.599998474121094" style="visibility: visible; transform-origin: 0px 0px 0px; transform: matrix(0, 0, 0, 0, 516.2, 36.6);"></path>
+    <path id="repodot1" class="st12" d="M530.3,75.7c1.9,0,3.5,1.6,3.5,3.5s-1.6,3.5-3.5,3.5c-1.9,0-3.5-1.6-3.5-3.5 S528.4,75.7,530.3,75.7z" data-svg-origin="530.2999877929688 79.19999694824219" style="visibility: visible; transform-origin: 0px 0px 0px; transform: matrix(0, 0, 0, 0, 530.3, 79.2);"></path>
+    <path id="slash" class="st7" d="M807.1 80.3l41-50.2c.9-1.1 2.2-1.6 3.7-1.3 2 .3 3.4 1.9 3.1 3.5-.1.6-.4 1.1-.7 1.5L813.3 84c-.9 1.1-2.1 1.6-3.6 1.3-2-.3-3.5-1.9-3.2-3.5 0-.6.3-1.2.6-1.5z" data-svg-origin="830.7000122070312 57.05000114440918" style="visibility: visible; transform-origin: 0px 0px 0px; transform: matrix(0, 0, 0, 0, 830.7, 57.05);"></path>
+    <path id="link" class="st0" d="M405.6 73.7c-1.4 1.1-1.6 3.2-.5 4.6l2.4 3c2.1 2.7 5.2 4.2 8.4 4.6 3.2.4 6.5-.5 9.2-2.6 2.6-2.1 4.3-5 4.6-8.3.4-3.3-.6-6.6-2.7-9.2L418.3 55c-5.4-6.7-12.3-8.4-17.6-4.2-1.4 1.1-1.7 3.2-.5 4.6 1.1 1.4 3.2 1.7 4.6.5 3.1-2.4 6.6 1 8.4 3.2l8.7 10.8c1 1.2 1.4 2.8 1.2 4.3-.2 1.6-1 3-2.2 3.9-2.6 2-6.3 1.6-8.4-.9l-2.4-3c-1.1-1.4-3.1-1.6-4.5-.5zm-25.5-32.3c-.4 3.3.6 6.6 2.7 9.2l9.3 11.6c2.9 3.6 6.1 5.6 9.3 5.9 2.6.3 5.3-.5 7.7-2.4 1.4-1.1 1.7-3.2.5-4.6-1.1-1.4-3.2-1.7-4.6-.5-1.1.8-3.6 2.8-7.8-2.5l-9.3-11.6c-1-1.2-1.4-2.8-1.3-4.3.2-1.6 1-2.9 2.2-3.9 2.3-1.8 5.6-2.5 7.8.2l3 3.7c1.1 1.4 3.2 1.6 4.6.5 1.4-1.1 1.6-3.2.5-4.6l-2.9-3.7c-4.2-5.2-11.3-5.7-17-1.3-2.7 2-4.3 5-4.7 8.3z"></path>
+  </g>
+  <circle id="dotExpand" fill="#E18728" cx="503" cy="61" r="3.9" data-svg-origin="499.1000061035156 57.099998474121094" style="opacity: 1;"></circle>
+  <circle id="dotActivate" fill="#E18728" cx="503" cy="61" r="3.9"></circle>
+</svg>
+  </a>
+
+  <nav class="main-nav" id="main-nav">
+  <ul>
+    <li class="home">
+      <a href="https://css-tricks.com/">
+        Blog
+      </a>
+    </li>
+    <li class="videos">
+      <a href="https://css-tricks.com/video-screencasts/">
+        Videos
+      </a>
+    </li>
+    <li class="almanac">
+      <a href="https://css-tricks.com/almanac/">
+        Almanac
+      </a>
+    </li>
+    <li class="snippets">
+      <a href="https://css-tricks.com/snippets/">
+        Snippets
+      </a>
+    </li>  
+    <li class="forums">
+      <a href="https://css-tricks.com/forums/">
+        Forums
+      </a>
+    </li>
+    <li class="shop">
+      <a href="https://css-tricks.com/shop/">
+        Shop
+      </a>
+    </li>
+    <li class="lodge">
+      <a href="https://css-tricks.com/lodge/">
+        Lodge
+      </a>
+    </li>
+    <li class="jobs">
+      <a href="https://css-tricks.com/jobs/">
+        Jobs
+      </a>
+    </li>
+    <li class="close-menu" id="close-menu">
+      <a href="https://css-tricks.com/understanding-border-image/#menu-closed">
+        × Collapse
+      </a>
+    </li>
+    <li class="show-menu" id="open-menu">
+      <a href="https://css-tricks.com/understanding-border-image/#menu">
+        ☰ Menu
+      </a>
+    </li>
+  </ul>
+</nav>
+  <section class="search" role="search">
+
+    <form id="search-form" action="https://css-tricks.com/search-results/">
+
+      <div class="flexy-search">
+        <input aria-labelledby="search-label" id="q" required="" type="search" name="q" class="search-field" value="" placeholder="e.g. flexbox">
+        <label for="q" id="search-label">
+          <span class="screen-reader">Search</span>
+          <svg viewBox="0 0 100 100" class="shape-search">
+            <use xlink:href="#shape-search"></use>
+          </svg>
+        </label>
+      </div>
+      
+    </form>
+
+  </section>
+
+  <div class="user-account-area">
+      
+    <img alt="" src="./Understanding border-image _ CSS-Tricks_files/saved_resource(1)" srcset="https://secure.gravatar.com/avatar/?s=92&amp;d=mm&amp;r=pg 2x" class="avatar avatar-46 photo avatar-default" height="46" width="46">
+    <ul class="user-dropdown">
+
+      
+      <li>
+        <a href="https://css-tricks.com/wp-login.php">Log In</a>
+      </li>
+      <li>
+        <a href="https://css-tricks.com/wp-login.php?action=register">Sign Up</a>
+      </li>
+
+            
+    </ul>
+
+  </div>
+
+</header>
+
+  <div class="page-wrap" id="page-wrap">
+
+<div class="main-and-sidebar-wrap">
+
+  <main class="main-col">
+
+    <header class="mega-header">
+
+      <h1 class="p-name">Understanding&nbsp;border-image</h1>
+
+      <p class="author-byline">
+        <span class="author-byline-inside">
+          <a href="https://css-tricks.com/author/guestauthor/">
+            <img alt="" class="avatar avatar-200 photo avatar-default" height="200" src="./Understanding border-image _ CSS-Tricks_files/guest-author-200x200.png" width="200">            <span class="p-author">
+              Guest Author            </span>
+          </a>
+          <span class="slashes">//</span>
+          <time datetime="2010-07-21" class="dt-published">
+            July 21, 2010          </time>
+        </span>
+      </p>
+
+    </header>
+
+    <div class="module-main blog-posts no-relative">
+
+      <article id="post-6883" role="main" class="instapaper_body h-entry e-content">
+
+          <div class="google-ad">
+    <div id="bsap_1279518" class="bsap bsap_1279518" data-serve="CV7DPKT">
+<style type="text/css">
+div.bsap_1279518{width:100%;display:block;}div.bsap_1279518 a{width:200px;}div.bsap_1279518 a img{padding:0;}div.bsap_1279518 a em{font-style:normal;}div.bsap_1279518 a{display:block;font-size:11px;color:#888;font-family:verdana,sans-serif;margin:0 4px 10px 0;text-align:center;text-decoration:none;overflow:hidden;float:left;}
+div.bsap_1279518 img{border:0;clear:right;}
+div.bsap_1279518 a.adhere{color:#666;font-weight:bold;font-size:12px;border:1px solid #ccc;background:#e7e7e7;text-align:center;}
+div.bsap_1279518 a.adhere:hover{border:1px solid #999;background:#ddd;color:#333;}div.bsap_1279518 a{line-height:100%;}div.bsap_1279518 a.adhere{width:200px;height:200px;line-height:1600%;}html>body div.bsap_1279518 a.adhere{width:198px;height:198px;}div.bsap_1279518 img.s{height:0;width:0;}
+</style>
+<a href="https://srv.buysellads.com/ads/click/x/GTND423UCVYIEKJIF6B4YKQWCA7D453MCVADCZ3JCESI6K3UCKAIP2QKC6BD5KJJFTYDVK3EHJNCLSIZ" class="ad0 odd " title="E-commerce just got a lot easier." id="bsa_6878999" target="_blank" rel="nofollow">
+<img src="./Understanding border-image _ CSS-Tricks_files/5568645-1468228828.png" width="200" height="200" alt=""></a>
+<script type="text/javascript" id="auto_1" class="ignoreme"> if (typeof(BSACallback) !== 'undefined') BSACallback(); </script></div>
+  </div>
+
+        <p>The new CSS3 property border-image is a little tricky, but it can allow you to create flexible boxes with custom borders (or drop shadows, if that's your thing) with a single div and a single image. In this article I explain how the <tt>border-image</tt> shorthand property works in today's browsers.</p>
+<p><span id="more-6883"></span></p>
+<h3 id="article-header-id-0" class="has-header-link"><a class="article-headline-link" href="https://css-tricks.com/understanding-border-image/#article-header-id-0">#</a>The basic idea</h3>
+<p>The border-image shorthand property has 3 parts:</p>
+<pre rel="CSS" class=" language-css"><code class=" language-css"><span class="token property">border-image</span><span class="token punctuation">:</span> <span class="token url">url(border-image.png)</span> <span class="token number">25%</span> repeat<span class="token punctuation">;</span></code></pre>
+<p><img src="./Understanding border-image _ CSS-Tricks_files/borderimagecss.png" alt="" title="borderimagecss" width="570" height="200" class="alignnone size-full wp-image-6899" srcset="https://cdn.css-tricks.com/wp-content/uploads/2010/07/borderimagecss.png 570w, https://cdn.css-tricks.com/wp-content/uploads/2010/07/borderimagecss-300x105.png 300w" sizes="(max-width: 570px) 100vw, 570px"></p>
+<p>Essentially, these allow you to specify:</p>
+<ol>
+<li>An image to use as the border</li>
+<li>Where to slice that image, dividing the image into 9 sections</li>
+<li>How the browser should apply those sections to the edges of your element</li>
+</ol>
+<h3 id="article-header-id-1" class="has-header-link"><a class="article-headline-link" href="https://css-tricks.com/understanding-border-image/#article-header-id-1">#</a>The pertinent details</h3>
+<p>Let's look at each part of the process in a little more detail. The first part is easy, and is familiar from the <tt>background-image</tt> property. For demonstration purposes I'll use this image, which is 100px x 100px:</p>
+<figure id="post-199492" class="align-right media-199492"><img sizes="(max-width: 100px) 100vw, 100px" src="./Understanding border-image _ CSS-Tricks_files/border-image.png" alt="a border image"></figure>
+<h3 id="article-header-id-2" class="has-header-link"><a class="article-headline-link" href="https://css-tricks.com/understanding-border-image/#article-header-id-2">#</a>Slicing your image</h3>
+<p>The second part can have from one to four values, much like the <tt>border-width</tt> property, and they are specified in the same order: top, right, bottom, left. You can use percentages or pixels. Strangely, the percentages require the "%", while pixels should be listed <em>without the "px"</em>:</p>
+<pre rel="CSS" class=" language-css"><code class=" language-css"><span class="token property">border-image</span><span class="token punctuation">:</span> <span class="token url">url(my-image.gif)</span> <span class="token number">25%</span> <span class="token number">30%</span> <span class="token number">10%</span> <span class="token number">20%</span> repeat<span class="token punctuation">;</span>
+<span class="token property">border-image</span><span class="token punctuation">:</span> <span class="token url">url(my-image.gif)</span> <span class="token number">25</span> <span class="token number">30</span> <span class="token number">10</span> <span class="token number">20</span> repeat<span class="token punctuation">;</span></code></pre>
+<p>In this case, since my image is 100px x 100px, the two rules above are equivalent - they slice the image in the same places. I've added some dimensions on my image to demonstrate:</p>
+<figure id="post-199494" class="align-right media-199494"><img sizes="(max-width: 100px) 100vw, 100px" src="./Understanding border-image _ CSS-Tricks_files/border-image-marked1.png" alt=""></figure>
+<h3 id="article-header-id-3" class="has-header-link"><a class="article-headline-link" href="https://css-tricks.com/understanding-border-image/#article-header-id-3">#</a>Repeat, Round, Stretch</h3>
+<p><code>border-image</code> will always place the corner sections of your image into the corresponding corners of your element box, but the third part of the shorthand rule tells the browser how to treat the middle sections of your image - the ones that will go along the edges of your element. </p>
+<p><code>Repeat</code> (repeat, or tile, the image) and <code>stretch</code> (stretch, or scale, the image) are pretty self-explanatory. </p>
+<p><code>Round</code> means tile the image but only so that a whole number of tiles fit, and otherwise scale the image. Right now, Safari and Chrome interpret <code>round</code> as <code>repeat</code>. There can be up to two values: one for the top and bottom edges of the element, and one for the left and right. </p>
+<p>Here's an example with the top/bottom value set to <code>repeat</code>, and the left/right value set to <code>stretch</code>:</p>
+<pre rel="CSS" class=" language-css"><code class=" language-css"><span class="token selector"><span class="token id">#example-one</span> </span><span class="token punctuation">{</span>
+  <span class="token property">border-width</span><span class="token punctuation">:</span> <span class="token number">25</span>px <span class="token number">30</span>px <span class="token number">10</span>px <span class="token number">20</span>px<span class="token punctuation">;</span>
+  <span class="token property">border-image</span><span class="token punctuation">:</span> <span class="token url">url("border-image.png")</span> <span class="token number">25</span> <span class="token number">30</span> <span class="token number">10</span> <span class="token number">20</span> repeat stretch<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<figure><img src="./Understanding border-image _ CSS-Tricks_files/exampleoneimage.png" alt="" title="exampleoneimage" width="510" height="272" class="alignnone size-full wp-image-6895" srcset="https://cdn.css-tricks.com/wp-content/uploads/2010/07/exampleoneimage.png 510w, https://cdn.css-tricks.com/wp-content/uploads/2010/07/exampleoneimage-300x160.png 300w" sizes="(max-width: 510px) 100vw, 510px"><br>
+<figcaption>Screenshot for Example One</figcaption>
+</figure>
+<div id="example-one">
+<p><strong>LIVE DEMO, RSS READERS CLICK OVER TO SEE.</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eu arcu non dui consequat vestibulum non vitae eros. Donec imperdiet lorem at mi rhoncus lacinia. Phasellus porttitor ligula eu justo condimentum eget placerat arcu pharetra. Proin fringilla vulputate eros in accumsan. Sed mi nibh, pulvinar eu sollicitudin ut, feugiat non ipsum. In ornare, quam sit amet tempor suscipit, erat odio suscipit nisi, eu gravida nisl orci ut arcu. Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+</div>
+<h3 id="article-header-id-4" class="has-header-link"><a class="article-headline-link" href="https://css-tricks.com/understanding-border-image/#article-header-id-4">#</a>Border-width</h3>
+<p><code>border-image</code> won't do anything if you don't specify a width for your border. For browsers that understand <tt>border-image</tt>, your image slices will be scaled to the specified width. If you use the <tt>border</tt> shorthand property, it provides a nice fallback for browsers that don't:</p>
+<pre rel="CSS" class=" language-css"><code class=" language-css"><span class="token selector"><span class="token id">#example-two</span> </span><span class="token punctuation">{</span>
+  <span class="token property">border</span><span class="token punctuation">:</span> <span class="token number">50</span>px double orange<span class="token punctuation">;</span>
+  <span class="token property">border-image</span><span class="token punctuation">:</span> <span class="token url">url("border-image.png")</span> <span class="token number">25</span> <span class="token number">30</span> <span class="token number">10</span> <span class="token number">20</span> repeat<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<figure><img src="./Understanding border-image _ CSS-Tricks_files/exampletwoimage.png" alt="" title="exampletwoimage" width="561" height="335" class="alignnone size-full wp-image-6894" srcset="https://cdn.css-tricks.com/wp-content/uploads/2010/07/exampletwoimage.png 561w, https://cdn.css-tricks.com/wp-content/uploads/2010/07/exampletwoimage-300x179.png 300w" sizes="(max-width: 561px) 100vw, 561px"><br>
+<figcaption>Screenshot of Example Two</figcaption>
+</figure>
+<div id="example-two" style="display: none;">
+<p><strong>LIVE DEMO, RSS READERS CLICK OVER TO SEE.</strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eu arcu non dui consequat vestibulum non vitae eros. Donec imperdiet lorem at mi rhoncus lacinia. Phasellus porttitor ligula eu justo condimentum eget placerat arcu pharetra. Proin fringilla vulputate eros in accumsan. Sed mi nibh, pulvinar eu sollicitudin ut, feugiat non ipsum. In ornare, quam sit amet tempor suscipit, erat odio suscipit nisi, eu gravida nisl orci ut arcu. Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+</div>
+<p>Or you can specify each width individually (in this example I've specified widths such that the image slices aren't scaled at all):</p>
+<pre rel="CSS" class=" language-css"><code class=" language-css"><span class="token selector"><span class="token id">#example-three</span> </span><span class="token punctuation">{</span>
+  <span class="token property">border-color</span><span class="token punctuation">:</span> orange<span class="token punctuation">;</span>
+  <span class="token property">border-style</span><span class="token punctuation">:</span> double<span class="token punctuation">;</span>
+  <span class="token property">border-width</span><span class="token punctuation">:</span> <span class="token number">25</span>px <span class="token number">30</span>px <span class="token number">10</span>px <span class="token number">20</span>px<span class="token punctuation">;</span>
+  <span class="token property">border-image</span><span class="token punctuation">:</span> <span class="token url">url("border-image.png")</span> <span class="token number">25</span> <span class="token number">30</span> <span class="token number">10</span> <span class="token number">20</span> repeat<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<figure><img src="./Understanding border-image _ CSS-Tricks_files/example-three-image.png" alt="" title="example-three-image" width="563" height="275" class="alignnone size-full wp-image-6893" srcset="https://cdn.css-tricks.com/wp-content/uploads/2010/07/example-three-image.png 563w, https://cdn.css-tricks.com/wp-content/uploads/2010/07/example-three-image-300x146.png 300w" sizes="(max-width: 563px) 100vw, 563px"><br>
+<figcaption>Screenshot of Example Three</figcaption>
+</figure>
+<div id="example-three" style="display: none;">
+<p><strong>LIVE DEMO, RSS READERS CLICK OVER TO SEE.</strong> dolor sit amet, consectetur adipiscing elit. Aenean eu arcu non dui consequat vestibulum non vitae eros. Donec imperdiet lorem at mi rhoncus lacinia. Phasellus porttitor ligula eu justo condimentum eget placerat arcu pharetra. Proin fringilla vulputate eros in accumsan. Sed mi nibh, pulvinar eu sollicitudin ut, feugiat non ipsum. In ornare, quam sit amet tempor suscipit, erat odio suscipit nisi, eu gravida nisl orci ut arcu. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+</div>
+<p>Using a plain border at the same widths as your border-image won't always be ideal, however, so you may want to use conditional stylesheets to give IE some different border styles altogether.</p>
+<h3 id="article-header-id-5" class="has-header-link"><a class="article-headline-link" href="https://css-tricks.com/understanding-border-image/#article-header-id-5">#</a>Browser quirks</h3>
+<p>Predictably, IE doesn't understand anything of <tt>border-image</tt>. Browsers that <i>do</i> support border-image only support the shorthand property, not all the individual properties that are <a href="http://www.w3.org/TR/css3-background/#border-images">described in the spec</a>. Some potentially useful properties aren't supported at all, especially <tt>border-image-outset</tt>, which would solve <a href="http://www.norabrowndesign.com/css-experiments/border-image-frame.html#one" title="Demonstration of border-image-outset issue">this problem.</a></p>
+<p>Also, the default behavior is supposed to be to <i>discard</i> the center section of the image, and use the 'fill' keyword on the <tt>border-image-slice</tt> property to preserve it:</p>
+<blockquote><p>The <code>fill</code> keyword, if present, causes the middle part of the border-image to be preserved. (By default it is discarded, i.e., treated as empty.) (<a href="http://www.w3.org/TR/css3-background/#border-image-slice">Read the spec</a>)</p></blockquote>
+<p>But the current browser behavior is to preserve the middle, and there is no way to turn it off. Thus, if you don't want your element's content area to have a background, the center section of your image must be empty. However, you can use this filling behavior to your advantage, to create a <a href="http://www.norabrowndesign.com/css-experiments/border-image-frame.html#two" alt="Demonstration of CSS3 border-image fill behavior">box with a fancy border and background</a>, with only one image.</p>
+<h3 id="article-header-id-6" class="has-header-link"><a class="article-headline-link" href="https://css-tricks.com/understanding-border-image/#article-header-id-6">#</a>Interactive demo</h3>
+<p>I built a <a href="http://www.norabrowndesign.com/css-experiments/border-image-anim.html"><code>border-image</code> demo page</a> to help me get my head around this complicated new set of CSS3 properties. You can pick an image, specify repeat, round, or stretch, and adjust the border-width and slicing. Enjoy!</p>
+<figure><a href="http://www.norabrowndesign.com/css-experiments/border-image-anim.html"><img src="./Understanding border-image _ CSS-Tricks_files/interactiveborderradiustool.jpg" alt="" title="interactiveborderradiustool" width="553" height="478" class="alignnone size-full wp-image-6898" srcset="https://cdn.css-tricks.com/wp-content/uploads/2010/07/interactiveborderradiustool.jpg 553w, https://cdn.css-tricks.com/wp-content/uploads/2010/07/interactiveborderradiustool-300x259.jpg 300w" sizes="(max-width: 553px) 100vw, 553px"></a></figure>
+<h3 id="article-header-id-7" class="has-header-link"><a class="article-headline-link" href="https://css-tricks.com/understanding-border-image/#article-header-id-7">#</a>Examples in the wild</h3>
+<ul>
+<li><a href="http://www.blog.spoongraphics.co.uk/latest_news/whats-new-at-blogspoongraphics">Chris Spooner</a> uses it to nice effect to give his images a custom border.</li>
+<li>On <a href="http://www.gopinkboots.com/">the travel blog Go Pink Boots</a> I built recently, I used it to add a torn-paper background to images.</li>
+<li>I use it on my site <a href="http://www.webdesignersreviewofbooks.com/reviews/html5-for-web-designers">The Web Designers' Review of Books</a> to highlight blockquotes.</li>
+</ul>
+<p>If you have other examples on live sites, I'd love to see them. Leave a link in the comments!</p>
+<h3 id="article-header-id-8" class="has-header-link"><a class="article-headline-link" href="https://css-tricks.com/understanding-border-image/#article-header-id-8">#</a>About the Author</h3>
+<p><a href="http://www.norabrowndesign.com/">Nora Brown</a> is a freelance web and graphic designer based in Boston. Her pet project at the moment is the <a href="http://www.webdesignersreviewofbooks.com/">Web Designers' Review of Books</a>, where she reviews books on everything from Blue Note album covers to HTML5. Have a look!</p>
+
+        
+      </article>
+
+    </div>
+
+          <div class="bsap-doubles">
+        <div id="bsap_1250418" class="bsap bsap_1250418" data-serve="CV7DV5V">
+<div class="bsa_it one"><div class="bsa_it_ad ad0 odd ">
+<a target="_blank" href="https://srv.buysellads.com/ads/click/x/GTND423UCVYIEKJIF67LYKQWCA7D4237CEADLZ3JCESI6KQEFTSIL53KC6BD5KJJFTYDVK3EHJNCLSIZ" rel="nofollow">
+<span class="bsa_it_i">
+<img alt="The Divi Theme" src="./Understanding border-image _ CSS-Tricks_files/293805-1444204566.png" width="120" height="90">
+</span>
+</a>
+<a target="_blank" href="https://srv.buysellads.com/ads/click/x/GTND423UCVYIEKJIF67LYKQWCA7D4237CEADLZ3JCESI6KQEFTSIL53KC6BD5KJJFTYDVK3EHJNCLSIZ" rel="nofollow">
+<span class="bsa_it_t">The Divi Theme</span>
+<span class="bsa_it_d">Download the Ultimate WordPress Theme including our advanced Drag &amp; Drop builder</span>
+</a>
+<div style="clear:both"></div>
+</div><div class="bsa_it_ad ad1  even">
+<a target="_blank" href="https://srv.buysellads.com/ads/click/x/GTND423UCVYIEKJIF67LYKQWCA7D427IC6SD6Z3JCESI6KQJCVYI5K7KC6BD5KJJFTYDVK3EHJNCLSIZ" rel="nofollow">
+<span class="bsa_it_i">
+<img alt="Responsive HTML5/CSS3" src="./Understanding border-image _ CSS-Tricks_files/288553-1441871746.jpg" width="120" height="90">
+</span>
+</a>
+<a target="_blank" href="https://srv.buysellads.com/ads/click/x/GTND423UCVYIEKJIF67LYKQWCA7D427IC6SD6Z3JCESI6KQJCVYI5K7KC6BD5KJJFTYDVK3EHJNCLSIZ" rel="nofollow">
+<span class="bsa_it_t">Responsive HTML5/CSS3</span>
+<span class="bsa_it_d">100% Hand Coded Markup by The Best Front-end Developers. Get a Free Quote Now!</span>
+</a>
+<div style="clear:both"></div>
+</div><span class="bsa_it_p">
+<a href="http://www.buysellads.com/buy/detail/1098/zone/1250418?utm_source=site_1098&amp;utm_medium=website&amp;utm_campaign=imagetext&amp;utm_content=zone_1250418">ads by BSA</a>
+</span>
+</div>
+
+<script type="text/javascript" id="auto_2" class="ignoreme"> if (typeof(BSACallback) !== 'undefined') BSACallback(); </script></div>
+      </div>
+    
+          <div class="module-comments">
+        <section id="comments">
+
+
+
+  <h1 class="h2 comments-title">
+    Comments
+  </h1>
+
+  <ol class="commentlist group">
+    
+    <li class="comment even thread-even depth-1" id="li-comment-80567">
+
+      <div class="grid group comment-wrap" id="comment-80567">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="./Understanding border-image _ CSS-Tricks_files/252cd772c4b972c2cd418dbde455ebec" srcset="https://secure.gravatar.com/avatar/252cd772c4b972c2cd418dbde455ebec?s=320&amp;d=https%3A%2F%2Fcss-tricks.com%2Fimages%2Fget-gravatar.png&amp;r=pg 2x" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author">Albanion</div> <div class="comment-time"><a href="https://css-tricks.com/understanding-border-image/#comment-80567"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2010-07-21T07:11:12+00:00">July 21, 2010</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>These things I’ve not known. Many Thank you for helping us offer us.</p>
+<p>Very useful article<br>
+Very helpful this post</p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+  </li><!-- #comment-## -->
+
+    <li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-80568">
+
+      <div class="grid group comment-wrap" id="comment-80568">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="./Understanding border-image _ CSS-Tricks_files/e7f4e4b1d3b381e70f864bc7f8b4493e" srcset="https://secure.gravatar.com/avatar/e7f4e4b1d3b381e70f864bc7f8b4493e?s=320&amp;d=https%3A%2F%2Fcss-tricks.com%2Fimages%2Fget-gravatar.png&amp;r=pg 2x" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author">Ian Storm Taylor</div> <div class="comment-time"><a href="https://css-tricks.com/understanding-border-image/#comment-80568"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2010-07-21T07:11:58+00:00">July 21, 2010</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>Chris you are starting to creep me out. And I mean that in the best of ways… it’s amazing how timely your articles are. I was just investigating this to not much avail yesterday.</p>
+<p>Thank you!</p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+  </li><!-- #comment-## -->
+
+    <li class="comment even thread-even depth-1 buried" id="li-comment-80569">
+
+      <div class="grid group comment-wrap" id="comment-80569">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="./Understanding border-image _ CSS-Tricks_files/b6098865c1142a996f600910714f4292" srcset="https://secure.gravatar.com/avatar/b6098865c1142a996f600910714f4292?s=320&amp;d=https%3A%2F%2Fcss-tricks.com%2Fimages%2Fget-gravatar.png&amp;r=pg 2x" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author">jason</div> <div class="comment-time"><a href="https://css-tricks.com/understanding-border-image/#comment-80569"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2010-07-21T07:40:58+00:00">July 21, 2010</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>Thanks.  Very informative.</p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+  </li><!-- #comment-## -->
+
+    <li class="comment odd alt thread-odd thread-alt depth-1 buried" id="li-comment-80570">
+
+      <div class="grid group comment-wrap" id="comment-80570">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="./Understanding border-image _ CSS-Tricks_files/1b45939302fa0d304d94eb1066b2ed0c" srcset="https://secure.gravatar.com/avatar/1b45939302fa0d304d94eb1066b2ed0c?s=320&amp;d=https%3A%2F%2Fcss-tricks.com%2Fimages%2Fget-gravatar.png&amp;r=pg 2x" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author">referat</div> <div class="comment-time"><a href="https://css-tricks.com/understanding-border-image/#comment-80570"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2010-07-21T07:47:23+00:00">July 21, 2010</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>Very useful article.<br>
+keep up the good work</p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+  </li><!-- #comment-## -->
+
+    <li class="comment even thread-even depth-1" id="li-comment-80571">
+
+      <div class="grid group comment-wrap" id="comment-80571">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="./Understanding border-image _ CSS-Tricks_files/c97dea97e5bb7ec6fbcf97c137f4d1ff" srcset="https://secure.gravatar.com/avatar/c97dea97e5bb7ec6fbcf97c137f4d1ff?s=320&amp;d=https%3A%2F%2Fcss-tricks.com%2Fimages%2Fget-gravatar.png&amp;r=pg 2x" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author">Jacob</div> <div class="comment-time"><a href="https://css-tricks.com/understanding-border-image/#comment-80571"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2010-07-21T07:59:16+00:00">July 21, 2010</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>I don’t know why, but this is way more confusing for me that linear and radial gradients.  I’m going to have to read and re-read this article another 4 or 5 times to really get it.  And, of course, play with it as much as possible.  Thanks for another great resource/reference.</p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+  </li><!-- #comment-## -->
+
+    <li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-80572">
+
+      <div class="grid group comment-wrap" id="comment-80572">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="./Understanding border-image _ CSS-Tricks_files/b33738e9a7a766a09a909cf006e0339e" srcset="https://secure.gravatar.com/avatar/b33738e9a7a766a09a909cf006e0339e?s=320&amp;d=https%3A%2F%2Fcss-tricks.com%2Fimages%2Fget-gravatar.png&amp;r=pg 2x" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author">Elisa</div> <div class="comment-time"><a href="https://css-tricks.com/understanding-border-image/#comment-80572"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2010-07-21T08:21:57+00:00">July 21, 2010</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>Thank you for clarifying a property that’s a little hard to understand.</p>
+<p>O.T.: browsing “Go pink boots” I noticed that tag pages don’t work. Since you built it, I think this information may help you</p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+  <ul class="children">
+
+    <li class="comment even depth-2" id="li-comment-80576">
+
+      <div class="grid group comment-wrap" id="comment-80576">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="./Understanding border-image _ CSS-Tricks_files/8c24cf7d516d12e4cd489a12e4f6cbdd" srcset="https://secure.gravatar.com/avatar/8c24cf7d516d12e4cd489a12e4f6cbdd?s=320&amp;d=https%3A%2F%2Fcss-tricks.com%2Fimages%2Fget-gravatar.png&amp;r=pg 2x" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author">Nora Brown</div> <div class="comment-time"><a href="https://css-tricks.com/understanding-border-image/#comment-80576"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2010-07-21T09:56:54+00:00">July 21, 2010</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>Thanks so much Elisa. That site is still a bit of a work-in-progress. I’ll look into the tag glitch right away!</p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+  </li><!-- #comment-## -->
+
+    <li class="comment odd alt depth-2" id="li-comment-80593">
+
+      <div class="grid group comment-wrap" id="comment-80593">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="./Understanding border-image _ CSS-Tricks_files/b33738e9a7a766a09a909cf006e0339e" srcset="https://secure.gravatar.com/avatar/b33738e9a7a766a09a909cf006e0339e?s=320&amp;d=https%3A%2F%2Fcss-tricks.com%2Fimages%2Fget-gravatar.png&amp;r=pg 2x" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author">Elisa</div> <div class="comment-time"><a href="https://css-tricks.com/understanding-border-image/#comment-80593"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2010-07-22T01:03:56+00:00">July 22, 2010</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>You’re welcome! Anyway, nice work. I like the way you used border-image property, I’ll try to implement it in my next projects an your guide will make it easier…</p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+  </li><!-- #comment-## -->
+
+    <li class="comment even depth-2" id="li-comment-80676">
+
+      <div class="grid group comment-wrap" id="comment-80676">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="./Understanding border-image _ CSS-Tricks_files/24f123098bb77ea700ac86706ef8426b" srcset="https://secure.gravatar.com/avatar/24f123098bb77ea700ac86706ef8426b?s=320&amp;d=https%3A%2F%2Fcss-tricks.com%2Fimages%2Fget-gravatar.png&amp;r=pg 2x" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author">Altin</div> <div class="comment-time"><a href="https://css-tricks.com/understanding-border-image/#comment-80676"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2010-07-24T21:57:15+00:00">July 24, 2010</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>Elisa, are you Albanian? :-) just a thought…<br>
+By the way, great article…</p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+  </li><!-- #comment-## -->
+
+    <li class="comment odd alt depth-2" id="li-comment-80690">
+
+      <div class="grid group comment-wrap" id="comment-80690">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="./Understanding border-image _ CSS-Tricks_files/b33738e9a7a766a09a909cf006e0339e" srcset="https://secure.gravatar.com/avatar/b33738e9a7a766a09a909cf006e0339e?s=320&amp;d=https%3A%2F%2Fcss-tricks.com%2Fimages%2Fget-gravatar.png&amp;r=pg 2x" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author">Elisa</div> <div class="comment-time"><a href="https://css-tricks.com/understanding-border-image/#comment-80690"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2010-07-26T00:38:43+00:00">July 26, 2010</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>No, I’m italian :-)</p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+  </li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+    <li class="comment even thread-even depth-1" id="li-comment-80577">
+
+      <div class="grid group comment-wrap" id="comment-80577">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="./Understanding border-image _ CSS-Tricks_files/6c4ce876f46ce9a0aae45d183a45201e" srcset="https://secure.gravatar.com/avatar/6c4ce876f46ce9a0aae45d183a45201e?s=320&amp;d=https%3A%2F%2Fcss-tricks.com%2Fimages%2Fget-gravatar.png&amp;r=pg 2x" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author">Tom</div> <div class="comment-time"><a href="https://css-tricks.com/understanding-border-image/#comment-80577"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2010-07-21T10:08:34+00:00">July 21, 2010</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>Wow I’m so used to creating border effects with a background picture that this almost seems unintuitive.</p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+  <ul class="children">
+
+    <li class="comment odd alt depth-2" id="li-comment-80621">
+
+      <div class="grid group comment-wrap" id="comment-80621">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="./Understanding border-image _ CSS-Tricks_files/8c24cf7d516d12e4cd489a12e4f6cbdd" srcset="https://secure.gravatar.com/avatar/8c24cf7d516d12e4cd489a12e4f6cbdd?s=320&amp;d=https%3A%2F%2Fcss-tricks.com%2Fimages%2Fget-gravatar.png&amp;r=pg 2x" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author">Nora Brown</div> <div class="comment-time"><a href="https://css-tricks.com/understanding-border-image/#comment-80621"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2010-07-22T11:57:00+00:00">July 22, 2010</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>Thanks for your comment Tom. When IE supports this, and other browsers expand their support, we will be able to replace all kinds of multi-div, multi-background-image sliding-doors type stuff with a single border-image. Can’t wait!</p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+  </li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+    <li class="comment even thread-odd thread-alt depth-1" id="li-comment-80582">
+
+      <div class="grid group comment-wrap" id="comment-80582">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="./Understanding border-image _ CSS-Tricks_files/23f863ddb90829407bc53dc10cd898ff" srcset="https://secure.gravatar.com/avatar/23f863ddb90829407bc53dc10cd898ff?s=320&amp;d=https%3A%2F%2Fcss-tricks.com%2Fimages%2Fget-gravatar.png&amp;r=pg 2x" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author">Owen</div> <div class="comment-time"><a href="https://css-tricks.com/understanding-border-image/#comment-80582"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2010-07-21T13:25:59+00:00">July 21, 2010</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>Wild. Glad we have people like yourself who are ambitious enough to tackle it and explain it to the community</p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+  </li><!-- #comment-## -->
+
+    <li class="comment odd alt thread-even depth-1" id="li-comment-80583">
+
+      <div class="grid group comment-wrap" id="comment-80583">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="./Understanding border-image _ CSS-Tricks_files/b2297c86998546be8ecc0c4554157ebc" srcset="https://secure.gravatar.com/avatar/b2297c86998546be8ecc0c4554157ebc?s=320&amp;d=https%3A%2F%2Fcss-tricks.com%2Fimages%2Fget-gravatar.png&amp;r=pg 2x" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author">Michael Tuck</div> <div class="comment-time"><a href="https://css-tricks.com/understanding-border-image/#comment-80583"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2010-07-21T15:46:47+00:00">July 21, 2010</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>Good article. Chris, you might want to credit Nora where it says “Guest Author” up top.</p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+  </li><!-- #comment-## -->
+
+    <li class="comment even thread-odd thread-alt depth-1" id="li-comment-80597">
+
+      <div class="grid group comment-wrap" id="comment-80597">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="./Understanding border-image _ CSS-Tricks_files/5e51b58a23bfa745b0bed9246c34b38a" srcset="https://secure.gravatar.com/avatar/5e51b58a23bfa745b0bed9246c34b38a?s=320&amp;d=https%3A%2F%2Fcss-tricks.com%2Fimages%2Fget-gravatar.png&amp;r=pg 2x" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author">damsfx</div> <div class="comment-time"><a href="https://css-tricks.com/understanding-border-image/#comment-80597"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2010-07-22T03:30:53+00:00">July 22, 2010</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>Nice article.<br>
+May have a look at : <a href="http://css3pie.com/" rel="nofollow">http://css3pie.com/</a> trying to offer css3 support for IE.</p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+  <ul class="children">
+
+    <li class="comment odd alt depth-2" id="li-comment-80605">
+
+      <div class="grid group comment-wrap" id="comment-80605">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="./Understanding border-image _ CSS-Tricks_files/d94a82e16f51b023ade391bf40ba9094" srcset="https://secure.gravatar.com/avatar/d94a82e16f51b023ade391bf40ba9094?s=320&amp;d=https%3A%2F%2Fcss-tricks.com%2Fimages%2Fget-gravatar.png&amp;r=pg 2x" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author">Rick</div> <div class="comment-time"><a href="https://css-tricks.com/understanding-border-image/#comment-80605"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2010-07-22T07:30:51+00:00">July 22, 2010</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>Wow, that <a href="http://css3pie.com/" rel="nofollow">http://css3pie.com/</a> looks amazing! Im gonna try it :)</p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+  </li><!-- #comment-## -->
+
+    <li class="comment even depth-2" id="li-comment-82708">
+
+      <div class="grid group comment-wrap" id="comment-82708">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="./Understanding border-image _ CSS-Tricks_files/a28e166db142f41fb656364d901e5c95" srcset="https://secure.gravatar.com/avatar/a28e166db142f41fb656364d901e5c95?s=320&amp;d=https%3A%2F%2Fcss-tricks.com%2Fimages%2Fget-gravatar.png&amp;r=pg 2x" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author">Joe</div> <div class="comment-time"><a href="https://css-tricks.com/understanding-border-image/#comment-82708"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2010-09-03T10:22:50+00:00">September 3, 2010</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>This is *the* solution for IE. I’m really that excited.</p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+  </li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+    <li class="comment odd alt thread-even depth-1 buried" id="li-comment-80604">
+
+      <div class="grid group comment-wrap" id="comment-80604">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="./Understanding border-image _ CSS-Tricks_files/6e338c78e47d45dcf5fb01cd30c32841" srcset="https://secure.gravatar.com/avatar/6e338c78e47d45dcf5fb01cd30c32841?s=320&amp;d=https%3A%2F%2Fcss-tricks.com%2Fimages%2Fget-gravatar.png&amp;r=pg 2x" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author">Michael Pehl</div> <div class="comment-time"><a href="https://css-tricks.com/understanding-border-image/#comment-80604"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2010-07-22T07:22:17+00:00">July 22, 2010</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>Good explanation. I think this will help me :-)</p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+  </li><!-- #comment-## -->
+
+    <li class="comment even thread-odd thread-alt depth-1" id="li-comment-80610">
+
+      <div class="grid group comment-wrap" id="comment-80610">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="./Understanding border-image _ CSS-Tricks_files/be97de37df6be35af0bc91bbddc538c5" srcset="https://secure.gravatar.com/avatar/be97de37df6be35af0bc91bbddc538c5?s=320&amp;d=https%3A%2F%2Fcss-tricks.com%2Fimages%2Fget-gravatar.png&amp;r=pg 2x" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author">silvers</div> <div class="comment-time"><a href="https://css-tricks.com/understanding-border-image/#comment-80610"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2010-07-22T07:52:45+00:00">July 22, 2010</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>wow a lot of that went over my head, but you have done a really in-depth tutorial here, and i salute you. </p>
+<p>i think i’ll have to look at this in bite-size chunks so that i understand it!</p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+  <ul class="children">
+
+    <li class="comment odd alt depth-2" id="li-comment-80620">
+
+      <div class="grid group comment-wrap" id="comment-80620">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="./Understanding border-image _ CSS-Tricks_files/8c24cf7d516d12e4cd489a12e4f6cbdd" srcset="https://secure.gravatar.com/avatar/8c24cf7d516d12e4cd489a12e4f6cbdd?s=320&amp;d=https%3A%2F%2Fcss-tricks.com%2Fimages%2Fget-gravatar.png&amp;r=pg 2x" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author">Nora Brown</div> <div class="comment-time"><a href="https://css-tricks.com/understanding-border-image/#comment-80620"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2010-07-22T11:54:23+00:00">July 22, 2010</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>Thanks a lot silvers. Get in touch if you have any questions, maybe I can help! (find my email at on my website: norabrowndesign.com).</p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+  </li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+    <li class="comment even thread-even depth-1" id="li-comment-80624">
+
+      <div class="grid group comment-wrap" id="comment-80624">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="./Understanding border-image _ CSS-Tricks_files/89e06a5cef6b1c52b0a860419c63821f" srcset="https://secure.gravatar.com/avatar/89e06a5cef6b1c52b0a860419c63821f?s=320&amp;d=https%3A%2F%2Fcss-tricks.com%2Fimages%2Fget-gravatar.png&amp;r=pg 2x" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author">Amit</div> <div class="comment-time"><a href="https://css-tricks.com/understanding-border-image/#comment-80624"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2010-07-22T12:52:34+00:00">July 22, 2010</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>Oh wow, great article.<br>
+It definitely helped me understand one of the hardest, most-confusing (in my opinion) CSS3 properties out there. Definitely keep it going!</p>
+<p>By the way, I just wanted to compliment you, Nora, on a very elegant site design.</p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+  <ul class="children">
+
+    <li class="comment odd alt depth-2" id="li-comment-80659">
+
+      <div class="grid group comment-wrap" id="comment-80659">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="./Understanding border-image _ CSS-Tricks_files/8c24cf7d516d12e4cd489a12e4f6cbdd" srcset="https://secure.gravatar.com/avatar/8c24cf7d516d12e4cd489a12e4f6cbdd?s=320&amp;d=https%3A%2F%2Fcss-tricks.com%2Fimages%2Fget-gravatar.png&amp;r=pg 2x" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author">Nora Brown</div> <div class="comment-time"><a href="https://css-tricks.com/understanding-border-image/#comment-80659"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2010-07-23T14:39:52+00:00">July 23, 2010</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>Thanks Amit – I really appreciate the compliment. I agree border-image is one of the most confusing new bits in CSS3, but also one with a lot of potential!</p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+  </li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+    <li class="comment even thread-odd thread-alt depth-1 featured" id="li-comment-80626">
+
+      <div class="grid group comment-wrap" id="comment-80626">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="./Understanding border-image _ CSS-Tricks_files/74c1ee8aa0d7b35ce81938b35bbc4fb5" srcset="https://secure.gravatar.com/avatar/74c1ee8aa0d7b35ce81938b35bbc4fb5?s=320&amp;d=https%3A%2F%2Fcss-tricks.com%2Fimages%2Fget-gravatar.png&amp;r=pg 2x" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author">Ben</div> <div class="comment-time"><a href="https://css-tricks.com/understanding-border-image/#comment-80626"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2010-07-22T13:23:14+00:00">July 22, 2010</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>Nice write up. I made a demo a while back with a “rounded” border image by starting with a rounded image for the border and adding a border radius declaration to the div:<br>
+<a href="http://blog.darkcrimson.com/samples/css3/" rel="nofollow">http://blog.darkcrimson.com/samples/css3/</a></p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+  <ul class="children">
+
+    <li class="comment odd alt depth-2" id="li-comment-80660">
+
+      <div class="grid group comment-wrap" id="comment-80660">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="./Understanding border-image _ CSS-Tricks_files/8c24cf7d516d12e4cd489a12e4f6cbdd" srcset="https://secure.gravatar.com/avatar/8c24cf7d516d12e4cd489a12e4f6cbdd?s=320&amp;d=https%3A%2F%2Fcss-tricks.com%2Fimages%2Fget-gravatar.png&amp;r=pg 2x" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author">Nora Brown</div> <div class="comment-time"><a href="https://css-tricks.com/understanding-border-image/#comment-80660"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2010-07-23T14:44:21+00:00">July 23, 2010</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>Hey great demo page. I love the “view css” option…perfect way to explain the features you’ve implemented. Got a tutorial on that somewhere?</p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+  </li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+    <li class="comment even thread-even depth-1" id="li-comment-80634">
+
+      <div class="grid group comment-wrap" id="comment-80634">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="./Understanding border-image _ CSS-Tricks_files/31ed81bde4ce929b7b2d12c2ae96b8a8" srcset="https://secure.gravatar.com/avatar/31ed81bde4ce929b7b2d12c2ae96b8a8?s=320&amp;d=https%3A%2F%2Fcss-tricks.com%2Fimages%2Fget-gravatar.png&amp;r=pg 2x" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author">Bart</div> <div class="comment-time"><a href="https://css-tricks.com/understanding-border-image/#comment-80634"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2010-07-22T14:46:28+00:00">July 22, 2010</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>Thanks Nora, like the interactive demo too.<br>
+Ok outset will be great, however can’t you just reduce the border and border-image widths to 80px, for example, instead of 213px, to reduce the white space? Solving the mentioned:<br>
+<a title="Demonstration of border-image-outset issue" href="http://www.norabrowndesign.com/css-experiments/border-image-frame.html#one" rel="nofollow">this problem</a></p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+  </li><!-- #comment-## -->
+
+    <li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-80636">
+
+      <div class="grid group comment-wrap" id="comment-80636">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="./Understanding border-image _ CSS-Tricks_files/3b2ad78c9c3894ade7c9ccba57b3d13f" srcset="https://secure.gravatar.com/avatar/3b2ad78c9c3894ade7c9ccba57b3d13f?s=320&amp;d=https%3A%2F%2Fcss-tricks.com%2Fimages%2Fget-gravatar.png&amp;r=pg 2x" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author">Iva</div> <div class="comment-time"><a href="https://css-tricks.com/understanding-border-image/#comment-80636"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2010-07-22T14:58:06+00:00">July 22, 2010</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>Thank you so much for this, I agree with the guy who said that this is harder than the gradients (and this is coming from a person who has a problem with gradients in PS and Illy, too!)</p>
+<p>Also, that’s a sweet-looking travel blog, wonderful design.</p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+  </li><!-- #comment-## -->
+
+    <li class="comment even thread-even depth-1" id="li-comment-80637">
+
+      <div class="grid group comment-wrap" id="comment-80637">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="./Understanding border-image _ CSS-Tricks_files/3f1c607c1ca269801a43103f6bf9cb42" srcset="https://secure.gravatar.com/avatar/3f1c607c1ca269801a43103f6bf9cb42?s=320&amp;d=https%3A%2F%2Fcss-tricks.com%2Fimages%2Fget-gravatar.png&amp;r=pg 2x" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author">alpaproductions</div> <div class="comment-time"><a href="https://css-tricks.com/understanding-border-image/#comment-80637"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2010-07-22T15:46:40+00:00">July 22, 2010</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>This was very interesting for me to read and to know about today. Thank you very much for this. I just wonder how often this will/can be used?</p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+  <ul class="children">
+
+    <li class="comment odd alt depth-2" id="li-comment-80661">
+
+      <div class="grid group comment-wrap" id="comment-80661">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="./Understanding border-image _ CSS-Tricks_files/8c24cf7d516d12e4cd489a12e4f6cbdd" srcset="https://secure.gravatar.com/avatar/8c24cf7d516d12e4cd489a12e4f6cbdd?s=320&amp;d=https%3A%2F%2Fcss-tricks.com%2Fimages%2Fget-gravatar.png&amp;r=pg 2x" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author">Nora Brown</div> <div class="comment-time"><a href="https://css-tricks.com/understanding-border-image/#comment-80661"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2010-07-23T14:45:54+00:00">July 23, 2010</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>Thanks alpaproductions. I would put border-image in that ever-growing category of things that can be implemented as “progressive enhancements” – things you can add as nice touches for browsers that understand them.</p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+  </li><!-- #comment-## -->
+
+    <li class="comment even depth-2" id="li-comment-80841">
+
+      <div class="grid group comment-wrap" id="comment-80841">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="./Understanding border-image _ CSS-Tricks_files/3f1c607c1ca269801a43103f6bf9cb42" srcset="https://secure.gravatar.com/avatar/3f1c607c1ca269801a43103f6bf9cb42?s=320&amp;d=https%3A%2F%2Fcss-tricks.com%2Fimages%2Fget-gravatar.png&amp;r=pg 2x" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author">alpaproductions</div> <div class="comment-time"><a href="https://css-tricks.com/understanding-border-image/#comment-80841"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2010-07-27T11:08:43+00:00">July 27, 2010</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>I guess that’s true. I use round corners the same way you just mentioned here.</p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+  </li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+    <li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-80648">
+
+      <div class="grid group comment-wrap" id="comment-80648">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="./Understanding border-image _ CSS-Tricks_files/93da7de6d050d44fc04d98ab13022102" srcset="https://secure.gravatar.com/avatar/93da7de6d050d44fc04d98ab13022102?s=320&amp;d=https%3A%2F%2Fcss-tricks.com%2Fimages%2Fget-gravatar.png&amp;r=pg 2x" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author">Sunny Singh</div> <div class="comment-time"><a href="https://css-tricks.com/understanding-border-image/#comment-80648"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2010-07-23T03:12:11+00:00">July 23, 2010</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>You can also use a trick with :before and :after and set background images for that with absolute positioning. Of course, I don’t know the exact cross-compatibility for that but I’m sure it’s better than border-image.</p>
+<p>Nice explanation though, I’ll go back to this one day when this becomes a more common thing.</p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+  </li><!-- #comment-## -->
+
+    <li class="comment even thread-even depth-1" id="li-comment-82887">
+
+      <div class="grid group comment-wrap" id="comment-82887">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="./Understanding border-image _ CSS-Tricks_files/73d4a3e9a2c3b2bc6d9da7643e45594f" srcset="https://secure.gravatar.com/avatar/73d4a3e9a2c3b2bc6d9da7643e45594f?s=320&amp;d=https%3A%2F%2Fcss-tricks.com%2Fimages%2Fget-gravatar.png&amp;r=pg 2x" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author">monica a.</div> <div class="comment-time"><a href="https://css-tricks.com/understanding-border-image/#comment-82887"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2010-09-10T05:45:55+00:00">September 10, 2010</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>this is the best border-image tutorial I found online! I had wondered how chris Spooners achieved that cool effect on his images. Glad I learned this!<br>
+Isn’t CSS so cool?<br>
+Thanks for explaining it so clearly.</p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+  </li><!-- #comment-## -->
+
+    <li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-1582269">
+
+      <div class="grid group comment-wrap" id="comment-1582269">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="./Understanding border-image _ CSS-Tricks_files/8c97332b71e2c0a06a17085522d1e315" srcset="https://secure.gravatar.com/avatar/8c97332b71e2c0a06a17085522d1e315?s=320&amp;d=https%3A%2F%2Fcss-tricks.com%2Fimages%2Fget-gravatar.png&amp;r=pg 2x" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author">Vlad</div> <div class="comment-time"><a href="https://css-tricks.com/understanding-border-image/#comment-1582269"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2014-06-07T18:42:58+00:00">June 7, 2014</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>Another great post! Lot of fun… but, one note: (it seams to me that) it is restricting application of gradient borders to elements with non-gradient background. What if you wanted to have an element of some gradient background and add to it borders of a different gradient… ? Then it wouldn’t work, right? Or did I get it all wrong…?</p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+  </li><!-- #comment-## -->
+  </ol>
+
+
+
+<div class="comments-closed">
+  This comment thread is closed. If you have important information to share, please <a href="https://css-tricks.com/contact/">contact us</a>.
+</div>
+
+
+</section>      </div>
+    
+  </main>
+
+      <aside class="entry-unrelated sidebar">
+
+  
+  
+  <div class="module module-jobs">
+
+    <h4>Job Board</h4>
+
+    
+    <ul class="job-list">
+
+            <li>
+                <a href="http://codepen.io/url/job/ZOJgEz">
+          <strong>
+            Gupta Media/smartURL          </strong>
+          is hiring a
+          Front End Software Engineer        </a>
+      </li>
+            <li>
+                <a href="http://codepen.io/url/job/rWNOqZ">
+          <strong>
+            Fueled          </strong>
+          is hiring a
+          Senior Creative Developer        </a>
+      </li>
+            <li>
+                <a href="http://codepen.io/url/job/nbNRJn">
+          <strong>
+            Love + Money          </strong>
+          is hiring a
+          Jr. Front End Developer        </a>
+      </li>
+      
+    </ul>
+
+    <div class="button-wrap">
+      <a href="https://css-tricks.com/jobs/" class="button">See More Jobs</a>
+      &nbsp;
+      <a href="http://codepen.io/jobs/post/" class="button button-bold">Post a Job</a>
+    </div>
+
+  </div>
+
+  <div class="module module-media-temple">
+
+    <a href="http://bit.ly/1O3LAHG" target="_blank" class="media-temple-ad-wrapper-link">
+  
+  <svg id="media-temple-ad" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 250 250">
+  <g id="all-backgrounds">
+    <rect x="0.2" y="0.2" width="125" height="125"></rect>
+    <rect x="125" fill="#232323" width="125" height="125"></rect>
+    <rect y="125" fill="#232323" width="125" height="125"></rect>
+    <rect x="125" y="125.4" width="125" height="125"></rect>
+  </g>
+  <g id="all-text">
+    <g id="text-ssds">
+      <path fill="#FFFFFF" d="M45,104.8c-0.1-0.1-0.2-0.2-0.2-0.4c0-0.3,0.2-0.6,0.5-0.6c0.1,0,0.3,0.1,0.3,0.1c0.9,0.8,1.9,1.2,3.2,1.2
+        c1.3,0,2.2-0.7,2.2-1.7v0c0-0.9-0.5-1.5-2.6-1.9c-2.3-0.5-3.4-1.2-3.4-2.9v0c0-1.6,1.4-2.7,3.3-2.7c1.3,0,2.3,0.3,3.2,1
+        c0.1,0.1,0.2,0.2,0.2,0.5c0,0.3-0.2,0.5-0.5,0.5c-0.1,0-0.2,0-0.3-0.1c-0.8-0.6-1.7-0.9-2.6-0.9c-1.3,0-2.1,0.7-2.1,1.6v0
+        c0,0.9,0.5,1.5,2.7,1.9c2.2,0.5,3.3,1.3,3.3,2.8v0c0,1.7-1.4,2.8-3.4,2.8C47.3,106.1,46.1,105.7,45,104.8z"></path>
+      <path fill="#FFFFFF" d="M54,104.8c-0.1-0.1-0.2-0.2-0.2-0.4c0-0.3,0.2-0.6,0.5-0.6c0.1,0,0.3,0.1,0.3,0.1c0.9,0.8,1.9,1.2,3.2,1.2
+        c1.3,0,2.2-0.7,2.2-1.7v0c0-0.9-0.5-1.5-2.6-1.9c-2.3-0.5-3.4-1.2-3.4-2.9v0c0-1.6,1.4-2.7,3.3-2.7c1.3,0,2.3,0.3,3.2,1
+        c0.1,0.1,0.2,0.2,0.2,0.5c0,0.3-0.2,0.5-0.5,0.5c-0.1,0-0.2,0-0.3-0.1c-0.8-0.6-1.7-0.9-2.6-0.9c-1.3,0-2.1,0.7-2.1,1.6v0
+        c0,0.9,0.5,1.5,2.7,1.9c2.2,0.5,3.3,1.3,3.3,2.8v0c0,1.7-1.4,2.8-3.4,2.8C56.3,106.1,55.1,105.7,54,104.8z"></path>
+      <path fill="#FFFFFF" d="M63.5,96.5c0-0.3,0.3-0.6,0.6-0.6H67c3.1,0,5.3,2.2,5.3,5v0c0,2.8-2.2,5-5.3,5H64c-0.3,0-0.6-0.3-0.6-0.6
+        V96.5z M67,104.9c2.5,0,4.1-1.7,4.1-3.9v0c0-2.2-1.6-4-4.1-4h-2.3v7.9H67z"></path>
+      <path fill="#FFFFFF" d="M74.1,105.2c-0.1-0.1-0.2-0.2-0.2-0.4c0-0.3,0.2-0.5,0.5-0.5c0.1,0,0.2,0,0.3,0.1c0.8,0.5,1.5,0.8,2.3,0.8
+        c0.9,0,1.5-0.5,1.5-1.2v0c0-0.7-0.9-1-1.8-1.3c-1.2-0.3-2.4-0.7-2.4-2.1v0c0-1.3,1.1-2.1,2.5-2.1c0.8,0,1.6,0.2,2.4,0.6
+        c0.1,0.1,0.3,0.2,0.3,0.5c0,0.3-0.2,0.5-0.5,0.5c-0.1,0-0.2,0-0.2-0.1c-0.6-0.4-1.3-0.6-1.9-0.6c-0.9,0-1.4,0.5-1.4,1.1v0
+        c0,0.7,0.9,1,1.9,1.3c1.1,0.3,2.4,0.8,2.4,2.1v0c0,1.4-1.2,2.2-2.6,2.2C75.9,106.1,74.9,105.8,74.1,105.2z"></path>
+    </g>
+    <g id="text-cdn">
+      <path fill="#FFFFFF" d="M44.3,224.5L44.3,224.5c0-2.9,2.1-5.2,5.1-5.2c1.6,0,2.6,0.5,3.6,1.3c0.1,0.1,0.2,0.3,0.2,0.5
+        c0,0.3-0.3,0.6-0.6,0.6c-0.2,0-0.3-0.1-0.4-0.1c-0.8-0.7-1.6-1.1-2.9-1.1c-2.2,0-3.9,1.8-3.9,4.1v0c0,2.3,1.7,4.1,3.9,4.1
+        c1.2,0,2.1-0.4,3-1.2c0.1-0.1,0.2-0.2,0.4-0.2c0.3,0,0.5,0.3,0.5,0.5c0,0.2-0.1,0.3-0.2,0.4c-1,0.9-2.1,1.5-3.7,1.5
+        C46.5,229.7,44.3,227.4,44.3,224.5z"></path>
+      <path fill="#FFFFFF" d="M55.3,220.1c0-0.3,0.3-0.6,0.6-0.6h2.9c3.1,0,5.3,2.2,5.3,5v0c0,2.8-2.2,5-5.3,5h-2.9
+        c-0.3,0-0.6-0.3-0.6-0.6V220.1z M58.8,228.5c2.5,0,4.1-1.7,4.1-3.9v0c0-2.2-1.6-4-4.1-4h-2.3v7.9H58.8z"></path>
+      <path fill="#FFFFFF" d="M66.5,220c0-0.3,0.3-0.6,0.6-0.6h0.2c0.3,0,0.4,0.1,0.6,0.3l6.1,7.7V220c0-0.3,0.2-0.6,0.6-0.6
+        c0.3,0,0.5,0.3,0.5,0.6v9c0,0.3-0.2,0.5-0.5,0.5h-0.1c-0.2,0-0.4-0.1-0.6-0.3l-6.2-7.9v7.7c0,0.3-0.2,0.6-0.6,0.6
+        c-0.3,0-0.5-0.3-0.5-0.6V220z"></path>
+    </g>
+    <g id="text-autoscaling">
+      <path fill="#FFFFFF" d="M152.1,228.8l4.1-8.9c0.1-0.3,0.4-0.5,0.7-0.5h0.1c0.3,0,0.6,0.2,0.7,0.5l4.1,8.9c0,0.1,0.1,0.2,0.1,0.3
+        c0,0.3-0.2,0.5-0.5,0.5c-0.3,0-0.5-0.2-0.6-0.4l-1-2.3h-5.5l-1,2.3c-0.1,0.2-0.3,0.4-0.5,0.4c-0.3,0-0.5-0.2-0.5-0.5
+        C152,229,152,228.9,152.1,228.8z M159.2,225.8l-2.3-5.1l-2.3,5.1H159.2z"></path>
+      <path fill="#FFFFFF" d="M169.9,229c0,0.3-0.2,0.6-0.5,0.6c-0.3,0-0.5-0.2-0.5-0.6v-0.8c-0.5,0.8-1.3,1.4-2.5,1.4
+        c-1.8,0-2.8-1.2-2.8-3v-4.1c0-0.3,0.2-0.6,0.5-0.6c0.3,0,0.6,0.2,0.6,0.6v3.8c0,1.4,0.7,2.2,2,2.2c1.3,0,2.2-0.9,2.2-2.3v-3.7
+        c0-0.3,0.2-0.6,0.5-0.6c0.3,0,0.5,0.2,0.5,0.6V229z"></path>
+      <path fill="#FFFFFF" d="M172.8,227.6v-4.5h-0.6c-0.3,0-0.5-0.2-0.5-0.5c0-0.3,0.2-0.5,0.5-0.5h0.6v-1.7c0-0.3,0.2-0.6,0.5-0.6
+        c0.3,0,0.6,0.3,0.6,0.6v1.7h1.9c0.3,0,0.5,0.2,0.5,0.5c0,0.3-0.2,0.5-0.5,0.5h-1.9v4.3c0,0.9,0.5,1.2,1.2,1.2
+        c0.4,0,0.6-0.1,0.7-0.1c0.3,0,0.5,0.2,0.5,0.5c0,0.2-0.1,0.4-0.3,0.4c-0.3,0.1-0.7,0.2-1.1,0.2
+        C173.7,229.6,172.8,229.1,172.8,227.6z"></path>
+      <path fill="#FFFFFF" d="M177.5,225.9L177.5,225.9c0-2.1,1.6-3.9,3.9-3.9c2.2,0,3.8,1.7,3.8,3.8v0c0,2.1-1.6,3.9-3.9,3.9
+        C179.1,229.7,177.5,227.9,177.5,225.9z M184.1,225.9L184.1,225.9c0-1.6-1.2-2.9-2.7-2.9c-1.6,0-2.7,1.3-2.7,2.9v0
+        c0,1.6,1.2,2.9,2.7,2.9C183,228.7,184.1,227.4,184.1,225.9z"></path>
+      <path fill="#FFFFFF" d="M186.8,228.7c-0.1-0.1-0.2-0.2-0.2-0.4c0-0.3,0.2-0.5,0.5-0.5c0.1,0,0.2,0,0.3,0.1
+        c0.8,0.5,1.5,0.8,2.3,0.8c0.9,0,1.5-0.5,1.5-1.2v0c0-0.7-0.9-1-1.8-1.3c-1.2-0.3-2.4-0.7-2.4-2.1v0c0-1.3,1.1-2.1,2.5-2.1
+        c0.8,0,1.6,0.2,2.4,0.6c0.1,0.1,0.3,0.2,0.3,0.5c0,0.3-0.2,0.5-0.5,0.5c-0.1,0-0.2,0-0.2-0.1c-0.6-0.4-1.3-0.6-1.9-0.6
+        c-0.9,0-1.4,0.5-1.4,1.1v0c0,0.7,0.9,1,1.9,1.3c1.1,0.3,2.4,0.8,2.4,2.1v0c0,1.4-1.2,2.2-2.6,2.2
+        C188.7,229.7,187.6,229.3,186.8,228.7z"></path>
+      <path fill="#FFFFFF" d="M193.8,225.9L193.8,225.9c0-2.1,1.6-3.9,3.8-3.9c1.2,0,2.1,0.5,2.7,1.1c0.1,0.1,0.2,0.2,0.2,0.4
+        c0,0.3-0.2,0.5-0.5,0.5c-0.1,0-0.3-0.1-0.4-0.1c-0.5-0.5-1.1-0.9-2-0.9c-1.5,0-2.6,1.3-2.6,2.9v0c0,1.6,1.2,2.9,2.7,2.9
+        c0.8,0,1.5-0.4,2.1-0.9c0.1-0.1,0.2-0.1,0.3-0.1c0.3,0,0.5,0.2,0.5,0.5c0,0.1-0.1,0.3-0.1,0.3c-0.7,0.7-1.5,1.2-2.8,1.2
+        C195.5,229.7,193.8,227.9,193.8,225.9z"></path>
+      <path fill="#FFFFFF" d="M201.9,227.4L201.9,227.4c0-1.6,1.3-2.4,3.2-2.4c0.9,0,1.6,0.1,2.3,0.3V225c0-1.3-0.8-2-2.2-2
+        c-0.7,0-1.4,0.2-1.9,0.4c-0.1,0-0.1,0-0.2,0c-0.3,0-0.5-0.2-0.5-0.5c0-0.2,0.2-0.4,0.3-0.5c0.7-0.3,1.5-0.5,2.4-0.5
+        c1,0,1.8,0.3,2.4,0.8c0.5,0.5,0.8,1.2,0.8,2.2v4c0,0.3-0.2,0.5-0.5,0.5c-0.3,0-0.5-0.2-0.5-0.5v-0.7c-0.5,0.7-1.4,1.3-2.7,1.3
+        C203.3,229.7,201.9,228.9,201.9,227.4z M207.3,226.8v-0.7c-0.5-0.2-1.3-0.3-2.2-0.3c-1.4,0-2.2,0.6-2.2,1.5v0
+        c0,0.9,0.9,1.5,1.9,1.5C206.2,228.8,207.3,228,207.3,226.8z"></path>
+      <path fill="#FFFFFF" d="M210.8,219.6c0-0.3,0.2-0.6,0.5-0.6c0.3,0,0.6,0.3,0.6,0.6v9.5c0,0.3-0.2,0.6-0.5,0.6s-0.6-0.2-0.6-0.6
+        V219.6z"></path>
+      <path fill="#FFFFFF" d="M214.5,219.8c0-0.4,0.3-0.6,0.6-0.6c0.4,0,0.7,0.2,0.7,0.6v0.2c0,0.3-0.3,0.6-0.7,0.6
+        c-0.4,0-0.6-0.2-0.6-0.6V219.8z M214.6,222.6c0-0.3,0.2-0.6,0.5-0.6c0.3,0,0.6,0.2,0.6,0.6v6.4c0,0.3-0.2,0.6-0.5,0.6
+        c-0.3,0-0.6-0.2-0.6-0.6V222.6z"></path>
+      <path fill="#FFFFFF" d="M218.2,222.6c0-0.3,0.2-0.6,0.5-0.6c0.3,0,0.6,0.2,0.6,0.6v0.8c0.5-0.8,1.3-1.4,2.5-1.4
+        c1.8,0,2.8,1.2,2.8,3v4.1c0,0.3-0.2,0.6-0.5,0.6c-0.3,0-0.6-0.2-0.6-0.6v-3.8c0-1.4-0.7-2.2-2-2.2c-1.3,0-2.2,0.9-2.2,2.3v3.7
+        c0,0.3-0.2,0.6-0.5,0.6s-0.6-0.2-0.6-0.6V222.6z"></path>
+      <path fill="#FFFFFF" d="M227.2,231c-0.2-0.1-0.3-0.3-0.3-0.5c0-0.2,0.2-0.5,0.5-0.5c0.1,0,0.2,0,0.2,0.1c0.8,0.5,1.7,0.8,2.6,0.8
+        c1.6,0,2.7-0.9,2.7-2.6v-0.9c-0.6,0.9-1.5,1.6-2.9,1.6c-1.8,0-3.5-1.3-3.5-3.5v0c0-2.2,1.7-3.5,3.5-3.5c1.4,0,2.3,0.7,2.9,1.5
+        v-0.8c0-0.3,0.2-0.6,0.5-0.6c0.3,0,0.6,0.3,0.6,0.6v5.6c0,1.1-0.3,2-0.9,2.6c-0.7,0.7-1.6,1-2.8,1
+        C229.2,231.8,228.2,231.5,227.2,231z M233,225.5L233,225.5c0-1.5-1.3-2.5-2.7-2.5s-2.6,1-2.6,2.5v0c0,1.5,1.2,2.5,2.6,2.5
+        C231.7,228,233,227,233,225.5z"></path>
+    </g>
+    <g id="text-backups">
+      <path fill="#FFFFFF" d="M159.1,96.5c0-0.3,0.3-0.6,0.6-0.6h3.7c1.1,0,2,0.3,2.6,0.9c0.4,0.4,0.6,1,0.6,1.6v0c0,1.3-0.8,2-1.6,2.3
+        c1.2,0.4,2.1,1,2.1,2.4v0c0,1.7-1.4,2.7-3.6,2.7h-3.9c-0.3,0-0.6-0.3-0.6-0.6V96.5z M163.1,100.4c1.4,0,2.3-0.6,2.3-1.8v0
+        c0-1-0.8-1.6-2.2-1.6h-3v3.4H163.1z M163.5,105c1.5,0,2.5-0.7,2.5-1.8v0c0-1.1-0.9-1.7-2.7-1.7h-3.2v3.5H163.5z"></path>
+      <path fill="#FFFFFF" d="M168.6,103.8L168.6,103.8c0-1.6,1.3-2.4,3.2-2.4c0.9,0,1.6,0.1,2.3,0.3v-0.3c0-1.3-0.8-2-2.2-2
+        c-0.7,0-1.4,0.2-1.9,0.4c-0.1,0-0.1,0-0.2,0c-0.3,0-0.5-0.2-0.5-0.5c0-0.2,0.2-0.4,0.3-0.5c0.7-0.3,1.5-0.5,2.4-0.5
+        c1,0,1.8,0.3,2.4,0.8c0.5,0.5,0.8,1.2,0.8,2.2v4c0,0.3-0.2,0.5-0.5,0.5c-0.3,0-0.5-0.2-0.5-0.5v-0.7c-0.5,0.7-1.4,1.3-2.7,1.3
+        C170,106.1,168.6,105.3,168.6,103.8z M174.1,103.3v-0.7c-0.5-0.2-1.3-0.3-2.2-0.3c-1.4,0-2.2,0.6-2.2,1.5v0c0,0.9,0.9,1.5,1.9,1.5
+        C173,105.3,174.1,104.4,174.1,103.3z"></path>
+      <path fill="#FFFFFF" d="M177,102.3L177,102.3c0-2.1,1.6-3.9,3.8-3.9c1.2,0,2.1,0.5,2.7,1.1c0.1,0.1,0.2,0.2,0.2,0.4
+        c0,0.3-0.2,0.5-0.5,0.5c-0.1,0-0.3-0.1-0.4-0.1c-0.5-0.5-1.1-0.9-2-0.9c-1.5,0-2.6,1.3-2.6,2.9v0c0,1.6,1.2,2.9,2.7,2.9
+        c0.8,0,1.5-0.4,2.1-0.9c0.1-0.1,0.2-0.1,0.3-0.1c0.3,0,0.5,0.2,0.5,0.5c0,0.1-0.1,0.3-0.1,0.3c-0.7,0.7-1.5,1.2-2.8,1.2
+        C178.6,106.1,177,104.4,177,102.3z"></path>
+      <path fill="#FFFFFF" d="M185.6,96c0-0.3,0.2-0.6,0.5-0.6c0.3,0,0.6,0.3,0.6,0.6v6.8l4-4.1c0.1-0.1,0.3-0.2,0.4-0.2
+        c0.3,0,0.5,0.2,0.5,0.5c0,0.2-0.1,0.3-0.2,0.4l-2.4,2.4l2.6,3.3c0.1,0.1,0.1,0.2,0.1,0.4c0,0.3-0.2,0.5-0.5,0.5
+        c-0.2,0-0.3-0.1-0.5-0.3l-2.6-3.2l-1.5,1.5v1.4c0,0.3-0.2,0.6-0.5,0.6s-0.6-0.2-0.6-0.6V96z"></path>
+      <path fill="#FFFFFF" d="M199.9,105.5c0,0.3-0.2,0.6-0.5,0.6c-0.3,0-0.5-0.2-0.5-0.6v-0.8c-0.5,0.8-1.3,1.4-2.5,1.4
+        c-1.8,0-2.8-1.2-2.8-3v-4.1c0-0.3,0.2-0.6,0.5-0.6c0.3,0,0.6,0.2,0.6,0.6v3.8c0,1.4,0.7,2.2,2,2.2c1.3,0,2.2-0.9,2.2-2.3v-3.7
+        c0-0.3,0.2-0.6,0.5-0.6c0.3,0,0.5,0.2,0.5,0.6V105.5z"></path>
+      <path fill="#FFFFFF" d="M202.4,99.1c0-0.3,0.2-0.6,0.5-0.6c0.3,0,0.6,0.2,0.6,0.6v1c0.6-0.9,1.5-1.6,2.8-1.6
+        c1.8,0,3.5,1.4,3.5,3.8v0c0,2.4-1.7,3.8-3.5,3.8c-1.4,0-2.3-0.7-2.8-1.6v3.2c0,0.3-0.2,0.6-0.5,0.6c-0.3,0-0.6-0.2-0.6-0.6V99.1z
+         M208.7,102.3L208.7,102.3c0-1.8-1.2-2.9-2.6-2.9c-1.4,0-2.7,1.2-2.7,2.8v0c0,1.7,1.3,2.9,2.7,2.9
+        C207.6,105.1,208.7,104.1,208.7,102.3z"></path>
+      <path fill="#FFFFFF" d="M211.5,105.2c-0.1-0.1-0.2-0.2-0.2-0.4c0-0.3,0.2-0.5,0.5-0.5c0.1,0,0.2,0,0.3,0.1
+        c0.8,0.5,1.5,0.8,2.3,0.8c0.9,0,1.5-0.5,1.5-1.2v0c0-0.7-0.9-1-1.8-1.3c-1.2-0.3-2.4-0.7-2.4-2.1v0c0-1.3,1.1-2.1,2.5-2.1
+        c0.8,0,1.6,0.2,2.4,0.6c0.1,0.1,0.3,0.2,0.3,0.5c0,0.3-0.2,0.5-0.5,0.5c-0.1,0-0.2,0-0.2-0.1c-0.6-0.4-1.3-0.6-1.9-0.6
+        c-0.9,0-1.4,0.5-1.4,1.1v0c0,0.7,0.9,1,1.9,1.3c1.1,0.3,2.4,0.8,2.4,2.1v0c0,1.4-1.2,2.2-2.6,2.2
+        C213.4,106.1,212.3,105.8,211.5,105.2z"></path>
+    </g>
+  </g>
+  <g id="all-icons">
+    <path id="icon-autoscaling" fill="#FFFFFF" d="M173.9,206H160v-24.3h13.9V206z M163.5,185.2v17.3h6.9v-17.3H163.5z M194.7,206
+      h-13.9v-38.2h13.9V206z M184.3,171.3v31.2h6.9v-31.2H184.3z M215.5,206h-13.9v-55.5h13.9V206z M205.1,154v48.6h6.9V154H205.1z"></path>
+    <path id="icon-ssds" fill="#FFFFFF" d="M47.9,22.8h27.5c2.6,0,4.8,0.9,6.7,2.8c1.8,1.8,2.8,4.1,2.8,6.7l5.9,41.2
+      c0.3,1,0.4,1.9,0.4,2.8c0,2.6-0.9,4.8-2.8,6.7c-1.8,1.8-4.1,2.8-6.7,2.8h-40c-2.6,0-4.8-0.9-6.7-2.8c-1.8-1.8-2.8-4.1-2.8-6.7
+      c0-0.9,0.1-1.8,0.4-2.8l5.9-41.2c0-2.6,0.9-4.8,2.8-6.7C43,23.7,45.3,22.8,47.9,22.8z M81.6,69.9H41.6c-1.1,0-2.1,0.4-3.1,1.3
+      c-1,0.8-1.7,1.9-2.1,3.1l-0.3,2.1l0,0.2v0.3l0.1,0.3l0,0.2l0.6,1.5l0.3,0.5l0.3,0.4l0.2,0.2c1.2,1.2,2.5,1.7,4,1.7h40.1
+      c0.8,0,1.4-0.1,1.8-0.3c0.4-0.2,0.6-0.3,0.6-0.3c0,0,0.1-0.1,0.2-0.1c0.1-0.1,0.3-0.2,0.5-0.3c0.2-0.1,0.6-0.4,1-1
+      c0.4-0.5,0.8-1,1-1.4c0.2-0.4,0.3-0.7,0.3-1c0-0.3,0-0.4,0-0.5v-0.3l0-0.2l-0.3-2.2c-0.4-1.2-1.1-2.3-2.1-3.1
+      C83.7,70.3,82.7,69.9,81.6,69.9z M75.3,26.7H47.9c-1.5,0-2.8,0.5-3.9,1.6c-1.1,1.1-1.6,2.4-1.6,3.9v0.3l-4.9,34.6
+      c1.3-0.8,2.7-1.1,4.1-1.1h40.1c1.5,0,2.9,0.4,4.1,1.1l-4.9-34.4l0-0.3v-0.3c0-1.5-0.6-2.8-1.6-3.9C78.1,27.3,76.9,26.7,75.3,26.7z
+       M79.8,74.4c0.4-0.4,0.8-0.6,1.4-0.6c0.5,0,1,0.2,1.4,0.6c0.4,0.4,0.6,0.8,0.6,1.4c0,0.5-0.2,1-0.6,1.4c-0.4,0.4-0.8,0.6-1.4,0.6
+      c-0.5,0-1-0.2-1.4-0.6c-0.4-0.4-0.6-0.8-0.6-1.4C79.3,75.3,79.5,74.8,79.8,74.4z"></path>
+    <path id="icon-cdn" fill="#FFFFFF" d="M58.9,150.7c3.8,0,7.4,0.7,10.9,2.2c3.5,1.5,6.5,3.5,9,6s4.5,5.5,6,9
+      c1.5,3.5,2.2,7.1,2.2,10.9c0,3.8-0.7,7.4-2.2,10.9c-1.5,3.5-3.5,6.5-6,9c-2.5,2.5-5.5,4.5-9,6c-3.5,1.5-7.1,2.2-10.9,2.2
+      c-3.8,0-7.4-0.7-10.9-2.2c-3.5-1.5-6.5-3.5-9-6c-2.5-2.5-4.5-5.5-6-9c-1.5-3.5-2.2-7.1-2.2-10.9c0-3.8,0.7-7.4,2.2-10.9
+      c1.5-3.5,3.5-6.5,6-9c2.5-2.5,5.5-4.5,9-6C51.5,151.5,55.1,150.7,58.9,150.7z M34.6,178.8c0,3.2,0.6,6.3,1.9,9.4H43
+      c-0.6-3.1-1-5.9-1-8.4s0.1-4.7,0.4-6.5h-7.2C34.8,175.1,34.6,176.9,34.6,178.8z M36.5,169.5H43c1.1-5,2.8-9.2,5.4-12.6
+      c-2.7,1.3-5.1,3-7.1,5.2C39.2,164.2,37.6,166.7,36.5,169.5z M44,191.9h-5.6c2.5,3.9,5.8,6.8,10,8.8C46.6,198.3,45.1,195.4,44,191.9
+      z M57,173.2H46.2c-0.3,1.8-0.4,4-0.4,6.6c0,2.7,0.4,5.4,1.1,8.4H57V173.2z M57,169.5v-14.7c-2.6,0.7-4.8,2.8-6.9,6.1
+      c-1.5,2.5-2.6,5.4-3.3,8.6H57z M57,191.9h-9.1c2.3,6.2,5.4,9.9,9.1,11V191.9z M60.8,169.5H71c-0.7-3.2-1.9-6.1-3.3-8.6
+      c-2-3.4-4.3-5.4-6.8-6.1V169.5z M60.8,173.2v15H71c0.7-2.9,1.1-5.7,1.1-8.4c0-2.7-0.1-4.9-0.4-6.6H60.8z M60.8,191.9v11
+      c3.7-1.1,6.8-4.7,9.1-11H60.8z M74.8,169.5h6.6c-1.2-2.8-2.8-5.2-4.8-7.4c-2.1-2.2-4.4-3.9-7.1-5.2
+      C71.9,160.2,73.7,164.4,74.8,169.5z M79.4,191.9h-5.6c-1.1,3.5-2.5,6.4-4.4,8.8C73.6,198.8,76.9,195.8,79.4,191.9z M75.7,179.7
+      c0,2.6-0.3,5.4-1,8.4h6.6c1.3-3,1.9-6.1,1.9-9.4c0-1.9-0.2-3.8-0.7-5.6h-7.2C75.6,175,75.7,177.2,75.7,179.7z"></path>
+    <path id="icon-backups" fill="#FFFFFF" d="M172.3,75.8h-4.6c-3.8,0-7.1-1.3-9.8-4c-2.7-2.7-4-5.7-4-9.2c0-3.4,0.9-6.3,2.7-8.7
+      c1.8-2.4,4.1-4,6.9-5c0.9-5.4,3.5-10,7.8-13.6c4.3-3.6,9.2-5.5,14.9-5.5c4.6,0,8.9,1.3,12.7,3.8c3.8,2.5,6.6,5.9,8.4,10
+      c4.3,0.1,8,1.7,11.1,4.9c3.1,3.1,4.6,6.9,4.6,11.2c0,2.7-0.7,5.3-2.1,7.8c-1.4,2.4-3.3,4.4-5.8,6s-5.2,2.3-8.2,2.3h-2.3v-4.6h2.3
+      c2.2,0,4.1-0.6,6-1.8c1.8-1.2,3.2-2.6,4.1-4.3c1-1.7,1.4-3.5,1.4-5.4c0-3.1-1.1-5.8-3.3-8c-2.2-2.3-4.8-3.4-7.9-3.5l-2.9-0.1
+      l-1.2-2.7c-1.5-3.3-3.7-6-6.8-8c-3.1-2-6.6-3-10.7-3c-4.1,0-7.8,1.4-11.2,4.3c-3.4,2.9-5.5,6.5-6.3,10.9l-0.5,2.8l-2.7,0.8
+      c-1.9,0.6-3.4,1.7-4.6,3.4c-1.2,1.6-1.8,3.6-1.8,5.8c0,2.3,0.9,4.3,2.7,6.1c1.8,1.8,4,2.7,6.5,2.7h4.6V75.8z M190.7,85h-4.6V57
+      l-9.9,9.8l-3.2-3.3l15.5-15.4l15.3,15.4l-3.2,3.3l-9.9-9.9V85z"></path>
+  </g>
+  <g id="media-temple-logo">
+    <path id="logo-4" fill="#FFFFFF" d="M188,96.9c5.6,8.4,9.3,18.5,9.3,28.5c0,11.9-4.7,21.6-9.4,28.4h-5.7c4.2-9.3,7-17.2,7-28.7
+      c0-13.2-4.7-23.3-6.8-27.9c-0.1-0.1-0.2-0.3-0.2-0.4L188,96.9L188,96.9z"></path>
+    <path id="logo-3" fill="#FFFFFF" d="M180.8,119.7h-10.2v10.1c0,3.6,0,4.8,4.2,4.8c2,0,3.7-0.2,5.6-0.6h0.4l1.3,5.1
+      c-4.9,0.9-10.3,1-11.8,1c-4.6,0-10.5-0.7-12.7-2.6c-1.9-1.5-2.1-3.1-2.1-6.9v-11h-6.9v-5.3h6.9v-5l15.1-3.9v8.9h10.2V119.7z"></path>
+    <path id="logo-2" fill="#FFFFFF" d="M81.7,114.1v3.4h0.2c6.2-3.7,12.5-4,16.3-4c10.3,0,13.7,2.9,15.1,4c2.4-1.4,7.5-4,16.2-4
+      c17.4,0,17.4,6.9,17.4,9.7v16.2h-14.1V125c0-3,0-6.3-7.5-6.3c-3.7,0-7.5,1.1-8.8,2.8c-1.2,1.4-1.7,2.7-1.7,5.8v12.2h-14.1v-13.9
+      c0-4.3,0.1-6.9-7.3-6.9c-3.7,0-7.5,1-8.9,2.4c-1.1,1.1-1.9,2.3-1.9,6v12.3h-14v-25.3C68.6,114.1,81.7,114.1,81.7,114.1z"></path>
+    <path id="logo-1" fill="#FFFFFF" d="M61.8,153.7c-5.6-8.4-9.3-18.5-9.3-28.5c0-11.9,4.7-21.6,9.4-28.4h5.7c-4.2,9.3-7,17.2-7,28.7
+      c0,13.2,4.7,23.3,6.8,27.9c0.1,0.1,0.2,0.3,0.2,0.4L61.8,153.7L61.8,153.7z"></path>
+  </g>
+  </svg>
+
+  <p>CSS-Tricks uses and recommends Media Temple web hosting. Their exceptional service and support keep this site fast. Use coupon code <b>CSSTRICKS</b> to save 20% for the first&nbsp;year.</p>
+  
+  <span class="internal-block-link-button">
+    Save 20% on Web Hosting
+  </span>
+  
+</a>
+  </div>
+
+  <a href="https://ad.doubleclick.net/ddm/clk/303181152;128762502;s" class="module module-ad wufoo-ad-6" id="wufoo-ad-6">
+  <svg viewBox="0 0 612 612" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <rect x="151.96" y="433.3" width="307.69" height="92.41" rx="5" ry="5" fill="#7EC4E1"></rect>
+    <g class="wufoo-logo">
+      <path id="w" d="M106,177.61L61.82,78.31l29.92-5.82,13.52,37.39c4.19,11.67,8.74,25.19,12.51,35.5l0.31-.06c-0.74-12-1-24.93-1.16-38l-0.81-39.54L145.87,62l14.28,38.84c4.16,11.52,7.62,21.89,11.29,33.34l0.31-.06C171,122.2,170.49,109.51,170,97L168.7,57.51,196.92,52l-5.37,108.93-30.38,5.91L146.3,127.5c-3.31-8.8-6.59-18.25-10.38-30.31l-0.31.06c0.7,12.67,1.21,22.65,1.16,32.27l0,42.09Z" stroke="#231f20" style="stroke-dashoffset: 270.45; stroke-dasharray: 828.254px, 838.254px; fill: transparent; stroke: rgb(0, 0, 0);"></path>
+      <path id="u" d="M231.82,81.64l-8.34,59.42c-2.23,15.87,1.95,25.65,13,27.2,11.2,1.57,17.8-5.91,20.14-22.55l8.34-59.42,28.16,4L285,148.11c-4.54,32.36-23,46.42-52.41,42.29-28.78-4-41.66-21.87-36.92-55.63l8-57.09Z" stroke="#231f20" style="stroke-dashoffset: 263.24; stroke-dasharray: 515.951px, 525.951px; fill: transparent; stroke: rgb(0, 0, 0);"></path>
+      <path id="f" d="M286.14,65.84l67.77-5.65,1.92,23-39.44,3.29L318,106.05,355.11,103l1.9,22.85-37.09,3.09L323.26,169l-28.33,2.36Z" stroke="#231f20" style="stroke-dashoffset: 310.918; stroke-dasharray: 423.193px, 433.193px; fill: transparent; stroke: rgb(0, 0, 0);"></path>
+      <path id="o-1" d="M461,130.16c0,34.1-20.43,55.78-53.11,55.78-32.84,0-50.91-24.67-50.91-54.05,0-30.8,20.27-55.31,52.64-55.31C443.75,76.58,461,101.88,461,130.16Zm-74,1.26c0,19.8,8.64,32.06,22.31,32.06S431,150.12,431,131.1C431,112.88,422.85,99,409.18,99,395.67,99,387,111.93,387,131.42Z" stroke="#231f20" style="stroke-dashoffset: 515.074; stroke-dasharray: 0px, 999999px; fill: transparent; stroke: rgb(0, 0, 0);"></path>
+      <path id="o-2" d="M550.18,104.47c0,34.1-20.43,55.78-53.11,55.78-32.84,0-50.91-24.67-50.91-54.05,0-30.8,20.27-55.31,52.64-55.31C532.9,50.89,550.18,76.19,550.18,104.47Zm-74,1.26c0,19.8,8.64,32.06,22.31,32.06s21.68-13.36,21.68-32.37c0-18.23-8.17-32.06-21.84-32.06C484.81,73.36,476.17,86.25,476.17,105.73Z" stroke="#231f20" style="stroke-dashoffset: 514.997; stroke-dasharray: 0px, 999999px; fill: transparent; stroke: rgb(0, 0, 0);"></path>
+    </g>
+
+    <rect x="60" y="331" width="490" height="63" fill="#fff" stroke="#231f20"></rect>
+
+    <text transform="translate(59 315)" font-size="31" fill="#231f20" font-weight="700">Build custom web forms easily.</text>
+    <text transform="translate(236.91 493.1)" font-size="40.76" fill="white" font-weight="700">Sign Up</text>
+    <text transform="translate(77 371)" font-size="31" fill="#969696">Let's get started!</text>
+
+    <g id="dino">
+      <path fill="#E41E26" d="M533.6,232.7c-0.3-0.1-0.6-0.2-0.9-0.3C533,232.5,533.3,232.6,533.6,232.7z M535.1,233.1
+		c-0.3,0-0.6-0.1-0.9-0.2C534.5,233,534.7,233,535.1,233.1z M536.6,233.2c-0.3,0-0.7,0-1-0.1C535.9,233.2,536.3,233.2,536.6,233.2z
+		 M531.2,231.7c0.3,0.1,0.6,0.3,0.8,0.4C531.8,232,531.5,231.8,531.2,231.7z M538.6,233.2c-0.5,0.1-1,0.1-1.5,0.1
+		C537.6,233.3,538.1,233.3,538.6,233.2z M528.4,229.9c0.3,0.2,0.6,0.4,0.8,0.6C528.9,230.3,528.7,230.1,528.4,229.9z M524.2,226.1
+		c0.3,0.3,0.6,0.6,0.9,0.9C524.8,226.7,524.5,226.4,524.2,226.1z M527,228.8c0.3,0.2,0.6,0.5,0.8,0.7
+		C527.5,229.2,527.3,229,527,228.8z M525.6,227.5c0.3,0.3,0.6,0.5,0.8,0.8C526.1,228,525.9,227.8,525.6,227.5z M518.7,219.4
+		c0.3,0.5,0.7,0.9,1,1.4C519.4,220.3,519.1,219.9,518.7,219.4z M517.4,217.4c0.4,0.5,0.7,1.1,1.1,1.6
+		C518.1,218.5,517.8,218,517.4,217.4z M520.1,221.2c0.3,0.4,0.6,0.8,0.9,1.2L520.1,221.2z M521.4,223c0.3,0.4,0.6,0.8,0.9,1.1
+		C522,223.7,521.7,223.3,521.4,223z M522.8,224.6c0.3,0.3,0.6,0.7,0.9,1C523.4,225.2,523.1,224.9,522.8,224.6z M529.8,230.9
+		c0.3,0.2,0.6,0.3,0.8,0.5C530.4,231.2,530.1,231,529.8,230.9z"></path>
+      <path fill="#8EC23F" d="M536.6,233.2c-0.3,0-0.7,0-1-0.1C535.9,233.2,536.3,233.2,536.6,233.2z M535.1,233.1
+		c-0.3,0-0.6-0.1-0.9-0.2C534.5,233,534.7,233,535.1,233.1z M533.6,232.7c-0.3-0.1-0.6-0.2-0.9-0.3
+		C533,232.5,533.3,232.6,533.6,232.7z M531.2,231.7c0.3,0.1,0.6,0.3,0.8,0.4C531.8,232,531.5,231.8,531.2,231.7z M538.6,233.2
+		c-0.5,0.1-1,0.1-1.5,0.1C537.6,233.3,538.1,233.3,538.6,233.2z M525.6,227.5c0.3,0.3,0.6,0.5,0.8,0.8
+		C526.1,228,525.9,227.8,525.6,227.5z M524.2,226.1c0.3,0.3,0.6,0.6,0.9,0.9C524.8,226.7,524.5,226.4,524.2,226.1z M528.4,229.9
+		c0.3,0.2,0.6,0.4,0.8,0.6C528.9,230.3,528.7,230.1,528.4,229.9z M522.8,224.6c0.3,0.3,0.6,0.7,0.9,1
+		C523.4,225.2,523.1,224.9,522.8,224.6z M521.4,223c0.3,0.4,0.6,0.8,0.9,1.1C522,223.7,521.7,223.3,521.4,223z M517.4,217.4
+		c0.4,0.5,0.7,1.1,1.1,1.6C518.1,218.5,517.8,218,517.4,217.4z M518.7,219.4c0.3,0.5,0.7,0.9,1,1.4
+		C519.4,220.3,519.1,219.9,518.7,219.4z M520.1,221.2c0.3,0.4,0.6,0.8,0.9,1.2L520.1,221.2z M527,228.8c0.3,0.2,0.6,0.5,0.8,0.7
+		C527.5,229.2,527.3,229,527,228.8z M529.8,230.9c0.3,0.2,0.6,0.3,0.8,0.5C530.4,231.2,530.1,231,529.8,230.9z"></path>
+
+      <lineargradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="643.465" y1="316.6403" x2="597.6864" y2="82.4081" gradientTransform="matrix(0.9533 -0.3021 0.3021 0.9533 -50.5851 215.0953)">
+        <stop offset="6.000000e-03" style="stop-color:#1E7086"></stop>
+        <stop offset="0.176" style="stop-color:#33839D"></stop>
+        <stop offset="0.348" style="stop-color:#4192B1"></stop>
+        <stop offset="0.473" style="stop-color:#4699BA"></stop>
+        <stop offset="0.613" style="stop-color:#4293B2"></stop>
+        <stop offset="0.792" style="stop-color:#3685A0"></stop>
+        <stop offset="0.991" style="stop-color:#207187"></stop>
+        <stop offset="1" style="stop-color:#1E7086"></stop>
+      </lineargradient>
+      <path fill="url(#SVGID_2_)" d="M639.5,190.8c-3.4-36.5,17.6-118.2-108.5-109.7l0,0c0,0-23.1,1-21.9,23.3
+		c1.2,22.4,6.2,36.9,9.6,50.4c0,0-21.8,20.1-16.1,33.8c5.7,13.7,20.7,46.7,35.9,44.6c15.3-2.1,48.4-15.3,61.4-23.1
+		c0,0,7,72.4,9.4,99.9c0.7,7.9,2.1,22.4,5.2,41.2c18.6-9.2,37.3-18.3,56.1-27.2C654.3,275.8,641.9,216.3,639.5,190.8z"></path>
+
+      <ellipse transform="matrix(0.9533 -0.3021 0.3021 0.9533 -15.9028 180.912)" fill="#FFFFFF" cx="576.9" cy="141.9" rx="13" ry="22.9"></ellipse>
+
+      <ellipse transform="matrix(0.9533 -0.3021 0.3021 0.9533 -16.5344 179.6383)" fill="#231815" cx="572.5" cy="143.3" rx="8.3" ry="14.7"></ellipse>
+      <path fill="#85BFD2" d="M621.6,237.7c-1.1-8.9-9.4-42.7-11.6-46.2c-2.1-3.4-4.9-18.6-47.2,7.1c-31.2,18.9-42.9,18.3-46.8,16.7
+		c6.5,10.3,14.5,18.9,22.5,17.8c15.2-2.1,48.4-15.3,61.4-23.1c0,0,7,72.4,9.4,99.9c0.7,7.9,2.1,22.4,5.2,41.2
+		c8.1-4,16.2-8,24.3-11.9C627.4,287.8,622.2,242.4,621.6,237.7z"></path>
+      <g opacity="0.6">
+
+        <lineargradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="506.196" y1="467.0849" x2="553.5162" y2="428.8841" gradientTransform="matrix(0.9533 -0.3021 -0.3021 -0.9533 134.293 798.5026)">
+          <stop offset="0" style="stop-color:#7AB3C4"></stop>
+          <stop offset="0.87" style="stop-color:#7AB3C4"></stop>
+          <stop offset="1" style="stop-color:#7AB3C4"></stop>
+        </lineargradient>
+        <path fill="url(#SVGID_3_)" d="M517.3,217.2c-0.4-0.6-0.8-1.2-1.2-1.8c0,0,0,0,0,0C516.5,216,516.9,216.6,517.3,217.2z"></path>
+
+        <lineargradient id="SVGID_4_" gradientUnits="userSpaceOnUse" x1="553.1611" y1="525.1908" x2="600.4362" y2="487.0253" gradientTransform="matrix(0.9533 -0.3021 -0.3021 -0.9533 134.293 798.5026)">
+          <stop offset="0" style="stop-color:#7AB3C4"></stop>
+          <stop offset="0.87" style="stop-color:#7AB3C4"></stop>
+          <stop offset="1" style="stop-color:#7AB3C4"></stop>
+        </lineargradient>
+        <path fill="url(#SVGID_4_)" d="M538.2,100c12.1-9.4,47.7-11.3,71-6c-16-9.9-40.5-15.4-78.2-12.9c0,0-23.1,1-21.9,23.3
+			s6.2,36.9,9.6,50.4c0,0-21.8,20.1-16.1,33.8c2.7,6.5,7.5,17.4,13.5,26.7c3.5,1.4,13,2,36.6-10.9c-0.4-1.7-1.2-4-2.6-6.8
+			c-6-11.7-16.1-20.8-6.2-35.3C553.8,147.8,524.3,110.8,538.2,100z"></path>
+      </g>
+      <path fill="#1E7086" d="M533.8,137.1c2.6,9.5,1.4,13-1,13.7c-2.4,0.7-5-1.8-7.6-11.3c-2.6-9.5-2.8-17.7-0.4-18.4
+		C527.1,120.5,531.2,127.6,533.8,137.1z"></path>
+
+      <lineargradient id="SVGID_5_" gradientUnits="userSpaceOnUse" x1="681.5992" y1="201.3821" x2="624.5172" y2="323.9237" gradientTransform="matrix(0.9533 -0.3021 0.3021 0.9533 -50.5851 215.0953)">
+        <stop offset="0" style="stop-color:#7AB3C4"></stop>
+        <stop offset="0.86" style="stop-color:#7AB3C4"></stop>
+        <stop offset="1" style="stop-color:#7AB3C4"></stop>
+      </lineargradient>
+      <path opacity="0.4" fill="url(#SVGID_5_)" enable-background="new    " d="M639.8,193.5c-3.4,3.6-9,11.7-7,23.6
+		c0,0,7.2,57.4,25.2,112.9c4.2-2,8.3-4,12.5-6C654.9,277.5,642.7,220.3,639.8,193.5z"></path>
+
+      <lineargradient id="SVGID_6_" gradientUnits="userSpaceOnUse" x1="611.5856" y1="236.8385" x2="647.111" y2="236.8385" gradientTransform="matrix(0.9533 -0.3021 0.3021 0.9533 -50.5851 215.0953)">
+        <stop offset="0" style="stop-color:#4699BA"></stop>
+        <stop offset="0.951" style="stop-color:#4699BA"></stop>
+        <stop offset="1" style="stop-color:#4699BA"></stop>
+      </lineargradient>
+      <path fill="url(#SVGID_6_)" d="M623.9,218.4c-3.2-25.8-11.1-40.6-11.1-40.6c3.7-7.1-2.9-17.7-2.9-17.7
+		c5.7,13.7-27.3,27.3-27.3,27.3l-0.2,0.9c23.7-10.1,25.8,0.5,27.6,3.3c2.1,3.4,10.5,37.3,11.6,46.2c0.6,4.7,5.8,50.1,17.2,101.6
+		c2.3-1.1,4.5-2.2,6.8-3.3C637.6,304.6,626.9,242.5,623.9,218.4z"></path>
+
+      <lineargradient id="SVGID_7_" gradientUnits="userSpaceOnUse" x1="540.0744" y1="428.1269" x2="622.0959" y2="428.1269" gradientTransform="matrix(0.9533 -0.3021 -0.3021 -0.9533 134.293 798.5026)">
+        <stop offset="0" style="stop-color:#FFFFFF"></stop>
+        <stop offset="0.87" style="stop-color:#FFFFFF"></stop>
+        <stop offset="1" style="stop-color:#FFFFFF"></stop>
+      </lineargradient>
+      <path opacity="0.35" fill="url(#SVGID_7_)" enable-background="new    " d="M538.6,233.2c15.3-2.1,48.4-15.3,61.4-23.1
+		c0.3-11.9-18.7,0-33,3.6c-9.6,2.4-14-3.9-15.8-8.4c-22.5,12-31.6,11.4-35.1,10C522.6,225.7,530.5,234.3,538.6,233.2z"></path>
+
+      <lineargradient id="SVGID_8_" gradientUnits="userSpaceOnUse" x1="592.8458" y1="312.0763" x2="606.6599" y2="312.0763" gradientTransform="matrix(0.9533 -0.3021 0.3021 0.9533 -50.5851 215.0953)">
+        <stop offset="0" style="stop-color:#FFFFFF"></stop>
+        <stop offset="1" style="stop-color:#FFFFFF"></stop>
+      </lineargradient>
+      <path opacity="0.35" fill="url(#SVGID_8_)" enable-background="new    " d="M617.7,315.7l-8.1-1.9c0.8,8.3,2.2,21.3,4.8,37.4
+		c3.1-1.5,6.3-3.1,9.4-4.6C619.5,327.7,617.7,315.7,617.7,315.7z"></path>
+    </g>
+  </svg>
+</a>
+
+<img src="./Understanding border-image _ CSS-Tricks_files/B7043538.128762502" alt="">
+
+</aside>
+  
+</div>
+
+
+  </div>
+  <form action="https://chriscoyier.us2.list-manage.com/subscribe/post?u=155f5a9ccc4e24c318130cace&amp;id=197f127a68" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="">
+
+    <h4>We have a pretty good<sup>*</sup> newsletter.</h4>
+
+    <p class="mc-field-group">
+      <label for="mce-EMAIL" class="screen-reader">Email Address</label>
+      <input type="email" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="your@email.com">
+      <input type="submit" value="Subscribe" name="Subscribe" id="mc-embedded-subscribe" class="button button-outline">
+    </p>
+    <div id="mce-responses" class="clear">
+      <div class="response" id="mce-error-response" style="display:none"></div>
+      <div class="response" id="mce-success-response" style="display:none"></div>
+    </div>
+    <div style="position: absolute; left: -5000px;"><input type="text" name="b_155f5a9ccc4e24c318130cace_197f127a68" value=""></div>
+
+  </form>
+
+  <div class="footer-wrap">
+
+    <footer class="site-footer site-footer-colophon">
+
+      <div class="colophon">
+        <p>CSS-Tricks* is created, written by, and maintained by <a href="http://chriscoyier.net/">Chris Coyier</a> and <a href="https://css-tricks.com/about/">a team</a> of swell people. It is built on <a href="http://wordpress.org/">WordPress</a>, hosted by <a href="http://bit.ly/1n2DZjU">Media Temple</a>, and the assets are served by <a href="http://tracking.maxcdn.com/c/13088/3982/378">MaxCDN</a>. The fonts are Source Sans Pro and Source Code Pro. It is made possible through <a href="https://css-tricks.com/advertising/">sponsorships</a> from products and services we like.</p>
+      
+        <p class="mega-big-time-warning"><small>*May or may not contain any actual "CSS" or "Tricks".</small></p>
+      </div>
+
+    </footer>
+
+    <footer class="site-footer site-footer-links">
+      <nav>
+        <a href="https://css-tricks.com/contact/">Contact</a>
+        <a href="https://css-tricks.com/about/">About</a>
+        <a href="https://css-tricks.com/archives/">Archives</a>
+        <a href="https://css-tricks.com/advertising/">Advertise</a>
+        <a href="https://css-tricks.com/guest-posting/">Guest Posting</a>
+        <a href="https://css-tricks.com/license/">License</a>
+        <a href="https://css-tricks.com/shop/">Shop</a>
+        <a href="https://css-tricks.com/subscription-options/">Subscribe</a>
+        <a href="http://feeds.feedburner.com/CssTricks">RSS</a>
+      </nav>
+    </footer>
+
+  </div>
+
+  <svg width="0" height="0" class="screen-reader">
+
+  <defs>
+
+    <path id="shape-link" d="M74.957.955h-15.139c-1.307 0-2.59.1-3.844.293l-.811.151c4.645 2.666 8.469 6.605 10.986 11.343h9.584c7.322 0 13.258 5.937 13.258 13.259 0 7.321-5.938 13.258-13.258 13.258h-16.555c-3.305 0-6.324-1.212-8.645-3.212l-.004.003-.002-.003c-.494-.414-.886-.802-1.206-1.148-.7-.764-1.011-1.303-1.011-1.303l.002-.003-.002-.003c-1.505-2.15-2.389-4.766-2.389-7.589 0-2.746.834-5.296 2.263-7.413l.127-.176c-1.736-1.473-3.978-2.367-6.429-2.367h-5.041c-1.325 3.052-2.067 6.416-2.067 9.956 0 3.538.737 6.903 2.061 9.955.244.562.509 1.11.792 1.651.237.449.482.896.746 1.332l.054.088.147.23c2.792 4.463 6.948 7.98 11.888 9.973.608.246 1.225.473 1.856.67l.104.031.318.09c.27.08.541.162.814.232l.01.003c2 .513 4.096.787 6.254.787h15.137c13.832.001 25.045-11.212 25.045-25.043s-11.211-25.045-25.043-25.045zM25.542 51.045h15.137c1.308 0 2.592-.102 3.846-.294l.811-.151c-4.646-2.664-8.47-6.604-10.987-11.342h-9.585c-7.322 0-13.257-5.936-13.257-13.259 0-7.322 5.935-13.257 13.257-13.257h16.555c3.304 0 6.323 1.212 8.645 3.212l.002-.003.002.003c.495.413.888.801 1.206 1.148.701.762 1.012 1.302 1.012 1.302l-.002.003.002.003c1.506 2.15 2.391 4.766 2.391 7.588 0 2.746-.835 5.297-2.264 7.412l-.127.176c1.735 1.475 3.979 2.369 6.428 2.369h5.043c1.324-3.053 2.064-6.417 2.064-9.957 0-3.539-.736-6.903-2.061-9.955-.244-.561-.51-1.111-.792-1.651-.237-.451-.481-.898-.746-1.332l-.054-.089-.146-.23c-2.792-4.463-6.949-7.981-11.888-9.973-.608-.245-1.226-.471-1.856-.67l-.103-.032-.318-.089c-.27-.081-.541-.162-.816-.232l-.009-.002c-2-.515-4.095-.788-6.255-.788h-15.135c-13.832 0-25.044 11.212-25.044 25.044 0 13.833 11.212 25.046 25.044 25.046z"></path>
+
+    <path id="shape-search" d="M3.327,96.684C5.534,98.895,8.434,100,11.331,100s5.797-1.105,8.004-3.316l21.321-21.322
+    c5.83,3.188,12.393,4.897,19.223,4.897c10.721,0,20.798-4.172,28.379-11.752c15.646-15.644,15.646-41.105,0.002-56.755
+    C80.677,4.171,70.598,0,59.877,0C49.159,0,39.08,4.171,31.504,11.752c-7.581,7.576-11.756,17.655-11.756,28.376
+    c0,6.832,1.71,13.396,4.9,19.226L3.327,80.675C-1.096,85.094-1.096,92.266,3.327,96.684z M59.879,68.938
+    c-7.695,0-14.93-2.996-20.371-8.435c-5.443-5.442-8.439-12.677-8.439-20.375c0-7.695,2.996-14.933,8.439-20.372
+    c5.441-5.44,12.676-8.436,20.369-8.436c7.698,0,14.936,2.997,20.378,8.436c11.231,11.236,11.231,29.515,0,40.747
+    C74.812,65.941,67.575,68.938,59.879,68.938z"></path>
+
+    <path id="shape-arrow-right" d="M0,49.993c0,7.387,6.007,13.394,13.396,13.394h40.691L42.898,74.407c-2.543,2.507-3.94,5.827-3.94,9.36
+    c0,3.539,1.407,6.863,3.952,9.364C45.428,95.616,48.809,97,52.402,97c3.6,0,6.978-1.384,9.516-3.891l34.159-33.623
+    c2.53-2.489,3.923-5.81,3.923-9.342v-0.307c0-3.545-1.4-6.867-3.943-9.358L61.914,6.869c-5.243-5.16-13.775-5.16-19.014,0
+    c-2.539,2.495-3.942,5.821-3.942,9.354c0,3.535,1.403,6.862,3.942,9.354L54.1,36.604H13.396C6.012,36.604,0.001,42.61,0,49.993z"></path>
+
+  </defs>
+
+</svg>
+
+	<script>var pollsL10n = {"ajax_url":"https:\/\/css-tricks.com\/wp-admin\/admin-ajax.php","text_wait":"Your last request is still being processed. Please wait a while ...","text_valid":"Please choose a valid poll answer.","text_multiple":"Maximum number of choices allowed: ","show_loading":"0","show_fading":"1"};</script><script>var markdownify = {"ajax_url":"\/wp-admin\/admin-ajax.php","nonce":"d605b619eb"};</script><script>var bblpAJAX = {"ajaxurl":"https:\/\/css-tricks.com\/wp-admin\/admin-ajax.php"};</script><script type="text/javascript" src="./Understanding border-image _ CSS-Tricks_files/jquery-2.2.1.min.js"></script>
+<script type="text/javascript" src="./Understanding border-image _ CSS-Tricks_files/wp-embed.min.js"></script>
+<script type="text/javascript" src="./Understanding border-image _ CSS-Tricks_files/minqueue-b86f83f0-13a3fd78.js"></script>
+<script type="text/javascript" src="./Understanding border-image _ CSS-Tricks_files/e-201634.js" async="" defer=""></script>
+<script type="text/javascript">
+	_stq = window._stq || [];
+	_stq.push([ 'view', {v:'ext',j:'1:4.2.2',blog:'45537868',post:'6883',tz:'-7',srv:'css-tricks.com'} ]);
+	_stq.push([ 'clickTrackerInit', '45537868', '6883' ]);
+</script>
+
+  
+<script src="./Understanding border-image _ CSS-Tricks_files/global-min.js"></script>
+<script async="" src="./Understanding border-image _ CSS-Tricks_files/ei.js"></script>
+
+
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-68528-29', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+<img src="./Understanding border-image _ CSS-Tricks_files/g.gif" alt=":)" width="6" height="5" id="wpstats"></body></html>

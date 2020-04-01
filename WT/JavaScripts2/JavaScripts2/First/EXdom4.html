@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<div class="example">
+A div element with class="example"
+</div>
+
+<div class="example">
+Another div element with class="example"
+</div>
+
+<p>A p element with class="example"</p>
+
+<p>Click the button to find out how many elements with class "example" there are in this document.</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<p><strong>Note:</strong> The getElementsByClassName() method is not supported in Internet Explorer 8 and earlier versions.</p>
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+    var x = document.getElementsByClassName("example");
+    document.getElementById("demo").innerHTML = x.length;
+}
+</script>
+
+</body>
+</html>

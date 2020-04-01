@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="d7805c34-8262-4027-ad93-5bbefae360bb" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="JupyterTrust" id="a4f8be87-8ffb-444e-9ec3-36375599d9b6" />
+  <component name="ProjectId" id="1ZfDcLBEtcaTZqKudTyheTdG3W8" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d7805c34-8262-4027-ad93-5bbefae360bb" name="Default Changelist" comment="" />
+      <created>1585221338373</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1585221338373</updated>
+      <workItem from="1585221352277" duration="151000" />
+      <workItem from="1585235310145" duration="28000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="199" y="34" key="SettingsEditor" timestamp="1585221390331">
+      <screen x="0" y="24" width="1366" height="744" />
+    </state>
+    <state x="199" y="34" key="SettingsEditor/0.24.1366.744@0.24.1366.744" timestamp="1585221390331" />
+    <state x="385" y="223" key="com.intellij.ide.util.TipDialog" timestamp="1585235316966">
+      <screen x="0" y="24" width="1366" height="744" />
+    </state>
+    <state x="385" y="223" key="com.intellij.ide.util.TipDialog/0.24.1366.744@0.24.1366.744" timestamp="1585235316966" />
+  </component>
+</project>

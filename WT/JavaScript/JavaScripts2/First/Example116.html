@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>argument object</title>
+    <script>
+        var x = findMax(1, 123, 500, 115, 44, 88,600,100);
+        function findMax() {
+            var i;
+            var max = -Infinity;
+            for (i = 0; i < arguments.length; i++) {
+                if (arguments[i] > max) {
+                    max = arguments[i];
+                }
+            }
+            return max;
+        }
+        document.write("<h2> Max no from array is : "+x+"</h2>");
+    </script>
+</head>
+<body>
+
+</body>
+</html>

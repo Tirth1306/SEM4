@@ -1,0 +1,95 @@
+25 January
+
+nano calc.sh
+ 1666  ./calc,sh
+ 1667  ./calc.sh
+ 1668  chmod 777 calc.sh
+ 1669  ./calc.sh
+ 1670  nano calc.sh
+ 1671  ./calc.sh
+ 1672  nano calc.sh
+ 1673  ./calc.sh
+ 1674  nano calc.sh
+ 1675  g
+ 1676  fg
+ 1677  ./calc.sh
+ 1678  nano calc.sh
+ 1679  ./calc.sh
+ 1680  nano calc.sh
+ 1681  ./calc.sh
+ 1682  nano calc.sh
+ 1683  ./calc.sh
+ 1684  nano calc.sh
+ 1685  ./calc.sh
+ 1686  nano calc.sh
+ 1687  ./calc.sh
+ 1688  nano calc.sh
+ 1689  ./calc.sh
+ 1690  nano calc.sh
+ 1691  ./calc.sh
+ 1692  nano calc.sh
+ 1693  ./calc.sh
+ 1694  nano calc.sh
+ 1695  ./calc.sh
+ 1696  nano calc.sh
+ 1697  ./calc.sh
+ 1698  nano calc.sh
+ 1699  ./calc.sh
+ 1700  nano calc.sh
+ 1701  ./calc.sh
+ 1702  nano calc.sh
+ 1703  ./calc.sh
+ 1704  nano calc.sh
+ 1705  ./calc.sh
+ 1706  nano calc.sh
+ 1707  ./calc.sh
+ 1708* 
+ 1709  ./calc.sh
+ 1710  nano calc.sh
+ 1711  ./calc.sh
+ 1712  nano calc.sh
+ 1713  ./calc.sh
+ 1714  nano calc.sh
+ 1715  ./calc.sh
+ 1716  nano calc.sh
+ 1717  ./calc.sh
+ 1718  nano calc.sh
+ 1719  ./calc.sh
+ 1720  cp calc.sh calc2.sh
+ 1721  ls
+ 1722  nano calc2.sh
+ 1723  nano calc.sh
+ 1724  ./calc.sh
+ 1725  nano calc.sh
+ 1726  ./calc.sh
+ 1727  nano calc2.sh
+ 1728  ./calc2.sh
+ 1729  nano calc2.sh
+ 1730  ./calc2.sh
+ 1731  man cmp
+ 1732  umask 0022
+ 1733  umask
+ 1734  nano hello.sh
+ 1735  ./hello.sh
+ 1736  cmp calc.sh cmp calc2.sh
+ 1737  mp 'calc.sh' 'calc2.sh'
+ 1738  cmp 'calc.sh' 'calc2.sh'
+ 1739  cmp 'calc.sh' 'calc.sh'
+ 1740  nano f1
+ 1741  cp f1 f2
+ 1742  cp f2
+ 1743  cp f2 f3
+ 1744  nano f3
+ 1745  cmp f1 f2
+ 1746  cmp f1 f3
+ 1747  nano compare.sh]
+ 1748  diff f1 f2
+ 1749  diff f1 f3
+ 1750  comm f1 f3
+ 1751  nano compare.sh]
+ 1752  las
+ 1753  ls
+ 1754  go through command exec
+ 1755  cls
+ 1756  history
+

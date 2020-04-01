@@ -1,0 +1,889 @@
+    1  nmcli d
+    2  nmcli r wifi on
+    3  nmcli d wifi list
+    4  nmcli d wifi connect NU-WiFiN password 1234567890
+    5  nmcli d wifi connect NU-WiFiN password 123456789
+    6  nmcli d wifi connect NU-WiFiN password 0123456789
+    7  ifconfig | grep HWaddr
+    8  sudo su
+    9  netstat -I
+   10  sudo apt install net-tools
+   11  netstat -I
+   12  netstat -l
+   13  cleaar
+   14  clear
+   15  sudo nano /etc/network/interfaces
+   16  sudo systemctl restart networking
+   17  netstat -l
+   18  ifconfig | grep HWaddr
+   19  ifconfig 
+   20  sudo nano /etc/network/interfaces
+   21  exit
+   22  sudo service network-manager restart
+   23  sudo nano /etc/netplan/01-network-manager-all.yml
+   24  sudo ./install.sh
+   25  sudo rmdir -r com.github.vinceliuice.Layan/
+   26  sudo rm -r com.github.vinceliuice.Layan/
+   27  yay -S sierrabreeze-kwin-decoration-git
+   28  sudo apt get install yay
+   29  sudo add-apt-repository ppa:thopiekar/sierrabreeze
+   30  sudo apt update
+   31  sudo apt install sierrabreeze
+   32  plasmapkg2 -i plasma-active-application.plasmoid
+   33  python
+   34  py
+   35  python3
+   36  exit
+   37  snap install spotify
+   38  spotify
+   39  nano test.py
+   40  python3 -m pip install Django
+   41  python3 -m pip3 install Django
+   42  python3 -m pip install Django
+   43  sudo apt-get install python3-pip
+   44  python3 -m pip install Django
+   45  cls
+   46  clear
+   47  pip install notebook
+   48  pip3 install notebook
+   49  exit
+   50  sudo apt update
+   51  sudo apt install git
+   52  git --version
+   53  exit
+   54  git config --global user.name "Shrey Viradiya"
+   55  git config --global user.email "shreyviradiya@gmail.com"
+   56  git config --list
+   57  exit
+   58  gcc -v
+   59  g++ -v
+   60  exit
+   61  snap install spotify
+   62  jupyter notebook
+   63  notebook
+   64  py notebook
+   65  python3 notebook
+   66  python3
+   67  sudo ./install.sh
+   68  qmake && make
+   69  cd ..
+   70  qmake && make
+   71  sudo apt-get update
+   72  sudo apt-get install --install-recommends adapta-kde
+   73  exit
+   74  virtualenv env
+   75  pip3 install virtualenv
+   76  virtualenv env
+   77  source env/bin/activate
+   78  pip3 install django
+   79  ls
+   80  which django-admin.py
+   81  pip3 freeze
+   82  ls
+   83  django-admin.py startproject GDjangoTut
+   84  atom .
+   85  atom.
+   86  atom .
+   87  env\bin\activate
+   88  source env/bin/activate
+   89  cls
+   90  cleat
+   91  clear
+   92  cd GDjangoTut/
+   93  atom .
+   94  deactivate
+   95  exit
+   96  source env/bin/activate
+   97  ls
+   98  cd GDjangoTut/
+   99  ls
+  100  atom .
+  101  python3 manage.py startapp reporter
+  102  ls
+  103  python3 manage.py makemigration
+  104  python3 manage.py makemigrations
+  105  python3 manage.py migrate
+  106  python3 manage.py startapp
+  107  python3 manage.py runserver
+  108  python3 manage.py createsuperuser
+  109  python3 manage.py runserver
+  110  sudo curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/youtube-dl
+  111  sudo wget https://yt-dl.org/downloads/latest/youtube-dl -O /usr/local/bin/youtube-dl
+  112  sudo chmod a+rx /usr/local/bin/youtube-dl
+  113  ls
+  114  exit
+  115  youtube-dl https://www.youtube.com/watch?v=RozoeWzT7IM&list=PLdo5W4Nhv31a5ucW_S1K3-x6ztBRD-PNa
+  116  youtube-dl https://www.youtube.com/watch?v=YwqexcfbucE&list=PLmXKhU9FNesSFvj6gASuWmQd23Ul5omtD&index=1
+  117  exit
+  118  source env/bin/activate
+  119  cd GDjangoTut/
+  120  pip3 install psycopg2
+  121  clear
+  122  source env/bin/activate
+  123  cls
+  124  psql
+  125  cls
+  126  clear
+  127  youtube-dl -i PLmXKhU9FNesSFvj6gASuWmQd23Ul5omtD
+  128  nano command.txt
+  129  ls
+  130  exit
+  131  su
+  132  exit
+  133  su
+  134  clear
+  135  ls
+  136  root
+  137  cd /
+  138  ls
+  139  cd etc/apt/sources.list.d/
+  140  nano
+  141  sudo cat > pgdg.list
+  142  cls
+  143  exit
+  144  sudo apt-get update
+  145  sudo apt-get install postgresql postgres-contrib
+  146  sudo apt-get install wget ca-certificates
+  147  wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+  148  sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/lsb_release -cs-pgdg main" >> /etc/apt/sources.list.d/pgdg.list'
+  149  sudo apt-get update
+  150  sudo apt-get install postgresql postgresql-contrib
+  151  ls /etc/postgresql/
+  152  ls /etc/postgresql/10/
+  153  ls /etc/postgresql/10/main
+  154  service postgresql
+  155  service postgresql status
+  156  sudo su - postgres
+  157  exit
+  158  source env/bin/activate
+  159  cd GDjangoTut/
+  160  clear
+  161  ls
+  162  atom .
+  163  python3 manage.py runserver
+  164  pip3 install psycopg2
+  165  sudo -H pip3 install psycopg2
+  166  sudo apt-get install python-psycopg2
+  167  sudo apt-get install libpq-dev
+  168  python3 manage.py runserver
+  169  pip3 install psycopg2
+  170  python3 manage.py runserver
+  171  pip freeze
+  172  sudo apt-get install binutils libproj-dev gdal-bin
+  173  python3 manage.py runserver
+  174  sudo su postgres
+  175  sudo apt-get install postgis postgresql-10.10-postgis-3.0
+  176  sudo apt-get install postgis postgresql-10.10-postgis-2.2
+  177  sudo apt-get install postgis postgresql-10.10-postgis
+  178  sudo apt install postgresql-10-postgis-2.4 
+  179  sudo su postgres
+  180  python3 manage.py runserver
+  181  py manage.py migrate
+  182  python3 manage.py migrate
+  183  python3 manage.py runserver
+  184  python3 manage.py createsuperuser
+  185  python3 manage.py runserver
+  186  python3 manage.py makemigrations
+  187  python3 manage.py migrate
+  188  python3 manage.py runserver
+  189  pip3 install django-leaflet
+  190  python3 manage.py runserver
+  191  pip3 install django-leaflet
+  192  python3 manage.py runserver
+  193  pip3 install six
+  194  python3 manage.py runserver
+  195  exit
+  196  sudo su postgres
+  197  ls
+  198  exit
+  199  cd /
+  200  ls
+  201  cd etc
+  202  exit
+  203  youtube-dl -i PLmXKhU9FNesSFvj6gASuWmQd23Ul5omtD
+  204  sudo apt-get install postgresql-11 pgadmin4
+  205  sudo apt-get install pgadmin4
+  206  sudo apt-get install postgresql-11 pgadmin4
+  207  cls
+  208  /
+  209  cd /
+  210  cd etc/apt/sources.list.d/
+  211  ls
+  212  cat pgdg.list
+  213  sudo cat > pgdg.list
+  214  sudo nano pgdg.list
+  215  cat pgdg.list
+  216  wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+  217  sudo apt-get update
+  218  wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+  219  sudo apt-get update
+  220  sudo apt-get install pgadmin4
+  221  source env/bin/activate
+  222  atom .
+  223  cd GDjangoTut/
+  224  atom .
+  225  python3 manage.py runserver
+  226  deactivate
+  227  axit
+  228  exit
+  229  source env/bin/activate
+  230  pip3 freeze
+  231  deactivate
+  232  pip3 freeze
+  233  youtube-dl -i PLmXKhU9FNesSFvj6gASuWmQd23Ul5omtD
+  234  youtube-dl -i PLdo5W4Nhv31a5ucW_S1K3-x6ztBRD-PNa
+  235  cd ../../../..
+  236  cd Data/
+  237  clear
+  238  nano trial.py 
+  239  python3 trial.py 
+  240  nano trial.py 
+  241  python3 trial.py 
+  242  nano trial.py 
+  243  python3 trial.py 
+  244  nano trial.py 
+  245  python3 trial.py 
+  246  nano trial.py 
+  247  python3 trial.py 
+  248  nano trial.py 
+  249  python3 trial.py 
+  250  nano maps.html
+  251  maps.html
+  252  firefox maps.html
+  253  plasmapkg -i /home/shrey/Downloads/Layan.tar.xz
+  254  plasmapkg -i /home/shrey/Downloads/Layan.zip
+  255  source env/bin/activate
+  256  cd GDjangoTut/
+  257  atom .
+  258  py manage.py runserver
+  259  python manage.py runserver
+  260  python manage.py orginspect reporterter/data/gujrat_administrative.shp Administrations --srid=4326 --mapping --multi
+  261  python manage.py ogrinspect reporterter/data/gujrat_administrative.shp Administrations --srid=4326 --mapping --multi
+  262  python manage.py ogrinspect reporter/data/gujrat_administrative.shp Administrations --srid=4326 --mapping --multi
+  263  python manage.py ogrinspect reporter/data/gujarat_administrative.shp Administrations --srid=4326 --mapping --multi
+  264  python manage.py makemigrations
+  265  python manage.py migrate
+  266  python manage.py runserver
+  267  python manage.py shell
+  268  python manage.py makemigrations
+  269  python manage.py migrate
+  270  python manage.py shell
+  271  python manage.py makemigrations
+  272  python manage.py migrate
+  273  python manage.py shell
+  274  py manage.py runserver
+  275  python manage.py runserver
+  276  python manage.py ogrinspect reporter/data/gujarat_gujarat_highway.shp Administrations --srid=4326 --mapping --multi
+  277  python manage.py ogrinspect reporter/data/gujarat_highway.shp Administrations --srid=4326 --mapping --multi
+  278  python manage.py ogrinspect reporter/data/gujarat_highway.shp Highways --srid=4326 --mapping --multi
+  279  python manage.py makemigrations
+  280  py manage.py runserver
+  281  python manage.py migrate
+  282  python manage.py runserver
+  283  python manage.py shell
+  284  python manage.py makemigrations
+  285  python manage.py migrate
+  286  python manage.py shell
+  287  python manage.py runserver
+  288  exit
+  289  source env/bin/activate
+  290  cd GDjangoTut/
+  291  atom .
+  292  python manage.py ogrinspect reporter/data/gujarat_coastline/gujarat_coastline.shp Coastlines --srid=4326 --mapping --multi
+  293  python manage.py makemigrations
+  294  python manage.py migrate
+  295  python manage.py shell
+  296  python manage.py makemigrations
+  297  python manage.py migrate
+  298  python manage.py shell
+  299  python manage.py runserver
+  300  cd reporter/
+  301  mkdir templates
+  302  cd temp
+  303  cd templates/
+  304  touch  index.html
+  305  cd ..
+  306  python manage.py runserver
+  307  ls
+  308  mkdir static
+  309  python manage.py runserver
+  310  python -m SimpleHTTPServer
+  311  pip3 install SimpleHTTPServer
+  312  python -m SimpleHTTPServer 9000
+  313  python manage.py runserver
+  314  deactivate
+  315  exit
+  316  source env/bin/activate
+  317  cd GDjangoTut/
+  318  atom .
+  319  python manage.py runserver
+  320  exit
+  321  source env/bin/activate
+  322  cd GDjangoTut/
+  323  python manage.py runserver
+  324  exit
+  325  sudo nano /etc/apt/sources.list
+  326  wget -O - https://qgis.org/downloads/qgis-2017.gpg.key | gpg --import
+  327  gpg --fingerprint CAEB3DC3BDF7FB45
+  328  gpg --export --armor CAEB3DC3BDF7FB45 | sudo apt-key add -
+  329  sudo apt-get update
+  330  sudo apt-get install qgis python-qgis qgis-plugin-grass
+  331  source env/bin/activate
+  332  cd GDjangoTut/
+  333  atom .
+  334  python manage.py runserver
+  335  deactivate
+  336  exit
+  337  source env/bin/activate
+  338  cd GDjangoTut/
+  339  atom .
+  340  python manage.py ogrinspect reporter/data/Ahmedabad/Ahmedabad.shp Roads --srid=4326 --mapping --multi
+  341  python manage.py makemigrations
+  342  python manage.py migrate
+  343  python manage.py runserver
+  344  python manage.py migrate
+  345  python manage.py shell
+  346  python manage.py runserver
+  347  python manage.py makemigrations
+  348  python manage.py migrate
+  349  python manage.py makemigrations
+  350  python manage.py migrate
+  351  python manage.py makemigrations
+  352  python manage.py migrate
+  353  python manage.py makemigrations
+  354  python manage.py migrate
+  355  python manage.py makemigrations
+  356  python manage.py migrate
+  357  python manage.py runserver
+  358  exit
+  359  source env/bin/activate
+  360  cd GDjangoTut/
+  361  atom .
+  362  python manage.py migrate
+  363  python manage.py runserver
+  364  python manage.py migrate
+  365  python manage.py makemigrations
+  366  python manage.py migrate
+  367  python manage.py makemigrations
+  368  python manage.py migrate
+  369  python manage.py makemigrations
+  370  python manage.py migrate
+  371  python manage.py runserver
+  372  sudo su postgres
+  373  source env/bin/activate
+  374  cd GDjangoTut/
+  375  python manage.py runserver
+  376  atom .
+  377  exit
+  378  atom .
+  379  python manage.py runserver
+  380  source env/bin/activate
+  381  cd GDjangoTut/
+  382  atom .
+  383  python manage.py runservre
+  384  python manage.py runserver
+  385  exit
+  386  source env/bin/activate
+  387  cd GDjangoTut/
+  388  python manage.py runserver
+  389  python manage.py runserver 5000
+  390  exit
+  391  atom .
+  392  virtualenv venv
+  393  pip freeze
+  394  pip3 freeze
+  395  python
+  396  pip3 install django
+  397  pip3 uninstall django
+  398  source ven/bin/activate
+  399  source venv/bin/activate
+  400  pip3 install django
+  401  django-admin.py startproject ParaProcedor
+  402  ls
+  403  cd ParaProcedor/
+  404  atom .
+  405  python manage.py startapp RMS
+  406  python manage.py runserver
+  407  pip3 install psycopg2
+  408  python manage.py runserver
+  409  sudo su postgres
+  410  pip3 install django-leaflet
+  411  python manage.py runserver
+  412  python manage.py makemigrations
+  413  python manage.py migrate
+  414  python manage.py runserver
+  415  python manage.py crcreatesuperuser
+  416  python manage.py createsuperuser
+  417  python manage.py runserver
+  418  atom .
+  419  python manage.py makemigrations
+  420  atom .
+  421  python manage.py makemigrations
+  422  python manage.py migrate
+  423  python manage.py runserver
+  424  pip3 install six
+  425  python manage.py runserver
+  426  python manage.py makemigrations
+  427  python manage.py migrate
+  428  python manage.py makemigrations
+  429  python manage.py migrate
+  430  python manage.py runserver
+  431  python manage.py shell
+  432  python manage.py runserver
+  433  python manage.py shell
+  434  python manage.py runserver
+  435  python manage.py shell
+  436  python manage.py runserver
+  437  exit
+  438  atom .
+  439  source venv/bin/activate
+  440  pip3 freeze
+  441  deactivate
+  442  exit
+  443  sudo kvantum
+  444  sudo kvantum manager
+  445  sudo kvantum-manager
+  446  sudo kvantum
+  447  sudo kvantum .
+  448  nano A.cpp
+  449  atom .
+  450  nano A.cpp
+  451  g++ A.cpp -o A
+  452  A
+  453  ./a
+  454  /A
+  455  /A.out
+  456  ./A.out
+  457  cls
+  458  clear
+  459  ./A.out
+  460  A
+  461  ls
+  462  ./A
+  463  clear
+  464  java CountingSticks.java
+  465  javac CountingSticks.java
+  466  cd Competition3/
+  467  clear
+  468  ls
+  469  g++ a.cpp -o a
+  470  ./a
+  471  g++ a.cpp -o a
+  472  ./a
+  473  g++ a.cpp -o a
+  474  ./a
+  475  g++ a.cpp -o a
+  476  ./a
+  477  g++ a.cpp -o a
+  478  ./a
+  479  g++ a.cpp -o a
+  480  ./a
+  481  g++ a.cpp -o a
+  482  ./a
+  483  4 5
+  484  5 11
+  485  ./a
+  486  4 5
+  487  5 11
+  488  g++ a.cpp -o a
+  489  ./a
+  490  g++ a.cpp -o a
+  491  ./a
+  492  g++ a.cpp -o a
+  493  ./a
+  494  g++ a.cpp -o a
+  495  ./a
+  496  g++ a.cpp -o a
+  497  ./a
+  498  g++ b.cpp -o b
+  499  ./b
+  500  1 11
+  501  4 2
+  502  191 31415926
+  503  g++ b.cpp -o b
+  504  ./b
+  505  g++ b.cpp -o b
+  506  ./b
+  507  g++ b.cpp -o b
+  508  ./b
+  509  1 11
+  510  4 2
+  511  191 31415926
+  512  clear
+  513  ./b
+  514  1 11
+  515  4 2
+  516  191 31415926
+  517  g++ b.cpp -o b
+  518  ./b
+  519  g++ b.cpp -o b
+  520  ./b
+  521  g++ b.cpp -o b
+  522  ./b
+  523  g++ b.cpp -o b
+  524  ./b
+  525  g++ b.cpp -o b
+  526  ./b
+  527  g++ b.cpp -o b
+  528  ./b
+  529  g++ b.cpp -o b
+  530  ./b
+  531  #define pb push_back
+  532  #define fo(i, a, b) for(int i=a;i<b;i++)
+  533  #define GCD(a, b) __gcd(a,b)
+  534  #define TESTCASE int t;cin>>t;while(t--)
+  535  #define INF LLONG_MAX
+  536  #define NINF LLONG_MIN
+  537  using namespace std;
+  538  // threading function
+  539  int main(int argc, char const *argv[]) {
+  540  ./b
+  541  g++ b.cpp -o b
+  542  ./b
+  543  g++ b.cpp -o b
+  544  ./b
+  545  g++ b.cpp -o b
+  546  ./b
+  547  #define pb push_back
+  548  #define fo(i, a, b) for(int i=a;i<b;i++)
+  549  #define GCD(a, b) __gcd(a,b)
+  550  #define TESTCASE int t;cin>>t;while(t--)
+  551  #define INF LLONG_MAX
+  552  #define NINF LLONG_MIN
+  553  using namespace std;
+  554  // threading function
+  555  int main(int argc, char const *argv[]) {
+  556  clear
+  557  ./b
+  558  argc, char const *argv[]) {
+  559  g++ b.cpp -o b
+  560  ./b
+  561  g++ b.cpp -o b
+  562  ./b
+  563  g++ b.cpp -o b
+  564  ./b
+  565  g++ c.cpp -o c
+  566  ./c
+  567  g++ c.cpp -o c
+  568  ./c
+  569  g++ c.cpp -o c
+  570  ./c
+  571  g++ c.cpp -o c
+  572  ./c
+  573  exit
+  574  virtualenv venv
+  575  source venv/bin/activate
+  576  deactivate
+  577  pip3 freeze
+  578  source venv/bin/activate
+  579  pip3 install django
+  580  pip3 freeze
+  581  deactivate
+  582  exit
+  583  cd ..
+  584  atom .
+  585  python manage.py runserver 5000
+  586  cd ..
+  587  ls
+  588  source env/bin/activate
+  589  cd GDjangoTut/
+  590  python manage.py runserver 5000
+  591  exit
+  592  source venv/bin/activate
+  593  cd ParaProcedor/
+  594  cd
+  595  cd /media/shrey/Data/ParaProcedor/Project/ParaProcedor
+  596  cls
+  597  cleat
+  598  clear
+  599  atom .
+  600  python manage.py runserver
+  601  kill
+  602  exit
+  603  shutdown
+  604  source venv/bin/activate
+  605  source env/bin/activate
+  606  cd GDjangoTut/
+  607  atom .
+  608  python manage.py runserver
+  609  exit
+  610  source env/bin/activate
+  611  cd GDjangoTut/
+  612  atom .
+  613  python manage.py runserver
+  614  python manage.py orginspect reporter/dadata/gujarat_highway/gujarat_highway.shp --srid=4326 --mapping --multi
+  615  python manage.py ogrinspect reporter/dadata/gujarat_highway/gujarat_highway.shp --srid=4326 --mapping --multi
+  616  python manage.py ogrinspect reporter/dadata/gujarat_highway/gujarat_highway.shp highway --srid=4326 --mapping --multi
+  617  python manage.py ogrinspect reporter/data/gujarat_highway/gujarat_highway.shp highway --srid=4326 --mapping --multi
+  618  python manage.py makemigrations
+  619  python manage.py migrate
+  620  python manage.py runserver
+  621  exit
+  622  source venv/bin/activatr
+  623  source venv/bin/activate
+  624  cd ParaProcedor/
+  625  atom .
+  626  python manage.py runserver
+  627  exit
+  628  cp "/media/shrey/SV_DRIVE/_igetintopc.com_Bootstrap_Studio_4_x64//_igetintopc.com_Bootstrap_Studio_4_x64/_igetintopc.com_Fix/app.asar" "/opt/bootstrapstudio/resources/"
+  629  sudo cp "/media/shrey/SV_DRIVE/_igetintopc.com_Bootstrap_Studio_4_x64//_igetintopc.com_Bootstrap_Studio_4_x64/_igetintopc.com_Fix/app.asar" "/opt/bootstrapstudio/resources/"
+  630  exxit
+  631  exit
+  632  sudo cp "/home/shrey/Downloads/Layan" "/usr/share/plasma/look-and-feel/"
+  633  sudo cp -r "/home/shrey/Downloads/Layan" "/usr/share/plasma/look-and-feel/"
+  634  exit
+  635  atom .
+  636  ls p* | ls p* > x.txt
+  637  ls s* | ls p* > x.txt
+  638  ls s* | ls s* > x.txt
+  639  ls s* && ls s* > x.txt
+  640  who
+  641  who -wc
+  642  who | wc
+  643  who | wc -l
+  644  whoami
+  645  w
+  646  cd /
+  647  w
+  648  cd /media/shrey/Data
+  649  sudo apt-get install popcorntime
+  650  sudo apt-get install popcorn-time
+  651  exit
+  652  source venv/bin/activate
+  653  cd ParaProcedor/
+  654  ls
+  655  python manage.py runserver
+  656  usr/bin/firefox -safe-mode
+  657  usr/bin/firefox-safe-mode
+  658  usr/bin/firefox --safe-mode
+  659  source venv/bin/activate
+  660  cd ParaProcedor/
+  661  ls
+  662  python manage.py runserver
+  663  exit
+  664  source venv/bin/activate
+  665  cd ParaProcedor/
+  666  python manage.py runserver
+  667  source venv/bin/activate
+  668  cd ParaProcedor/
+  669  ls
+  670  python manage.py runserver
+  671  exit
+  672  git
+  673  clear
+  674  ls
+  675  git init
+  676  git remote add origin https://github.com/tirthasheshpatel/ParaProcedor-de-SIH-2020.git
+  677  git pull origin master --allow-unrelated-histories
+  678  clear
+  679  ls
+  680  git status
+  681  vim .gitignore
+  682  sudo apt install vim
+  683  nono .gitignore
+  684  clear
+  685  nano .gitignore
+  686  clear
+  687  git status
+  688  git checkout -b "web-dev-0.0"
+  689  clear
+  690  ls
+  691  git branch
+  692  git status
+  693  git add -A
+  694  clear
+  695  ls
+  696  git commit -m"ENH: add version 0.0 of web dev env!"
+  697  clear
+  698  ls
+  699  git status
+  700  git push origin web-dev-0.0
+  701  cd ..
+  702  ls
+  703  cd Project
+  704  clear
+  705  ls
+  706  git status
+  707  echo $PYTHONPATH
+  708  ls
+  709  cd ParaProcedor
+  710  ls
+  711  echo $PYTHONPATH
+  712  cd ..
+  713  ls
+  714  source venv/bin/activate
+  715  echo $PYTHONPATH
+  716  export PYTHONPATH="$PWD"
+  717  echo $PYTHONPATH
+  718  clear
+  719  ls
+  720  pip3 freeze
+  721  pip3 install pytest-cov
+  722  clear
+  723  pytest --cov="./"
+  724  clear
+  725  ls
+  726  cd ParaProcedor
+  727  ls
+  728  atom .
+  729  cd ..
+  730  clear
+  731  ls
+  732  atom .
+  733  cd ParaProcedor/
+  734  py manage.py runserver
+  735  python manage.py runserver
+  736  clear
+  737  ls
+  738  cd ..
+  739  clear
+  740  ls
+  741  deactivate
+  742  exit
+  743  source venv/bin/activa
+  744  source venv/bin/activate
+  745  cd ParaProcedor/
+  746  python manage.py shell
+  747  python manage.py runserver
+  748  exit
+  749  ls
+  750  cd Documents/
+  751  nano test.c
+  752  gcc test.c -o test
+  753  ./test
+  754  clear
+  755  exit
+  756  cd Documents/
+  757  nano testc
+  758  ls
+  759  nano test.c
+  760  gcc test.c -o test
+  761  nano test.c
+  762  gcc test.c -o test
+  763  ./test
+  764  nano test.c
+  765  gcc test.c -o test
+  766  ./test
+  767  nano test.c
+  768  gcc test.c -o test
+  769  ./test
+  770  nano test2.c
+  771  gcc test2.c -o test2
+  772  nano test2.c
+  773  gcc test2.c -o test2
+  774  nano test2.c
+  775  gcc test2.c -o test2
+  776  nano test2.c
+  777  gcc test2.c -o test2
+  778  nano test2.c
+  779  gcc test2.c -o test2
+  780  nano test2.c
+  781  gcc test2.c -o test2
+  782  nano test2.c
+  783  gcc test2.c -o test2
+  784  ./test2
+  785  rm test2.cpp
+  786  rm test2.c
+  787  ls
+  788  rm test
+  789  rm test.c
+  790  exit
+  791  date
+  792  exit
+  793  tty
+  794  tty
+  795  du
+  796  clear
+  797  df
+  798  tty
+  799  tty
+  800  tty
+  801  shelby
+  802  ls -l
+  803  unmask
+  804  umask
+  805  date
+  806  cal
+  807  pwd
+  808  man cal
+  809  cal -m 12 -y 2021
+  810  cls
+  811  clae
+  812  clear
+  813  cal -y 2021
+  814  cal -m 12 2021
+  815  chmod
+  816  umask
+  817  cls
+  818  ls
+  819  exit
+  820  ls
+  821  date
+  822  cal
+  823  cal -y 9999
+  824  cal -m 12 0000
+  825  cal -m 12 000
+  826  cal -m 12 0001
+  827  pwd
+  828  man cal
+  829  cal -3
+  830  pwd
+  831  cls
+  832  clear
+  833  date
+  834  cal
+  835  cal -m 12 2002
+  836  cal -m 2 2003
+  837  pwd
+  838  man cal
+  839  man ca
+  840  ls
+  841  mkdir 18bce259
+  842  ls
+  843  help history
+  844  man history
+  845  cd 18bce259
+  846  cd ..
+  847  rmdir 18bce259/
+  848  ls
+  849  mkdir x
+  850  ls
+  851  cd x
+  852  touch x.txt
+  853  ls
+  854  cd ..
+  855  ls
+  856  rmdir x
+  857  rmdir x --ignore-fail-on-non-empty
+  858  ls
+  859  rmdir x -r
+  860  rmdir -r x
+  861  rm -r x
+  862  ls
+  863  touch f1
+  864  cat f1
+  865  cat > f1
+  866  cat f1
+  867  cat > f1
+  868  cat f1
+  869  cat > f1
+  870  cat f1
+  871  cat > f1
+  872  cat f1
+  873  cat > f1
+  874  cat f1
+  875  cat >> f1
+  876  cat f1
+  877  mv f1 f2
+  878  ls
+  879  cat f2
+  880  nano f3
+  881  cat f3
+  882  cp f3 f4
+  883  ls
+  884  cat f4
+  885  ls -l
+  886  umask
+  887  who
+  888  whoami
+  889  history > f5

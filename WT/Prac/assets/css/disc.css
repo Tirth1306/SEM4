@@ -1,0 +1,86 @@
+::-moz-selection { /* Code for Firefox */
+    color: white;
+    background: #359263;
+  }
+  
+  ::selection {
+    color: white;
+    background: #359263;
+  }
+
+body{
+    background-color: black;
+    background-image: url('../img/modelBlackedSquare.png');
+    background-position-x: right;
+    background-size: 100vh;
+    background-repeat: no-repeat;
+    font-family: 'Raleway';
+    color: white;
+    align-items: center;
+}
+
+#margin_setter{
+    margin-left: 100px;
+    margin-top: 100px;
+    margin-right: 100px;
+}
+
+#heading{
+    font-size: 10vh;
+    transition: color 0.5s ease-in-out;
+}
+
+#heading:hover{
+    font-size: 10vh;
+    color: #549E5F; 
+}
+
+.ml12 {
+    font-weight: 200;
+    font-size: 1.8em;
+    text-transform: uppercase;
+    letter-spacing: 0.5em;
+  }
+  
+.ml12 .letter {
+display: inline-block;
+line-height: 1em;
+}
+
+#animationDiv{
+    margin-left: 100px;
+    width: 10%;
+    background-color:  #359263;
+    color: #ffffff;
+    text-align: right;
+    padding-right: 1.25%;
+    transition: background-color 0.5s ease-in-out,width 2s ease, color 0.5s ease-in;
+}
+
+#animationDiv:hover{
+    text-align: right;
+    width: 50%;
+    background-color:#35926498;
+    color: rgb(255, 255, 255);
+}
+
+#girl{
+    margin: auto;
+    height: 100vh;
+    width: 800px;
+    background-image: url('../img/GirlsLaugh1.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    transition: background-image 1s ease;
+}
+
+#girl:hover{
+    margin: auto;
+    height: 100vh;
+    width: 800px;
+    background-image: url('../img/GirlsLaugh2.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    transition: background-image 1s ease;
+}
+

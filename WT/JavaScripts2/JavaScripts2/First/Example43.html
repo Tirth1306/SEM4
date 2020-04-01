@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Function as member</title>
+    <script>
+        var person = {
+            firstName: "John",
+            lastName : "Doe",
+            id       : 5566,
+            fullName : function() {
+                return this.firstName + " " + this.lastName;
+            }
+        };
+        document.write("<h2> Object function : " +person.fullName()+"</h2>");
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,155 @@
+1) Which of the following Scheduling algorithms leads to convoy effect.
+A. First Come First Serve	ANSWER
+B. Shortest Remaining Time First
+C. Priority Scheduling
+D. Round Robin
+
+2) Which of the following algorithm provides only non preemptive scheduling.
+A. Shortest Remaining First
+B. Round Robin
+C. Priority Scheduling
+D. First Come First Serve	ANS
+
+3) Which of the below mentioned information will not be present in process control block.
+A. context switch timE		ANS	
+B. CPU Registers value
+C. Program Counter
+D. Memory Management Information
+
+4) Process will move from running state to waiting state except when
+A. Interrupt has occured
+B. Process needs to wait for child process
+C. Process needs to wait for resources to get free for it.
+D. Quantum Time of process gets over	ANS
+
+5) The number of processes completed per unit time is known as
+A. CPU utilization
+B. Throughput		ANS
+C. Frequency	
+D. Turnaround Time
+
+6) Which of the below scheduling algorithm leads to starvation problem		ASK MA'AM
+A. First Come First Serve
+B. Round Robin
+C. None of given choices	
+D. Priority Scheduling
+
+7) The degree of multi-programming is :
+A. the number of processes executed per unit time
+B. the number of processes in the ready queue
+C. the number of processes in the I/O queue
+D. the number of processes in main memory	ANS
+
+8) To access the services of operating system, the interface is provided by the		ASK
+A. system calls		ans
+B. API
+C. library
+D. assembly instructions
+
+9)Which module gives control of the CPU to the process selected by the short-term scheduler?
+A. dispatcher		ANS
+B. interrupt
+C. scheduler
+D. none of the mentioned
+
+10) The interval between the time a process enters new state to the time when first instruction is executed is termed as
+A. waiting time
+B. turnaround time
+C. response time	ANS
+D. throughput
+
+11) Process are classified into different groups in
+A. shortest job scheduling algorithm
+B. round robin scheduling algorithm
+C. priority scheduling algorithm
+D. multilevel queue scheduling algorithm	ANS
+
+12) Aging is :
+A. keeping track of cache contents
+B. keeping track of what pages are currently residing in memory
+C. keeping track of how many times a given page is referenced
+D. increasing the priority of jobs to ensure termination in a finite time	ANS
+
+13) What is Turnaround time of a process?
+A. Time spent in waiting queue
+B. Time spent in ready queue + waiting queue + running state		ANS
+C. Time spent in ready queue + waiting queue
+D. Time spent in ready queue
+
+14) What is a medium-term scheduler ?
+A. It selects which process has to be brought into the ready queue
+B. It selects which process has to be executed next and allocates CPU
+C. It selects which process to remove from memory by swapping		ANS 
+D. It selects which process has to be brought into the I/O queue
+
+15) If all processes are I/O bound, the ready queue will almost always be ______ and the Short term Scheduler will have a ______ to do.
+A. full,little
+B. full,lot
+C. empty,little		ANS
+D. empty,lot
+
+16) The Blocked Suspend state is when
+A. The process is in main memory and waiting for an event to occur.
+B. The process is in secondary memory but is availble for execution as soon as it is loaded into the main memory.
+C. The process is in main memory but is not availble for execution.
+D. The process is in secondary memory and waiting for an event to occur.	ANS
+
+17) Which one of the following reason leads to process termination	ASK Ma'am
+A. A piece of data is of wrong type or is not initiated
+B. A user at terminal logs on to the system
+C. Swapping of a process from main memory
+D. None of above
+
+18) When a program is loaded, the _______ register is set to point to the start of its program text and ________ register tells how large the combine program text and data are.     ASK Ma'am
+A. Base,Limit		ans
+B. Limit,Base
+C. Limit,Base Stack
+D. Base Stack,Limit
+
+19) Which of the following requires a device driver?
+A. Register
+B. Cache
+C. Main memory
+D. Disk		ANS
+
+20) The __________ was invented to attach all the slow Input output devices such as keyboard and mouse to the computer.		Ask maam
+A. USB
+B. SCSI
+C. BIOS
+D. IDE
+
+21) The ___________ instruction switches from user mode to kernel mode.
+A. Trap 	ans
+B. statt
+C. PSW
+D. execvee
+
+22) Which of the following is not system software		Ask maam
+A. Compilers
+B. Operating System
+C. Device Driver
+D. All are System Softwares	ans
+
+23) Which of the following operating system allows execution of multiple processes at exactly same time.	ASK MAAM
+A. Multitasking Operating System
+B. Multiprogramming Operating System
+C. Multiprocessing Operating System	ans
+D. None
+
+24) Switching the CPU to another process requires performing a state save of the current process and a state restore of some other process from ready queue. This task is called as
+A. Swapping
+B. Context Switch	ANS
+C. Dispatcher
+D. Process Control Block
+
+25) System call cannot be executed in which of the following mode
+A. kernel mode
+B. Supervisor Mode
+C. Priviliged Mode
+D. User Mode 	ANS
+
+26) Which of the below criteria is not used to measure the performance of short term scheduler.
+A. Throughput
+B. CPU utilization
+C. Context Switch time
+D. Response Time

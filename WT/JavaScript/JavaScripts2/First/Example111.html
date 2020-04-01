@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Recursion function</title>
+    <script>
+        var x = function myfunction(a)
+        {
+            var result;
+            if(a==1) return 1;
+            result=myfunction(a-1)*a;
+            return result;
+        }
+        document.write("<h2> Result : "+x(5)+"</h2>");
+    </script>
+</head>
+<body>
+
+</body>
+</html>

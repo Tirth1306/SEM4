@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<!-- saved from url=(0083)https://s.codepen.io/team/css-tricks/fullembedgrid/jPzQxB?type=embed&animations=run -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+
+
+    <title>CodePen - border-image demo: Inline SVG</title>
+    
+    
+    
+    
+        <style>
+      .inline-svg {
+  /* Doesn't work at all in IE */
+  
+  border: 10px solid white;
+  border-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='50' height='50'><defs><linearGradient id='redgradient'><stop offset='0' stop-color='%23FFC14D'/><stop offset='0.362' stop-color='%23FF4834'/><stop offset='1' stop-color='%233B0300'/></linearGradient></defs><g id='Layer_1'><path d='M0,0 L50,0 L50,50 L0,50 L0,0 z' fill='url(%23redgradient)' width='100%' height='100%'/></g></svg>") 10% stretch;
+}
+/* styling for Pen, unrelated to border-image */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #1D1F1F;
+}
+
+div {
+  width: 40vw;
+  height: 40vh;
+  margin: 4em auto;
+}
+    </style>
+
+    <script>
+  window.console = window.console || function(t) {};
+</script>
+
+    
+    
+  </head>
+
+  <body translate="no">
+
+    <div class="inline-svg">
+</div>
+    
+    
+    
+    
+    <script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+
+    
+  
+
+ 
+</body></html>

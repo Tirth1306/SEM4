@@ -1,0 +1,3 @@
+/media/shrey/Data/SEM4/OS/Operating-System-CS356-Project-2-master/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/media/shrey/Data/SEM4/OS/Operating-System-CS356-Project-2-master/cmake-build-debug/CMakeFiles/Operating_System_CS356_Project_2_master.dir
+/media/shrey/Data/SEM4/OS/Operating-System-CS356-Project-2-master/cmake-build-debug/CMakeFiles/edit_cache.dir

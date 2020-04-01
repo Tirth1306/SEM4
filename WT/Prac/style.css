@@ -1,0 +1,25 @@
+#card-holder{
+    background-color: crimson;
+    height: 80%;
+    width: 100%;
+}
+
+#card-holder:hover{
+    background-color: yellowgreen;
+    height: 200;
+    width: 100%;
+}
+
+#second-card{
+    background-color: rgba(55, 0, 144, 0.787);
+    color: rgb(255, 255, 255);
+    text-align: center;
+    font-family: 'Raleway';
+}
+
+.card{
+    background-color: rgb(25, 10, 25);
+    color: antiquewhite;
+    text-align: center;
+    font-family: 'Raleway';
+}

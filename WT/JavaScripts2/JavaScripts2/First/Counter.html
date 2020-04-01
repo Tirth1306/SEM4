@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Counter</title>
+
+    <style>
+        #parent
+        {
+            margin-top: 100px;
+            margin-left: 180px;
+        }
+        .timmer
+        {
+            box-sizing: border-box;
+            background-color: aqua;
+            height: 100px;
+            width: 100px;
+            display: inline-block;
+            padding-top: 1px;
+            padding-left: 36px;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body bgcolor="blue">
+<div id="parent">
+    <div class="timmer"><p id="hour"></p></div>
+    <div class="timmer" ><p id="minute"></p></div>
+    <div class="timmer" ><p id="sec"></p></div>
+</div>
+<script>
+    (function displaytime()
+    {
+        var today = new Date();
+        document.getElementById("hour").innerHTML=today.getHours();
+        document.getElementById("minute").innerHTML=checkTime(today.getMinutes());
+        document.getElementById("sec").innerHTML=checkTime(today.getSeconds());
+        setTimeout(displaytime, 1000);
+    })();
+    function checkTime(i) {
+        if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+        return i;
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Student Registration Form</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=ABeeZee">
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+</head>
+
+<body id="page-top" style="min-height: 100vh;">
+    <section class="d-xl-flex justify-content-xl-end" style="background-image: url(&quot;assets/img/bg-masthead.jpg&quot;);background-size: cover;background-repeat: no-repeat;background-position: center;">
+        <div class="d-xl-flex flex-column justify-content-xl-start align-items-xl-start" id="main">
+            <h2 style="font-family: ABeeZee, sans-serif;">Minimalist Student Registration Form</h2>
+            <form id="main_form" name="main_form" action="#" method="post">
+                <div class="form-group fg"><input class="shadow form-control inputCSS" id="nameinput" type="text" placeholder="First Name" name="Firstname" required=""></div>
+                <div class="form-group fg"><input class="shadow form-control inputCSS" id="nameinput" type="text" placeholder="Last Name" name="Lastname" required=""></div>
+                <div class="form-group fg"><input class="shadow form-control inputCSS" id="emailinput" type="text" placeholder="Email ID" name="Email"></div>
+                <div class="form-group fg"><input class="shadow form-control inputCSS" id="contactinput" type="tel" placeholder="Contact No" name="Contact" required="" minlength="10"></div>
+                <div class="form-group fg"><input class="shadow form-control inputCSS" type="password" placeholder="Password" name="pass1" required=""></div>
+                <div class="form-group fg"><input class="shadow form-control inputCSS" type="password" placeholder="Confirm Password" name="pass2" required=""></div>
+                <div class="form-group fg" style="color: #000000;">
+                    <div><label style="font-family: ABeeZee, sans-serif;"><span style="text-decoration: underline;">Gender</span></label></div>
+                    <div class="d-xl-flex align-items-xl-center">
+                        <div class="form-check radio_box"><input class="form-check-input inputCSS" type="radio" id="Male"   name="gender" value="Male"  ><label class="form-check-label" for="Male"  >Male</label></div>
+                        <div class="form-check radio_box"><input class="form-check-input inputCSS" type="radio" id="Female" name="gender" value="Female"><label class="form-check-label" for="Female">Female</label></div>
+                        <div class="form-check radio_box"><input class="form-check-input inputCSS" type="radio" id="Other"  name="gender" value="Other" ><label class="form-check-label" for="Other" >Other</label></div>
+                    </div>
+                </div>
+                <div class="form-group d-xl-flex flex-row"><label style="font-family: ABeeZee, sans-serif;margin-right: 40px;">DOB</label><input class="shadow form-control inputCSS" type="date" style="width: 40%;color: #495057;" name="Date" required=""></div>
+                <div class="form-group"><textarea class="form-control form-control-sm inputCSS" placeholder="Address" name="Address" rows="3" required="" style="width: 60%;"></textarea></div>
+                <div class="form-group fg"><input class="shadow form-control inputCSS" type="text" placeholder="City" name="City" required=""></div>
+                <div class="form-group fg"><input class="form-control inputCSS" type="number" placeholder="Pincode" name="Pincode" required=""></div>
+                <div class="form-group fg"><input class="shadow form-control inputCSS" type="text" placeholder="State" name="State" required=""></div>
+                <div class="form-group fg"><input class="shadow form-control inputCSS" type="text" placeholder="Country" name="Country" disabled="" value="India" required=""></div>
+                <!-- <div class="form-group fg" style="color: #000000;">
+                    <div><label style="font-family: ABeeZee, sans-serif;"><span style="text-decoration: underline;">Hobbies</span></label></div>
+                    <div class="d-xl-flex">
+                        <div class="form-check" style="margin: auto;"><input class="form-check-input" type="checkbox" id="Drawing"   name="Drawing"   value="Drawing"  ><label class="form-check-label" for="Drawing"  >Drawing</label></div>
+                        <div class="form-check" style="margin: auto;"><input class="form-check-input" type="checkbox" id="Singing"   name="Singing"   value="Singing"  ><label class="form-check-label" for="Singing"  >Singing</label></div>
+                        <div class="form-check" style="margin: auto;"><input class="form-check-input" type="checkbox" id="Dancing"   name="Dancing"   value="Dancing"  ><label class="form-check-label" for="Dancing"  >Dancing</label></div>
+                        <div class="form-check" style="margin: auto;"><input class="form-check-input" type="checkbox" id="Sketching" name="Sketching" value="Sketching"><label class="form-check-label" for="Sketching">Sketching</label></div>
+                    </div>
+                    <div style="margin-top: 5px;"><input class="form-control inputCSS" id="otherHobbies" type="text" placeholder="Others"></div>
+                </div> -->
+                <!-- <div class="form-group fg" style="color: #000000;">
+                    <div><label style="font-family: ABeeZee, sans-serif;"><span style="text-decoration: underline;">Qualification:</span></label></div>
+                    <div>
+                        <div class="form-check" style="margin: auto;"><input class="form-check-input" type="checkbox" id="10th"      name="10th"      value="10th"      checked><label class="form-check-label" for="10th"     >High School (10th)</label></div>
+                        <div class="form-check" style="margin: auto;"><input class="form-check-input" type="checkbox" id="12th"      name="12th"      value="12th"     ><label class="form-check-label" for="12th"     >Higher School (12th)</label></div>
+                        <div class="form-check" style="margin: auto;"><input class="form-check-input" type="checkbox" id="Bachelors" name="Bachelors" value="Bachelors"><label class="form-check-label" for="Bachelors">Graduation (Bachelors)</label></div>
+                        <div class="form-check" style="margin: auto;"><input class="form-check-input" type="checkbox" id="Masters"   name="Masters"   value="Masters"  ><label class="form-check-label" for="Masters"  >Post Graduation (Masters)</label></div>
+                        <div class="form-check" style="margin: auto;"><input class="form-check-input" type="checkbox" id="PhD"       name="PhD"       value="PhD"      ><label class="form-check-label" for="PhD"      >Ph.D.</label></div>
+                    </div>
+                </div> -->
+                <!-- <div class="form-group fg" style="color: #000000;">
+                    <div><label style="font-family: ABeeZee, sans-serif;"><span style="text-decoration: underline;">Course Applied For:</span></label></div>
+                    <div>
+                        <div class="form-check radio_box"><input class="radio inputCSS" type="radio" id="BCA"   name="course" value="BCA"  ><label class="form-check-label" for="BCA">BCA</label></div>
+                        <div class="form-check radio_box"><input class="radio inputCSS" type="radio" id="BCom"  name="course" value="BCom" ><label class="form-check-label" for="BCom">B.Com.</label></div>
+                        <div class="form-check radio_box"><input class="radio inputCSS" type="radio" id="BSc"   name="course" value="BSc"  ><label class="form-check-label" for="BSc">B.Sc.</label></div>
+                        <div class="form-check radio_box"><input class="radio inputCSS" type="radio" id="BA"    name="course" value="BA"   ><label class="form-check-label" for="BA">B.A.</label></div>
+                        <div class="form-check radio_box"><input class="radio inputCSS" type="radio" id="BTech" name="course" value="BTech"><label class="form-check-label" for="BTech">B.Tech.</label></div>
+                        <div class="form-check radio_box"><input class="radio inputCSS" type="radio" id="BArch" name="course" value="BArch"><label class="form-check-label" for="BArch">B.Arch.</label></div>
+                        <div class="form-check radio_box"><input class="radio inputCSS" type="radio" id="MA"    name="course" value="MA"   ><label class="form-check-label" for="MA">M.A.</label></div>
+                        <div class="form-check radio_box"><input class="radio inputCSS" type="radio" id="MSc"   name="course" value="MSc"  ><label class="form-check-label" for="MSc">M.Sc.</label></div>
+                        <div class="form-check radio_box"><input class="radio inputCSS" type="radio" id="MTech" name="course" value="MTech"><label class="form-check-label" for="MTech">M.Tech.</label></div>
+                        <div class="form-check radio_box"><input class="radio inputCSS" type="radio" id="MCom"  name="course" value="MCom" ><label class="form-check-label" for="MCom">M.Com.</label></div>
+                    </div>
+                </div> -->
+                <input class="btn btn-primary" type="submit" value="Submit" onclick="return ValidateForm(document.main_form);"><button class="btn btn-secondary" type="reset" style="margin-left: 5px;color: rgb(255,0,0);">Reset</button></form>
+        </div>
+    </section>
+    <script src="assets/js/validations.js"></script>
+</body>
+
+</html>

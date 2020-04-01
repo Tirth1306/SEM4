@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="Operating_System_CS356_Project_2_master"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/media/shrey/Data/SEM4/OS/Operating-System-CS356-Project-2-master/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/media/shrey/Data/SEM4/OS/Operating-System-CS356-Project-2-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/media/shrey/Data/SEM4/OS/Operating-System-CS356-Project-2-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/media/shrey/Data/SEM4/OS/Operating-System-CS356-Project-2-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/media/shrey/Data/SEM4/OS/Operating-System-CS356-Project-2-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/media/shrey/Data/SEM4/OS/Operating-System-CS356-Project-2-master/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/media/shrey/Data/SEM4/OS/Operating-System-CS356-Project-2-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/media/shrey/Data/SEM4/OS/Operating-System-CS356-Project-2-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/media/shrey/Data/SEM4/OS/Operating-System-CS356-Project-2-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/media/shrey/Data/SEM4/OS/Operating-System-CS356-Project-2-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Operating_System_CS356_Project_2_master">
+				<Option output="/media/shrey/Data/SEM4/OS/Operating-System-CS356-Project-2-master/cmake-build-debug/Operating_System_CS356_Project_2_master" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/media/shrey/Data/SEM4/OS/Operating-System-CS356-Project-2-master/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/media/shrey/Data/SEM4/OS/Operating-System-CS356-Project-2-master/."/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/media/shrey/Data/SEM4/OS/Operating-System-CS356-Project-2-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 Operating_System_CS356_Project_2_master"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/media/shrey/Data/SEM4/OS/Operating-System-CS356-Project-2-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/media/shrey/Data/SEM4/OS/Operating-System-CS356-Project-2-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/media/shrey/Data/SEM4/OS/Operating-System-CS356-Project-2-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Operating_System_CS356_Project_2_master/fast">
+				<Option output="/media/shrey/Data/SEM4/OS/Operating-System-CS356-Project-2-master/cmake-build-debug/Operating_System_CS356_Project_2_master" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/media/shrey/Data/SEM4/OS/Operating-System-CS356-Project-2-master/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/media/shrey/Data/SEM4/OS/Operating-System-CS356-Project-2-master/."/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/media/shrey/Data/SEM4/OS/Operating-System-CS356-Project-2-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 Operating_System_CS356_Project_2_master/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/media/shrey/Data/SEM4/OS/Operating-System-CS356-Project-2-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/media/shrey/Data/SEM4/OS/Operating-System-CS356-Project-2-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/media/shrey/Data/SEM4/OS/Operating-System-CS356-Project-2-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/media/shrey/Data/SEM4/OS/Operating-System-CS356-Project-2-master/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/media/shrey/Data/SEM4/OS/Operating-System-CS356-Project-2-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/media/shrey/Data/SEM4/OS/Operating-System-CS356-Project-2-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/media/shrey/Data/SEM4/OS/Operating-System-CS356-Project-2-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/media/shrey/Data/SEM4/OS/Operating-System-CS356-Project-2-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/media/shrey/Data/SEM4/OS/Operating-System-CS356-Project-2-master/console.c">
+			<Option target="Operating_System_CS356_Project_2_master"/>
+		</Unit>
+		<Unit filename="/media/shrey/Data/SEM4/OS/Operating-System-CS356-Project-2-master/console.h">
+			<Option target="Operating_System_CS356_Project_2_master"/>
+		</Unit>
+		<Unit filename="/media/shrey/Data/SEM4/OS/Operating-System-CS356-Project-2-master/control.c">
+			<Option target="Operating_System_CS356_Project_2_master"/>
+		</Unit>
+		<Unit filename="/media/shrey/Data/SEM4/OS/Operating-System-CS356-Project-2-master/control.h">
+			<Option target="Operating_System_CS356_Project_2_master"/>
+		</Unit>
+		<Unit filename="/media/shrey/Data/SEM4/OS/Operating-System-CS356-Project-2-master/cpu.c">
+			<Option target="Operating_System_CS356_Project_2_master"/>
+		</Unit>
+		<Unit filename="/media/shrey/Data/SEM4/OS/Operating-System-CS356-Project-2-master/cpu.h">
+			<Option target="Operating_System_CS356_Project_2_master"/>
+		</Unit>
+		<Unit filename="/media/shrey/Data/SEM4/OS/Operating-System-CS356-Project-2-master/error_codes.h">
+			<Option target="Operating_System_CS356_Project_2_master"/>
+		</Unit>
+		<Unit filename="/media/shrey/Data/SEM4/OS/Operating-System-CS356-Project-2-master/memory.c">
+			<Option target="Operating_System_CS356_Project_2_master"/>
+		</Unit>
+		<Unit filename="/media/shrey/Data/SEM4/OS/Operating-System-CS356-Project-2-master/memory.h">
+			<Option target="Operating_System_CS356_Project_2_master"/>
+		</Unit>
+		<Unit filename="/media/shrey/Data/SEM4/OS/Operating-System-CS356-Project-2-master/pager.c">
+			<Option target="Operating_System_CS356_Project_2_master"/>
+		</Unit>
+		<Unit filename="/media/shrey/Data/SEM4/OS/Operating-System-CS356-Project-2-master/pager.h">
+			<Option target="Operating_System_CS356_Project_2_master"/>
+		</Unit>
+		<Unit filename="/media/shrey/Data/SEM4/OS/Operating-System-CS356-Project-2-master/scheduler.c">
+			<Option target="Operating_System_CS356_Project_2_master"/>
+		</Unit>
+		<Unit filename="/media/shrey/Data/SEM4/OS/Operating-System-CS356-Project-2-master/scheduler.h">
+			<Option target="Operating_System_CS356_Project_2_master"/>
+		</Unit>
+		<Unit filename="/media/shrey/Data/SEM4/OS/Operating-System-CS356-Project-2-master/types.h">
+			<Option target="Operating_System_CS356_Project_2_master"/>
+		</Unit>
+		<Unit filename="/media/shrey/Data/SEM4/OS/Operating-System-CS356-Project-2-master/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

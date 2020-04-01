@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style> 
+#myDIV {
+    width: 300px;
+    height: 300px;
+    background: lightblue url('smiley.gif') no-repeat;
+    color: white;
+    overflow: auto;
+}
+</style>
+</head>
+<body>
+
+<p>Click the radio buttons and scroll the DIV element to see the effect of the background-attachment property:</p>
+
+<form name="myForm">
+  <input type="radio" name="myAtt" value="scroll" onclick="myFunction()" checked>scroll
+  <input type="radio" name="myAtt" value="local" onclick="myFunction()">local
+</form>
+
+<div id="myDIV">
+  <h1>Hello</h1>
+  <h1>Hello</h1>
+  <h1>Hello</h1>
+  <h1>Hello</h1>
+  <h1>Hello</h1>
+  <h1>Hello</h1>
+  <h1>Hello</h1>
+  <h1>Hello</h1>
+  <h1>Hello</h1>
+  <h1>Hello</h1>
+  <h1>Hello</h1>
+  <h1>Hello</h1>
+  <h1>Hello</h1>
+  <h1>Hello</h1>
+  <h1>Hello</h1>
+  <h1>Hello</h1>
+  <h1>Hello</h1>
+  <h1>Hello</h1>
+  <h1>Hello</h1>
+  <h1>Hello</h1>
+</div>
+
+<script>
+function myFunction() {
+    if (document.forms["myForm"]["myAtt"][0].checked) {
+      document.getElementById("myDIV").style.backgroundAttachment = "scroll";
+    } else {
+      document.getElementById("myDIV").style.backgroundAttachment = "local";
+    }
+}
+</script>
+
+</body>
+</html>

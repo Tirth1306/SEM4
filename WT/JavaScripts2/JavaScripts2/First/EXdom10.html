@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Click the button to display the value of the onclick attribute of the button element.</p>
+
+<button id="myBtn" onclick="myFunction()">Try it</button>
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+    var x = document.getElementById("myBtn").getAttribute("onclick");
+    document.getElementById("demo").innerHTML = x;
+}
+</script>
+
+</body>
+</html>

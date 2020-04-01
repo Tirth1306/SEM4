@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Slice example</title>
+    <script>
+        var numbers = "0123456789";
+        document.write("<h1>"+numbers+"</h1>");
+        // String.slice( begin, end )
+
+        // Let's start by using both begin and end.
+        document.write("<h3>slice( 3, 7 ) :"+ numbers.slice( 3, 7 )+"</h3><br/>");
+
+        // What happens when we start with a negative number.
+        document.write("<h3>slice( -7, 7 ) :"+numbers.slice( -7, 7 )+"</h3><br/>");
+
+        // What happens when we use two negative numbers.
+        document.write("<h3>slice( -7, -3 ) :"+numbers.slice( -7, -3 )+"</h3><br/>");
+
+        // What happens when we omit the last argument.
+        document.write("<h3>slice( 3 ) :"+numbers.slice( 3 )+"</h3><br/>");
+
+        // And with the negative, end-relevant index.
+        document.write("<h3>slice( -7 ) :"+numbers.slice( -7 )+"</h3><br/>");
+
+        // If the index is out of range, it returns the empty string.
+        document.write("<h3>slice( 100, 101 ) :"+numbers.slice( 100, 101 )+"</h3><br/>");
+
+        // -------------------------------------------------- //
+        // -------------------------------------------------- //
+
+
+        // String.substring( from, to )
+
+        // Let's start by using both begin and end.
+        document.write("<h3>substring( 3, 7 ) :"+numbers.substring( 3, 7 )+"</h3><br/>");
+
+        // What happens when we start with a negative number.
+        document.write("<h3>substring( -7, 7 ) :"+numbers.substring( -7, 7 )+"</h3><br/>");
+
+        // What happens when we use two negative numbers.
+        document.write("<h3>substring( -7, -3 ) :"+numbers.substring( -7, -3 )+"</h3><br/>");
+
+        // What happens when we omit the last argument.
+        document.write("<h3>substring( 3 ) :"+numbers.substring( 3 )+"</h3><br/>");
+
+        // And with the negative, end-relevant index.
+        document.write("<h3>substring( -7 ) :"+numbers.substring( -7 )+"</h3><br/>");
+
+        // If the index is out of range, it returns the empty string.
+        document.write("<h3>substring( 100, 101 ) :"+numbers.substring( 100, 101 )+"</h3><br/>");
+
+
+        // -------------------------------------------------- //
+        // -------------------------------------------------- //
+
+
+        // String.substr( start, length )
+
+        // Let's start by using both start and length
+        document.write("<h3>substr( 3, 4 ) :"+numbers.substr( 3, 4 )+"</h3><br/>");
+
+        // What happens when we start with a negative number.
+        document.write("<h3>substr( -7, 4 ) :"+numbers.substr( -7, 4 )+"</h3><br/>");
+
+        // What happens when we omit the last argument.
+        document.write("<h3>substr( 3 ) :"+numbers.substr( 3 )+"</h3><br/>");
+
+        // And with the negative, end-relevant index.
+        document.write("<h3>substr( -7 ) :"+numbers.substr( -7 )+"</h3><br/>");
+
+        // If the index is out of range, it returns the empty string.
+        document.write("<h3>substr( 100, 1 ) :", numbers.substr( 100, 1 )+"</h3><br/>");
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

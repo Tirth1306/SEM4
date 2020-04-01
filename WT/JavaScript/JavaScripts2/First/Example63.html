@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>localeCompare example</title>
+    <script>
+        var str1 = new String( "This is beautiful string" );
+        var index = str1.localeCompare( "XYZ" );
+        document.write("localeCompare first :" + index );
+
+        document.write("<br />" );
+
+        var index = str1.localeCompare( "AbCD ?" );
+        document.write("localeCompare second :" + index );
+	
+	str1="AbCD ?";
+        var index1 = str1.localeCompare( "AbCD ?" );
+        document.write("localeCompare second :" + index1 );
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

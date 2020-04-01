@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Regular expression example</title>
+</head>
+<body>
+    Roll no : <input type="text" id="rollno"><br/>
+    Pin no <input type="text" id="pin"><br/>
+    Email address <input type="text" id="mailid"><br/>
+    web address<input type="text" id="webadd"><br/>
+    <input type="button" onclick="check()" value="CLICK ME">
+<script>
+    function check() {
+        var roll = document.getElementById("rollno").value;
+        var pinno = document.getElementById("pin").value;
+        var checkmail =document.getElementById("mailid").value;
+        var checkadd = document.getElementById("webadd").value;
+        var pattern = /^[0-9]{2}[BIT|BCE]{3}[0-9]{3}/gmi;
+        var pinpattern = /^[0-9]{6}/gmi;
+        var mailpattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/gmi;
+        var webpattern =  /^(((ht|f){1}((tp|tps){1}:[/][/]){1})|((www.){1}))?([a-z0-9\-]+\.)?[a-z0-9\-]+\.[a-z0-9]{2,4}(\.[a-z0-9]{2,4})?(\/.*)?$/gmi;
+        var result = roll.match(pattern);
+        var result1 = pinno.match(pinpattern);
+        var result2 = checkmail.match(mailpattern);
+        var result3 = checkadd.match(webpattern);
+        //RETURN NULL IF ROLL AND PATTERN IS NOT MATCH.
+        document.write(result+"<br/>");
+        document.write(result1+"<br/>");
+        document.write(result2+"<br/>");
+        document.write(result3+"<br/>");
+
+        //If you want to work on 4 digit domain, for example .info then you must change w{2,3} to w{2,4}.
+    }
+</script>
+</body>
+</html>

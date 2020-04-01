@@ -1,0 +1,4 @@
+/home/shrey/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/193.6911.21/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /media/shrey/Data/SEM4/OS/Operating-System-CS356-Project-2-master
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /media/shrey/Data/SEM4/OS/Operating-System-CS356-Project-2-master/cmake-build-debug

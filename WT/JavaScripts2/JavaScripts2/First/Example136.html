@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Location example</title>
+</head>
+<body>
+ <script>
+     document.write("Page location : " + window.location.href +"<br/>");
+     document.write("Hostname : " + window.location.hostname+"<br/>");
+     document.write("Pathname : " + window.location.pathname+"<br/>");
+     document.write("Protocol : " + window.location.protocol+"<br/>");
+     function newDoc() {
+         window.location.assign("http://www.w3schools.com")
+     }
+ </script>
+ <input type="button" value="Load new document" onclick="newDoc()">
+</body>
+</html>

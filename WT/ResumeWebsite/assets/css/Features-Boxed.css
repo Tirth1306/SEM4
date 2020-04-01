@@ -1,0 +1,134 @@
+.features-boxed {
+  color: #313437;
+  background-color: #eef4f7;
+}
+
+.features-boxed p {
+  color: #7d8285;
+}
+
+.features-boxed h2 {
+  font-weight: bold;
+  margin-bottom: 40px;
+  padding-top: 40px;
+  color: inherit;
+}
+
+@media (max-width:767px) {
+  .features-boxed h2 {
+    margin-bottom: 25px;
+    padding-top: 25px;
+    font-size: 24px;
+  }
+}
+
+.features-boxed .intro {
+  font-size: 16px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.features-boxed .intro p {
+  margin-bottom: 0;
+}
+
+.features-boxed .features {
+  height: 45%;
+  padding: 50px 0;
+}
+
+.features-boxed .item {
+  height: 100%;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+.features-boxed .item .box {
+  height: 100%;
+  text-align: center;
+  color: #ffffff;
+}
+
+.features-boxed .item .box:hover {
+  border-radius: 20px;
+  height: 100%;
+  text-align: center;
+  background-color: rgba(20,133,238,0.1);
+  color: #1485ee;
+}
+
+.features-boxed .item .icon {
+  font-size: 60px;
+  color: #1485ee;
+  margin-bottom: 35px;
+}
+
+.features-boxed .item .name {
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 8px;
+  margin-top: 0;
+  color: inherit;
+}
+
+.features-boxed .item .description {
+  font-size: 15px;
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+
+#ExtraCurricular {
+  height: 100vh;
+  width: 100%;
+}
+
+.WorkHeading {
+  font-size: 1.9rem;
+}
+
+.ExtraAct:hover {
+  border-radius: 25px;
+  height: 250px;
+  background-color: rgba(255,236,136,0.03);
+  color: rgb(228,201,86);
+}
+
+.ExtraAct {
+  height: 250px;
+  transition: background-color 0.5s;
+}
+
+#HeadingOfExtraCurri:hover {
+  color: rgb(228,201,86);
+}
+
+.edu {
+  height: 25%;
+}
+
+@media (min-width: 768px) {
+  .skill-row {
+    margin-bottom: 20px;
+    height: 147px;
+  }
+}
+
+@media (min-width: 576px) {
+  .skill-row {
+    margin-bottom: 20px;
+    height: 147px;
+  }
+}
+
+.col-md-4.skill-box:hover {
+  border-radius: 20px;
+  color: rgb(255,255,255);
+  background-color: rgba(0,128,255,0.16);
+}
+
+.col-md-4.skill-box {
+  border-radius: 20px;
+  color: rgb(0,128,255);
+  transition: background-color 0.5s;
+}
+

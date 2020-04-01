@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<!-- saved from url=(0061)http://tympanus.net/codrops/css_reference/border-image-slice/ -->
+<html dir="ltr" lang="en-US" class="js canvas fontface generatedcontent wf-proximanova-n7-active wf-brandongrotesque-n7-active wf-proximanova-i7-active wf-proximanova-n4-active wf-proximanova-i4-active wf-active"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script type="text/javascript" src="./border-image-slice _ Codrops CSS Reference_files/1caac07779"></script><script src="./border-image-slice _ Codrops CSS Reference_files/nr-974.min.js"></script><script src="./border-image-slice _ Codrops CSS Reference_files/cb=gapi.loaded_0" async=""></script><script type="text/javascript" async="" src="./border-image-slice _ Codrops CSS Reference_files/ga.js"></script><script async="" src="./border-image-slice _ Codrops CSS Reference_files/fbds.js"></script><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"VwIGV1JTGwIJUVZVAwc="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o||e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e,n){function r(t){try{s.console&&console.log(t)}catch(e){}}var o,i=t("ee"),a=t(15),s={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(s.console=!0,o.indexOf("dev")!==-1&&(s.dev=!0),o.indexOf("nr_dev")!==-1&&(s.nrDev=!0))}catch(c){}s.nrDev&&i.on("internal-error",function(t){r(t.stack)}),s.dev&&i.on("fn-err",function(t,e,n){r(n.stack)}),s.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(s,function(t,e){return t}).join(", ")))},{}],2:[function(t,e,n){function r(t,e,n,r,o){try{d?d-=1:i("err",[o||new UncaughtException(t,e,n)])}catch(s){try{i("ierr",[s,(new Date).getTime(),!0])}catch(c){}}return"function"==typeof f&&f.apply(this,a(arguments))}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function o(t){i("err",[t,(new Date).getTime()])}var i=t("handle"),a=t(16),s=t("ee"),c=t("loader"),f=window.onerror,u=!1,d=0;c.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(l){"stack"in l&&(t(8),t(7),"addEventListener"in window&&t(5),c.xhrWrappable&&t(9),u=!0)}s.on("fn-start",function(t,e,n){u&&(d+=1)}),s.on("fn-err",function(t,e,n){u&&(this.thrown=!0,o(n))}),s.on("fn-end",function(){u&&!this.thrown&&d>0&&(d-=1)}),s.on("internal-error",function(t){i("ierr",[t,(new Date).getTime(),!0])})},{}],3:[function(t,e,n){t("loader").features.ins=!0},{}],4:[function(t,e,n){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var o=t("ee"),i=t("handle"),a=t(8),s=t(7),c="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",l="resource",p="-start",h="-end",m="fn"+p,w="fn"+h,v="bstTimer",y="pushState";t("loader").features.stn=!0,t(6);var g=NREUM.o.EV;o.on(m,function(t,e){var n=t[0];n instanceof g&&(this.bstStart=Date.now())}),o.on(w,function(t,e){var n=t[0];n instanceof g&&i("bst",[n,e,this.bstStart,Date.now()])}),a.on(m,function(t,e,n){this.bstStart=Date.now(),this.bstType=n}),a.on(w,function(t,e){i(v,[e,this.bstStart,Date.now(),this.bstType])}),s.on(m,function(){this.bstStart=Date.now()}),s.on(w,function(t,e){i(v,[e,this.bstStart,Date.now(),"requestAnimationFrame"])}),o.on(y+p,function(t){this.time=Date.now(),this.startPath=location.pathname+location.hash}),o.on(y+h,function(t){i("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+c]?window.performance[f](u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["c"+c]()},!1):window.performance[f]("webkit"+u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["webkitC"+c]()},!1)),document[f]("scroll",r,!1),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],5:[function(t,e,n){function r(t){for(var e=t;e&&!e.hasOwnProperty(u);)e=Object.getPrototypeOf(e);e&&o(e)}function o(t){s.inPlace(t,[u,d],"-",i)}function i(t,e){return t[1]}var a=t("ee").get("events"),s=t(17)(a),c=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";e.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,e){if(t[1]){var n=t[1];if("function"==typeof n){var r=c(n,"nr@wrapped",function(){return s(n,"fn-",null,n.name||"anonymous")});this.wrapped=t[1]=r}else"function"==typeof n.handleEvent&&s.inPlace(n,["handleEvent"],"fn-")}}),a.on(d+"-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{}],6:[function(t,e,n){var r=t("ee").get("history"),o=t(17)(r);e.exports=r,o.inPlace(window.history,["pushState","replaceState"],"-")},{}],7:[function(t,e,n){var r=t("ee").get("raf"),o=t(17)(r),i="equestAnimationFrame";e.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],8:[function(t,e,n){function r(t,e,n){t[0]=a(t[0],"fn-",null,n)}function o(t,e,n){this.method=n,this.timerDuration="number"==typeof t[1]?t[1]:0,t[0]=a(t[0],"fn-",this,n)}var i=t("ee").get("timer"),a=t(17)(i),s="setTimeout",c="setInterval",f="clearTimeout",u="-start",d="-";e.exports=i,a.inPlace(window,[s,"setImmediate"],s+d),a.inPlace(window,[c],c+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(c+u,r),i.on(s+u,o)},{}],9:[function(t,e,n){function r(t,e){d.inPlace(e,["onreadystatechange"],"fn-",s)}function o(){var t=this,e=u.context(t);t.readyState>3&&!e.resolved&&(e.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,w,"fn-",s)}function i(t){v.push(t),h&&(g=-g,b.data=g)}function a(){for(var t=0;t<v.length;t++)r([],v[t]);v.length&&(v=[])}function s(t,e){return e}function c(t,e){for(var n in t)e[n]=t[n];return e}t(5);var f=t("ee"),u=f.get("xhr"),d=t(17)(u),l=NREUM.o,p=l.XHR,h=l.MO,m="readystatechange",w=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],v=[];e.exports=u;var y=window.XMLHttpRequest=function(t){var e=new p(t);try{u.emit("new-xhr",[e],e),e.addEventListener(m,o,!1)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}return e};if(c(p,y),y.prototype=p.prototype,d.inPlace(y.prototype,["open","send"],"-xhr-",s),u.on("send-xhr-start",function(t,e){r(t,e),i(e)}),u.on("open-xhr-start",r),h){var g=1,b=document.createTextNode(g);new h(a).observe(b,{characterData:!0})}else f.on("fn-end",function(t){t[0]&&t[0].type===m||a()})},{}],10:[function(t,e,n){function r(t){var e=this.params,n=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<d;r++)t.removeEventListener(u[r],this.listener,!1);if(!e.aborted){if(n.duration=(new Date).getTime()-this.startTime,4===t.readyState){e.status=t.status;var i=o(t,this.lastSize);if(i&&(n.rxSize=i),this.sameOrigin){var a=t.getResponseHeader("X-NewRelic-App-Data");a&&(e.cat=a.split(", ").pop())}}else e.status=0;n.cbTime=this.cbTime,f.emit("xhr-done",[t],t),s("xhr",[e,n,this.startTime])}}}function o(t,e){var n=t.responseType;if("json"===n&&null!==e)return e;var r="arraybuffer"===n||"blob"===n||"json"===n?t.response:t.responseText;return h(r)}function i(t,e){var n=c(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}var a=t("loader");if(a.xhrWrappable){var s=t("handle"),c=t(11),f=t("ee"),u=["load","error","abort","timeout"],d=u.length,l=t("id"),p=t(14),h=t(13),m=window.XMLHttpRequest;a.features.xhr=!0,t(9),f.on("new-xhr",function(t){var e=this;e.totalCbs=0,e.called=0,e.cbTime=0,e.end=r,e.ended=!1,e.xhrGuids={},e.lastSize=null,p&&(p>34||p<10)||window.opera||t.addEventListener("progress",function(t){e.lastSize=t.loaded},!1)}),f.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),f.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),f.on("send-xhr-start",function(t,e){var n=this.metrics,r=t[0],o=this;if(n&&r){var i=h(r);i&&(n.txSize=i)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof e.onload))&&o.end(e)}catch(n){try{f.emit("internal-error",[n])}catch(r){}}};for(var a=0;a<d;a++)e.addEventListener(u[a],this.listener,!1)}),f.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),f.on("xhr-load-added",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),f.on("xhr-load-removed",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),f.on("addEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-added",[t[1],t[2]],e)}),f.on("removeEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-removed",[t[1],t[2]],e)}),f.on("fn-start",function(t,e,n){e instanceof m&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),f.on("fn-end",function(t,e){this.xhrCbStart&&f.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{}],11:[function(t,e,n){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname);var i=!e.protocol||":"===e.protocol||e.protocol===n.protocol,a=e.hostname===document.domain&&e.port===n.port;return r.sameOrigin=i&&(!e.hostname||a),r}},{}],12:[function(t,e,n){function r(){}function o(t,e,n){return function(){return i(t,[(new Date).getTime()].concat(s(arguments)),e?null:this,n),e?void 0:this}}var i=t("handle"),a=t(15),s=t(16),c=t("ee").get("tracer"),f=NREUM;"undefined"==typeof window.newrelic&&(newrelic=f);var u=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit"],d="api-",l=d+"ixn-";a(u,function(t,e){f[e]=o(d+e,!0,"api")}),f.addPageAction=o(d+"addPageAction",!0),e.exports=newrelic,f.interaction=function(){return(new r).get()};var p=r.prototype={createTracer:function(t,e){var n={},r=this,o="function"==typeof e;return i(l+"tracer",[Date.now(),t,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[Date.now(),r,o],n),o)try{return e.apply(this,arguments)}finally{c.emit("fn-end",[Date.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){p[e]=o(l+e)}),newrelic.noticeError=function(t){"string"==typeof t&&(t=new Error(t)),i("err",[t,(new Date).getTime()])}},{}],13:[function(t,e,n){e.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(e){return}}}},{}],14:[function(t,e,n){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),e.exports=r},{}],15:[function(t,e,n){function r(t,e){var n=[],r="",i=0;for(r in t)o.call(t,r)&&(n[i]=e(r,t[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],16:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(o<0?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=r},{}],17:[function(t,e,n){function r(t){return!(t&&"function"==typeof t&&t.apply&&!t[a])}var o=t("ee"),i=t(16),a="nr@original",s=Object.prototype.hasOwnProperty,c=!1;e.exports=function(t){function e(t,e,n,o){function nrWrapper(){var r,a,s,c;try{a=this,r=i(arguments),s="function"==typeof n?n(r,a):n||{}}catch(u){d([u,"",[r,a,o],s])}f(e+"start",[r,a,o],s);try{return c=t.apply(a,r)}catch(l){throw f(e+"err",[r,a,l],s),l}finally{f(e+"end",[r,a,c],s)}}return r(t)?t:(e||(e=""),nrWrapper[a]=t,u(t,nrWrapper),nrWrapper)}function n(t,n,o,i){o||(o="");var a,s,c,f="-"===o.charAt(0);for(c=0;c<n.length;c++)s=n[c],a=t[s],r(a)||(t[s]=e(a,f?s+o:o,i,s))}function f(e,n,r){if(!c){c=!0;try{t.emit(e,n,r)}catch(o){d([o,e,n,r])}c=!1}}function u(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){d([r])}for(var o in t)s.call(t,o)&&(e[o]=t[o]);return e}function d(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=o),e.inPlace=n,e.flag=a,e}},{}],ee:[function(t,e,n){function r(){}function o(t){function e(t){return t&&t instanceof r?t:t?s(t,a,i):i()}function n(n,r,o){t&&t(n,r,o);for(var i=e(o),a=l(n),s=a.length,c=0;c<s;c++)a[c].apply(i,r);var u=f[w[n]];return u&&u.push([v,n,r,i]),i}function d(t,e){m[t]=l(t).concat(e)}function l(t){return m[t]||[]}function p(t){return u[t]=u[t]||o(n)}function h(t,e){c(t,function(t,n){e=e||"feature",w[n]=e,e in f||(f[e]=[])})}var m={},w={},v={on:d,emit:n,get:p,listeners:l,context:e,buffer:h};return v}function i(){return new r}var a="nr@context",s=t("gos"),c=t(15),f={},u={},d=e.exports=o();d.backlog=f},{}],gos:[function(t,e,n){function r(t,e,n){if(o.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[e]=r,r}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){o.buffer([t],r),o.emit(t,e,n)}var o=t("ee").get("handle");e.exports=r,r.ee=o},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!g++){var t=y.info=NREUM.info,e=u.getElementsByTagName("script")[0];if(t&&t.licenseKey&&t.applicationID&&e){c(w,function(e,n){t[e]||(t[e]=n)});var n="https"===m.split(":")[0]||t.sslForHttp;y.proto=n?"https://":"http://",s("mark",["onload",a()],null,"api");var r=u.createElement("script");r.src=y.proto+t.agent,e.parentNode.insertBefore(r,e)}}}function o(){"complete"===u.readyState&&i()}function i(){s("mark",["domContent",a()],null,"api")}function a(){return(new Date).getTime()}var s=t("handle"),c=t(15),f=window,u=f.document,d="addEventListener",l="attachEvent",p=f.XMLHttpRequest,h=p&&p.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:p,REQ:f.Request,EV:f.Event,PR:f.Promise,MO:f.MutationObserver},t(12);var m=""+location,w={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-974.min.js"},v=p&&h&&h[d]&&!/CriOS/.test(navigator.userAgent),y=e.exports={offset:a(),origin:m,features:{},xhrWrappable:v};u[d]?(u[d]("DOMContentLoaded",i,!1),f[d]("load",r,!1)):(u[l]("onreadystatechange",o),f[l]("onload",r)),s("mark",["firstbyte",a()],null,"api");var g=0},{}]},{},["loader",2,10,4,3]);</script><link rel="stylesheet" type="text/css" href="./border-image-slice _ Codrops CSS Reference_files/PYpdCoAgDIAvpEzpRHOOlNQNJ0S3j3zo8fuJcKu32rWxTyJXHacnbDwyTiAzsEQuftN6lLEw5q1_cgFI8hS1VbhzOHYeYjSrrhc.css" media="all">
+ 
+		
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>border-image-slice | Codrops CSS Reference</title>
+				<link rel="stylesheet" type="text/css" href="./border-image-slice _ Codrops CSS Reference_files/main.css">
+		<link rel="stylesheet" type="text/css" media="print" href="./border-image-slice _ Codrops CSS Reference_files/main_print.css">
+		<link rel="profile" href="http://gmpg.org/xfn/11">
+		
+		<script src="./border-image-slice _ Codrops CSS Reference_files/pdd7wbw.js"></script>
+		<style type="text/css">.tk-proxima-nova{font-family:"proxima-nova",sans-serif;}.tk-brandon-grotesque{font-family:"brandon-grotesque",sans-serif;}</style><style type="text/css">@font-face{font-family:proxima-nova;src:url(https://fonts.typekit.net/af/590c05/00000000000000000001499c/23/l?primer=fff1a989570eb474b8c22c57cc7199e63bfc7e911b750165d0199218f0b7e7cc&fvd=n7) format("woff2");font-weight:700;font-style:normal;}@font-face{font-family:proxima-nova;src:url(https://fonts.typekit.net/af/1f2c3f/0000000000000000000148a9/23/l?primer=fff1a989570eb474b8c22c57cc7199e63bfc7e911b750165d0199218f0b7e7cc&fvd=i7) format("woff2");font-weight:700;font-style:italic;}@font-face{font-family:proxima-nova;src:url(https://fonts.typekit.net/af/810327/0000000000000000000148a4/23/l?primer=fff1a989570eb474b8c22c57cc7199e63bfc7e911b750165d0199218f0b7e7cc&fvd=n4) format("woff2");font-weight:400;font-style:normal;}@font-face{font-family:proxima-nova;src:url(https://fonts.typekit.net/af/8e5830/0000000000000000000148a5/23/l?primer=fff1a989570eb474b8c22c57cc7199e63bfc7e911b750165d0199218f0b7e7cc&fvd=i4) format("woff2");font-weight:400;font-style:italic;}@font-face{font-family:brandon-grotesque;src:url(https://fonts.typekit.net/af/98e2c6/0000000000000000000132e3/23/l?subset_id=1&fvd=n7) format("woff2");font-weight:700;font-style:normal;}</style><script>try{Typekit.load();}catch(e){}</script>
+		
+		<script>
+			(function(){var e=window._fbq||(window._fbq=[]);if(!e.loaded){var t=document.createElement("script");t.async=true;t.src="//connect.facebook.net/en_US/fbds.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(t,n);e.loaded=true}})();window._fbq=window._fbq||[];window._fbq.push(["track","6024769872202",{value:"0.00",currency:"USD"}])
+		</script>
+		<noscript>&lt;img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/tr?ev=6024769872202&amp;amp;cd[value]=0.00&amp;amp;cd[currency]=USD&amp;amp;noscript=1" /&gt;</noscript>
+		
+		<link rel="shortcut icon" href="http://codropspz.tympanus.netdna-cdn.com/codrops/wp-content/themes/codropstheme03/favicons/favicon.ico">
+		<link rel="apple-touch-icon" sizes="57x57" href="http://codropspz.tympanus.netdna-cdn.com/codrops/wp-content/themes/codropstheme03/favicons/apple-touch-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="http://codropspz.tympanus.netdna-cdn.com/codrops/wp-content/themes/codropstheme03/favicons/apple-touch-icon-114x114.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="http://codropspz.tympanus.netdna-cdn.com/codrops/wp-content/themes/codropstheme03/favicons/apple-touch-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="http://codropspz.tympanus.netdna-cdn.com/codrops/wp-content/themes/codropstheme03/favicons/apple-touch-icon-144x144.png">
+		<link rel="apple-touch-icon" sizes="60x60" href="http://codropspz.tympanus.netdna-cdn.com/codrops/wp-content/themes/codropstheme03/favicons/apple-touch-icon-60x60.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="http://codropspz.tympanus.netdna-cdn.com/codrops/wp-content/themes/codropstheme03/favicons/apple-touch-icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="http://codropspz.tympanus.netdna-cdn.com/codrops/wp-content/themes/codropstheme03/favicons/apple-touch-icon-76x76.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="http://codropspz.tympanus.netdna-cdn.com/codrops/wp-content/themes/codropstheme03/favicons/apple-touch-icon-152x152.png">
+		<link rel="icon" type="image/png" href="http://codropspz.tympanus.netdna-cdn.com/codrops/wp-content/themes/codropstheme03/favicons/favicon-196x196.png" sizes="196x196">
+		<link rel="icon" type="image/png" href="http://codropspz.tympanus.netdna-cdn.com/codrops/wp-content/themes/codropstheme03/favicons/favicon-160x160.png" sizes="160x160">
+		<link rel="icon" type="image/png" href="http://codropspz.tympanus.netdna-cdn.com/codrops/wp-content/themes/codropstheme03/favicons/favicon-96x96.png" sizes="96x96">
+		<link rel="icon" type="image/png" href="http://codropspz.tympanus.netdna-cdn.com/codrops/wp-content/themes/codropstheme03/favicons/favicon-16x16.png" sizes="16x16">
+		<link rel="icon" type="image/png" href="http://codropspz.tympanus.netdna-cdn.com/codrops/wp-content/themes/codropstheme03/favicons/favicon-32x32.png" sizes="32x32">
+		<meta name="msapplication-TileColor" content="#2b5797">
+		<meta name="msapplication-TileImage" content="http://codropspz.tympanus.netdna-cdn.com/codrops/wp-content/themes/codropstheme03/favicons/mstile-144x144.png">
+		<meta name="msapplication-config" content="/codrops/wp-content/themes/codropstheme03/favicons/browserconfig.xml">
+					<!--single syntax highlighter-->
+			<link rel="stylesheet" type="text/css" href="./border-image-slice _ Codrops CSS Reference_files/cssref.css">
+			   
+		
+<!-- This site is optimized with the Yoast SEO plugin v3.4.2 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="border-image-slice explained on the Codrops CSS Reference">
+<meta name="robots" content="noodp">
+<link rel="canonical" href="http://tympanus.net/codrops/css_reference/border-image-slice/">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="border-image-slice | Codrops CSS Reference">
+<meta property="og:description" content="border-image-slice explained on the Codrops CSS Reference">
+<meta property="og:url" content="http://tympanus.net/codrops/css_reference/border-image-slice/">
+<meta property="og:site_name" content="Codrops">
+<meta property="article:publisher" content="https://www.facebook.com/pages/Codrops/159107397912">
+<meta property="fb:admins" content="508764091">
+<meta property="og:image" content="http://codropspz.tympanus.netdna-cdn.com/codrops/wp-content/uploads/2014/09/offsets-slices.jpg">
+<meta property="og:image" content="http://codropspz.tympanus.netdna-cdn.com/codrops/wp-content/uploads/2014/09/border-image-sliced.png">
+<meta property="og:image" content="http://codropspz.tympanus.netdna-cdn.com/codrops/wp-content/uploads/2014/09/border-img3.png">
+<!-- / Yoast SEO plugin. -->
+
+<link rel="dns-prefetch" href="http://s.w.org/">
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/tympanus.net\/codrops\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.6"}};
+			!function(a,b,c){function d(a){var c,d,e,f,g,h=b.createElement("canvas"),i=h.getContext&&h.getContext("2d"),j=String.fromCharCode;if(!i||!i.fillText)return!1;switch(i.textBaseline="top",i.font="600 32px Arial",a){case"flag":return i.fillText(j(55356,56806,55356,56826),0,0),!(h.toDataURL().length<3e3)&&(i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,65039,8205,55356,57096),0,0),c=h.toDataURL(),i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,55356,57096),0,0),d=h.toDataURL(),c!==d);case"diversity":return i.fillText(j(55356,57221),0,0),e=i.getImageData(16,16,1,1).data,f=e[0]+","+e[1]+","+e[2]+","+e[3],i.fillText(j(55356,57221,55356,57343),0,0),e=i.getImageData(16,16,1,1).data,g=e[0]+","+e[1]+","+e[2]+","+e[3],f!==g;case"simple":return i.fillText(j(55357,56835),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode8":return i.fillText(j(55356,57135),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode9":return i.fillText(j(55358,56631),0,0),0!==i.getImageData(16,16,1,1).data[0]}return!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i;for(i=Array("simple","flag","unicode8","diversity","unicode9"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script><script src="./border-image-slice _ Codrops CSS Reference_files/wp-emoji-release.min.js" type="text/javascript"></script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+
+
+<script type="text/javascript" src="./border-image-slice _ Codrops CSS Reference_files/jYxrCsMwDIMvlDQtO5HrmMRrXrUTxm6_BvpzsIGEQHwSVi-1qXs1ywXT8KTueekcJO87DP4B2cxBoNOSuZhtosq5JbJ7rQeXYBESFQ8yl7qjWd192yNlWh-zjxxiutyXBnj8QIaSfEWUQDB-AA.js"></script>
+<link rel="https://api.w.org/" href="http://tympanus.net/codrops/wp-json/">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://tympanus.net/codrops/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://tympanus.net/codrops/wp-includes/wlwmanifest.xml"> 
+<meta name="generator" content="WordPress 4.6">
+<link rel="shortlink" href="http://tympanus.net/codrops/?p=20326">
+<link rel="alternate" type="application/json+oembed" href="http://tympanus.net/codrops/wp-json/oembed/1.0/embed?url=http%3A%2F%2Ftympanus.net%2Fcodrops%2Fcss_reference%2Fborder-image-slice%2F">
+<link rel="alternate" type="text/xml+oembed" href="http://tympanus.net/codrops/wp-json/oembed/1.0/embed?url=http%3A%2F%2Ftympanus.net%2Fcodrops%2Fcss_reference%2Fborder-image-slice%2F&amp;format=xml">
+		<script type="text/javascript">
+			  var _gaq = _gaq || [];
+			  _gaq.push(['_setAccount', 'UA-7243260-2']);
+			  _gaq.push(['_trackPageview']);
+
+			  (function() {
+				var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+			  })();
+		</script>
+
+				<script type="text/javascript" src="./border-image-slice _ Codrops CSS Reference_files/modernizr.custom.70736.js"></script>
+		<!--[if lt IE 9 ]>
+			<script type="text/javascript" src="http://codropspz.tympanus.netdna-cdn.com/codrops/wp-content/themes/codropstheme03/js/css3-mediaqueries.js"></script>
+			<link rel="stylesheet" href="http://codropspz.tympanus.netdna-cdn.com/codrops/wp-content/themes/codropstheme03/css/ie.css"/>
+		<![endif]-->
+		<!--[if lt IE 8 ]>
+			<script type="text/javascript" src="http://codropspz.tympanus.netdna-cdn.com/codrops/wp-content/themes/codropstheme03/js/iconfonts.js"></script>
+		<![endif]-->
+		<noscript>
+			
+		</noscript>
+		<script type="application/ld+json">
+		{
+		  "@context": "http://schema.org",
+		  "@type": "WebSite",
+		  "url": "http://tympanus.net/codrops/",
+		  "potentialAction": {
+		    "@type": "SearchAction",
+		    "target": "http://tympanus.net/codrops/?s={search_term_string}",
+		    "query-input": "required name=search_term_string"
+		  }
+		}
+		</script>
+	<script type="text/javascript" async="" src="./border-image-slice _ Codrops CSS Reference_files/bsa.js"></script><script type="text/javascript" id="_bsap_js_af25dfd2f1908889af7a1aa5f4dcbd9e" src="./border-image-slice _ Codrops CSS Reference_files/s_af25dfd2f1908889af7a1aa5f4dcbd9e.js" async="async"></script><script type="text/javascript" src="./border-image-slice _ Codrops CSS Reference_files/pro.js" id="_bsap_premium_pro"></script><script type="text/javascript" id="_bsaPRO_js" src="./border-image-slice _ Codrops CSS Reference_files/saved_resource" async="async"></script></head>
+	<body id="codrops-body">
+				<!-- BuySellAds.com Ad Code -->
+		<script type="text/javascript">
+			(function(){
+				var bsa = document.createElement('script');
+				bsa.type = 'text/javascript';
+				bsa.async = true;
+				bsa.src = '//s3.buysellads.com/ac/bsa.js';
+				(document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(bsa);
+			})();
+		</script>
+		<!-- END BuySellAds.com Ad Code -->	
+				<div class="ct-container">
+			<header class="ct-header">
+				<div class="ct-inner ct-cf">
+
+											<div class="ct-branding">
+							<a class="ct-logo" href="http://tympanus.net/codrops" rel="home">Codrops</a>
+						</div>
+					
+					<div class="ct-nav-wrapper">
+						<nav class="ct-nav-main">
+						   <ul>
+								<li><a href="http://tympanus.net/codrops/category/tutorials/">Tutorials</a></li>
+								<li><a href="http://tympanus.net/codrops/category/playground/">Playground</a></li>
+								<li><a href="http://tympanus.net/codrops/category/blueprints/">Blueprints</a></li>
+								<li><a href="http://tympanus.net/codrops/collective/">Collective</a></li>
+								<li><a href="http://tympanus.net/codrops/css_reference/">CSS Reference</a></li>
+							</ul>
+						</nav>
+					</div>
+
+					<div class="ct-header-items-right ct-cf">
+						<div class="ct-search" id="ct-search">
+							<form method="get" id="searchform" action="http://tympanus.net/codrops/">
+								<div class="ct-search-input-wrap">
+									<span class="twitter-typeahead" style="position: relative; display: inline-block;"><input class="tt-hint" type="text" autocomplete="off" spellcheck="off" disabled="" style="position: absolute; top: 0px; left: 0px; border-color: transparent; box-shadow: none; background: none 0% 0% / auto repeat scroll padding-box border-box rgb(255, 255, 255);"><input class="ct-search-input tt-query" placeholder="Search on Codrops..." type="text" value="" name="s" id="s" autocomplete="off" spellcheck="false" dir="auto" style="position: relative; vertical-align: top; background-color: transparent;"><span style="position: absolute; left: -9999px; visibility: hidden; white-space: nowrap; font-family: proxima-nova, &quot;Proxima Nova&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 13px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: bold; word-spacing: 0px; letter-spacing: 0px; text-indent: 0px; text-rendering: auto; text-transform: none;"></span><span class="tt-dropdown-menu" style="position: absolute; top: 100%; left: 0px; z-index: 100; display: none;"></span></span>
+								</div>
+								<input type="hidden" name="search-type" value="posts">
+								<input class="ct-search-submit" type="submit" id="go" value=""><span class="ct-icon-search"></span>
+							</form>
+						</div>
+						<ul class="ct-connect">
+							<li><a class="ct-icon-feed" href="http://feeds2.feedburner.com/tympanus"><span>Rss Feed</span></a></li>
+							<li><a class="ct-icon-mail" href="http://feedburner.google.com/fb/a/mailverify?uri=tympanus&amp;loc=en_US"><span>Email Updates</span></a></li>
+							<li><a class="ct-icon-twitter" href="http://www.twitter.com/codrops"><span>Codrops on Twitter</span></a></li>
+							<li><a class="ct-icon-facebook" href="http://www.facebook.com/pages/Codrops/159107397912"><span>Codrops on Facebook</span></a></li>
+							<li><a class="ct-icon-google-plus" href="https://plus.google.com/101095823814290637419" rel="publisher"><span>Codrops on Google+</span></a></li>
+						    <li><a class="ct-icon-github" href="https://github.com/codrops"><span>Codrops on Github</span></a></li>
+						</ul>
+					</div><!--/ct-header-items-right-->
+
+				</div><!-- ct-inner -->
+			</header><div class="ct-content">
+    <div class="ct-inner">		
+										<div class="ct-main ct-main-post ct-cssref" id="ct-main" role="main">
+					<div class="ct-post">
+						<article id="post-20326" class="post-20326 css_reference type-css_reference status-publish format-standard hentry css-type-css-property">
+							<header>
+								<div class="ct-cssref-header-inner ct-cssref-header-inner--css-property">
+									<span class="ct-cssref-head ct-cssref-head--css-property">
+										<a href="http://tympanus.net/codrops/css_reference/">CSS Reference</a>
+										<span class="ct-cssref-type">Property</span>									</span>
+									<div class="ct-cssref-title" data-title="border-image-slice">
+										<h1>border-image-slice</h1>
+									</div>
+									<div class="clr"></div>
+								</div>
+								<div class="ct-cssref-headerbar">
+									<div class="ct-cssref-search">
+										<div class="ct-cssref-searchinput">
+											<form method="get" id="searchform-cssref" action="http://tympanus.net/codrops/">
+												<span class="ct-icon-search"></span>
+												<span class="twitter-typeahead" style="position: relative; display: inline-block;"><input class="tt-hint" type="text" autocomplete="off" spellcheck="off" disabled="" style="position: absolute; top: 0px; left: 0px; border-color: transparent; box-shadow: none; background: none 0% 0% / auto repeat scroll padding-box border-box rgb(75, 94, 115);"><input placeholder="e.g. mask-image" type="text" value="" name="s" id="s2" class="tt-query" autocomplete="off" spellcheck="false" dir="auto" style="position: relative; vertical-align: top; background-color: transparent;"><span style="position: absolute; left: -9999px; visibility: hidden; white-space: nowrap; font-family: proxima-nova, &quot;Proxima Nova&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 14.4px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: bold; word-spacing: 0px; letter-spacing: 0px; text-indent: 0px; text-rendering: auto; text-transform: none;"></span><span class="tt-dropdown-menu" style="position: absolute; top: 100%; left: 0px; z-index: 100; display: none;"></span></span>
+												<input type="hidden" name="search-type" value="css_reference">
+												<input type="submit" value="">
+											</form>
+										</div>
+									</div>
+									<nav class="ct-cssref-related">
+																					<span class="ct-cssref-related__title">See also</span>
+										
+																						<a href="http://tympanus.net/codrops/css_reference/border-image-repeat/">border-image-repeat</a>
+																							<a href="http://tympanus.net/codrops/css_reference/border-image-width/">border-image-width</a>
+																							<a href="http://tympanus.net/codrops/css_reference/border-image-source/">border-image-source</a>
+																				</nav>
+								</div>
+							</header>
+							<div class="ct-post-content">
+																<div class="ct-cssref-description">
+<p>
+                    The <code>border-image-slice</code> property is used to “slice” the image which is to be used as a border image into nine pieces: four corners, four edges, and one center piece.
+                </p>
+<p>
+                    The size of the nine pieces is determined based on the top, right, bottom, and left offsets of four imaginary lines that are offsetted inwards from the edges of the element. The offsets can be specified using absolute <a href="http://tympanus.net/codrops/css_reference/length"><code>&lt;number&gt;</code></a> values or <a href="http://tympanus.net/codrops/css_reference/percentage"><code>&lt;percentage&gt;</code></a> values. The four offsets don’t have to be equal.
+                </p>
+<figure id="attachment_20330" aria-describedby="figcaption_attachment_20330" class="wp-caption alignnone" itemscope="" itemtype="http://schema.org/ImageObject" style="width: 814px"><img itemprop="contentURL" src="./border-image-slice _ Codrops CSS Reference_files/offsets-slices.jpg" alt="The nine pieces of an image which is to be used as a border image. The four lines cutting the image into pieces are offsetted by top, right, bottom, and left offsets inwards." width="814" height="653" class="size-full wp-image-20330" srcset="http://codropspz.tympanus.netdna-cdn.com/codrops/wp-content/uploads/2014/09/offsets-slices.jpg 814w, http://tympanus.net/codrops/wp-content/uploads/2014/09/offsets-slices-300x240.jpg 300w" sizes="(max-width: 814px) 100vw, 814px"><figcaption id="figcaption_attachment_20330" class="wp-caption-text" itemprop="description">The nine pieces of an image which is to be used as a border image. The four lines cutting the image into pieces are offsetted by top, right, bottom, and left offsets inwards.</figcaption></figure>
+<p>
+                    For example, the following image has been sliced into 9 pieces. The top, right, bottom, and left offsets have an equal value of 124px.
+                </p>
+<figure id="attachment_20328" aria-describedby="figcaption_attachment_20328" class="wp-caption alignnone" itemscope="" itemtype="http://schema.org/ImageObject" style="width: 631px"><img itemprop="contentURL" src="./border-image-slice _ Codrops CSS Reference_files/border-image-sliced.png" alt="The nine pieces of an image which is to be used as a border image." width="631" height="435" class="size-full wp-image-20328" srcset="http://codropspz.tympanus.netdna-cdn.com/codrops/wp-content/uploads/2014/09/border-image-sliced.png 631w, http://tympanus.net/codrops/wp-content/uploads/2014/09/border-image-sliced-300x206.png 300w" sizes="(max-width: 631px) 100vw, 631px"><figcaption id="figcaption_attachment_20328" class="wp-caption-text" itemprop="description">The nine pieces of an image which is to be used as a border image.</figcaption></figure>
+<p>
+                    The <code>border-image-slice</code> property can take four, three, two, or one offset values.
+                </p>
+<p>
+                    When four values are specified, they set the offsets on the top, right, bottom and left sides in that order. If three values are specified, the first one specifies the top offset, the second one specifies the right and left offsets, and the third one specifies the bottom offset. If two values are specified, the first one specifies the top and bottom offsets, and the second one specifies the right and left offsets. If one value is specified, it specifies all the four offsets.
+                </p>
+<p>
+                    The corner pieces of the sliced image will be placed at the corners of the element to which it is going to be applied. The edges of the sliced images will be placed on the edges of the element. The <a href="http://tympanus.net/codrops/css_reference/border-image-repeat"><code>border-image-repeat</code></a> property specifies <em>how</em> the image edges will be applied to the element’s edges. The size of these slices and position is specified using the <a href="http://tympanus.net/codrops/css_reference/border-image-width"><code>border-image-width</code></a> and <a href="http://tympanus.net/codrops/css_reference/border-image-outset"><code>border-image-outset</code></a> properties. <strong>You can read more about how these properties work together in the <a href="http://tympanus.net/codrops/css_reference/border-image"><code>border-image</code></a> shorthand property entry</strong>.
+                </p>
+<p>
+                    The middle image part is discarded (treated as fully transparent) unless the <code>fill</code> keyword is present in the <code>border-image-slice</code> property. If the <code>fill</code> keyword is present, the middle piece of the border image is used as a background image to the element. The <code>fill</code> keyword can be placed anywhere in the declaration of the <code>border-image-slice</code> property (before, after, or even between the other values).
+                </p>
+<p>
+                    The regions specified by the <code>border-image-slice</code> values may overlap. However, if the sum of the right and left widths is equal to or greater than the width of the image, the images for the top and bottom edge and the middle part are empty, which has the same effect as if a nonempty transparent image had been specified for those parts. Same is applied for the top and bottom values.
+                </p>
+<p></p></div>
+<div class="ct-cssref-info">
+<h2>Official Syntax</h2>
+<ul>
+<li>
+                       <strong>Syntax: </strong> <p></p>
+<pre class="brush:css hljs xml">border-image-slice: [<a href="http://tympanus.net/codrops/css_reference/number"><span class="hljs-tag">&lt;<span class="hljs-title">number</span>&gt;</span></a> | <a href="http://tympanus.net/codrops/css_reference/percentage"><span class="hljs-tag">&lt;<span class="hljs-title">percentage</span>&gt;</span></a>]{1,4} &amp;&amp; fill?
+                       </pre>
+</li>
+<li>
+                        <strong>Initial: </strong> 100%
+                    </li>
+<li>
+                       <strong>Applies To: </strong> All elements, except internal table elements when <a href="http://tympanus.net/codrops/css_reference/border-collapse"><code>border-collapse</code></a> is <code>collapse</code>
+                    </li>
+<li>
+                        <strong>Animatable: </strong> no
+                    </li>
+</ul></div>
+<div class="ct-cssref-values">
+<h2>Values</h2>
+<p>
+                    The informal syntax looks something like this:
+                </p>
+<pre class="brush:css hljs ini"><span class="hljs-setting">border-image-slice = <span class="hljs-value">[offset] [offset]? [offset]? [offset]? fill?</span></span>
+                </pre>
+<p>
+                    The question mark (?) indicates that the value is optional. When one offset is specified, it is used as a top, right, bottom, and left offset. When two offsets are specified, the first one represents the top and bottom offsets and the second one represents the right and left offsets. When three offsets are specified, the first represents the offset from the top, the second one represents the offset from the right and left, and the third one represents the bottom offset. When four offsets are specified, they represent the top, right, bottom, and left offsets, in that order.
+                </p>
+<p>
+                    Each offset is represented as a <a href="http://tympanus.net/codrops/css_reference/number"><code>&lt;number&gt;</code></a> or <a href="http://tympanus.net/codrops/css_reference/percentage"><code>&lt;percentage&gt;</code></a> value. <a href="http://tympanus.net/codrops/css_reference/length"><code>&lt;length&gt;</code></a> values are not allowed.
+                </p>
+<p>
+                    Percentage values are specified as percentages and thus require the ‘%’ sign after the numerical value. <strong>Number values do not take any unit.</strong> The number represents <em>pixels</em> for raster images and <em>coordinates</em> for vector images.
+                </p>
+<p>
+                    Negative offset values are not allowed. Percentage values are computed relative to the element’s height or width, whichever applied (left and right percentage offsets are computed relative to the element’s width and top and bottom percentage offsets are computed relative to the element’s height). If the percentage value specified is larger than ‘100%’, it is computed as if it were equal to ‘100%’.
+                </p>
+<dl>
+<dt>fill</dt>
+<dd>
+                        The <code>fill</code> keyword, if present, causes the middle part of the border image to be preserved and used as an additional background image on the element. (By default it is discarded, i.e., treated as empty.) The size of the middle part and its height are resized like those of the top and left image slices, respectively.
+                    </dd>
+</dl>
+<h3>Notes</h3>
+<p>
+                    The <code>border-image-slice</code> can also inherit its values from the computed values of the element’s parent, using the <code>inherit</code> keyword.
+                </p>
+<p></p></div>
+<div class="ct-cssref-examples">
+<h2>Examples</h2>
+<p>
+                    The following are valid <code>border-image-slice</code> declarations:
+                </p>
+<pre class="brush:css hljs scss"><span class="hljs-attribute">border-image-slice</span><span class="hljs-value">: <span class="hljs-number">20</span> fill;</span> <span class="hljs-comment">/* number is set without units. If the image used is a raster image, it will be considered a pixel value */</span>
+<span class="hljs-attribute">border-image-slice</span><span class="hljs-value">: <span class="hljs-number">30%</span> <span class="hljs-number">25%</span>;</span>
+<span class="hljs-attribute">border-image-slice</span><span class="hljs-value">: fill <span class="hljs-number">125</span> <span class="hljs-number">50</span> <span class="hljs-number">125</span>;</span>
+                </pre>
+<p></p></div>
+<div class="ct-cssref-demo">
+<h2>Live Demo</h2>
+<p>The mask border image used is the following:<br>
+<img src="./border-image-slice _ Codrops CSS Reference_files/border-img3.png" alt="border-img" width="81" height="81" class="alignnone size-full wp-image-20329"><br>
+ Play with the value of the <code>border-image-slice</code> property to see how that affects the slices of the image.</p>
+<iframe src="./border-image-slice _ Codrops CSS Reference_files/saved_resource.html" class="codrops-playground-embed" width="100%" height="400px" frameborder="0" scrolling="no" allowfullscreen="true" style="position: relative;"></iframe>
+</div>
+<div class="ct-cssref-support">
+<h2>Browser Support</h2>
+<p>                <iframe src="./border-image-slice _ Codrops CSS Reference_files/saved_resource(1).html"></iframe>
+            </p></div>
+<div class="ct-cssref-further-reading">
+<h2>Further Reading</h2>
+<ul>
+<li>
+                       <a href="http://www.w3.org/TR/css3-background/#border-image-slice">Backgrounds and Borders Module Level 3</a>
+                    </li>
+</ul></div>
+								<div class="related-posts">
+<div id="related-posts-MRP_all" class="related-posts-type">
+<h2>Related Entries</h2>
+<ul>
+<li><a href="http://tympanus.net/codrops/css_reference/border-image-repeat/">border-image-repeat</a></li>
+<li><a href="http://tympanus.net/codrops/css_reference/border-image-width/">border-image-width</a></li>
+<li><a href="http://tympanus.net/codrops/css_reference/border-image-source/">border-image-source</a></li>
+</ul></div>
+</div>		
+							</div>
+							<div class="ct-padded ct-talign-right"><a href="http://tympanus.net/codrops/css_reference/border-image-slice/#codrops-body" class="ct-back-top">Back to the top</a></div>
+							<footer>
+								<p><small>Last updated: February 4, 2015 at 2:33 pm</small></p>
+								<p>Do you have a suggestion, question or want to contribute? <a href="https://github.com/codrops/css-reference-issues">Submit an issue.</a></p>
+							</footer>
+						</article>
+						<div class="clr"></div>
+					</div>
+				</div>
+				<aside class="ct-sidebar">		
+	<div class="ct-ads">
+		<div class="ct-ads-info">
+			<h4>Advertisement</h4>
+			<a href="http://tympanus.net/codrops/advertise/" class="ct-advertise-here">
+				<i class="ct-icon-info"></i>
+				<span>Advertise Here</span>
+			</a>
+		</div>
+		<div id="bsap_1275127" class="bsap bsap_1275127" data-serve="CKYDK2Y"><a href="http://srv.buysellads.com/ads/click/x/GTND423UCVBI627NF6YLYKQWCA7DV2JYC6BDEZ3JCESI62QWCYBD4K7KC6BD5KJMCVSDTK3EHJNCLSIZ" class="ad0 odd " title="Get Amium" id="bsa_57860" target="_blank" rel="nofollow">
+<img src="./border-image-slice _ Codrops CSS Reference_files/332729-1472059768.jpg" width="300" height="250" alt=""></a>
+
+<div class="bsap_adhere">
+
+<a href="http://www.buysellads.com/buy/detail/17086/zone/1275127?utm_source=site_17086&amp;utm_medium=website&amp;utm_campaign=imagetext&amp;utm_content=zone_1275127" class="">Advertise Here</a>
+
+</div>
+
+
+<script type="text/javascript" id="auto_1" class="ignoreme"> if (typeof(BSACallback) !== 'undefined') BSACallback(); </script></div>
+		<div id="bsap_1243201" class="bsap bsap_1243201" data-serve="CKYDKKY">
+<style type="text/css">
+div.bsap_1243201{width:100%;display:block;}div.bsap_1243201 a{width:125px;}div.bsap_1243201 a img{padding:0;}div.bsap_1243201 a em{font-style:normal;}div.bsap_1243201 a{background: rgba(255, 255, 255, 0.5); padding: 10px;display:block;font-size:11px;color:#888;margin:0 10px 10px 0;text-align:center;text-decoration:none;overflow:hidden;float:left;}
+div.bsap_1243201 img{border:0;}
+div.bsap_1243201 a.adhere{color: #9DB0C1; text-transform: uppercase; font-size: 10px; text-align: center; background: rgba(255,255,255,0.5); line-height: 1200%; width: 125px; height: 125px;}
+div.bsap_1243201 a.adhere:hover{color: #7e95aa;}div.bsap_1243201 a{line-height:100%;}div.bsap_1243201 a.adhere{width:125px;height:125px;line-height:1000%;}html>body div.bsap_1243201 a.adhere{width:123px;height:123px;}div.bsap_1243201 img.s{height:0;width:0;}
+</style>
+<a href="http://srv.buysellads.com/ads/click/x/GTND423UCVBI627NFTSLYKQWCA7DPKQYFT7DCZ3JCESI62QUFTSI6K3KC6BD5KJMCVSDTK3EHJNCLSIZ" class="ad0 odd " title="X Theme" id="bsa_11287" target="_blank" rel="nofollow">
+<img src="./border-image-slice _ Codrops CSS Reference_files/246685-1416079804.png" width="125" height="125" alt=""></a><a href="http://srv.buysellads.com/ads/click/x/GTND423UCVBI627NFTSLYKQWCA7DPKQYFT7D6Z3JCESI62QYCYYIT5QKC6BD5KJMCVSDTK3EHJNCLSIZ" class="ad1  even" title="The Ultimate WordPress Theme" id="bsa_11286" target="_blank" rel="nofollow">
+<img src="./border-image-slice _ Codrops CSS Reference_files/289250-1442087157.png" width="125" height="125" alt=""></a><a href="http://srv.buysellads.com/ads/click/x/GTND423UCVBI627NFTSLYKQWCA7DV53WCYYD4Z3JCESI62QMCTYI62JKC6BD5KJMCVSDTK3EHJNCLSIZ" class="ad2 odd " title="Politist" id="bsa_41545" target="_blank" rel="nofollow">
+<img src="./border-image-slice _ Codrops CSS Reference_files/6127191-1468588671.jpg" width="125" height="125" alt=""></a><a href="http://srv.buysellads.com/ads/click/x/GTND423UCVBI627NFTSLYKQWCA7DV53WCYAIPZ3JCESI62QYCWADTKQKC6BD5KJMCVSDTK3EHJNCLSIZ" class="ad3  even" title="Premium Bootstrap templates" id="bsa_41959" target="_blank" rel="nofollow">
+<img src="./border-image-slice _ Codrops CSS Reference_files/307390-1452515240.jpg" width="125" height="125" alt=""></a><a href="http://srv.buysellads.com/ads/click/x/GTND423UCVBI627NFTSLYKQWCA7DPKQYFTYIEZ3JCESI62QYCVBDL2JKC6BD5KJMCVSDTK3EHJNCLSIZ" class="ad4 odd " title="PSD2HTML.com: Responsive HTML5/CSS3" id="bsa_11282" target="_blank" rel="nofollow">
+<img src="./border-image-slice _ Codrops CSS Reference_files/293176-1443799836.jpg" width="125" height="125" alt=""></a><a href="http://srv.buysellads.com/ads/click/x/GTND423UCVBI627NFTSLYKQWCA7DPKQYFTYIKZ3JCESI623YCKYIPKJKC6BD5KJMCVSDTK3EHJNCLSIZ" class="ad5  even" title="Brooklyn for WordPress, what else?" id="bsa_11280" target="_blank" rel="nofollow">
+<img src="./border-image-slice _ Codrops CSS Reference_files/266637-1429324335.jpg" width="125" height="125" alt=""></a><a href="http://srv.buysellads.com/ads/click/x/GTND423UCVBI627NFTSLYKQWCA7DV2JYFTYILZ3JCESI62QWCYBI6KJKC6BD5KJMCVSDTK3EHJNCLSIZ" class="ad6 odd " title="Motifmate : A hassle-free Shopify Desktop Theme Editor" id="bsa_57827" target="_blank" rel="nofollow">
+<img src="./border-image-slice _ Codrops CSS Reference_files/6972210-1472042402.png" width="125" height="125" alt=""></a><a href="http://srv.buysellads.com/ads/click/x/GTND423UCVBI627NFTSLYKQWCA7DV2JYFTSI6Z3JCESI62QMC67IC23KC6BD5KJMCVSDTK3EHJNCLSIZ" class="ad7  even" title="Use GoJS for flowcharts, org charts, mindmaps, ER diagrams and UML diagrams in HTML5 Canvas applications." id="bsa_57656" target="_blank" rel="nofollow">
+<img src="./border-image-slice _ Codrops CSS Reference_files/157600-1360868534.png" width="125" height="125" alt=""></a><!-- no ad --><a href="http://srv.buysellads.com/ads/click/x/GTND423UCVBI627NFTSLYKQWCA7DPKQYFTBD5Z3JCESI62QJCWYDC23KC6BD5KJMCVSDTK3EHJNCLSIZ" class="ad9 odd " title="Premium Website Templates &amp; WordPress Themes" id="bsa_11279" target="_blank" rel="nofollow">
+<img src="./border-image-slice _ Codrops CSS Reference_files/178447-1373139325.gif" width="125" height="125" alt=""></a>
+
+<a href="http://www.buysellads.com/buy/detail/17086/zone/1243201?utm_source=site_17086&amp;utm_medium=website&amp;utm_campaign=imagetext&amp;utm_content=zone_1243201" class="adhere">Advertise Here</a>
+
+
+<script type="text/javascript" id="auto_2" class="ignoreme"> if (typeof(BSACallback) !== 'undefined') BSACallback(); </script></div>
+		<div class="clr"></div>
+	</div>
+		
+	<div class="ct-widget-wrapper"> 
+
+				<div class="ct-widget ct-widget-deals">
+		    <h5>Check out our deals &amp; offers!</h5>
+		    <article>
+		        <div class="ct-latest-thumb">
+		            <a href="http://tympanus.net/codrops/deals/">
+		                <img src="./border-image-slice _ Codrops CSS Reference_files/gifticon.png" alt="Deals Thumbnail">
+		            </a>
+		        </div>
+		        <p><strong>Find great discounts for many useful services and resources on our <a href="http://tympanus.net/codrops/deals/">Deals &amp; Offers</a> page!</strong></p>
+		        <div class="clr"></div>
+		    </article>
+		</div>
+		
+
+									<div class="ct-widget ct-widget-coll">
+					<h5>Latest News:</h5>
+					                <article id="post-27839" class="post-27839 collective type-collective status-publish has-post-thumbnail hentry">
+					<h3><a href="http://tympanus.net/codrops/collective/collective-241/" class="">Collective #241</a></h3>
+                    <div class="ct-latest-thumb">
+                        <a href="http://tympanus.net/codrops/collective/collective-241/" class="ct-trans">
+                            <img width="200" height="259" src="./border-image-slice _ Codrops CSS Reference_files/Cover_Collective_241.png" class="attachment-collective-thumb size-collective-thumb wp-post-image" alt="Cover_Collective_241">                        </a>
+                    </div>
+					
+                    <p class="ct-feat-excerpt">
+                       Collective #241: Data Structures * Test262 * target="_blank" vulnerability * BlokDust * Markapp * in-view.js * Odoo * Re...
+                    </p>
+                    <div class="clr"></div>
+                </article>
+                            <article id="post-27821" class="post-27821 collective type-collective status-publish has-post-thumbnail hentry">
+					<h3><a href="http://tympanus.net/codrops/collective/collective-240/" class="">Collective #240</a></h3>
+                    <div class="ct-latest-thumb">
+                        <a href="http://tympanus.net/codrops/collective/collective-240/" class="ct-trans">
+                            <img width="200" height="259" src="./border-image-slice _ Codrops CSS Reference_files/Cover_Collective_240.png" class="attachment-collective-thumb size-collective-thumb wp-post-image" alt="Cover_Collective_240">                        </a>
+                    </div>
+					
+                    <p class="ct-feat-excerpt">
+                       The State Of JavaScript * Grade.js * Svgsus * JavaScript Battery API * React-music * Awesome Mac...
+                    </p>
+                    <div class="clr"></div>
+                </article>
+            				</div>
+									<div class="clr"></div>
+			
+		
+		<div class="ct-widget ct-widget-default">
+			<h5>Hot on Codrops:</h5>
+			                <article id="post-27094" class="post-27094 post type-post status-publish format-standard has-post-thumbnail hentry category-playground tag-3d tag-grid tag-isometric tag-masonry tag-perspective">
+					
+                    <div class="ct-latest-thumb">
+                        <a href="http://tympanus.net/codrops/2016/05/25/isometric-and-3d-grids/" class="ct-trans">
+                            <img width="105" height="105" src="./border-image-slice _ Codrops CSS Reference_files/IsometricGrids_Featured-105x105.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="IsometricGrids_Featured">                        </a>
+                    </div>
+					<h3><a href="http://tympanus.net/codrops/2016/05/25/isometric-and-3d-grids/" class="">Isometric and 3D Grids</a></h3>
+                   
+                    <div class="clr"></div>
+                </article>
+                            <article id="post-26866" class="post-26866 post type-post status-publish format-standard has-post-thumbnail hentry category-playground tag-button tag-distorted tag-effect tag-filter tag-svg">
+					
+                    <div class="ct-latest-thumb">
+                        <a href="http://tympanus.net/codrops/2016/05/11/distorted-button-effects-with-svg-filters/" class="ct-trans">
+                            <img width="105" height="105" src="./border-image-slice _ Codrops CSS Reference_files/DistortedButtonEffects_Featured-105x105.png" class="attachment-thumbnail size-thumbnail wp-post-image" alt="DistortedButtonEffects_Featured">                        </a>
+                    </div>
+					<h3><a href="http://tympanus.net/codrops/2016/05/11/distorted-button-effects-with-svg-filters/" class="">Distorted Button Effects with SVG Filters</a></h3>
+                   
+                    <div class="clr"></div>
+                </article>
+                            <article id="post-26950" class="post-26950 post type-post status-publish format-standard has-post-thumbnail hentry category-tutorials tag-animation tag-heat tag-shader tag-svg tag-webgl">
+					
+                    <div class="ct-latest-thumb">
+                        <a href="http://tympanus.net/codrops/2016/05/03/animated-heat-distortion-effects-webgl/" class="ct-trans">
+                            <img width="105" height="105" src="./border-image-slice _ Codrops CSS Reference_files/DistortionEffect_Featured-105x105.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="DistortionEffect_Featured">                        </a>
+                    </div>
+					<h3><a href="http://tympanus.net/codrops/2016/05/03/animated-heat-distortion-effects-webgl/" class="">Animated Heat Distortion Effects with WebGL</a></h3>
+                   
+                    <div class="clr"></div>
+                </article>
+                            <article id="post-25885" class="post-25885 post type-post status-publish format-standard has-post-thumbnail hentry category-playground tag-3d tag-perspective tag-preview tag-room">
+					
+                    <div class="ct-latest-thumb">
+                        <a href="http://tympanus.net/codrops/2016/01/12/cinema-seat-preview-experiment/" class="ct-trans">
+                            <img width="105" height="105" src="./border-image-slice _ Codrops CSS Reference_files/CinemaSeatPreviewExperiment-105x105.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="CinemaSeatPreviewExperiment">                        </a>
+                    </div>
+					<h3><a href="http://tympanus.net/codrops/2016/01/12/cinema-seat-preview-experiment/" class="">Cinema Seat Preview Experiment</a></h3>
+                   
+                    <div class="clr"></div>
+                </article>
+            					</div>
+		
+	</div>
+
+	<div class="ct-ads">
+		<div class="ct-ads-info">
+			<h4>Advertisement</h4>
+			<a href="http://tympanus.net/codrops/advertise/" class="ct-advertise-here">
+				<i class="ct-icon-info"></i>
+				<span>Advertise Here</span>
+			</a>
+		</div>
+		<div id="bsap_1298539" class="bsap bsap_1298539" data-serve="CKYD5KE"><iframe width="300" height="250" id="ad_1298539_backfill1_frame" src="./border-image-slice _ Codrops CSS Reference_files/raw_534b2354ecbc955d765be7a12fef9c76.html" frameborder="0" class="bsap_adframe" scrolling="no"></iframe>
+
+<script type="text/javascript" id="auto_3" class="ignoreme"> if (typeof(_bsap_serving_callback) !== 'undefined') _bsap_serving_callback(48208, 'CKYD5KE', ''); </script>
+<script type="text/javascript" id="auto_4" class="ignoreme"> if (typeof(BSACallback) !== 'undefined') BSACallback(); </script></div>
+	</div>
+
+    		
+    	<div class="clr"></div>
+</aside>
+
+				<div class="clr"></div>
+				<script type="text/javascript" src="./border-image-slice _ Codrops CSS Reference_files/plusone.js" gapi_processed="true"></script>
+		    </div>
+</div>
+		<footer class="ct-footer">
+			
+			<div class="ct-inner ct-cf">
+				<nav class="ct-cf">
+					<ul>
+						<li><a href="http://tympanus.net/codrops/category/tutorials/">Tutorials</a></li>
+						<li><a href="http://tympanus.net/codrops/category/articles/">Articles</a></li>
+						<li><a href="http://tympanus.net/codrops/category/playground/">Playground</a></li>
+						<li><a href="http://tympanus.net/codrops/category/blueprints/">Blueprints</a></li>
+						<li><a href="http://tympanus.net/codrops/css_reference/">CSS Reference</a></li>
+					</ul>
+					<ul>
+						<li><a href="http://tympanus.net/codrops/category/news/">News</a></li>
+						<li><a href="http://tympanus.net/codrops/category/giveaways/">Giveaways</a></li>
+						<li><a href="http://tympanus.net/codrops/category/freebies/">Freebies</a></li>
+						<li><a href="http://tympanus.net/codrops/collective/">Collective</a></li>
+					</ul>
+					<ul>
+						<li><a href="http://tympanus.net/codrops/about/">About</a></li>
+						<li><a href="http://tympanus.net/codrops/contact/">Contact</a></li>
+						<li><a href="http://tympanus.net/codrops/archives/">Archives</a></li>
+						<li><a href="http://tympanus.net/codrops/deals/">Deals</a></li>
+						<li><a href="http://tympanus.net/codrops/advertise/">Advertise</a></li>
+					</ul>
+					<ul>
+						<li><a href="http://tympanus.net/codrops/privacy-policy/">Privacy Policy</a></li>
+						<li><a href="http://tympanus.net/codrops/licensing/">License</a></li>
+						<li><a href="http://tympanus.net/codrops/credits/">Credits</a></li>
+						<li><a href="http://tympanus.net/codrops/impressum/">Impressum</a></li>
+					</ul>
+				</nav>
+				<div class="ct-items ct-cf">
+					<div class="ct-item ct-copyright">
+						<span>© Codrops 2016 by</span> 
+						<a href="http://tympanus.net/" title="Tympanus">Tympanus</a>
+					</div>
+					<div class="ct-item ct-cdn">
+						<span>Content delivered by</span>
+						<a href="http://tracking.maxcdn.com/c/24359/3982/378?u=http%3A%2F%2Fwww.maxcdn.com%2Fcodrops%2F" title="Content Distribution Network" target="blank">Content Distribution Network</a>
+						<img height="1" width="1" src="./border-image-slice _ Codrops CSS Reference_files/378">
+					</div>	
+				</div>
+			</div>
+		</footer>
+		<script type="text/javascript" src="./border-image-slice _ Codrops CSS Reference_files/S85PKcovKNYvL9DNzEvOKU1JLdbPKtZPzs_NTc0r0S1KLcip1MvNzNMxBCkpqSxITcxITUwBqYFzcMhn5Kcn5oHkAA.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var wp_typeahead = {"ajaxurl":"http:\/\/tympanus.net\/codrops\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./border-image-slice _ Codrops CSS Reference_files/M9QvL9AtqSxITcxITUzRzypG4esk56cU5ReABTPzknNKU1KLoWpSc5NSU_RyM_NganQLchIr04vyS_PAxhTow1UAAA.js"></script>
+</div><!--ct-container-->
+	<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"1caac07779","applicationID":"1957746","transactionName":"M1ADYUVXXENTVEwPVgoaIFZDX11eHURRCF4IUExWREVtQldRXRRcClYE","queueTime":0,"applicationTime":1474,"atts":"HxcAFw1NT00=","errorBeacon":"bam.nr-data.net","agent":""}</script>
+
+<!-- Performance optimized by W3 Total Cache. Learn more: http://www.w3-edge.com/wordpress-plugins/
+
+Minified using disk
+Page Caching using disk: enhanced
+Content Delivery Network via codropspz.tympanus.netdna-cdn.com
+Application Monitoring using New Relic
+
+ Served from: tympanus.net @ 2016-08-30 04:38:01 by W3 Total Cache --></body></html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+Read about the <a id="myAnchor" href="dom_obj_attributes.asp" target="_blank">Attr object</a>.
+
+<p>Click the button to display the value of the target attribute of the link above.</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+    var x = document.getElementById("myAnchor").getAttribute("target");
+    document.getElementById("demo").innerHTML = x;
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,134 @@
+<html>
+  <head>
+    <title>Registration and imagemap</title>
+    <meta content="">
+    <style>
+      body{
+        font-family: Lato;
+      }
+    </style>
+  </head>
+  <body>
+  <!-- <img src="ahm.png" usemap="#image-map"> -->
+
+  <!-- <map name="image-map">
+      <area target="_blank" alt="Thaltej Area" title="Thaltej Area" href="https://en.wikipedia.org/wiki/Thaltej" coords="381,264,320,227" shape="rect">
+      <area target="_self" alt="Sarkhej Area" title="Sarkhej Area" href="https://en.wikipedia.org/wiki/Sarkhej" coords="296,437,342,464" shape="rect">
+      <area target="_blank" alt="Isanpur" title="Isanpur" href="https://en.wikipedia.org/wiki/Isanpur" coords="580,449,636,465" shape="rect">
+  </map> -->
+
+  <form class="" action="ImageMap&Form.html" method="post">
+    <table>
+      <h3>
+        Student Registration Form
+      </h3>
+      <tr>
+        <td><label for="fname">First Name</label></td>
+        <td style="padding-top:5px; padding-bottom:5px"><input  required type="text" name="fname" placeholder="Enter Your First Name" style="border-top:0;border-left:0;border-right:0"></td>
+      </tr>
+
+      <tr>
+        <td><label for="mname">Middle Name</label></td>
+        <td style="padding-top:5px; padding-bottom:5px"><input required type="text" name="mname" placeholder="Enter Your Middle Name" style="border-top:0;border-left:0;border-right:0"></td>
+      </tr>
+
+      <tr>
+        <td><label for="lname">Last Name</label></td>
+        <td style="padding-top:5px; padding-bottom:5px"><input required type="text" name="lname" placeholder="Enter Your Last Name" style="border-top:0;border-left:0;border-right:0"></td>
+      </tr>
+
+      <tr>
+        <td><label for="password">Password</label></td>
+        <td style="padding-top:5px; padding-bottom:5px"><input required type="password" name="password" placeholder="Enter Your Password" style="border-top:0;border-left:0;border-right:0"></td>
+      </tr>
+
+      <tr>
+        <td>Gender: </td>
+          <td><input type="radio" name="gender" value="male" checked> Male </td>
+          <td><input type="radio" name="gender" value="female" > Female </td>
+          <td><input type="radio" name="gender" value="other" > Other </td>
+      </tr>
+
+    <tr>
+      <td><label for="roll">Roll</label></td>
+      <td style="padding-top:5px; padding-bottom:5px">  <input required type="text" name="roll" placeholder="Enter Your Roll No" style="border-top:0;border-left:0;border-right:0"></td>
+    </tr>
+
+    <tr>
+      <td><label for="color">Color</label></td>
+      <td style="padding-top:5px; padding-bottom:5px">  <input required type="color" name="color" placeholder="Enter Your color here" style="border-top:0;border-left:0;border-right:0"></td>
+    </tr>
+
+
+
+    <tr>
+      <td><label for="mob">Mobile</label></td>
+      <td style="padding-top:5px; padding-bottom:5px"><input required type="tel" name="mobile" pattern="[0-9]{10}" placeholder="Enter Your Mobile No" style="border-top:0;border-left:0;border-right:0"></td>
+    </tr>
+
+    <tr>
+      <td><label for="email">Email</label></td>
+      <td style="padding-top:5px; padding-bottom:5px">  <input required type="email" name="email" placeholder="Enter Your Email" style="border-top:0;border-left:0;border-right:0"></td>
+    </tr>
+
+    <tr>
+      <td><label for="bday">Birthdate</label></td>
+      <td style="padding-top:5px; padding-bottom:5px"><input required type='date' name="bday" placeholder="Enter Your Birthdate" style="border-top:0;border-left:0;border-right:0"></td>
+    </tr>
+
+    <tr>
+      <td><label for="bdt">BDT</label></td>
+      <td style="padding-top:5px; padding-bottom:5px"><input required type='datetime-local' name="bdt" placeholder="Enter Your Birthdate Time" style="border-top:0;border-left:0;border-right:0"></td>
+    </tr>
+
+    <tr>
+      <td><label for="add">Address</label></td>
+      <td style="padding-top:5px; padding-bottom:5px"><textarea name="addr" placeholder="Enter Your Address" rows="5" cols="30" style="border-top:0;border-left:0;border-right:0"></textarea></td>
+    </tr>
+
+    <tr>
+      <td><label for="alert">Alert</label></td>
+      <td style="padding-top:5px; padding-bottom:5px"><button type="button" onclick="alert('Hello World')">alert</button></td>
+    </tr>
+
+    <tr>
+      <td><label for="image">Image</label></td>
+      <td style="padding-top:5px; padding-bottom:5px"><input type="image" src="Assets/bgImage.jpg" style="widows: 100px;height:60px" alt="Submit"></td>
+    </tr>
+
+    <tr>
+      <td><input required type="number" min="1" max="3"></td>
+      <td><input required type="file"></td>
+      <td><input required type="range" min="0" max="1000000" ></td>
+      <td><input required type="week" ></td>
+      <td><input required type="month" ></td>
+      <td><input type="search" name="googlesearch" ></td>
+
+    </tr>
+
+
+    <tr>
+      <td><label for="city">City</label></td>
+      <td>
+      <select name="choosecity" >
+        <!-- <select name="choosecity" multiple> -->
+        <option value="ahmedabad">Ahmedabad</option>
+        <option value="surat">Surat</option>
+        <option value="vadodara">Vadodara</option>
+        <option value="rajkot">Rajkot</option>
+      </select>
+    </td>
+    </tr>
+
+
+    <tr>
+      <td><input type="submit" name="submit" value="submit" style="border:0;width:100px;height:25px;color:white;background:#5657f5;border-radius:12px"></td>
+      <td align="center"><input type="reset" name="reset" value="reset" style="border:0;width:100px;height:25px;color:white;background:#5657f5;border-radius:12px"></td>
+    </tr>
+
+    </table>
+
+  </form>
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!-- saved from url=(0067)https://www.w3schools.com/cssref/tryit.asp?filename=trycss3_js_flex -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<style> 
+#myDIV {
+    width: 220px;
+    height: 300px;
+    border: 1px solid black;
+    display: -webkit-flex; /* Safari */
+    display: flex;
+}
+</style>
+</head>
+<body contenteditable="false">
+
+<p>Click the "Try it" button to set the flex property of ALL DIV elements inside the "myDIV" element:</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<div id="myDIV">
+  <div style="background-color: coral; flex: 1 1 0%;">RED</div>
+  <div style="background-color: lightblue; flex: 1 1 0%;">BLUE</div>  
+  <div style="background-color: lightgreen; flex: 1 1 0%;">Green div with more content.</div>
+</div>
+
+<p><b>Note:</b> Internet Explorer 9 and earlier versions and do not support the flex property.</p>
+
+<p><b>Note:</b> Internet Explorer 10 supports an alternative, the msFlex property. IE11 and newer versions fully support the flex property (do not need the ms prefix).</p>
+
+<p><b>Note:</b> Safari 6.1 (and newer) supports an alternative, the WebkitFlex property.</p>
+
+<script>
+function myFunction() {
+    var x = document.getElementById("myDIV");
+    var y = x.getElementsByTagName("DIV");
+    var i = 0;
+    for (i; i < y.length; i++) {
+        y[i].style.msFlex = "1"; // IE10
+        y[i].style.WebkitFlex = "1"; // Safari 6.1+
+        y[i].style.flex = "1";
+    }
+}
+</script>
+
+
+
+</body></html>

@@ -1,0 +1,199 @@
+SQL> select min(total) from ( select total from student minus select os+dbms+ca as total from student where total > (select avg(os+dbms+ca) from student));
+select min(total) from ( select total from student minus select os+dbms+ca as total from student where total > (select avg(os+dbms+ca) from student))
+                                *
+ERROR at line 1:
+ORA-00904: "TOTAL": invalid identifier 
+
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select min(total) from ( select os+dbms+ca as total from student minus select os+dbms+ca as total from student where total > (select avg(os+dbms+ca) from student))
+  2  ;
+select min(total) from ( select os+dbms+ca as total from student minus select os+dbms+ca as total from student where total > (select avg(os+dbms+ca) from student))
+                                                                                                                     *
+ERROR at line 1:
+ORA-00904: "TOTAL": invalid identifier 
+
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select min(total) from ( select os+dbms+ca as total from student minus select os+dbms+ca as total from student where os+dbms+ca> (select avg(os+dbms+ca) from student))
+  2  ;
+
+MIN(TOTAL)                                                                                          
+----------                                                                                          
+       193                                                                                          
+
+SQL> select avg(ca+os+dbms) from student;
+
+AVG(CA+OS+DBMS)                                                                                     
+---------------                                                                                     
+            226                                                                                     
+
+SQL> select os+dbms+ca as total from student group by total;
+select os+dbms+ca as total from student group by total
+                                                 *
+ERROR at line 1:
+ORA-00904: "TOTAL": invalid identifier 
+
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select os+dbms+ca as total from student
+  2  ;
+
+    TOTAL                                                                                           
+---------                                                                                           
+      267                                                                                           
+      246                                                                                           
+      248                                                                                           
+      253                                                                                           
+      195                                                                                           
+      199                                                                                           
+      207                                                                                           
+      193                                                                                           
+
+8 rows selected.
+
+SQL> select min(total) from ( select os+dbms+ca as total from student minus select os+dbms+ca as total from student where os+dbms+ca> (select avg(os+dbms+ca) from student))
+  2  ;
+
+MIN(TOTAL)                                                                                          
+----------                                                                                          
+       193                                                                                          
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select min(total) from ( select os+dbms+ca as total from student minus select os+dbms+ca as total from student where os+dbms+ca< (select avg(os+dbms+ca) from student))
+  2  ;
+
+MIN(TOTAL)                                                                                          
+----------                                                                                          
+       246                                                                                          
+
+SQL> select * from student;
+
+ROLL_NO  NAME                            SEM        OS        CA      DBMS                          
+-------- ------------------------- --------- --------- --------- ---------                          
+18BCE259 Shrey Viradiya                    4        86        89        92                          
+18BCE258 Dhvanik Viradiya                  4        88        76        82                          
+18BCE257 Gunjan Vinzuda                    4        75        98        75                          
+18BCE260 Vishva Patel                      4        80        83        90                          
+18BCE261 Mohamad Asim                      4        85        45        65                          
+18BCE263 Yash Chelani                      4        86        71        42                          
+18BCE264 Vivek Zalariya                    4        74        71        62                          
+18BCE256 Sagar Vasoya                      4        85        63        45                          
+
+8 rows selected.
+
+SQL> insert into student values('17BCE152','Sindhant Molhotra',6,75,15,26);
+
+1 row created.
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* insert into student values('17BCE254','Meera Kumari',6,72,75,56)
+  2  ;
+
+1 row created.
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* insert into student values('17BCE099','Rajat singh',6,85,86,92)
+  2  ;
+
+1 row created.
+
+SQL> select * from student;
+
+ROLL_NO  NAME                            SEM        OS        CA      DBMS                          
+-------- ------------------------- --------- --------- --------- ---------                          
+18BCE259 Shrey Viradiya                    4        86        89        92                          
+18BCE258 Dhvanik Viradiya                  4        88        76        82                          
+18BCE257 Gunjan Vinzuda                    4        75        98        75                          
+18BCE260 Vishva Patel                      4        80        83        90                          
+18BCE261 Mohamad Asim                      4        85        45        65                          
+18BCE263 Yash Chelani                      4        86        71        42                          
+18BCE264 Vivek Zalariya                    4        74        71        62                          
+18BCE256 Sagar Vasoya                      4        85        63        45                          
+17BCE152 Sindhant Molhotra                 6        75        15        26                          
+17BCE254 Meera Kumari                      6        72        75        56                          
+17BCE099 Rajat singh                       6        85        86        92                          
+
+11 rows selected.
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select * from student
+SQL> ed
+Wrote file afiedt.buf
+
+  1* insert into student values('17BCE011','Mohil Patel',6,85,76,65)
+  2  ;
+
+1 row created.
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* insert into student values('17BCE000','Ghost Rider',6,76,65,85)
+  2  ;
+
+1 row created.
+
+SQL> select * from student;
+
+ROLL_NO  NAME                            SEM        OS        CA      DBMS                          
+-------- ------------------------- --------- --------- --------- ---------                          
+18BCE259 Shrey Viradiya                    4        86        89        92                          
+18BCE258 Dhvanik Viradiya                  4        88        76        82                          
+18BCE257 Gunjan Vinzuda                    4        75        98        75                          
+18BCE260 Vishva Patel                      4        80        83        90                          
+18BCE261 Mohamad Asim                      4        85        45        65                          
+18BCE263 Yash Chelani                      4        86        71        42                          
+18BCE264 Vivek Zalariya                    4        74        71        62                          
+18BCE256 Sagar Vasoya                      4        85        63        45                          
+17BCE152 Sindhant Molhotra                 6        75        15        26                          
+17BCE254 Meera Kumari                      6        72        75        56                          
+17BCE099 Rajat singh                       6        85        86        92                          
+17BCE011 Mohil Patel                       6        85        76        65                          
+17BCE000 Ghost Rider                       6        76        65        85                          
+
+13 rows selected.
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select * from student
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select * from student where sem = 6 and os+ca+dbms > (select avg(os+dbms+ca) from student where sem = 4)
+  2  ;
+
+ROLL_NO  NAME                            SEM        OS        CA      DBMS                          
+-------- ------------------------- --------- --------- --------- ---------                          
+17BCE099 Rajat singh                       6        85        86        92                          
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select * from student where sem = 6 and os+ca+dbms >= (select avg(os+dbms+ca) from student where sem = 4)
+  2  ;]
+  3  
+SQL>  select * from student where sem = 6 and os+ca+dbms >= (select avg(os+dbms+ca) from student where sem = 4);
+
+ROLL_NO  NAME                            SEM        OS        CA      DBMS                          
+-------- ------------------------- --------- --------- --------- ---------                          
+17BCE099 Rajat singh                       6        85        86        92                          
+17BCE011 Mohil Patel                       6        85        76        65                          
+17BCE000 Ghost Rider                       6        76        65        85                          
+
+SQL> spool off

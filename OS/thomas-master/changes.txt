@@ -1,0 +1,6 @@
+See updated design document in repository.
+
+Design changes include:
++ Remove extra uses of mutexes (question 3)
++ Update condition variable roles (question 7)
++ Re-word/simplify algorithm (question 8)

@@ -1,0 +1,29 @@
+#main {
+  width: 60%;
+  margin: 50px;
+  min-height: 80vh;
+}
+
+#main_form {
+  margin-top: 10px;
+  width: 100%;
+  color: black;
+}
+
+.inputCSS {
+  background-color: rgba(232,227,228,0.51);
+  border-radius: 25px;
+  border: 0px;
+  color: black;
+  font-family: 'ABeeZee';
+}
+
+.fg {
+  width: 60%;
+  font-family: 'ABeeZee';
+}
+
+.radio_box {
+  width: 30%;
+}
+

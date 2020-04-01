@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Recursion function</title>
+    <script>
+
+        var result;
+        (function myfunction(n)
+        {
+            if(n==1) return 1;
+            result=myfunction(n-1)*n;
+            return result;
+        })(5);
+        document.write("<h2>"+result+"</h2>");
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

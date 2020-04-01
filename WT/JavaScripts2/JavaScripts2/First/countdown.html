@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>countdown</title>
+
+    <style>
+        #parent
+        {
+            margin-top: 100px;
+            margin-left: 100px;
+        }
+        .timmer
+        {
+            box-sizing: border-box;
+            background-color: aqua;
+            height: 100px;
+            width: 100px;
+            display: inline-block;
+            padding-top: 1px;
+            padding-left: 36px;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body bgcolor="blue">
+<div id="parent">
+    <div class="timmer"><p id="day"></p></div>
+    <div class="timmer"><p id="hour"></p></div>
+    <div class="timmer" ><p id="minute"></p></div>
+    <div class="timmer" ><p id="sec"></p></div>
+</div>
+
+<script>
+    var deadline = 'October 21 2015 20:47:00 GMT+05:30';
+    (function getTimeRemaining(){
+        var t = Date.parse(deadline) - Date.parse(new Date());
+        var seconds = Math.floor( (t/1000) % 60 );
+        var minutes = Math.floor( (t/1000/60) % 60 );
+        var hours = Math.floor( (t/(1000*60*60)) % 24 );
+        var days = Math.floor( t/(1000*60*60*24) );
+        document.getElementById("day").innerHTML=checkTime(days);
+        document.getElementById("hour").innerHTML=checkTime(hours);
+        document.getElementById("minute").innerHTML=checkTime(minutes);
+        document.getElementById("sec").innerHTML=checkTime(seconds);
+        if(days<=0 && hours<=0&&minutes<=0&&seconds<=0)
+        {
+            window.location="Counter.html";
+        }
+        else {
+            setTimeout(getTimeRemaining, 1000);
+        }
+    })(deadline);
+    function checkTime(i) {
+        if (i < 10) {i = "0" + i;}// add zero in front of numbers < 10
+        return i;
+    }
+</script>
+</body>
+</html>

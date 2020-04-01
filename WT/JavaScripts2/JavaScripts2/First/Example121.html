@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nested function</title>
+    <script>
+        document.write("<h1>"+add()+"</h1>");
+        function add() {
+            var counter = 0;
+            function plus() {counter += 1;}
+            plus();
+            plus();
+            return counter;
+        }
+        document.write("<h1>"+add()+"</h1>");
+    </script>
+</head>
+<body>
+
+</body>
+</html>

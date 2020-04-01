@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>
+        Factorial of a number using JavaScript
+    </title>
+</head>
+
+
+
+<body style = "text-align:center; background-color: aqua">
+
+    <h1 style = "color:Black;" style="font-size: 100px">
+        Calculate Factorial
+    </h1>
+
+	<input type="number" placeholder="Enter the Number!" id="num">
+    <p id = "Para1" >
+    </p>
+
+    <button onclick = "Funtion()">
+        Click Here
+    </button>
+
+    <p id = "Para2" style ="color:Black; font-size: 20px;"></p>
+
+    <script>
+        var up = document.getElementById('Para1');
+        var down = document.getElementById('Para2');
+
+        function Fact(n) {
+            var ans=1;
+
+            for (var i = 2; i <= n; i++)
+                ans = ans * i;
+            return ans;
+        }
+
+        function Funtion() {
+
+			var n = parseInt(document.getElementById('num').value);
+
+			up.innerHTML = "The factorial of n.<br>n = " + n;
+
+            down.innerHTML = Fact(n);
+        }
+    </script>
+</body>
+
+</html>

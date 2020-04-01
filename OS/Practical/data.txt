@@ -1,0 +1,9 @@
+Test line 1
+Test line 2
+Test line 3
+Hello
+How are you?
+This is OS lab.
+We are learning Shell Script
+Thank you for your time.
+bye

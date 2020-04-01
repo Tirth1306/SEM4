@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>get element by name</title>
+</head>
+<body>
+Cats:  <input name="animal" type="checkbox" value="Cats">
+Dogs:  <input name="animal" type="checkbox" value="Dogs">
+Dogs:  <input name="animal1" type="checkbox" value="Dog1">
+<p>Click the button to check all checkboxes that have a name attribute with the value "animal".</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<script>
+    function myFunction() {
+        var x = document.getElementsByName("animal");
+        var i;
+        for (i = 0; i < x.length; i++) {
+            if (x[i].type == "checkbox") {
+                x[i].checked = true;
+            }
+        }
+    }
+</script>
+
+
+
+</body>
+</html>

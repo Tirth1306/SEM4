@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<input value="OK">
+
+<p>Click the button below to change the input field to an input button.</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<p>Internet Explorer 8 and earlier does not support the setAttribute method.</p>
+
+<script>
+function myFunction() {
+    document.getElementsByTagName("INPUT")[0].setAttribute("type", "button"); 
+}
+</script>
+
+</body>
+</html>

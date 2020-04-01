@@ -1,0 +1,40 @@
+.image {
+    float: left;
+    width: 40%;
+    margin: 0 30px 20px 0;
+    border: 1px dashed gray;
+    
+    &:nth-child(2n) {
+      clear: left;
+    }
+    
+    &:nth-child(2n+1){
+      margin-right: 0;
+    }
+  }
+  
+img { height: 120px; background-color: #444;}
+
+.object-fit_fill { object-fit: fill }
+.object-fit_contain { object-fit: contain }
+.object-fit_cover { object-fit: cover }
+.object-fit_none { object-fit: none }
+.object-fit_scale-down { object-fit: scale-down }
+
+.pagination {
+    display: inline-block;
+  }
+  
+.pagination a {
+color: black;
+float: left;
+padding: 8px 16px;
+text-decoration: none;
+}
+
+.pagination a.active {
+background-color: #4CAF50;
+color: white;
+}
+
+.pagination a:hover:not(.active) {background-color: #ddd;}

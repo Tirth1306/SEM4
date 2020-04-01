@@ -1,0 +1,210 @@
+1726  clear
+ 1727  cd Desktop
+ 1728  ls
+ 1729  grep int demo
+ 1730  grep -v int demo
+ 1731  cat demo
+ 1732  nano test
+ 1733  cat test
+ 1734  cut -f1 test
+ 1735  cut -f2 test
+ 1736  cut -f3 test
+ 1737  cut -f4 test
+ 1738  cut -f12 test
+ 1739  cut -f1 -f2 test
+ 1740  cut -f1,f2 test
+ 1741  cut -f1,-f2 test
+ 1742  cut -f1,2 test
+ 1743  last was the correct one
+ 1744  cut -f1-2 test
+ 1745  cut -f1-3 test
+ 1746  help last
+ 1747  bc
+ 1748  bc -l
+ 1749  bc -a
+ 1750  bc -i
+ 1751  man bc
+ 1752  bc -l
+ 1753  ls -h
+ 1754  ls -c
+ 1755  help l
+ 1756  help ls
+ 1757  ls | wc -w
+ 1758  wc demo
+ 1759  wc demo & echo hello]
+ 1760  wc demo & echo hello
+ 1761  date; who
+ 1762  tty
+ 1763  tee
+ 1764  date;who > f12
+ 1765  ls
+ 1766  cat f12
+ 1767* date;who) > f12
+ 1768  cat f12
+ 1769  (date;who) > f12
+ 1770  cat f12
+ 1771  ls 
+ 1772  ls | grep demo
+ 1773  who|ls -l
+ 1774  cal 1996 | head -10
+ 1775  cal 1996 | head -15
+ 1776  cat demo | grep int
+ 1777  tea
+ 1778  sort 
+ 1779  sort
+ 1780  sort 2 1 4 53 1 14 87 
+ 1781  sort demo
+ 1782  sort
+ 1783  ls
+ 1784  sort bubble.o prj22.o
+ 1785  sort -o sorted
+ 1786  cat sorted
+ 1787  ls
+ 1788  sort - krunal.html 
+ 1789  umask
+ 1790  ls
+ 1791  ls -l
+ 1792  umask 022
+ 1793  ls -l
+ 1794  umask
+ 1795  umask 0002
+ 1796  ls -l
+ 1797  echo a
+ 1798  read a
+ 1799  echo a
+ 1800  echo {a}
+ 1801  echo name
+ 1802  read name
+ 1803  echo "Enter your name: "
+ 1804  read name
+ 1805  echo "Hi, $name"
+ 1806  nano p1.ah]
+ 1807  nano p1.sh
+ 1808  ./p1.sh
+ 1809  chmod 666 p1.sh
+ 1810  chmod 777 p1.sh
+ 1811  ./p1.sh
+ 1812  umask 0222
+ 1813  ls -
+ 1814  ls -l
+ 1815  umask 0022
+ 1816  ls -l
+ 1817  nano p1.sh
+ 1818  ./p1.sh
+ 1819  nano p2.sh
+ 1820  ./p2.sh
+ 1821  ls -l
+ 1822  umask
+ 1823  chmod 777 p2.sh
+ 1824  ./p2.sh
+ 1825  nano p2.sh
+ 1826  ./p2.sh
+ 1827  nano p2.sh
+ 1828  ./p2.sh
+ 1829  nano p2.sh
+ 1830  ./p2.sh
+ 1831  nano p2.sh
+ 1832  ./p2.sh
+ 1833  nano p2.sh
+ 1834  ./p2.sh
+ 1835  nano p2.sh
+ 1836  ./p2.sh
+ 1837  nano p2.sh
+ 1838  ./p2.sh
+ 1839  nano p2.sh
+ 1840  ./p2.sh
+ 1841  nano p2.sh
+ 1842  ./p2.sh
+ 1843  nano p2.sh
+ 1844  ./p2.sh
+ 1845  nano p2.sh
+ 1846  ./p2.sh
+ 1847* 
+ 1848  ./p2.sh
+ 1849  nano p2.sh
+ 1850  ./p2.sh
+ 1851  nano p3.sh
+ 1852  ./p3.sh
+ 1853  chmod 777 p3.sh
+ 1854  ./p3.sh
+ 1855  ls
+ 1856  nano p3.sh
+ 1857  ./p3.sh
+ 1858  nano p3.sh
+ 1859  ./p3.sh
+ 1860  nano p3.sh
+ 1861  ./p3.sh
+ 1862  nano p3.sh
+ 1863  ./p3.sh
+ 1864  nano p3.sh
+ 1865  ./p3.sh
+ 1866  nano p3.sh
+ 1867  ./p3.sh
+ 1868  nano p3.sh
+ 1869  ./p3.sh
+ 1870  cp f1 f2
+ 1871  nano p3.sh
+ 1872  nano p4.sh
+ 1873  nano p3.sh
+ 1874  ./p3.sh
+ 1875  nano p4.sh
+ 1876  ./p4.sh
+ 1877  chmod 777 p4.sh 
+ 1878  ./p4.sh
+ 1879  nano p4.sh
+ 1880  ./p4.sh
+ 1881  cat f1
+ 1882  nano p4.sh
+ 1883  ./p4.sh
+ 1884  ls
+ 1885  ./p4.sh
+ 1886  ./a.out
+ 1887  nano p4.sh
+ 1888  nano p5.sh
+ 1889  ./p5.sh
+ 1890  chmod 777 p5.sh]
+ 1891  chmod 777 p5.sh
+ 1892  ./p5.sh
+ 1893  nano p5.sh
+ 1894  ./p5.sh
+ 1895  nano p5.sh
+ 1896  ./p5.sh
+ 1897  nano p5.sh
+ 1898  ./p5.sh
+ 1899  nano p5.sh
+ 1900  ./p5.sh
+ 1901  nano p5.sh
+ 1902  ./p5.sh
+ 1903  nano p5.sh
+ 1904  ./p5.sh
+ 1905  nano p5.sh
+ 1906  ./p5.sh
+ 1907  nano p5.sh
+ 1908  ./p5.sh
+ 1909  nano p5.sh
+ 1910  ./p5.sh
+ 1911  read x
+ 1912  echo $x
+ 1913  b -eq 4
+ 1914  $b -eq 4
+ 1915  b -eq 4
+ 1916  nano p6.sh
+ 1917  chmod 777 p6.sh
+ 1918  ./p6.sh
+ 1919  nano p6.sh
+ 1920  ./p6.sh
+ 1921  nano p6.sh
+ 1922  ./p6.sh
+ 1923  nano p6.sh
+ 1924  ./p6.sh
+ 1925  nano p6.sh
+ 1926  ./p6.sh
+ 1927  nano p6.sh
+ 1928  ./p6.sh
+ 1929  nano p6.sh
+ 1930  ./p6.sh
+ 1931  nano p6.sh
+ 1932  ./p6.sh
+ 1933  nano p6.sh
+ 1934  ./p6.sh
+ 1935  history

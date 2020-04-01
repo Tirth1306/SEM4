@@ -1,0 +1,552 @@
+.ct-archive--padded {
+	padding-top: 50px;
+}
+
+.ct-archive .ct-cssref-heading {
+	margin: 0;
+	background: url(../images/CSSRefBus.png) no-repeat center top;
+	text-align: center;
+	padding: 70px 0 0;
+}
+
+.ct-box-container {
+	padding: 20px;
+	background: #fff;
+	margin: 10px 10px 2em;
+}
+
+.ct-box-container__heading {
+	margin: 0.4em 6px 10px;
+}
+
+.ct-box-container__footer {
+	text-align: right;
+	padding-top: 10px;
+}
+
+.ct-back-top {
+	position: relative;
+	text-indent: 100%;
+	overflow: hidden;
+	width: 1em;
+	height: 1em;
+	margin: 0 1em;
+	color: #ddd;
+	display: inline-block;
+}
+
+.ct-back-top::after {
+	speak: none;
+	text-indent: 0;
+	font-family: 'codrops-icons';
+	content: '\e600';
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin: -15px 0 0 -15px;
+	width: 30px;
+	height: 30px;
+	text-align: center;
+	line-height: 30px;
+	font-size: 24px;
+	font-weight: 400;
+	z-index: 100;
+	-webkit-transform: rotate(90deg);
+	transform: rotate(90deg);
+}
+
+.boxed-list__item {
+	white-space: nowrap;
+	float: left;
+	margin: 6px 0.66%;
+	width: 32%;
+	min-width: 250px;
+}
+
+.boxed-list--inline {
+	text-align: center;
+}
+
+.boxed-list__item--inline {
+	float: none;
+	display: inline-block;
+}
+
+.boxed-list__item a {
+	display: block;
+	background: #D7DEE8;
+	color: #4C555C;
+	padding: 0 0.85em;
+	line-height: 2.2;
+	font-weight: bold;
+	-webkit-transition: color 0.1s, background 0.1s;
+	transition: color 0.1s, background 0.1s;
+}
+
+.boxed-list__item a:hover,
+.boxed-list__item a:focus {
+	color: #fff;
+	background: #37495d;
+}
+
+/* Article styles */
+.ct-cssref * {
+	box-sizing: border-box;
+}
+
+.ct-cssref header {
+	padding-top: 29px;
+	background: #f1f4f9;
+}
+
+.ct-cssref .ct-cssref-header-inner {
+	overflow: hidden;
+	position: relative;
+	z-index: 1;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-align-items: stretch;
+	align-items: stretch;
+	background: #fff;
+}
+
+.ct-cssref .ct-cssref-head {
+	width: 230px;
+	padding: 1em;
+	margin-right: auto;
+	text-align: center;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-justify-content: center;
+    justify-content: center;
+	-webkit-flex-direction: column;
+	flex-direction: column;
+}
+
+/* property */
+.ct-cssref .ct-cssref-header-inner--css-property {
+	background: rgb(244, 218, 218);
+}
+
+.ct-cssref .ct-cssref-head--css-property {
+	background: rgb(245, 226, 226);
+	color: rgb(213, 141, 141);
+}
+
+.ct-cssref .boxed-list__item--css-property a {
+	background: rgb(245, 226, 226);
+}
+
+.ct-cssref .boxed-list__item--css-property a:hover,
+.ct-cssref .boxed-list__item--css-property a:focus {
+	background: rgb(213, 141, 141);
+}
+
+/* pseudo-class */
+.ct-cssref .ct-cssref-header-inner--css-pseudo-class {
+	background: rgb(221, 215, 239);
+}
+
+.ct-cssref .ct-cssref-head--css-pseudo-class {
+	background: rgb(227, 223, 240);
+	color: rgb(158, 145, 200);
+}
+
+.ct-cssref .boxed-list__item--css-pseudo-class a {
+	background: rgb(227, 223, 240);
+}
+
+.ct-cssref .boxed-list__item--css-pseudo-class a:hover,
+.ct-cssref .boxed-list__item--css-pseudo-class a:focus {
+	background: rgb(158, 145, 200);
+}
+
+/* concept */
+.ct-cssref .ct-cssref-header-inner--css-concept {
+	background: rgb(234, 198, 209);
+}
+
+.ct-cssref .ct-cssref-head--css-concept {
+	background: rgb(242, 208, 218);
+	color: rgb(210, 112, 141);
+}
+
+.ct-cssref .boxed-list__item--css-concept a {
+	background: rgb(242, 208, 218);
+}
+
+.ct-cssref .boxed-list__item--css-concept a:hover,
+.ct-cssref .boxed-list__item--css-concept a:focus {
+	background: rgb(210, 112, 141);
+}
+
+/* function */
+.ct-cssref .ct-cssref-header-inner--css-function {
+	background: rgb(247, 215, 171);
+}
+
+.ct-cssref .ct-cssref-head--css-function {
+	background: rgb(245, 220, 185);
+	color: rgb(211, 144, 49);
+}
+
+.ct-cssref .boxed-list__item--css-function a {
+	background: rgb(245, 220, 185);
+}
+
+.ct-cssref .boxed-list__item--css-function a:hover,
+.ct-cssref .boxed-list__item--css-function a:focus {
+	background: rgb(245, 195, 123);
+}
+
+/* data-type */
+.ct-cssref .ct-cssref-header-inner--css-data-type {
+	background: rgb(196, 234, 200);
+}
+
+.ct-cssref .ct-cssref-head--css-data-type {
+	background: rgb(212, 239, 215);
+	color: rgb(133, 178, 138);
+}
+
+.ct-cssref .boxed-list__item--css-data-type a {
+	background: rgb(212, 239, 215);
+}
+
+.ct-cssref .boxed-list__item--css-data-type a:hover,
+.ct-cssref .boxed-list__item--css-data-type a:focus {
+	background: rgb(163, 208, 168);
+}
+
+/* at-rule */
+.ct-cssref .ct-cssref-header-inner--css-at-rule {
+	background: rgb(237,235,197);
+}
+
+.ct-cssref .ct-cssref-head--css-at-rule {
+	background: rgb(245, 244, 217);
+	color: rgb(208, 202, 82);
+}
+
+.ct-cssref .boxed-list__item--css-at-rule a {
+	background: rgb(245, 244, 217);
+}
+
+.ct-cssref .boxed-list__item--css-at-rule a:hover,
+.ct-cssref .boxed-list__item--css-at-rule a:focus {
+	background: rgb(218, 215, 129);
+}
+
+.ct-cssref .ct-cssref-head a {
+	font-family: "brandon-grotesque", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	margin: 0 auto;
+	display: block;
+	background: url(../images/CSSRefBus_tiny.png) no-repeat center top;
+	padding: 35px 0 5px;
+	color: #37495d;
+	font-size: 1.15em;
+	font-weight: bold;
+	max-width: 119px;
+}
+
+.ct-cssref .ct-cssref-head a:hover,
+.ct-cssref .ct-cssref-head a:focus {
+	color: #546476;
+}
+
+.ct-cssref header .ct-cssref-type {
+	font-weight: bold;
+	text-transform: uppercase;
+	font-size: 0.725em;
+	letter-spacing: 1px;
+}
+
+.ct-cssref .ct-cssref-title {
+	-webkit-flex: 1;
+	flex: 1;
+	text-align: right;
+	padding: 3em 3em 2em;
+}
+
+.ct-cssref header h1 {
+	border: none;
+	margin: 0;
+	padding: 0.25em 0;
+	line-height: 1.2;
+	font-size: 3em;
+	text-transform: none;
+}
+
+.ct-cssref .ct-cssref-headerbar {
+	background: #37495d;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-align-items: center;
+	align-items: center;
+	color: rgb(136, 153, 171);
+}
+
+.ct-cssref .ct-cssref-related {
+	text-align: right;
+	width: calc(100% - 230px - 2.5em);
+}
+
+.ct-cssref .ct-cssref-related a {
+	color: #CED9E5;
+	font-weight: bold;
+	font-size: 0.75em;
+	margin: 0 0.75em 0 0;
+	vertical-align: middle;
+	display: inline-block;
+}
+
+.ct-cssref .ct-cssref-related a:hover,
+.ct-cssref .ct-cssref-related a:focus {
+	color: #fff;
+}
+
+.ct-cssref .ct-cssref-related__title {
+	display: inline-block;
+	margin: 0;
+	padding: 0 1em 0 0;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 0.75em;
+	text-align: right;
+	line-height: 1;
+	vertical-align: middle;
+}
+
+.ct-cssref .ct-cssref-author {
+	padding: 0 0 1em 1em;
+	text-align: right;
+	display: block;
+	font-weight: bold;
+}
+
+.ct-cssref .ct-cssref-author a {
+	color: #70777C;
+}
+
+.ct-cssref .ct-cssref-author a:hover,
+.ct-cssref .ct-cssref-author a:focus {
+	color: rgb(65, 74, 81);
+}
+
+.ct-cssref .ct-cssref-author img {
+	display: inline-block;
+	border-radius: 50%;
+	margin: 0 0 0 10px;
+	vertical-align: middle;
+}
+
+.ct-cssref footer a:hover {
+	color: #fff;
+}
+
+.ct-cssref footer {
+	background: #37495d;
+	color: #fff;
+	padding: 30px 40px;
+}
+
+.ct-cssref footer p {
+	line-height: 2;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+/* Post styles */
+
+.ct-cssref .ct-post article {
+	padding: 0;
+}
+
+.ct-cssref .ct-post-content {
+	padding: 20px 70px 50px;
+}
+
+.ct-cssref .ct-cssref-description > p:first-child {
+	font-size: 1.75em;
+	line-height: 1.5;
+	margin: 0.75em 0 0.5em;
+}
+
+.ct-cssref dl {
+	margin-bottom: 2em;
+}
+
+.ct-cssref dl dt {
+	font-weight: bold;
+	color: #535F6F;
+	background: #c6ced8;
+	padding: 0.75em 1em 0.7em;
+	font-size: 1.05em;
+	margin: 1em 0 0;
+}
+
+.ct-cssref dl dt code {
+	color: #fff;
+}
+
+.ct-cssref dl dd {
+	padding: 2em;
+	border: 3px solid #c6ced8;
+	border-top: none;
+}
+
+/* Can I use embed */
+.ct-cssref .ct-cssref-support iframe {
+	width: 100%;
+	height: 370px;
+	margin: 30px 0;
+}
+
+.ct-cssref .ct-post p > code {
+	-ms-word-break: break-all;
+	word-break: break-all;
+	word-break: break-word;
+	-webkit-hyphens: auto;
+	-moz-hyphens: auto;
+	-ms-hyphens: auto;
+	hyphens: auto;
+}
+
+.article-table-wrap {
+	width: 100%;
+	margin: 1em 0;
+	overflow-x: auto;
+	border: 1px solid #37495d;
+}
+
+.ct-cssref .ct-post table.article-table {
+	width: 100%;
+	border-collapse: collapse;
+	border: none;
+}
+
+.ct-cssref .ct-post table.article-table caption {
+	padding: 1em;
+	font-weight: bold;
+	text-align: center;
+}
+
+.ct-cssref .ct-post table.article-table th {
+	border: none;
+	font-weight: bold;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-size: 75%;
+}
+
+.ct-cssref .ct-post table.article-table th,
+.ct-cssref .ct-post table.article-table td {
+	padding: 0.5em 1em;
+}
+
+.ct-cssref .ct-post table.article-table th {
+	background: #edf0f3;
+}
+
+.ct-cssref .ct-post table.article-table thead tr:first-child th {
+	text-align: center;
+	color: #fff;
+	background: #37495d;
+}
+
+.ct-cssref .ct-post table.article-table tr {
+	border-bottom: 1px solid #d2d7db;
+}
+
+.ct-cssref .ct-post table.article-table tbody tr:hover td:not(.article-table__no-highlight),
+.ct-cssref .ct-post table.article-table tbody tr:hover th {
+	background: #FDFAD8;
+}
+
+.article-table__border-right {
+	border-right: 1px solid silver;
+}
+
+.ct-cssref .ct-post table.article-table td {
+	border: none;
+}
+
+/* Search */
+.ct-cssref-search {
+	width: 230px;
+}
+/* other styles are in main stylesheet */
+
+@media screen and (max-width: 1170px){
+	.ct-cssref header h1 {
+		font-size: 2.25em;
+	}
+
+	.ct-cssref .ct-cssref-description > p:first-child {
+		font-size: 1.25em;
+	}
+}
+
+@media screen and (max-width: 960px){
+	.ct-cssref header {
+		padding-top: 15px;
+	}
+
+	.ct-cssref .ct-cssref-header-inner,
+	.ct-cssref .ct-cssref-headerbar {
+		-webkit-flex-direction: column;
+		flex-direction: column;
+	}
+
+	.ct-cssref .ct-cssref-head {
+		width: 100%;
+		padding: 1.25em 1em;
+	}
+
+	.ct-cssref .ct-cssref-title {
+		padding: 1.5em 1em;
+	}
+
+	.ct-cssref .ct-cssref-title,
+	.ct-cssref .ct-cssref-author {
+		text-align: center;
+	}
+
+	.ct-cssref .ct-cssref-author {
+		padding: 0.25em;
+		font-size: 0.85em;
+	}
+
+	.ct-cssref-search {
+		width: 100%;
+	}
+
+	.ct-cssref .ct-cssref-related {
+		text-align: left;
+		width: 100%;
+		padding: 1em;
+	}
+
+	.ct-cssref .boxed-list__item {
+		width: calc(50% - 0.9em);
+	}
+}
+
+@media screen and (max-width: 1200px){
+	.boxed-list__item {
+		width: 49%;
+		margin: 6px 0.5%;
+	}
+}
+
+@media screen and (max-width: 600px){
+	.ct-cssref .boxed-list__item {
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 480px){
+	.ct-cssref .ct-post-content {
+		padding: 20px 40px 100px;
+	}
+}
