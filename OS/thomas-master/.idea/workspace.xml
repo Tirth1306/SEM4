@@ -9,7 +9,14 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b1a5962f-e1b9-43e8-966e-a185d661da59" name="Default Changelist" comment="" />
+    <list default="true" id="b1a5962f-e1b9-43e8-966e-a185d661da59" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trains.txt" beforeDir="false" afterPath="$PROJECT_DIR$/trains.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PS/.ipynb_checkpoints/Practical7-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../../PS/.ipynb_checkpoints/Practical7-checkpoint.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PS/Practical7.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../../PS/Practical7.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../WT/SRF_JSvalidations/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../WT/SRF_JSvalidations/index.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,7 +25,11 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
   <component name="ProjectId" id="1ZX1LImyP6yrshwQPSbifqMZcB6" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -26,6 +37,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -34,6 +46,7 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="CMakeSettings" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -47,6 +60,7 @@
       <updated>1584970567626</updated>
       <workItem from="1584970570073" duration="2804000" />
       <workItem from="1585473065139" duration="1964000" />
+      <workItem from="1585817007957" duration="821000" />
     </task>
     <servers />
   </component>
@@ -54,10 +68,18 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="471" y="157" key="FileChooserDialogImpl" timestamp="1584971864498">
+    <state x="18" y="30" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1585817215028">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
-    <state x="471" y="157" key="FileChooserDialogImpl/0.24.1366.744@0.24.1366.744" timestamp="1584971864498" />
+    <state x="18" y="30" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.24.1366.744@0.24.1366.744" timestamp="1585817215028" />
+    <state x="471" y="157" key="FileChooserDialogImpl" timestamp="1585817140560">
+      <screen x="0" y="24" width="1366" height="744" />
+    </state>
+    <state x="471" y="157" key="FileChooserDialogImpl/0.24.1366.744@0.24.1366.744" timestamp="1585817140560" />
+    <state x="62" y="24" key="SettingsEditor" timestamp="1585817199932">
+      <screen x="0" y="24" width="1366" height="744" />
+    </state>
+    <state x="62" y="24" key="SettingsEditor/0.24.1366.744@0.24.1366.744" timestamp="1585817199932" />
     <state x="366" y="223" key="com.intellij.ide.util.TipDialog" timestamp="1585473073997">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
