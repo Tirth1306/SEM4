@@ -1,0 +1,401 @@
+SQL> select * from student
+  2  ;
+
+ROLL_NO  NAME                            SEM    MOBILE                                              
+-------- ------------------------- --------- ---------                                              
+18BCE259 Shrey Viradiya                    4 1.111E+09                                              
+18BCE263 Yash Chelani                      4 1.111E+09                                              
+18BCE260 Vishva Patel                      4 1.111E+09                                              
+18BCE258 Dhvanik Viradiya                  4 1.111E+09                                              
+
+SQL> drop table student
+  2  ;
+
+Table dropped.
+
+SQL> create table student (roll_no char(8), name varchar(25), sem number(12), OS number(3), CA number(3), DBMS number(3));
+
+Table created.
+
+SQL> select * from table;
+select * from table
+                  *
+ERROR at line 1:
+ORA-00906: missing left parenthesis 
+
+
+SQL> select * from student;
+
+no rows selected
+
+SQL> insert into student values('18BCE259','Shrey Viradiya',4,86,89,92);
+
+1 row created.
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* insert into student values('18BCE258','Dhvanik Viradiya',4,88,76,82)
+  2  ;
+
+1 row created.
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* insert into student values('18BCE257','Gunjan Vinzuda',4,75,98,75)
+  2  ;
+
+1 row created.
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* insert into student values('18BCE260','Vishva Patel',4,80,83,90)
+  2  ;
+
+1 row created.
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* insert into student values('18BCE261','Mohamad Asim',4,85,45,65)
+  2  ;
+
+1 row created.
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* insert into student values('18BCE263','Yash Chelani',4,86,71,42)
+  2  ;
+
+1 row created.
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* insert into student values('18BCE264','Vivek Zalariya',4,74,71,62)
+  2  ;
+
+1 row created.
+
+SQL> select * from student
+  2  ;
+
+ROLL_NO  NAME                            SEM        OS        CA      DBMS                          
+-------- ------------------------- --------- --------- --------- ---------                          
+18BCE259 Shrey Viradiya                    4        86        89        92                          
+18BCE258 Dhvanik Viradiya                  4        88        76        82                          
+18BCE257 Gunjan Vinzuda                    4        75        98        75                          
+18BCE260 Vishva Patel                      4        80        83        90                          
+18BCE261 Mohamad Asim                      4        85        45        65                          
+18BCE263 Yash Chelani                      4        86        71        42                          
+18BCE264 Vivek Zalariya                    4        74        71        62                          
+
+7 rows selected.
+
+SQL> insert into student values('18BCE256','Sagar Vasoya',4,85,63,45);
+
+1 row created.
+
+SQL> select * from student;
+
+ROLL_NO  NAME                            SEM        OS        CA      DBMS                          
+-------- ------------------------- --------- --------- --------- ---------                          
+18BCE259 Shrey Viradiya                    4        86        89        92                          
+18BCE258 Dhvanik Viradiya                  4        88        76        82                          
+18BCE257 Gunjan Vinzuda                    4        75        98        75                          
+18BCE260 Vishva Patel                      4        80        83        90                          
+18BCE261 Mohamad Asim                      4        85        45        65                          
+18BCE263 Yash Chelani                      4        86        71        42                          
+18BCE264 Vivek Zalariya                    4        74        71        62                          
+18BCE256 Sagar Vasoya                      4        85        63        45                          
+
+8 rows selected.
+
+SQL> commit
+  2  ;
+
+Commit complete.
+
+SQL> select sum(OS) from student;
+
+  SUM(OS)                                                                                           
+---------                                                                                           
+      659                                                                                           
+
+SQL> select * from student where os < avg(os) + 10 or os > avg(os) - 10;
+select * from student where os < avg(os) + 10 or os > avg(os) - 10
+                                 *
+ERROR at line 1:
+ORA-00934: group function is not allowed here 
+
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select * from student where OS < avg(OS) + 10 or OS > avg(OS) - 10
+  2  ;
+select * from student where OS < avg(OS) + 10 or OS > avg(OS) - 10
+                                 *
+ERROR at line 1:
+ORA-00934: group function is not allowed here 
+
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select * from student where (OS < avg(OS) + 10) or (OS > avg(OS) - 10)
+  2  ;
+select * from student where (OS < avg(OS) + 10) or (OS > avg(OS) - 10)
+                                *
+ERROR at line 1:
+ORA-00934: group function is not allowed here 
+
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select * from student where (OS < avg(OS) + 10 OR OS > avg(OS) - 10)
+  2  ;
+select * from student where (OS < avg(OS) + 10 OR OS > avg(OS) - 10)
+                                *
+ERROR at line 1:
+ORA-00934: group function is not allowed here 
+
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select * from student having (OS < avg(OS) + 10 OR OS > avg(OS) - 10)
+  2  ;
+select * from student having (OS < avg(OS) + 10 OR OS > avg(OS) - 10)
+                                                   *
+ERROR at line 1:
+ORA-00979: not a GROUP BY expression 
+
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select * from student group by sem having (OS < avg(OS) + 10 OR OS > avg(OS) - 10)
+  2  ;
+select * from student group by sem having (OS < avg(OS) + 10 OR OS > avg(OS) - 10)
+                                                                *
+ERROR at line 1:
+ORA-00979: not a GROUP BY expression 
+
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select * from student group by sem having (OS < avg(OS) + 10)
+  2  ;
+select * from student group by sem having (OS < avg(OS) + 10)
+                                           *
+ERROR at line 1:
+ORA-00979: not a GROUP BY expression 
+
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select * from student GROUP BY sem having (OS < avg(OS) + 10)
+  2  ;
+select * from student GROUP BY sem having (OS < avg(OS) + 10)
+                                           *
+ERROR at line 1:
+ORA-00979: not a GROUP BY expression 
+
+
+SQL> select * from student where OS > 62;
+
+ROLL_NO  NAME                            SEM        OS        CA      DBMS                          
+-------- ------------------------- --------- --------- --------- ---------                          
+18BCE259 Shrey Viradiya                    4        86        89        92                          
+18BCE258 Dhvanik Viradiya                  4        88        76        82                          
+18BCE257 Gunjan Vinzuda                    4        75        98        75                          
+18BCE260 Vishva Patel                      4        80        83        90                          
+18BCE261 Mohamad Asim                      4        85        45        65                          
+18BCE263 Yash Chelani                      4        86        71        42                          
+18BCE264 Vivek Zalariya                    4        74        71        62                          
+18BCE256 Sagar Vasoya                      4        85        63        45                          
+
+8 rows selected.
+
+SQL> select avg(OS) from student;
+
+  AVG(OS)                                                                                           
+---------                                                                                           
+   82.375                                                                                           
+
+SQL> select name from student where os > 82.375;
+
+NAME                                                                                                
+-------------------------                                                                           
+Shrey Viradiya                                                                                      
+Dhvanik Viradiya                                                                                    
+Mohamad Asim                                                                                        
+Yash Chelani                                                                                        
+Sagar Vasoya                                                                                        
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select name from student where os > avg(os)
+  2  ;
+select name from student where os > avg(os)
+                                    *
+ERROR at line 1:
+ORA-00934: group function is not allowed here 
+
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select name from student where os > 82.375
+  2  ;
+
+NAME                                                                                                
+-------------------------                                                                           
+Shrey Viradiya                                                                                      
+Dhvanik Viradiya                                                                                    
+Mohamad Asim                                                                                        
+Yash Chelani                                                                                        
+Sagar Vasoya                                                                                        
+
+SQL> select name from student where os > (select avg(os) from student);
+
+NAME                                                                                                
+-------------------------                                                                           
+Shrey Viradiya                                                                                      
+Dhvanik Viradiya                                                                                    
+Mohamad Asim                                                                                        
+Yash Chelani                                                                                        
+Sagar Vasoya                                                                                        
+
+SQL> select * from student where CA > (select max(CA) from student);
+
+no rows selected
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select * from student where CA = > (select max(CA) from student)
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select * from student where CA = > (select max(CA) from student)
+  2  ;
+select * from student where CA = > (select max(CA) from student)
+                                 *
+ERROR at line 1:
+ORA-00936: missing expression 
+
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select * from student where CA = (select max(CA) from student)
+  2  ;
+
+ROLL_NO  NAME                            SEM        OS        CA      DBMS                          
+-------- ------------------------- --------- --------- --------- ---------                          
+18BCE257 Gunjan Vinzuda                    4        75        98        75                          
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select * from student where CA = (select min(CA) from student)
+  2  ;
+
+ROLL_NO  NAME                            SEM        OS        CA      DBMS                          
+-------- ------------------------- --------- --------- --------- ---------                          
+18BCE261 Mohamad Asim                      4        85        45        65                          
+
+SQL> select * from student where CA > (select median(DBMS) from student) + 10;
+
+ROLL_NO  NAME                            SEM        OS        CA      DBMS                          
+-------- ------------------------- --------- --------- --------- ---------                          
+18BCE259 Shrey Viradiya                    4        86        89        92                          
+18BCE257 Gunjan Vinzuda                    4        75        98        75                          
+18BCE260 Vishva Patel                      4        80        83        90                          
+
+SQL> select * from student where CA < (select rank(os) from student) - 2;
+select * from student where CA < (select rank(os) from student) - 2
+                                                  *
+ERROR at line 1:
+ORA-02000: missing WITHIN keyword 
+
+
+SQL> select rank(os) from student;
+select rank(os) from student
+                *
+ERROR at line 1:
+ORA-02000: missing WITHIN keyword 
+
+
+SQL> select variance(OS) from student;
+
+VARIANCE(OS)                                                                                        
+------------                                                                                        
+   28.839286                                                                                        
+
+SQL> select std(DBMS) from student;
+select std(DBMS) from student
+       *
+ERROR at line 1:
+ORA-00904: "STD": invalid identifier 
+
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select stddev(DBMS) from student
+  2  ;
+
+STDDEV(DBMS)                                                                                        
+------------                                                                                        
+   19.067081                                                                                        
+
+SQL> select roll_no, name, os+ca+dbms as total from student;
+
+ROLL_NO  NAME                          TOTAL                                                        
+-------- ------------------------- ---------                                                        
+18BCE259 Shrey Viradiya                  267                                                        
+18BCE258 Dhvanik Viradiya                246                                                        
+18BCE257 Gunjan Vinzuda                  248                                                        
+18BCE260 Vishva Patel                    253                                                        
+18BCE261 Mohamad Asim                    195                                                        
+18BCE263 Yash Chelani                    199                                                        
+18BCE264 Vivek Zalariya                  207                                                        
+18BCE256 Sagar Vasoya                    193                                                        
+
+8 rows selected.
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select roll_no, name, os+ca+dbms as total from student order by total
+  2  ;
+
+ROLL_NO  NAME                          TOTAL                                                        
+-------- ------------------------- ---------                                                        
+18BCE256 Sagar Vasoya                    193                                                        
+18BCE261 Mohamad Asim                    195                                                        
+18BCE263 Yash Chelani                    199                                                        
+18BCE264 Vivek Zalariya                  207                                                        
+18BCE258 Dhvanik Viradiya                246                                                        
+18BCE257 Gunjan Vinzuda                  248                                                        
+18BCE260 Vishva Patel                    253                                                        
+18BCE259 Shrey Viradiya                  267                                                        
+
+8 rows selected.
+
+SQL> commit
+  2  ;
+
+Commit complete.
+
+SQL> spool off

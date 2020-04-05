@@ -1,0 +1,415 @@
+SQL> select * from student where os+ca+dbms < (select avg(os+dbms+ca) from student) and rownum<=3;
+
+ROLL_NO  NAME                            SEM        OS        CA      DBMS                          
+-------- ------------------------- --------- --------- --------- ---------                          
+18BCE261 Mohamad Asim                      4        85        45        65                          
+18BCE263 Yash Chelani                      4        86        71        42                          
+18BCE264 Vivek Zalariya                    4        74        71        62                          
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select * from student where os+ca+dbms < (select avg(os+dbms+ca) from student) and os+ca+dbms> (select avg(os+dbms+ca) from student)  and rownum<=3
+  2  ;
+
+no rows selected
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select * from student where os+ca+dbms < (select avg(os+dbms+ca) from student) or os+ca+dbms> (select avg(os+dbms+ca) from student)  and rownum<=3
+  2  ;
+
+ROLL_NO  NAME                            SEM        OS        CA      DBMS                          
+-------- ------------------------- --------- --------- --------- ---------                          
+18BCE259 Shrey Viradiya                    4        86        89        92                          
+18BCE258 Dhvanik Viradiya                  4        88        76        82                          
+18BCE257 Gunjan Vinzuda                    4        75        98        75                          
+18BCE261 Mohamad Asim                      4        85        45        65                          
+18BCE263 Yash Chelani                      4        86        71        42                          
+18BCE264 Vivek Zalariya                    4        74        71        62                          
+18BCE256 Sagar Vasoya                      4        85        63        45                          
+17BCE152 Sindhant Molhotra                 6        75        15        26                          
+17BCE254 Meera Kumari                      6        72        75        56                          
+
+9 rows selected.
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select * from student where os+ca+dbms < (select avg(os+dbms+ca) from student) or os+ca+dbms> (select avg(os+dbms+ca) from student)  and rownum<3
+  2  ;
+
+ROLL_NO  NAME                            SEM        OS        CA      DBMS                          
+-------- ------------------------- --------- --------- --------- ---------                          
+18BCE259 Shrey Viradiya                    4        86        89        92                          
+18BCE258 Dhvanik Viradiya                  4        88        76        82                          
+18BCE261 Mohamad Asim                      4        85        45        65                          
+18BCE263 Yash Chelani                      4        86        71        42                          
+18BCE264 Vivek Zalariya                    4        74        71        62                          
+18BCE256 Sagar Vasoya                      4        85        63        45                          
+17BCE152 Sindhant Molhotra                 6        75        15        26                          
+17BCE254 Meera Kumari                      6        72        75        56                          
+
+8 rows selected.
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select *, os+dbms+ca as total from student where os+ca+dbms < (select avg(os+dbms+ca) from student) or os+ca+dbms> (select avg(os+dbms+ca) from student)  and rownum<2
+  2  ;
+select *, os+dbms+ca as total from student where os+ca+dbms < (select avg(os+dbms+ca) from student) or os+ca+dbms> (select avg(os+dbms+ca) from student)  and rownum<2
+        *
+ERROR at line 1:
+ORA-00923: FROM keyword not found where expected 
+
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select roll_num,name,os+dbms+ca as total from student where os+ca+dbms < (select avg(os+dbms+ca) from student) or os+ca+dbms> (select avg(os+dbms+ca) from student)  and rownum<2
+  2  ;
+select roll_num,name,os+dbms+ca as total from student where os+ca+dbms < (select avg(os+dbms+ca) from student) or os+ca+dbms> (select avg(os+dbms+ca) from student)  and rownum<2
+       *
+ERROR at line 1:
+ORA-00904: "ROLL_NUM": invalid identifier 
+
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select roll_no,name,os+dbms+ca as total from student where os+ca+dbms < (select avg(os+dbms+ca) from student) or os+ca+dbms> (select avg(os+dbms+ca) from student)  and rownum<2
+  2  ;
+
+ROLL_NO  NAME                          TOTAL                                                        
+-------- ------------------------- ---------                                                        
+18BCE259 Shrey Viradiya                  267                                                        
+18BCE261 Mohamad Asim                    195                                                        
+18BCE263 Yash Chelani                    199                                                        
+18BCE264 Vivek Zalariya                  207                                                        
+18BCE256 Sagar Vasoya                    193                                                        
+17BCE152 Sindhant Molhotra               116                                                        
+17BCE254 Meera Kumari                    203                                                        
+
+7 rows selected.
+
+SQL> select avg(os+dbms+ca) from student;
+
+AVG(OS+DBMS+CA)                                                                                     
+---------------                                                                                     
+      218.61538                                                                                     
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1  insert into student values('18BCE220','Bula Beyer',4,54,54,76);
+  2  insert into student values('18BCE68','Hyacinth Hoyos',6,3,18,9);
+  3  insert into student values('17BCE215','Detra Deets',4,54,66,62);
+  4  insert into student values('18BCE64','Tana Tramel',6,15,28,45);
+  5  insert into student values('18BCE61','Ann Alexis',6,76,4,80);
+  6  insert into student values('18BCE103','Yadira Yarman',4,94,50,77);
+  7  insert into student values('17BCE201','Elfriede Enyeart',4,10,96,23);
+  8  insert into student values('17BCE221','Cordell Curci',4,73,60,27);
+  9  insert into student values('17BCE94','Elina Edelstein',4,69,19,17);
+ 10* insert into student values('18BCE12','Delois Danielson',6,63,33,89);
+ 11  
+SQL> select * from student;
+
+ROLL_NO  NAME                            SEM        OS        CA      DBMS                          
+-------- ------------------------- --------- --------- --------- ---------                          
+18BCE259 Shrey Viradiya                    4        86        89        92                          
+18BCE258 Dhvanik Viradiya                  4        88        76        82                          
+18BCE257 Gunjan Vinzuda                    4        75        98        75                          
+18BCE260 Vishva Patel                      4        80        83        90                          
+18BCE261 Mohamad Asim                      4        85        45        65                          
+18BCE263 Yash Chelani                      4        86        71        42                          
+18BCE264 Vivek Zalariya                    4        74        71        62                          
+18BCE256 Sagar Vasoya                      4        85        63        45                          
+17BCE152 Sindhant Molhotra                 6        75        15        26                          
+17BCE254 Meera Kumari                      6        72        75        56                          
+17BCE099 Rajat singh                       6        85        86        92                          
+17BCE011 Mohil Patel                       6        85        76        65                          
+17BCE000 Ghost Rider                       6        76        65        85                          
+
+13 rows selected.
+
+SQL> insert into student values('18BCE220','Bula Beyer',4,54,54,76);
+
+1 row created.
+
+SQL> insert into student values('18BCE68','Hyacinth Hoyos',6,3,18,9)
+  2  ;
+
+1 row created.
+
+SQL> insert into student values('17BCE215','Detra Deets',4,54,66,62);
+
+1 row created.
+
+SQL> insert into student values('18BCE64','Tana Tramel',6,15,28,45)
+  2  ;
+
+1 row created.
+
+SQL> insert into student values('18BCE61','Ann Alexis',6,76,4,80);
+
+1 row created.
+
+SQL> insert into student values('18BCE103','Yadira Yarman',4,94,50,77);
+
+1 row created.
+
+SQL> insert into student values('17BCE201','Elfriede Enyeart',4,10,96,23);
+
+1 row created.
+
+SQL> insert into student values('17BCE221','Cordell Curci',4,73,60,27);
+
+1 row created.
+
+SQL> insert into student values('17BCE94','Elina Edelstein',4,69,19,17);
+
+1 row created.
+
+SQL> insert into student values('18BCE12','Delois Danielson',6,63,33,89);
+
+1 row created.
+
+SQL> select * from student;
+
+ROLL_NO  NAME                            SEM        OS        CA      DBMS                          
+-------- ------------------------- --------- --------- --------- ---------                          
+18BCE259 Shrey Viradiya                    4        86        89        92                          
+18BCE258 Dhvanik Viradiya                  4        88        76        82                          
+18BCE257 Gunjan Vinzuda                    4        75        98        75                          
+18BCE260 Vishva Patel                      4        80        83        90                          
+18BCE261 Mohamad Asim                      4        85        45        65                          
+18BCE263 Yash Chelani                      4        86        71        42                          
+18BCE264 Vivek Zalariya                    4        74        71        62                          
+18BCE256 Sagar Vasoya                      4        85        63        45                          
+17BCE152 Sindhant Molhotra                 6        75        15        26                          
+17BCE254 Meera Kumari                      6        72        75        56                          
+17BCE099 Rajat singh                       6        85        86        92                          
+17BCE011 Mohil Patel                       6        85        76        65                          
+17BCE000 Ghost Rider                       6        76        65        85                          
+18BCE220 Bula Beyer                        4        54        54        76                          
+18BCE68  Hyacinth Hoyos                    6         3        18         9                          
+17BCE215 Detra Deets                       4        54        66        62                          
+18BCE64  Tana Tramel                       6        15        28        45                          
+18BCE61  Ann Alexis                        6        76         4        80                          
+18BCE103 Yadira Yarman                     4        94        50        77                          
+17BCE201 Elfriede Enyeart                  4        10        96        23                          
+17BCE221 Cordell Curci                     4        73        60        27                          
+
+ROLL_NO  NAME                            SEM        OS        CA      DBMS                          
+-------- ------------------------- --------- --------- --------- ---------                          
+17BCE94  Elina Edelstein                   4        69        19        17                          
+18BCE12  Delois Danielson                  6        63        33        89                          
+
+23 rows selected.
+
+SQL> commit
+  2  ;
+
+Commit complete.
+
+SQL> select * from student;
+
+ROLL_NO  NAME                            SEM        OS        CA      DBMS                          
+-------- ------------------------- --------- --------- --------- ---------                          
+18BCE259 Shrey Viradiya                    4        86        89        92                          
+18BCE258 Dhvanik Viradiya                  4        88        76        82                          
+18BCE257 Gunjan Vinzuda                    4        75        98        75                          
+18BCE260 Vishva Patel                      4        80        83        90                          
+18BCE261 Mohamad Asim                      4        85        45        65                          
+18BCE263 Yash Chelani                      4        86        71        42                          
+18BCE264 Vivek Zalariya                    4        74        71        62                          
+18BCE256 Sagar Vasoya                      4        85        63        45                          
+17BCE152 Sindhant Molhotra                 6        75        15        26                          
+17BCE254 Meera Kumari                      6        72        75        56                          
+17BCE099 Rajat singh                       6        85        86        92                          
+17BCE011 Mohil Patel                       6        85        76        65                          
+17BCE000 Ghost Rider                       6        76        65        85                          
+18BCE220 Bula Beyer                        4        54        54        76                          
+18BCE68  Hyacinth Hoyos                    6         3        18         9                          
+17BCE215 Detra Deets                       4        54        66        62                          
+18BCE64  Tana Tramel                       6        15        28        45                          
+18BCE61  Ann Alexis                        6        76         4        80                          
+18BCE103 Yadira Yarman                     4        94        50        77                          
+17BCE201 Elfriede Enyeart                  4        10        96        23                          
+17BCE221 Cordell Curci                     4        73        60        27                          
+
+ROLL_NO  NAME                            SEM        OS        CA      DBMS                          
+-------- ------------------------- --------- --------- --------- ---------                          
+17BCE94  Elina Edelstein                   4        69        19        17                          
+18BCE12  Delois Danielson                  6        63        33        89                          
+
+23 rows selected.
+
+SQL> insert into student values('18BCE250','Raymond Ramaya',4,25,36,85);
+
+1 row created.
+
+SQL> select * from student;
+
+ROLL_NO  NAME                            SEM        OS        CA      DBMS                          
+-------- ------------------------- --------- --------- --------- ---------                          
+18BCE259 Shrey Viradiya                    4        86        89        92                          
+18BCE258 Dhvanik Viradiya                  4        88        76        82                          
+18BCE257 Gunjan Vinzuda                    4        75        98        75                          
+18BCE260 Vishva Patel                      4        80        83        90                          
+18BCE261 Mohamad Asim                      4        85        45        65                          
+18BCE263 Yash Chelani                      4        86        71        42                          
+18BCE264 Vivek Zalariya                    4        74        71        62                          
+18BCE256 Sagar Vasoya                      4        85        63        45                          
+17BCE152 Sindhant Molhotra                 6        75        15        26                          
+17BCE254 Meera Kumari                      6        72        75        56                          
+17BCE099 Rajat singh                       6        85        86        92                          
+17BCE011 Mohil Patel                       6        85        76        65                          
+17BCE000 Ghost Rider                       6        76        65        85                          
+18BCE220 Bula Beyer                        4        54        54        76                          
+18BCE68  Hyacinth Hoyos                    6         3        18         9                          
+17BCE215 Detra Deets                       4        54        66        62                          
+18BCE64  Tana Tramel                       6        15        28        45                          
+18BCE61  Ann Alexis                        6        76         4        80                          
+18BCE103 Yadira Yarman                     4        94        50        77                          
+17BCE201 Elfriede Enyeart                  4        10        96        23                          
+17BCE221 Cordell Curci                     4        73        60        27                          
+
+ROLL_NO  NAME                            SEM        OS        CA      DBMS                          
+-------- ------------------------- --------- --------- --------- ---------                          
+17BCE94  Elina Edelstein                   4        69        19        17                          
+18BCE12  Delois Danielson                  6        63        33        89                          
+18BCE250 Raymond Ramaya                    4        25        36        85                          
+
+24 rows selected.
+
+SQL>  select * from student where sem = 6 and os+ca+dbms >= (select avg(os+dbms+ca) from student where sem = 4);
+
+ROLL_NO  NAME                            SEM        OS        CA      DBMS                          
+-------- ------------------------- --------- --------- --------- ---------                          
+17BCE254 Meera Kumari                      6        72        75        56                          
+17BCE099 Rajat singh                       6        85        86        92                          
+17BCE011 Mohil Patel                       6        85        76        65                          
+17BCE000 Ghost Rider                       6        76        65        85                          
+
+SQL> 
+SQL> select avg(os+dbms+ca) from student;
+
+AVG(OS+DBMS+CA)                                                                                     
+---------------                                                                                     
+      184.66667                                                                                     
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select avg(os+dbms+ca) from student where sem = 4
+  2  ;
+
+AVG(OS+DBMS+CA)                                                                                     
+---------------                                                                                     
+      195.66667                                                                                     
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select avg(os+dbms+ca) from student where sem = 6
+  2  ;
+
+AVG(OS+DBMS+CA)                                                                                     
+---------------                                                                                     
+      166.33333                                                                                     
+
+SQL> select * from student where sem = 6 and os+ca+dbms >= (select avg(os+dbms+ca) from student where sem = 4);
+
+ROLL_NO  NAME                            SEM        OS        CA      DBMS                          
+-------- ------------------------- --------- --------- --------- ---------                          
+17BCE254 Meera Kumari                      6        72        75        56                          
+17BCE099 Rajat singh                       6        85        86        92                          
+17BCE011 Mohil Patel                       6        85        76        65                          
+17BCE000 Ghost Rider                       6        76        65        85                          
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select * from student where sem = 6 and os+ca+dbms <= (select avg(os+dbms+ca) from student where sem = 4)
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select * from student where sem = 6 and os+ca+dbms <= (select avg(os+dbms+ca) from student where sem = 4)
+  2  l;
+l
+*
+ERROR at line 2:
+ORA-00933: SQL command not properly ended 
+
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select * from student where sem = 6 and os+ca+dbms <= (select avg(os+dbms+ca) from student where sem = 4)
+  2  ;
+
+ROLL_NO  NAME                            SEM        OS        CA      DBMS                          
+-------- ------------------------- --------- --------- --------- ---------                          
+17BCE152 Sindhant Molhotra                 6        75        15        26                          
+18BCE68  Hyacinth Hoyos                    6         3        18         9                          
+18BCE64  Tana Tramel                       6        15        28        45                          
+18BCE61  Ann Alexis                        6        76         4        80                          
+18BCE12  Delois Danielson                  6        63        33        89                          
+
+SQL> select max(avg) from (select avg(os+dbms+ca) from student group by sem);
+select max(avg) from (select avg(os+dbms+ca) from student group by sem)
+           *
+ERROR at line 1:
+ORA-00904: "AVG": invalid identifier 
+
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select max(avg) from (select sem,avg(os+dbms+ca) from student group by sem)
+  2  ;
+select max(avg) from (select sem,avg(os+dbms+ca) from student group by sem)
+           *
+ERROR at line 1:
+ORA-00904: "AVG": invalid identifier 
+
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select max(average) from (select sem,avg(os+dbms+ca) as average from student group by sem)
+  2  ;
+
+MAX(AVERAGE)                                                                                        
+------------                                                                                        
+   195.66667                                                                                        
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select sem,max(average) from (select sem,avg(os+dbms+ca) as average from student group by sem)
+  2  ;
+select sem,max(average) from (select sem,avg(os+dbms+ca) as average from student group by sem)
+       *
+ERROR at line 1:
+ORA-00937: not a single-group group function 
+
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select max(average) from (select sem,avg(os+dbms+ca) as average from student group by sem)
+  2  ;
+
+MAX(AVERAGE)                                                                                        
+------------                                                                                        
+   195.66667                                                                                        
+
+SQL> commit
+  2  ;
+
+Commit complete.
+
+SQL> spool off

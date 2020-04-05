@@ -1,0 +1,431 @@
+SQL> insert into table sale values=(1,C00,25);
+insert into table sale values=(1,C00,25)
+            *
+ERROR at line 1:
+ORA-00903: invalid table name 
+
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* insert into sales values=(1,C00,25)
+  2  ;
+insert into sales values=(1,C00,25)
+                        *
+ERROR at line 1:
+ORA-00936: missing expression 
+
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* insert into sales values (1,C00,25)
+  2  ;
+insert into sales values (1,C00,25)
+                            *
+ERROR at line 1:
+ORA-00984: column not allowed here 
+
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* insert into sales values (1,'C00',25)
+  2  ;
+
+1 row created.
+
+SQL> insert into sales values (2,'C01',85);
+
+1 row created.
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* insert into sales values (3,'C00',5)
+SQL> ed
+Wrote file afiedt.buf
+
+  1* insert into sales values (3,'C00',5);
+SQL> ;
+  1* insert into sales values (3,'C00',5);
+SQL> ed
+Wrote file afiedt.buf
+
+  1* insert into sales values (3,'C00',5)
+  2  ;
+
+1 row created.
+
+SQL> select * from sales;
+
+PRODUCT_NO CLIE  QUANTITY                                                                           
+---------- ---- ---------                                                                           
+         1 C00         25                                                                           
+         2 C01         85                                                                           
+         3 C00          5                                                                           
+
+SQL> select * from product;
+
+PRODUCT_NO DESCRIPTION          PROFITE_PERCENT UNIT_MEASURE         QTY_ON_HAND REORDER_LEVEL      
+---------- -------------------- --------------- -------------------- ----------- -------------      
+SELL_PRICE COST_PRICE                                                                               
+---------- ----------                                                                               
+         1 1.44 Floppies                      5 Piece                        100            20      
+       525        500                                                                               
+                                                                                                    
+      3453 Monitors                           6 Piece                         10             3      
+     12000      11200                                                                               
+                                                                                                    
+      6734 Mouse                              5 Piece                         20             5      
+      1050        500                                                                               
+                                                                                                    
+      7865 1.22 Floppies                      5 Piece                        100            20      
+       525        500                                                                               
+                                                                                                    
+      7868 Keyboards                          2 Piece                         10             3      
+      3150       3050                                                                               
+                                                                                                    
+
+SQL> set linewidth 200
+SP2-0158: unknown SET option "linewidth"
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select * from product
+SQL> set linesize 200
+SQL> select * from product;
+
+PRODUCT_NO DESCRIPTION          PROFITE_PERCENT UNIT_MEASURE         QTY_ON_HAND REORDER_LEVEL SELL_PRICE COST_PRICE                                                                                    
+---------- -------------------- --------------- -------------------- ----------- ------------- ---------- ----------                                                                                    
+         1 1.44 Floppies                      5 Piece                        100            20        525        500                                                                                    
+      3453 Monitors                           6 Piece                         10             3      12000      11200                                                                                    
+      6734 Mouse                              5 Piece                         20             5       1050        500                                                                                    
+      7865 1.22 Floppies                      5 Piece                        100            20        525        500                                                                                    
+      7868 Keyboards                          2 Piece                         10             3       3150       3050                                                                                    
+
+SQL> select * from client;
+select * from client
+              *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+SQL> select * from tab;
+
+TNAME                          TABTYPE CLUSTERID                                                                                                                                                        
+------------------------------ ------- ---------                                                                                                                                                        
+BIN$RIy6qNwoQX2L78Ik3LhxFg==$0 TABLE                                                                                                                                                                    
+BIN$ZZ7YruzuTemrVc6fYaHK6g==$0 TABLE                                                                                                                                                                    
+CLIENTS                        TABLE                                                                                                                                                                    
+EMPLOYEES                      TABLE                                                                                                                                                                    
+PRODUCT                        TABLE                                                                                                                                                                    
+SALES                          TABLE                                                                                                                                                                    
+SALESMAN                       TABLE                                                                                                                                                                    
+STUDENT                        TABLE                                                                                                                                                                    
+
+8 rows selected.
+
+SQL> select * from products;
+select * from products
+              *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1  select * from tab/
+  2  select * from product/
+  3* select * from clients/
+SQL> ;
+  1  select * from tab/
+  2  select * from product/
+  3* select * from clients/
+SQL> ;
+  1  select * from tab/
+  2  select * from product/
+  3* select * from clients/
+SQL> ;
+  1  select * from tab/
+  2  select * from product/
+  3* select * from clients/
+SQL> ;
+  1  select * from tab/
+  2  select * from product/
+  3* select * from clients/
+SQL> ;
+  1  select * from tab/
+  2  select * from product/
+  3* select * from clients/
+SQL> ed
+Wrote file afiedt.buf
+
+  1  select * from tab;
+  2  select * from product;
+  3* select * from clients;
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select * from tab
+  2  ;
+
+TNAME                          TABTYPE CLUSTERID                                                                                                                                                        
+------------------------------ ------- ---------                                                                                                                                                        
+BIN$RIy6qNwoQX2L78Ik3LhxFg==$0 TABLE                                                                                                                                                                    
+BIN$ZZ7YruzuTemrVc6fYaHK6g==$0 TABLE                                                                                                                                                                    
+CLIENTS                        TABLE                                                                                                                                                                    
+EMPLOYEES                      TABLE                                                                                                                                                                    
+PRODUCT                        TABLE                                                                                                                                                                    
+SALES                          TABLE                                                                                                                                                                    
+SALESMAN                       TABLE                                                                                                                                                                    
+STUDENT                        TABLE                                                                                                                                                                    
+
+8 rows selected.
+
+SQL> select * from product;
+
+PRODUCT_NO DESCRIPTION          PROFITE_PERCENT UNIT_MEASURE         QTY_ON_HAND REORDER_LEVEL SELL_PRICE COST_PRICE                                                                                    
+---------- -------------------- --------------- -------------------- ----------- ------------- ---------- ----------                                                                                    
+         1 1.44 Floppies                      5 Piece                        100            20        525        500                                                                                    
+      3453 Monitors                           6 Piece                         10             3      12000      11200                                                                                    
+      6734 Mouse                              5 Piece                         20             5       1050        500                                                                                    
+      7865 1.22 Floppies                      5 Piece                        100            20        525        500                                                                                    
+      7868 Keyboards                          2 Piece                         10             3       3150       3050                                                                                    
+
+SQL> select * from clients;
+
+CLIE NAME                      CITY                   PINCODE STATE                        BALDUE                                                                                                       
+---- ------------------------- -------------------- --------- ------------------------- ---------                                                                                                       
+C00  Bula Beyer                Mumabi                  400054 Maharastra                     6115                                                                                                       
+C01  Hyacinth Hoyos            Manglore                560050 Karnataka                      6849                                                                                                       
+C02  Detra Deets               Chennai                 780001 Tamil nadu                     9556                                                                                                       
+C03  Tana Tramel               Chennai                 780001 Tamil nadu                        0                                                                                                       
+C04  Ann Alexis                Chennai                 780001 Tamil nadu                     9185                                                                                                       
+C05  Yadira Yarman             Chennai                 780001 Tamil nadu                     7191                                                                                                       
+C06  Elfriede Enyeart          Mumabi                  400054 Maharastra                     7389                                                                                                       
+C07  Cordell Curci             Manglore                560050 Karnataka                      5210                                                                                                       
+C08  Elina Edelstein           Mumabi                  400054 Maharastra                        0                                                                                                       
+
+9 rows selected.
+
+SQL> select * from sales;
+
+PRODUCT_NO CLIE  QUANTITY                                                                                                                                                                               
+---------- ---- ---------                                                                                                                                                                               
+         1 C00         25                                                                                                                                                                               
+         2 C01         85                                                                                                                                                                               
+         3 C00          5                                                                                                                                                                               
+
+SQL> insert into sales values (3453,'C07',20);
+
+1 row created.
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* insert into sales values (6734,'C05',100)
+  2  ;
+
+1 row created.
+
+SQL> insert into sales values (3453,'C03',10);
+
+1 row created.
+
+SQL> select * from sales;
+
+PRODUCT_NO CLIE  QUANTITY                                                                                                                                                                               
+---------- ---- ---------                                                                                                                                                                               
+         1 C00         25                                                                                                                                                                               
+         2 C01         85                                                                                                                                                                               
+         3 C00          5                                                                                                                                                                               
+      3453 C07         20                                                                                                                                                                               
+      6734 C05        100                                                                                                                                                                               
+      3453 C03         10                                                                                                                                                                               
+
+6 rows selected.
+
+SQL> select sales.product_no,clients.name from sales inner join clients on sales.client_no=clients.client_no;
+select sales.product_no,clients.name from sales inner join clients on sales.client_no=clients.client_no
+                                                                                      *
+ERROR at line 1:
+ORA-00904: "CLIENTS"."CLIENT_NO": invalid identifier 
+
+
+SQL> desc clients
+ Name                                                                                                              Null?    Type
+ ----------------------------------------------------------------------------------------------------------------- -------- ----------------------------------------------------------------------------
+ CLIENTNO                                                                                                                   VARCHAR2(4)
+ NAME                                                                                                                       VARCHAR2(25)
+ CITY                                                                                                                       VARCHAR2(20)
+ PINCODE                                                                                                                    NUMBER(6)
+ STATE                                                                                                                      VARCHAR2(25)
+ BALDUE                                                                                                                     NUMBER(25)
+
+SQL> desc sales
+ Name                                                                                                              Null?    Type
+ ----------------------------------------------------------------------------------------------------------------- -------- ----------------------------------------------------------------------------
+ PRODUCT_NO                                                                                                                 NUMBER(6)
+ CLIENT_NO                                                                                                                  VARCHAR2(4)
+ QUANTITY                                                                                                                   NUMBER(4)
+
+SQL> select sales.product_no,clients.name from sales inner join clients on sales.client_no=clients.client_no;
+select sales.product_no,clients.name from sales inner join clients on sales.client_no=clients.client_no
+                                                                                      *
+ERROR at line 1:
+ORA-00904: "CLIENTS"."CLIENT_NO": invalid identifier 
+
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select sales.product_no,clients.name from sales inner join clients on sales.client_no=clients.clientno
+  2  ;
+
+PRODUCT_NO NAME                                                                                                                                                                                         
+---------- -------------------------                                                                                                                                                                    
+         3 Bula Beyer                                                                                                                                                                                   
+         1 Bula Beyer                                                                                                                                                                                   
+         2 Hyacinth Hoyos                                                                                                                                                                               
+      3453 Tana Tramel                                                                                                                                                                                  
+      6734 Yadira Yarman                                                                                                                                                                                
+      3453 Cordell Curci                                                                                                                                                                                
+
+6 rows selected.
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select sales.product_no,product.description from sales inner join product on sales.product_no=product.product_no
+  2  ;
+
+PRODUCT_NO DESCRIPTION                                                                                                                                                                                  
+---------- --------------------                                                                                                                                                                         
+         1 1.44 Floppies                                                                                                                                                                                
+      3453 Monitors                                                                                                                                                                                     
+      6734 Mouse                                                                                                                                                                                        
+      3453 Monitors                                                                                                                                                                                     
+
+SQL> select * from sales;
+
+PRODUCT_NO CLIE  QUANTITY                                                                                                                                                                               
+---------- ---- ---------                                                                                                                                                                               
+         1 C00         25                                                                                                                                                                               
+         2 C01         85                                                                                                                                                                               
+         3 C00          5                                                                                                                                                                               
+      3453 C07         20                                                                                                                                                                               
+      6734 C05        100                                                                                                                                                                               
+      3453 C03         10                                                                                                                                                                               
+
+6 rows selected.
+
+SQL> insert into sales values (7865,'C04',1200);
+
+1 row created.
+
+SQL> commit
+  2  ;
+
+Commit complete.
+
+SQL> desc product
+ Name                                                                                                              Null?    Type
+ ----------------------------------------------------------------------------------------------------------------- -------- ----------------------------------------------------------------------------
+ PRODUCT_NO                                                                                                                 NUMBER(6)
+ DESCRIPTION                                                                                                                VARCHAR2(20)
+ PROFITE_PERCENT                                                                                                            NUMBER(2)
+ UNIT_MEASURE                                                                                                               VARCHAR2(20)
+ QTY_ON_HAND                                                                                                                NUMBER(6)
+ REORDER_LEVEL                                                                                                              NUMBER(4)
+ SELL_PRICE                                                                                                                 NUMBER(6)
+ COST_PRICE                                                                                                                 NUMBER(6)
+
+SQL> select sales.client_no from sales inner join product on sales.product_no=product.product_no where sales.quantity*product.sell_price < 15000;
+
+CLIE                                                                                                                                                                                                    
+----                                                                                                                                                                                                    
+C00                                                                                                                                                                                                     
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select avg(quantity) from (select * from sales / (select sales.client_no from sales inner join product on sales.product_no=product.product_no where sales.quantity*product.sell_price < 15000)) group by client_no
+  2  ;
+select avg(quantity) from (select * from sales / (select sales.client_no from sales inner join product on sales.product_no=product.product_no where sales.quantity*product.sell_price < 15000)) group by client_no
+                                               *
+ERROR at line 1:
+ORA-00907: missing right parenthesis 
+
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select avg(quantity) from (select * from sales devide (select sales.client_no from sales inner join product on sales.product_no=product.product_no where sales.quantity*product.sell_price < 15000)) group by client_no
+  2  ;
+select avg(quantity) from (select * from sales devide (select sales.client_no from sales inner join product on sales.product_no=product.product_no where sales.quantity*product.sell_price < 15000)) group by client_no
+                                                      *
+ERROR at line 1:
+ORA-00907: missing right parenthesis 
+
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select avg(quantity) from (select * from sales divide (select sales.client_no from sales inner join product on sales.product_no=product.product_no where sales.quantity*product.sell_price < 15000)) group by client_no
+  2  ;
+select avg(quantity) from (select * from sales divide (select sales.client_no from sales inner join product on sales.product_no=product.product_no where sales.quantity*product.sell_price < 15000)) group by client_no
+                                                      *
+ERROR at line 1:
+ORA-00907: missing right parenthesis 
+
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select avg(quantity) from (select * from sales where sales.client_no in (select sales.client_no from sales inner join product on sales.product_no=product.product_no where sales.quantity*product.sell_price < 15000)) group by client_no
+  2  ;
+
+AVG(QUANTITY)                                                                                                                                                                                           
+-------------                                                                                                                                                                                           
+           15                                                                                                                                                                                           
+
+SQL> select * from sales;
+
+PRODUCT_NO CLIE  QUANTITY                                                                                                                                                                               
+---------- ---- ---------                                                                                                                                                                               
+         1 C00         25                                                                                                                                                                               
+         2 C01         85                                                                                                                                                                               
+         3 C00          5                                                                                                                                                                               
+      3453 C07         20                                                                                                                                                                               
+      6734 C05        100                                                                                                                                                                               
+      3453 C03         10                                                                                                                                                                               
+      7865 C04       1200                                                                                                                                                                               
+
+7 rows selected.
+
+SQL> insert into sales values (3457,'C02',2);
+
+1 row created.
+
+SQL> select avg(quantity) from (select * from sales where sales.client_no in (select sales.client_no from sales inner join product on sales.product_no=product.product_no where sales.quantity*product.sell_price < 15000)) group by client_no;
+
+AVG(QUANTITY)                                                                                                                                                                                           
+-------------                                                                                                                                                                                           
+           15                                                                                                                                                                                           
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select client_no,avg(quantity) from (select * from sales where sales.client_no in (select sales.client_no from sales inner join product on sales.product_no=product.product_no where sales.quantity*product.sell_price < 15000)) group by client_no
+  2  ;]
+  3  
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select client_no,avg(quantity) from (select * from sales where sales.client_no in (select sales.client_no from sales inner join product on sales.product_no=product.product_no where sales.quantity*product.sell_price < 15000)) group by client_no
+  2  ;
+
+CLIE AVG(QUANTITY)                                                                                                                                                                                      
+---- -------------                                                                                                             

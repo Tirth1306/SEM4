@@ -1,0 +1,1190 @@
+SQL> select * from employees;
+
+EMPLOYEE_ID FIRST_NAME           LAST_NAME                 EMAIL                                    
+----------- -------------------- ------------------------- -------------------------                
+PHONE_NUMBER         HIRE_DATE JOB_ID                                      SALARY COMMISSION_PCT    
+-------------------- --------- ---------------------------------------- --------- --------------    
+MANAGER_ID DEPARTMENT_ID                                                                            
+---------- -------------                                                                            
+        100 Steven               King                      SKING                                    
+515.123.4567         17-JUN-00 PRESIDENT                                    24000                   
+       103            90                                                                            
+                                                                                                    
+        101 Neena                Kochhar                   NKOCHHAR                                 
+515.123.4568         18-JUN-12 VICE PRESIDENT                               17000              0    
+       100            90                                                                            
+                                                                                                    
+        102 Lex                  De Haan                   LDEHAAN                                  
+123.515.4569         19-JUN-17 VICE PRESIDENT                               17000                   
+       100            90                                                                            
+                                                                                                    
+        103 Alexander            Hunold                    AHUNOLD                                  
+590.423.4567         20-MAY-16 IT PROG                                       9000                   
+       102            60                                                                            
+                                                                                                    
+        104 Bruce                Ernst                     BERNST                                   
+
+EMPLOYEE_ID FIRST_NAME           LAST_NAME                 EMAIL                                    
+----------- -------------------- ------------------------- -------------------------                
+PHONE_NUMBER         HIRE_DATE JOB_ID                                      SALARY COMMISSION_PCT    
+-------------------- --------- ---------------------------------------- --------- --------------    
+MANAGER_ID DEPARTMENT_ID                                                                            
+---------- -------------                                                                            
+590.423.4568         20-MAY-14 FINANCIAL MANAGER                             6000              0    
+       103            60                                                                            
+                                                                                                    
+        105 David                Austin                    DAUSTIN                                  
+590.423.4569         17-SEP-01 IT PROG                                       4800              0    
+       103            60                                                                            
+                                                                                                    
+        106 Valli                Pataballa                 VPATABAL                                 
+590.423.4560         20-SEP-01 FINANCE ACCOUNTANT                            4800              0    
+       103            60                                                                            
+                                                                                                    
+        114 Den                  Raphaely                  DRAPHEAL                                 
+515.127.4561         01-SEP-90 SALES CLERK                                  11000              0    
+       100            30                                                                            
+                                                                                                    
+        119 Karen                Colmenares                KCOLMENA                                 
+515.127.4566         06-JUL-87 CLERK                                         2500                   
+
+EMPLOYEE_ID FIRST_NAME           LAST_NAME                 EMAIL                                    
+----------- -------------------- ------------------------- -------------------------                
+PHONE_NUMBER         HIRE_DATE JOB_ID                                      SALARY COMMISSION_PCT    
+-------------------- --------- ---------------------------------------- --------- --------------    
+MANAGER_ID DEPARTMENT_ID                                                                            
+---------- -------------                                                                            
+       114            30                                                                            
+                                                                                                    
+        206 William              Gietz                     WGIETZ                                   
+515.123.8181         06-JUL-05 ACCOUNTANT                                    8300                   
+       205           110                                                                            
+                                                                                                    
+
+10 rows selected.
+
+SQL> create table clients( ClientNo VARCHAR2(4),
+  2  Name VARCHAR2(25),
+  3  City VARCHAR2(20),
+  4  Pincode NUMBER(6),
+  5  State VARCHAR2(25),
+  6  BalDue NUMBER(25),
+  7  CONSTRAINT pincode_valid CHECK(Pincode > 99999));
+
+Table created.
+
+SQL> SELECT * FROM TAB;
+
+TNAME                          TABTYPE CLUSTERID                                                    
+------------------------------ ------- ---------                                                    
+BIN$ZZ7YruzuTemrVc6fYaHK6g==$0 TABLE                                                                
+CLIENTS                        TABLE                                                                
+EMPLOYEES                      TABLE                                                                
+STUDENT                        TABLE                                                                
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1  insert into clients values('C00','Bula Beyer',Mumabi,400054,Maharastra,8062);
+  2  insert into clients values('C01','Hyacinth Hoyos',Manglore,560050,Karnataka,8498);
+  3  insert into clients values('C02','Detra Deets',Mumabi,400054,Maharastra,9271);
+  4  insert into clients values('C03','Tana Tramel',Manglore,560050,Karnataka,7236);
+  5  insert into clients values('C04','Ann Alexis',Manglore,560050,Karnataka,9186);
+  6  insert into clients values('C05','Yadira Yarman',Banglore,400057,Karnataka,4395);
+  7  insert into clients values('C06','Elfriede Enyeart',Manglore,560050,Karnataka,204);
+  8  insert into clients values('C07','Cordell Curci',Banglore,400057,Karnataka,9514);
+  9* insert into clients values('C08','Elina Edelstein',Mumabi,400054,Maharastra,1316);
+ 10  
+SQL> @C:\Users\B106\Desktop\18BCE259\data.sql
+insert into clients values('C00','Bula Beyer',Mumabi,400054,Maharastra,8062)
+                                                            *
+ERROR at line 1:
+ORA-00984: column not allowed here 
+
+
+insert into clients values('C01','Hyacinth Hoyos',Manglore,560050,Karnataka,8498)
+                                                                  *
+ERROR at line 1:
+ORA-00984: column not allowed here 
+
+
+insert into clients values('C02','Detra Deets',Mumabi,400054,Maharastra,9271)
+                                                             *
+ERROR at line 1:
+ORA-00984: column not allowed here 
+
+
+insert into clients values('C03','Tana Tramel',Manglore,560050,Karnataka,7236)
+                                                               *
+ERROR at line 1:
+ORA-00984: column not allowed here 
+
+
+insert into clients values('C04','Ann Alexis',Manglore,560050,Karnataka,9186)
+                                                              *
+ERROR at line 1:
+ORA-00984: column not allowed here 
+
+
+insert into clients values('C05','Yadira Yarman',Banglore,400057,Karnataka,4395)
+                                                                 *
+ERROR at line 1:
+ORA-00984: column not allowed here 
+
+
+insert into clients values('C06','Elfriede Enyeart',Manglore,560050,Karnataka,204)
+                                                                    *
+ERROR at line 1:
+ORA-00984: column not allowed here 
+
+
+insert into clients values('C07','Cordell Curci',Banglore,400057,Karnataka,9514)
+                                                                 *
+ERROR at line 1:
+ORA-00984: column not allowed here 
+
+
+insert into clients values('C08','Elina Edelstein',Mumabi,400054,Maharastra,1316)
+                                                                 *
+ERROR at line 1:
+ORA-00984: column not allowed here 
+
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* insert into clients values('C08','Elina Edelstein',Mumabi,400054,Maharastra,1316)
+SQL> @C:\Users\B106\Desktop\18BCE259\data.sql
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+SQL> select * from clients;
+
+CLIE NAME                      CITY                   PINCODE STATE                        BALDUE   
+---- ------------------------- -------------------- --------- ------------------------- ---------   
+C00  Bula Beyer                Mumabi                  400054 Maharastra                     6115   
+C01  Hyacinth Hoyos            Manglore                560050 Karnataka                      6849   
+C02  Detra Deets               Chennai                 780001 Tamil nadu                     9556   
+C03  Tana Tramel               Chennai                 780001 Tamil nadu                     2397   
+C04  Ann Alexis                Chennai                 780001 Tamil nadu                     9185   
+C05  Yadira Yarman             Chennai                 780001 Tamil nadu                     7191   
+C06  Elfriede Enyeart          Mumabi                  400054 Maharastra                     7389   
+C07  Cordell Curci             Manglore                560050 Karnataka                      5210   
+C08  Elina Edelstein           Mumabi                  400054 Maharastra                     5031   
+
+9 rows selected.
+
+SQL> @C:\Users\B106\Desktop\18BCE259\product.sql
+
+Table created.
+
+insert into product values('P00001','1.44 Floppies',5,'Piece',100,20,525,500)
+                           *
+ERROR at line 1:
+ORA-01722: invalid number 
+
+
+insert into product values('P03453','Monitors',6,'Piece',10,3,12000,11200)
+                           *
+ERROR at line 1:
+ORA-01722: invalid number 
+
+
+insert into product values('P06734','Mouse',5,'Piece',20,5,1050,500)
+                           *
+ERROR at line 1:
+ORA-01722: invalid number 
+
+
+insert into product values('P07865','1.22 Floppies',5,'Piece',100,20,525,500)
+                           *
+ERROR at line 1:
+ORA-01722: invalid number 
+
+
+insert into product values('P07868','Keyboards',2,'Piece',10,3,3150,3050)
+                           *
+ERROR at line 1:
+ORA-01722: invalid number 
+
+
+
+Table created.
+
+SQL> desc product
+ Name                                                  Null?    Type
+ ----------------------------------------------------- -------- ------------------------------------
+ PRODUCT_NO                                                     NUMBER(6)
+ DESCRIPTION                                                    VARCHAR2(20)
+ PROFITE_PERCENT                                                NUMBER(2)
+ UNIT_MEASURE                                                   VARCHAR2(20)
+ QTY_ON_HAND                                                    NUMBER(6)
+ REORDER_LEVEL                                                  NUMBER(4)
+ SELL_PRICE                                                     NUMBER(6)
+ COST_PRICE                                                     NUMBER(6)
+
+SQL> alter table product alter column product_no varchar2(6);
+alter table product alter column product_no varchar2(6)
+                    *
+ERROR at line 1:
+ORA-01735: invalid ALTER TABLE option 
+
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* alter table product modify column product_no varchar2(6)
+SQL> ;
+  1* alter table product modify column product_no varchar2(6)
+SQL> ed
+Wrote file afiedt.buf
+
+  1* alter table product modify column product_no varchar2(6)
+  2  ;
+alter table product modify column product_no varchar2(6)
+                                             *
+ERROR at line 1:
+ORA-00905: missing keyword 
+
+
+SQL> @C:\Users\B106\Desktop\18BCE259\product.sql
+CREATE TABLE product
+             *
+ERROR at line 1:
+ORA-00955: name is already used by an existing object 
+
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+CREATE TABLE salesman
+             *
+ERROR at line 1:
+ORA-00955: name is already used by an existing object 
+
+
+SQL> select * from tab;
+
+TNAME                          TABTYPE CLUSTERID                                                    
+------------------------------ ------- ---------                                                    
+BIN$ZZ7YruzuTemrVc6fYaHK6g==$0 TABLE                                                                
+CLIENTS                        TABLE                                                                
+EMPLOYEES                      TABLE                                                                
+PRODUCT                        TABLE                                                                
+SALESMAN                       TABLE                                                                
+STUDENT                        TABLE                                                                
+
+6 rows selected.
+
+SQL> select * from salesman;
+
+no rows selected
+
+SQL> alter table salesman add column salamt number(15);
+alter table salesman add column salamt number(15)
+                         *
+ERROR at line 1:
+ORA-00904: : invalid identifier 
+
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* alter table salesman add salamt number(15)
+  2  ;
+
+Table altered.
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* alter table salesman add TgtToGet number(3)
+  2  ;
+
+Table altered.
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* alter table salesman add YtdSales number(3)
+  2  ;
+
+Table altered.
+
+SQL> ed]
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* alter table salesman add Remarks VARCHAR(15)
+  2  ;
+
+Table altered.
+
+SQL> desc salesman;
+ Name                                                  Null?    Type
+ ----------------------------------------------------- -------- ------------------------------------
+ SALESMAN_NO                                                    NUMBER(6)
+ NAME                                                           VARCHAR2(20)
+ ADDRESS1                                                       VARCHAR2(20)
+ ADDRESS2                                                       VARCHAR2(20)
+ CITY                                                           VARCHAR2(25)
+ PINCODE                                                        NUMBER(6)
+ STATE                                                          VARCHAR2(25)
+ SALAMT                                                         NUMBER(15)
+ TGTTOGET                                                       NUMBER(3)
+ YTDSALES                                                       NUMBER(3)
+ REMARKS                                                        VARCHAR2(15)
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* insert into salesman values(0001,'Rushi','A-54','Worli','Mumbai',400002,'Maharashtra',3000,100,50,'Good')
+  2  ;
+
+1 row created.
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* insert into salesman values(0002,'Omkar','65','Nariman','Mumbai',400001,'Maharashtra',3000,200,100,'Good')
+  2  '
+  3  ;
+ERROR:
+ORA-01756: quoted string not properly terminated 
+
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* insert into salesman values(0002,'Omkar','65','Nariman','Mumbai',400001,'Maharashtra',3000,200,100,'Good')
+  2  ;
+
+1 row created.
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* insert into salesman values(0003,'Raj','P-7','Bandra','Mumbai',400032,'Maharashtra',3000,200,100,'Good')
+  2  ;
+
+1 row created.
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* insert into salesman values(0003,'Ashish','A/5','Juhu','Mumbai',400044,'Maharashtra',3500,200,150,'Good')
+  2  ;
+
+1 row created.
+
+SQL> select * from salesman;
+
+SALESMAN_NO NAME                 ADDRESS1             ADDRESS2             CITY                     
+----------- -------------------- -------------------- -------------------- -------------------------
+  PINCODE STATE                        SALAMT  TGTTOGET  YTDSALES REMARKS                           
+--------- ------------------------- --------- --------- --------- ---------------                   
+          1 Rushi                A-54                 Worli                Mumbai                   
+   400002 Maharashtra                    3000       100        50 Good                              
+                                                                                                    
+          2 Omkar                65                   Nariman              Mumbai                   
+   400001 Maharashtra                    3000       200       100 Good                              
+                                                                                                    
+          3 Raj                  P-7                  Bandra               Mumbai                   
+   400032 Maharashtra                    3000       200       100 Good                              
+                                                                                                    
+          3 Ashish               A/5                  Juhu                 Mumbai                   
+   400044 Maharashtra                    3500       200       150 Good                              
+                                                                                                    
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select * from salesman
+  2  ;
+
+SALESMAN_NO NAME                 ADDRESS1             ADDRESS2             CITY                     
+----------- -------------------- -------------------- -------------------- -------------------------
+  PINCODE STATE                        SALAMT  TGTTOGET  YTDSALES REMARKS                           
+--------- ------------------------- --------- --------- --------- ---------------                   
+          1 Rushi                A-54                 Worli                Mumbai                   
+   400002 Maharashtra                    3000       100        50 Good                              
+                                                                                                    
+          2 Omkar                65                   Nariman              Mumbai                   
+   400001 Maharashtra                    3000       200       100 Good                              
+                                                                                                    
+          3 Raj                  P-7                  Bandra               Mumbai                   
+   400032 Maharashtra                    3000       200       100 Good                              
+                                                                                                    
+          3 Ashish               A/5                  Juhu                 Mumbai                   
+   400044 Maharashtra                    3500       200       150 Good                              
+                                                                                                    
+
+SQL> select sum(ytdsales) from salesman;
+
+SUM(YTDSALES)                                                                                       
+-------------                                                                                       
+          400                                                                                       
+
+SQL> select * from clients where baldue = 0;
+
+no rows selected
+
+SQL> describe products;
+ERROR:
+ORA-04043: object products does not exist 
+
+
+SQL> select * from tab;
+
+TNAME                          TABTYPE CLUSTERID                                                    
+------------------------------ ------- ---------                                                    
+BIN$ZZ7YruzuTemrVc6fYaHK6g==$0 TABLE                                                                
+CLIENTS                        TABLE                                                                
+EMPLOYEES                      TABLE                                                                
+PRODUCT                        TABLE                                                                
+SALESMAN                       TABLE                                                                
+STUDENT                        TABLE                                                                
+
+6 rows selected.
+
+SQL> desc product;
+ Name                                                  Null?    Type
+ ----------------------------------------------------- -------- ------------------------------------
+ PRODUCT_NO                                                     NUMBER(6)
+ DESCRIPTION                                                    VARCHAR2(20)
+ PROFITE_PERCENT                                                NUMBER(2)
+ UNIT_MEASURE                                                   VARCHAR2(20)
+ QTY_ON_HAND                                                    NUMBER(6)
+ REORDER_LEVEL                                                  NUMBER(4)
+ SELL_PRICE                                                     NUMBER(6)
+ COST_PRICE                                                     NUMBER(6)
+
+SQL> select description from product where sell_price = (select max(sell_price) from prodcut);
+select description from product where sell_price = (select max(sell_price) from prodcut)
+                                                                                *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select description from product where sell_price = (select max(sell_price) from product)
+  2  ;
+
+DESCRIPTION                                                                                         
+--------------------                                                                                
+Monitors                                                                                            
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select description,sell_price - cost_price as ppu from product where ppu = (select max(sell_price-cost_price) from product)
+  2  ;
+select description,sell_price - cost_price as ppu from product where ppu = (select max(sell_price-cost_price) from product)
+                                                                     *
+ERROR at line 1:
+ORA-00904: "PPU": invalid identifier 
+
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select description,sell_price - cost_price as ppu from product where sell_price - cost_price = (select max(sell_price-cost_price) from product)
+  2  ;
+
+DESCRIPTION                PPU                                                                      
+-------------------- ---------                                                                      
+Monitors                   800                                                                      
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select description,(sell_price - cost_price)/cost_price as ppu from product where (sell_price - cost_price)/cost_price = (select max((sell_price-cost_price)/cost_price) from product)
+  2  ;
+
+DESCRIPTION                PPU                                                                      
+-------------------- ---------                                                                      
+Mouse                      1.1                                                                      
+
+SQL> describe students;
+ERROR:
+ORA-04043: object students does not exist 
+
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select description,(sell_price - cost_price)/cost_price as ppu from product where (sell_price - cost_price)/cost_price = (select max((sell_price-cost_price)/cost_price) from product)
+  2  ;
+
+DESCRIPTION                PPU                                                                      
+-------------------- ---------                                                                      
+Mouse                      1.1                                                                      
+
+SQL> desc student;
+ Name                                                  Null?    Type
+ ----------------------------------------------------- -------- ------------------------------------
+ ROLL_NO                                                        CHAR(8)
+ NAME                                                           VARCHAR2(25)
+ SEM                                                            NUMBER(12)
+ OS                                                             NUMBER(3)
+ CA                                                             NUMBER(3)
+ DBMS                                                           NUMBER(3)
+
+SQL> select count(roll_no) from student;
+
+COUNT(ROLL_NO)                                                                                      
+--------------                                                                                      
+            24                                                                                      
+
+SQL> alter table student add batch varchar(2);
+
+Table altered.
+
+SQL> alter table student add city varchar(25);
+
+Table altered.
+
+SQL> desc student;
+ Name                                                  Null?    Type
+ ----------------------------------------------------- -------- ------------------------------------
+ ROLL_NO                                                        CHAR(8)
+ NAME                                                           VARCHAR2(25)
+ SEM                                                            NUMBER(12)
+ OS                                                             NUMBER(3)
+ CA                                                             NUMBER(3)
+ DBMS                                                           NUMBER(3)
+ BATCH                                                          VARCHAR2(2)
+ CITY                                                           VARCHAR2(25)
+
+SQL> select * from student;
+
+ROLL_NO  NAME                            SEM        OS        CA      DBMS BA                       
+-------- ------------------------- --------- --------- --------- --------- --                       
+CITY                                                                                                
+-------------------------                                                                           
+18BCE259 Shrey Viradiya                    4        86        89        92                          
+                                                                                                    
+                                                                                                    
+18BCE258 Dhvanik Viradiya                  4        88        76        82                          
+                                                                                                    
+                                                                                                    
+18BCE257 Gunjan Vinzuda                    4        75        98        75                          
+                                                                                                    
+                                                                                                    
+18BCE260 Vishva Patel                      4        80        83        90                          
+                                                                                                    
+                                                                                                    
+18BCE261 Mohamad Asim                      4        85        45        65                          
+                                                                                                    
+                                                                                                    
+18BCE263 Yash Chelani                      4        86        71        42                          
+                                                                                                    
+                                                                                                    
+18BCE264 Vivek Zalariya                    4        74        71        62                          
+
+ROLL_NO  NAME                            SEM        OS        CA      DBMS BA                       
+-------- ------------------------- --------- --------- --------- --------- --                       
+CITY                                                                                                
+-------------------------                                                                           
+                                                                                                    
+                                                                                                    
+18BCE256 Sagar Vasoya                      4        85        63        45                          
+                                                                                                    
+                                                                                                    
+17BCE152 Sindhant Molhotra                 6        75        15        26                          
+                                                                                                    
+                                                                                                    
+17BCE254 Meera Kumari                      6        72        75        56                          
+                                                                                                    
+                                                                                                    
+17BCE099 Rajat singh                       6        85        86        92                          
+                                                                                                    
+                                                                                                    
+17BCE011 Mohil Patel                       6        85        76        65                          
+                                                                                                    
+                                                                                                    
+17BCE000 Ghost Rider                       6        76        65        85                          
+                                                                                                    
+
+ROLL_NO  NAME                            SEM        OS        CA      DBMS BA                       
+-------- ------------------------- --------- --------- --------- --------- --                       
+CITY                                                                                                
+-------------------------                                                                           
+                                                                                                    
+18BCE220 Bula Beyer                        4        54        54        76                          
+                                                                                                    
+                                                                                                    
+18BCE68  Hyacinth Hoyos                    6         3        18         9                          
+                                                                                                    
+                                                                                                    
+17BCE215 Detra Deets                       4        54        66        62                          
+                                                                                                    
+                                                                                                    
+18BCE64  Tana Tramel                       6        15        28        45                          
+                                                                                                    
+                                                                                                    
+18BCE61  Ann Alexis                        6        76         4        80                          
+                                                                                                    
+                                                                                                    
+18BCE103 Yadira Yarman                     4        94        50        77                          
+                                                                                                    
+                                                                                                    
+
+ROLL_NO  NAME                            SEM        OS        CA      DBMS BA                       
+-------- ------------------------- --------- --------- --------- --------- --                       
+CITY                                                                                                
+-------------------------                                                                           
+17BCE201 Elfriede Enyeart                  4        10        96        23                          
+                                                                                                    
+                                                                                                    
+17BCE221 Cordell Curci                     4        73        60        27                          
+                                                                                                    
+                                                                                                    
+17BCE94  Elina Edelstein                   4        69        19        17                          
+                                                                                                    
+                                                                                                    
+18BCE12  Delois Danielson                  6        63        33        89                          
+                                                                                                    
+                                                                                                    
+18BCE250 Raymond Ramaya                    4        25        36        85                          
+                                                                                                    
+                                                                                                    
+
+24 rows selected.
+
+SQL> alter table student modify city varchar(10)
+  2  ;
+
+Table altered.
+
+SQL> desc student;
+ Name                                                  Null?    Type
+ ----------------------------------------------------- -------- ------------------------------------
+ ROLL_NO                                                        CHAR(8)
+ NAME                                                           VARCHAR2(25)
+ SEM                                                            NUMBER(12)
+ OS                                                             NUMBER(3)
+ CA                                                             NUMBER(3)
+ DBMS                                                           NUMBER(3)
+ BATCH                                                          VARCHAR2(2)
+ CITY                                                           VARCHAR2(10)
+
+SQL> select * from student;
+
+ROLL_NO  NAME                            SEM        OS        CA      DBMS BA CITY                  
+-------- ------------------------- --------- --------- --------- --------- -- ----------            
+18BCE259 Shrey Viradiya                    4        86        89        92                          
+18BCE258 Dhvanik Viradiya                  4        88        76        82                          
+18BCE257 Gunjan Vinzuda                    4        75        98        75                          
+18BCE260 Vishva Patel                      4        80        83        90                          
+18BCE261 Mohamad Asim                      4        85        45        65                          
+18BCE263 Yash Chelani                      4        86        71        42                          
+18BCE264 Vivek Zalariya                    4        74        71        62                          
+18BCE256 Sagar Vasoya                      4        85        63        45                          
+17BCE152 Sindhant Molhotra                 6        75        15        26                          
+17BCE254 Meera Kumari                      6        72        75        56                          
+17BCE099 Rajat singh                       6        85        86        92                          
+17BCE011 Mohil Patel                       6        85        76        65                          
+17BCE000 Ghost Rider                       6        76        65        85                          
+18BCE220 Bula Beyer                        4        54        54        76                          
+18BCE68  Hyacinth Hoyos                    6         3        18         9                          
+17BCE215 Detra Deets                       4        54        66        62                          
+18BCE64  Tana Tramel                       6        15        28        45                          
+18BCE61  Ann Alexis                        6        76         4        80                          
+18BCE103 Yadira Yarman                     4        94        50        77                          
+17BCE201 Elfriede Enyeart                  4        10        96        23                          
+17BCE221 Cordell Curci                     4        73        60        27                          
+
+ROLL_NO  NAME                            SEM        OS        CA      DBMS BA CITY                  
+-------- ------------------------- --------- --------- --------- --------- -- ----------            
+17BCE94  Elina Edelstein                   4        69        19        17                          
+18BCE12  Delois Danielson                  6        63        33        89                          
+18BCE250 Raymond Ramaya                    4        25        36        85                          
+
+24 rows selected.
+
+SQL> select roll_no from student;
+
+ROLL_NO                                                                                             
+--------                                                                                            
+18BCE259                                                                                            
+18BCE258                                                                                            
+18BCE257                                                                                            
+18BCE260                                                                                            
+18BCE261                                                                                            
+18BCE263                                                                                            
+18BCE264                                                                                            
+18BCE256                                                                                            
+17BCE152                                                                                            
+17BCE254                                                                                            
+17BCE099                                                                                            
+17BCE011                                                                                            
+17BCE000                                                                                            
+18BCE220                                                                                            
+18BCE68                                                                                             
+17BCE215                                                                                            
+18BCE64                                                                                             
+18BCE61                                                                                             
+18BCE103                                                                                            
+17BCE201                                                                                            
+17BCE221                                                                                            
+
+ROLL_NO                                                                                             
+--------                                                                                            
+17BCE94                                                                                             
+18BCE12                                                                                             
+18BCE250                                                                                            
+
+24 rows selected.
+
+SQL> 18BCE259
+SP2-0042: unknown command "18BCE259" - rest of line ignored.
+SQL> 18BCE258
+SP2-0042: unknown command "18BCE258" - rest of line ignored.
+SQL> 18BCE257
+SP2-0042: unknown command "18BCE257" - rest of line ignored.
+SQL> 18BCE260
+SP2-0042: unknown command "18BCE260" - rest of line ignored.
+SP2-0044: For a list of known commands enter HELP
+and to leave enter EXIT.
+SQL> 18BCE261
+SP2-0042: unknown command "18BCE261" - rest of line ignored.
+SQL> 18BCE263
+SP2-0042: unknown command "18BCE263" - rest of line ignored.
+SQL> 18BCE264
+SP2-0042: unknown command "18BCE264" - rest of line ignored.
+SQL> 18BCE256
+SP2-0042: unknown command "18BCE256" - rest of line ignored.
+SP2-0044: For a list of known commands enter HELP
+and to leave enter EXIT.
+SQL> 17BCE152
+SP2-0042: unknown command "17BCE152" - rest of line ignored.
+SQL> 17BCE254
+SP2-0042: unknown command "17BCE254" - rest of line ignored.
+SQL> 17BCE099
+SP2-0042: unknown command "17BCE099" - rest of line ignored.
+SQL> 17BCE011
+SP2-0042: unknown command "17BCE011" - rest of line ignored.
+SP2-0044: For a list of known commands enter HELP
+and to leave enter EXIT.
+SQL> 17BCE000
+SP2-0042: unknown command "17BCE000" - rest of line ignored.
+SQL> 18BCE220
+SP2-0042: unknown command "18BCE220" - rest of line ignored.
+SQL> 18BCE68
+SP2-0042: unknown command "18BCE68" - rest of line ignored.
+SQL> 17BCE215
+SP2-0042: unknown command "17BCE215" - rest of line ignored.
+SP2-0044: For a list of known commands enter HELP
+and to leave enter EXIT.
+SQL> 18BCE64
+SP2-0042: unknown command "18BCE64" - rest of line ignored.
+SQL> 18BCE61
+SP2-0042: unknown command "18BCE61" - rest of line ignored.
+SQL> 18BCE103
+SP2-0042: unknown command "18BCE103" - rest of line ignored.
+SQL> 17BCE201
+SP2-0042: unknown command "17BCE201" - rest of line ignored.
+SP2-0044: For a list of known commands enter HELP
+and to leave enter EXIT.
+SQL> 17BCE221
+SP2-0042: unknown command "17BCE221" - rest of line ignored.
+SQL> 
+SQL> ROLL_NO
+Rollback complete.
+SQL> --------
+SQL> 17BCE94
+SP2-0042: unknown command "17BCE94" - rest of line ignored.
+SQL> 18BCE12
+SP2-0042: unknown command "18BCE12" - rest of line ignored.
+SQL> 18BCE250
+SP2-0042: unknown command "18BCE250" - rest of line ignored.
+SQL> select roll_no from student;
+
+ROLL_NO                                                                                             
+--------                                                                                            
+18BCE259                                                                                            
+18BCE258                                                                                            
+18BCE257                                                                                            
+18BCE260                                                                                            
+18BCE261                                                                                            
+18BCE263                                                                                            
+18BCE264                                                                                            
+18BCE256                                                                                            
+17BCE152                                                                                            
+17BCE254                                                                                            
+17BCE099                                                                                            
+17BCE011                                                                                            
+17BCE000                                                                                            
+18BCE220                                                                                            
+18BCE68                                                                                             
+17BCE215                                                                                            
+18BCE64                                                                                             
+18BCE61                                                                                             
+18BCE103                                                                                            
+17BCE201                                                                                            
+17BCE221                                                                                            
+
+ROLL_NO                                                                                             
+--------                                                                                            
+17BCE94                                                                                             
+18BCE12                                                                                             
+18BCE250                                                                                            
+
+24 rows selected.
+
+SQL> desc student;
+ Name                                                  Null?    Type
+ ----------------------------------------------------- -------- ------------------------------------
+ ROLL_NO                                                        CHAR(8)
+ NAME                                                           VARCHAR2(25)
+ SEM                                                            NUMBER(12)
+ OS                                                             NUMBER(3)
+ CA                                                             NUMBER(3)
+ DBMS                                                           NUMBER(3)
+ BATCH                                                          VARCHAR2(2)
+ CITY                                                           VARCHAR2(10)
+
+SQL> @D:\st.sql
+
+1 row updated.
+
+
+1 row updated.
+
+
+1 row updated.
+
+
+1 row updated.
+
+
+1 row updated.
+
+
+1 row updated.
+
+
+1 row updated.
+
+
+1 row updated.
+
+
+1 row updated.
+
+
+1 row updated.
+
+
+1 row updated.
+
+
+1 row updated.
+
+
+1 row updated.
+
+
+1 row updated.
+
+
+1 row updated.
+
+
+1 row updated.
+
+
+1 row updated.
+
+
+1 row updated.
+
+
+1 row updated.
+
+
+1 row updated.
+
+
+1 row updated.
+
+
+1 row updated.
+
+
+1 row updated.
+
+
+1 row updated.
+
+SQL> select * from student;
+
+ROLL_NO  NAME                            SEM        OS        CA      DBMS BA CITY                  
+-------- ------------------------- --------- --------- --------- --------- -- ----------            
+18BCE259 Shrey Viradiya                    4        86        89        92 3  Banglore              
+18BCE258 Dhvanik Viradiya                  4        88        76        82 4  Manglore              
+18BCE257 Gunjan Vinzuda                    4        75        98        75 2  Banglore              
+18BCE260 Vishva Patel                      4        80        83        90 3  Chennai               
+18BCE261 Mohamad Asim                      4        85        45        65 3  Mumabi                
+18BCE263 Yash Chelani                      4        86        71        42 3  Banglore              
+18BCE264 Vivek Zalariya                    4        74        71        62 2  Chennai               
+18BCE256 Sagar Vasoya                      4        85        63        45 2  Banglore              
+17BCE152 Sindhant Molhotra                 6        75        15        26 1  Manglore              
+17BCE254 Meera Kumari                      6        72        75        56 4  Chennai               
+17BCE099 Rajat singh                       6        85        86        92 4  Banglore              
+17BCE011 Mohil Patel                       6        85        76        65 1  Chennai               
+17BCE000 Ghost Rider                       6        76        65        85 2  Mumabi                
+18BCE220 Bula Beyer                        4        54        54        76 2  Manglore              
+18BCE68  Hyacinth Hoyos                    6         3        18         9 1  Mumabi                
+17BCE215 Detra Deets                       4        54        66        62 4  Banglore              
+18BCE64  Tana Tramel                       6        15        28        45 3  Manglore              
+18BCE61  Ann Alexis                        6        76         4        80 2  Manglore              
+18BCE103 Yadira Yarman                     4        94        50        77 3  Mumabi                
+17BCE201 Elfriede Enyeart                  4        10        96        23 4  Mumabi                
+17BCE221 Cordell Curci                     4        73        60        27 1  Manglore              
+
+ROLL_NO  NAME                            SEM        OS        CA      DBMS BA CITY                  
+-------- ------------------------- --------- --------- --------- --------- -- ----------            
+17BCE94  Elina Edelstein                   4        69        19        17 4  Manglore              
+18BCE12  Delois Danielson                  6        63        33        89 4  Banglore              
+18BCE250 Raymond Ramaya                    4        25        36        85 4  Mumabi                
+
+24 rows selected.
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select name from student where os+ca+d
+  2  ;
+
+*
+ERROR at line 2:
+ORA-00920: invalid relational operator 
+
+
+SQL> commit
+  2  ;
+
+Commit complete.
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select avg(os+dbms+ca) from student where sem=4 group by batch
+  2  ;
+
+AVG(OS+DBMS+CA)                                                                                     
+---------------                                                                                     
+            160                                                                                     
+            227                                                                                     
+          161.6                                                                                     
+            208                                                                                     
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select batch,avg(os+dbms+ca) from student where sem=4 group by batch
+  2  ;
+
+BA AVG(OS+DBMS+CA)                                                                                  
+-- ---------------                                                                                  
+1              160                                                                                  
+3              227                                                                                  
+4            161.6                                                                                  
+2              208                                                                                  
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select batch,avg(os+dbms+ca) from student where sem=4 group by batch minus (select batch,avg(os+dbms+ca) from student where avg(os+dbms+ca)=(select max(avg(os+ca+dbms)) from student where sem=4 group by batch))
+  2  ;
+select batch,avg(os+dbms+ca) from student where sem=4 group by batch minus (select batch,avg(os+dbms+ca) from student where avg(os+dbms+ca)=(select max(avg(os+ca+dbms)) from student where sem=4 group by batch))
+                                                                                                                            *
+ERROR at line 1:
+ORA-00934: group function is not allowed here 
+
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select batch,avg(os+dbms+ca) as avgtotal from student where avgtotal <> (select max(avgtotal) from select batch,avg(os+dbms+ca) as avgtotal from student where sem=4 group by batch) group by batch
+  2  ;
+select batch,avg(os+dbms+ca) as avgtotal from student where avgtotal <> (select max(avgtotal) from select batch,avg(os+dbms+ca) as avgtotal from student where sem=4 group by batch) group by batch
+                                                                                                   *
+ERROR at line 1:
+ORA-00903: invalid table name 
+
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select batch,avg(os+dbms+ca) as avgtotal from student where avgtotal <> (select max(avgtotal) from student select batch,avg(os+dbms+ca) as avgtotal from student where sem=4 group by batch) group by batch
+  2  ;
+select batch,avg(os+dbms+ca) as avgtotal from student where avgtotal <> (select max(avgtotal) from student select batch,avg(os+dbms+ca) as avgtotal from student where sem=4 group by batch) group by batch
+                                                                                                           *
+ERROR at line 1:
+ORA-00907: missing right parenthesis 
+
+
+SQL> ed]
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select batch,avg(os+dbms+ca) as avgtotal from student where avgtotal <> (select max(avgtotal) from (student select batch,avg(os+dbms+ca) as avgtotal from student where sem=4 group by batch)) group by batch
+  2  ;
+select batch,avg(os+dbms+ca) as avgtotal from student where avgtotal <> (select max(avgtotal) from (student select batch,avg(os+dbms+ca) as avgtotal from student where sem=4 group by batch)) group by batch
+                                                                                                            *
+ERROR at line 1:
+ORA-00907: missing right parenthesis 
+
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select batch,avg(os+dbms+ca) as avgtotal from student where avgtotal <> (select max(avgtotal) from student (select batch,avg(os+dbms+ca) as avgtotal from student where sem=4 group by batch)) group by batch
+  2  ;
+select batch,avg(os+dbms+ca) as avgtotal from student where avgtotal <> (select max(avgtotal) from student (select batch,avg(os+dbms+ca) as avgtotal from student where sem=4 group by batch)) group by batch
+                                                                                                           *
+ERROR at line 1:
+ORA-00907: missing right parenthesis 
+
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select batch,avg(os+dbms+ca) as avgtotal from student where avgtotal <> (select max(avgtotal) from (select batch,avg(os+dbms+ca) as avgtotal from student where sem=4 group by batch)) group by batch
+  2  ;
+select batch,avg(os+dbms+ca) as avgtotal from student where avgtotal <> (select max(avgtotal) from (select batch,avg(os+dbms+ca) as avgtotal from student where sem=4 group by batch)) group by batch
+                                                            *
+ERROR at line 1:
+ORA-00904: "AVGTOTAL": invalid identifier 
+
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select batch,avg(os+dbms+ca) as avgtotal from student where avg(os+dbms+ca) <> (select max(avgtotal) from (select batch,avg(os+dbms+ca) as avgtotal from student where sem=4 group by batch)) group by batch
+  2  ;
+select batch,avg(os+dbms+ca) as avgtotal from student where avg(os+dbms+ca) <> (select max(avgtotal) from (select batch,avg(os+dbms+ca) as avgtotal from student where sem=4 group by batch)) group by batch
+                                                            *
+ERROR at line 1:
+ORA-00934: group function is not allowed here 
+
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select batch,avg(os+dbms+ca) as avgtotal from student where avgtotal <> (select max(avgtotal) from (select batch,avg(os+dbms+ca) as avgtotal from student where sem=4 group by batch)) group by batch
+  2  ;
+select batch,avg(os+dbms+ca) as avgtotal from student where avgtotal <> (select max(avgtotal) from (select batch,avg(os+dbms+ca) as avgtotal from student where sem=4 group by batch)) group by batch
+                                                            *
+ERROR at line 1:
+ORA-00904: "AVGTOTAL": invalid identifier 
+
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select batch,avg(os+dbms+ca) as at from student where at <> (select max(avgtotal) from (select batch,avg(os+dbms+ca) as avgtotal from student where sem=4 group by batch)) group by batch
+  2  ;
+select batch,avg(os+dbms+ca) as at from student where at <> (select max(avgtotal) from (select batch,avg(os+dbms+ca) as avgtotal from student where sem=4 group by batch)) group by batch
+                                                      *
+ERROR at line 1:
+ORA-00904: "AT": invalid identifier 
+
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select name from student where os+dbms+ca in (select min(os+dbms+ca) from student group by batch having avg(os+dbms+ca) in (select max(avg(os+dbms+ca) from student where sem = 4 group by batch having avg(os+dbms+ca) < (select max(avg(os+dbms+ca) from student where sem=4 group by batch)));
+  2  ;
+select name from student where os+dbms+ca in (select min(os+dbms+ca) from student group by batch having avg(os+dbms+ca) in (select max(avg(os+dbms+ca) from student where sem = 4 group by batch having avg(os+dbms+ca) < (select max(avg(os+dbms+ca) from student where sem=4 group by batch)));
+                                                                                                                                                       *
+ERROR at line 1:
+ORA-00907: missing right parenthesis 
+
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select name from student where os+dbms+ca in (select min(os+dbms+ca) from student group by batch having avg(os+dbms+ca) in (select max(avg(os+dbms+ca)) from student where sem = 4 group by batch having avg(os+dbms+ca) < (select max(avg(os+dbms+ca) from student where sem=4 group by batch)));
+  2  ;
+select name from student where os+dbms+ca in (select min(os+dbms+ca) from student group by batch having avg(os+dbms+ca) in (select max(avg(os+dbms+ca)) from student where sem = 4 group by batch having avg(os+dbms+ca) < (select max(avg(os+dbms+ca) from student where sem=4 group by batch)));
+                                                                                                                                                                                                                                                       *
+ERROR at line 1:
+ORA-00907: missing right parenthesis 
+
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select name from student where os+dbms+ca in (select min(os+dbms+ca) from student group by batch having avg(os+dbms+ca) in (select max(avg(os+dbms+ca)) from student where sem = 4 group by batch having avg(os+dbms+ca) < (select max(avg(os+dbms+ca)) from student where sem=4 group by batch)));
+  2  ed
+  3  ;
+select name from student where os+dbms+ca in (select min(os+dbms+ca) from student group by batch having avg(os+dbms+ca) in (select max(avg(os+dbms+ca)) from student where sem = 4 group by batch having avg(os+dbms+ca) < (select max(avg(os+dbms+ca)) from student where sem=4 group by batch)));
+                                                                                                                                                                                                                                                                                                  *
+ERROR at line 1:
+ORA-00911: invalid character 
+
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select name from student where os+dbms+ca in (select min(os+dbms+ca) from student group by batch having avg(os+dbms+ca) in (select max(avg(os+dbms+ca)) from student where sem = 4 group by batch having avg(os+dbms+ca) < (select max(avg(os+dbms+ca)) from student where sem=4 group by batch)));
+  2  ;
+select name from student where os+dbms+ca in (select min(os+dbms+ca) from student group by batch having avg(os+dbms+ca) in (select max(avg(os+dbms+ca)) from student where sem = 4 group by batch having avg(os+dbms+ca) < (select max(avg(os+dbms+ca)) from student where sem=4 group by batch)));
+                                                                                                                                                                                                                                                                                                  *
+ERROR at line 1:
+ORA-00911: invalid character 
+
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select name from student where os+dbms+ca in (select min(os+dbms+ca) from student group by batch having avg(os+dbms+ca) in (select max(avg(os+dbms+ca)) from student where sem = 4 group by batch having avg(os+dbms+ca) < (select max(avg(os+dbms+ca)) from student where sem=4 group by batch)))
+  2  ;
+
+no rows selected
+
+SQL> spool off

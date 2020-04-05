@@ -1,0 +1,3 @@
+SQL> spoolD:\14bce152
+SP2-0042: unknown command beginning "spoolD:\14..." - rest of line ignored.
+SQL> spool D:\14bce152

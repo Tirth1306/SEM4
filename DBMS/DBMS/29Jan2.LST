@@ -1,0 +1,160 @@
+SQL> select * from student where os
+  2  ;
+
+*
+ERROR at line 2:
+ORA-00920: invalid relational operator 
+
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select * from student where os < (select median(os) from student) + 10 or os > (select median(os) from student) - 10
+  2  ;
+
+ROLL_NO  NAME                            SEM        OS        CA      DBMS                          
+-------- ------------------------- --------- --------- --------- ---------                          
+18BCE259 Shrey Viradiya                    4        86        89        92                          
+18BCE258 Dhvanik Viradiya                  4        88        76        82                          
+18BCE257 Gunjan Vinzuda                    4        75        98        75                          
+18BCE260 Vishva Patel                      4        80        83        90                          
+18BCE261 Mohamad Asim                      4        85        45        65                          
+18BCE263 Yash Chelani                      4        86        71        42                          
+18BCE264 Vivek Zalariya                    4        74        71        62                          
+18BCE256 Sagar Vasoya                      4        85        63        45                          
+
+8 rows selected.
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select * from student where os < (select median(os) from student) + 5 or os > (select median(os) from student) - 5
+  2  ;
+
+ROLL_NO  NAME                            SEM        OS        CA      DBMS                          
+-------- ------------------------- --------- --------- --------- ---------                          
+18BCE259 Shrey Viradiya                    4        86        89        92                          
+18BCE258 Dhvanik Viradiya                  4        88        76        82                          
+18BCE257 Gunjan Vinzuda                    4        75        98        75                          
+18BCE260 Vishva Patel                      4        80        83        90                          
+18BCE261 Mohamad Asim                      4        85        45        65                          
+18BCE263 Yash Chelani                      4        86        71        42                          
+18BCE264 Vivek Zalariya                    4        74        71        62                          
+18BCE256 Sagar Vasoya                      4        85        63        45                          
+
+8 rows selected.
+
+SQL> select median(os) from student;
+
+MEDIAN(OS)                                                                                          
+----------                                                                                          
+        85                                                                                          
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select median(dbms) from student
+  2  ;
+
+MEDIAN(DBMS)                                                                                        
+------------                                                                                        
+          70                                                                                        
+
+SQL> select * from student where dbms < (select avg(dbms) from student) + 5 or dbms
+  2  > (select avg(dbms) from student) -5;
+
+ROLL_NO  NAME                            SEM        OS        CA      DBMS                          
+-------- ------------------------- --------- --------- --------- ---------                          
+18BCE259 Shrey Viradiya                    4        86        89        92                          
+18BCE258 Dhvanik Viradiya                  4        88        76        82                          
+18BCE257 Gunjan Vinzuda                    4        75        98        75                          
+18BCE260 Vishva Patel                      4        80        83        90                          
+18BCE261 Mohamad Asim                      4        85        45        65                          
+18BCE263 Yash Chelani                      4        86        71        42                          
+18BCE264 Vivek Zalariya                    4        74        71        62                          
+18BCE256 Sagar Vasoya                      4        85        63        45                          
+
+8 rows selected.
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select * from student where dbms < (select avg(dbms) from student) + 5 and dbms > (select avg(dbms) from student) -5
+  2  ;
+
+ROLL_NO  NAME                            SEM        OS        CA      DBMS                          
+-------- ------------------------- --------- --------- --------- ---------                          
+18BCE261 Mohamad Asim                      4        85        45        65                          
+
+SQL> select os+dbms+ca as total from student minus select max(os+dbms+ca) from student;
+
+    TOTAL                                                                                           
+---------                                                                                           
+      193                                                                                           
+      195                                                                                           
+      199                                                                                           
+      207                                                                                           
+      246                                                                                           
+      248                                                                                           
+      253                                                                                           
+
+7 rows selected.
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select name,max(os+dbms+ca) from student minus select max(os+dbms+ca) from student
+  2  ;
+select name,max(os+dbms+ca) from student minus select max(os+dbms+ca) from student
+*
+ERROR at line 1:
+ORA-01789: query block has incorrect number of result columns 
+
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select name, os+dbms+ca as total from student minus select max(os+dbms+ca) from student where total=(select max(total) from student)
+  2  ;
+select name, os+dbms+ca as total from student minus select max(os+dbms+ca) from student where total=(select max(total) from student)
+                                                                                              *
+ERROR at line 1:
+ORA-00904: "TOTAL": invalid identifier 
+
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select name, os+dbms+ca as total from student minus select max(os+dbms+ca) from student
+  2  ;
+select name, os+dbms+ca as total from student minus select max(os+dbms+ca) from student
+*
+ERROR at line 1:
+ORA-01789: query block has incorrect number of result columns 
+
+
+SQL> select os+dbms+ca as total from student minus select max(os+dbms+ca) from student;
+
+    TOTAL                                                                                           
+---------                                                                                           
+      193                                                                                           
+      195                                                                                           
+      199                                                                                           
+      207                                                                                           
+      246                                                                                           
+      248                                                                                           
+      253                                                                                           
+
+7 rows selected.
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select max(total) from (select os+dbms+ca as total from student minus select max(os+dbms+ca) from student)
+  2  ;
+
+MAX(TOTAL)                                                                                          
+----------                                                                                          
+       253                                                                                          
+
+SQL> spool off

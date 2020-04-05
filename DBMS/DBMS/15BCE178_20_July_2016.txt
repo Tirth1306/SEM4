@@ -1,0 +1,633 @@
+SQL> create table client_master(client_no number(10) primary key,name varchar2(30),addr varchar2(50),city varchar2(30),pin number(7),state varchar2(30),bal_due number(8,2));
+
+Table created.
+
+SQL> create table product_master(product_no number(10) primary key,desc varchar2(50),profit_person varchar2(30),unit number(10),sell_price number(8,2),cost_price number(8,2));
+create table product_master(product_no number(10) primary key,desc varchar2(50),profit_person varchar2(30),unit number(10),sell_price number(8,2),cost_price number(8,2))
+                                                              *
+ERROR at line 1:
+ORA-00904: : invalid identifier 
+
+
+SQL> create table product_master(
+  2  product_no number(10) primary key,
+  3  description varchar2(50),
+  4  profit_person varchar2(30),
+  5  unit number(10),
+  6  sell_price number(8,2),
+  7  cost_price number(8,2)
+  8  );
+
+Table created.
+
+SQL> create table salesman_master(
+  2  salesman_no number(10) primary key,
+  3  salesman_name varchar2(30),
+  4  addr varchar2(50),
+  5  city varchar2(30),
+  6  pincode number(7),
+  7  state varchar2(30),
+  8  sell_amt number(8,2),
+  9  target number(8,2),
+ 10  remarks varchar2(50)
+ 11  );
+
+Table created.
+
+SQL> desc client_master,product_master;
+SP2-0565: Illegal identifier.
+SQL> desc client_master;
+ Name                                                  Null?    Type
+ ----------------------------------------------------- -------- ------------------------------------
+ CLIENT_NO                                             NOT NULL NUMBER(10)
+ NAME                                                           VARCHAR2(30)
+ ADDR                                                           VARCHAR2(50)
+ CITY                                                           VARCHAR2(30)
+ PIN                                                            NUMBER(7)
+ STATE                                                          VARCHAR2(30)
+ BAL_DUE                                                        NUMBER(8,2)
+
+SQL> desc product_master
+ Name                                                  Null?    Type
+ ----------------------------------------------------- -------- ------------------------------------
+ PRODUCT_NO                                            NOT NULL NUMBER(10)
+ DESCRIPTION                                                    VARCHAR2(50)
+ PROFIT_PERSON                                                  VARCHAR2(30)
+ UNIT                                                           NUMBER(10)
+ SELL_PRICE                                                     NUMBER(8,2)
+ COST_PRICE                                                     NUMBER(8,2)
+
+SQL> desc salesman_master
+ Name                                                  Null?    Type
+ ----------------------------------------------------- -------- ------------------------------------
+ SALESMAN_NO                                           NOT NULL NUMBER(10)
+ SALESMAN_NAME                                                  VARCHAR2(30)
+ ADDR                                                           VARCHAR2(50)
+ CITY                                                           VARCHAR2(30)
+ PINCODE                                                        NUMBER(7)
+ STATE                                                          VARCHAR2(30)
+ SELL_AMT                                                       NUMBER(8,2)
+ TARGET                                                         NUMBER(8,2)
+ REMARKS                                                        VARCHAR2(50)
+
+SQL> insert into client_master values(1,'Argo','56 Chimera Street, Near Water tank','Orlando',560002,'Arizona',150.50);
+
+1 row created.
+
+SQL> select * from client_master;
+
+CLIENT_NO NAME                           ADDR                                                       
+--------- ------------------------------ --------------------------------------------------         
+CITY                                 PIN STATE                            BAL_DUE                   
+------------------------------ --------- ------------------------------ ---------                   
+        1 Argo                           56 Chimera Street, Near Water tank                         
+Orlando                           560002 Arizona                            150.5                   
+                                                                                                    
+
+SQL> insert into client_master values(2,'Muthhu','78 Ramanna Res., Near Rama Temple','Yedurappa',780802,'Kerala',875.50);
+
+1 row created.
+
+SQL> insert into client_master values(3,'Neel','502 Saimilan Res., Sudama Chowk','Surat',394101,'Gujarat',1103.75);
+
+1 row created.
+
+SQL> insert into client_master values(4,'Horuka','5 Henzu Street','Fukusha',126007,'ShiYen',367.25);
+
+1 row created.
+
+SQL> insert into client_master values(5,'Kartik','12 Shyamsundar nagar, Near Moti Kacheri','Ahmedabad',780890,'Gujarat',993.00);
+
+1 row created.
+
+SQL> select * from client_master;
+
+CLIENT_NO NAME                           ADDR                                                       
+--------- ------------------------------ --------------------------------------------------         
+CITY                                 PIN STATE                            BAL_DUE                   
+------------------------------ --------- ------------------------------ ---------                   
+        1 Argo                           56 Chimera Street, Near Water tank                         
+Orlando                           560002 Arizona                            150.5                   
+                                                                                                    
+        2 Muthhu                         78 Ramanna Res., Near Rama Temple                          
+Yedurappa                         780802 Kerala                             875.5                   
+                                                                                                    
+        3 Neel                           502 Saimilan Res., Sudama Chowk                            
+Surat                             394101 Gujarat                          1103.75                   
+                                                                                                    
+        4 Horuka                         5 Henzu Street                                             
+Fukusha                           126007 ShiYen                            367.25                   
+                                                                                                    
+        5 Kartik                         12 Shyamsundar nagar, Near Moti Kacheri                    
+Ahmedabad                         780890 Gujarat                              993                   
+                                                                                                    
+
+SQL> set buffer 500;
+SQL> select * frolm client_master;
+select * frolm client_master
+         *
+ERROR at line 1:
+ORA-00923: FROM keyword not found where expected 
+
+
+SQL> select * from client_master;
+
+CLIENT_NO NAME                           ADDR                                                       
+--------- ------------------------------ --------------------------------------------------         
+CITY                                 PIN STATE                            BAL_DUE                   
+------------------------------ --------- ------------------------------ ---------                   
+        1 Argo                           56 Chimera Street, Near Water tank                         
+Orlando                           560002 Arizona                            150.5                   
+                                                                                                    
+        2 Muthhu                         78 Ramanna Res., Near Rama Temple                          
+Yedurappa                         780802 Kerala                             875.5                   
+                                                                                                    
+        3 Neel                           502 Saimilan Res., Sudama Chowk                            
+Surat                             394101 Gujarat                          1103.75                   
+                                                                                                    
+        4 Horuka                         5 Henzu Street                                             
+Fukusha                           126007 ShiYen                            367.25                   
+                                                                                                    
+        5 Kartik                         12 Shyamsundar nagar, Near Moti Kacheri                    
+Ahmedabad                         780890 Gujarat                              993                   
+                                                                                                    
+
+SQL> set page 500;
+SP2-0158: unknown SET option "page"
+SQL> set /?
+SP2-0158: unknown SET option "/?"
+SQL> help set
+
+ SET
+ ---
+
+ Sets a system variable to alter the SQL*Plus environment settings
+ for your current session. For example, to:
+     -   set the display width for data
+     -   customize HTML formatting
+     -   enable or disable printing of column headings
+     -   set the number of lines per page
+ In iSQL*Plus, you can also use the Preferences screen to set
+ system variables.
+
+ SET system_variable value
+
+ where system_variable and value represent one of the following clauses:
+
+   APPI[NFO]{OFF|ON|text}                   NUM[WIDTH] {10|n}
+   ARRAY[SIZE] {15|n}                       PAGES[IZE] {14|n}
+   AUTO[COMMIT] {OFF|ON|IMM[EDIATE]|n}      PAU[SE] {OFF|ON|text}
+   AUTOP[RINT] {OFF|ON}                     RECSEP {WR[APPED]|EA[CH]|OFF}
+   AUTORECOVERY {OFF|ON}                    RECSEPCHAR {_|c}
+   AUTOT[RACE] {OFF|ON|TRACE[ONLY]}         SERVEROUT[PUT] {ON|OFF}
+     [EXP[LAIN]] [STAT[ISTICS]]               [SIZE {n | UNLIMITED}] [FOR[MAT]
+   BLO[CKTERMINATOR] {.|c|ON|OFF}             {WRA[PPED] |
+   CMDS[EP] {;|c|OFF|ON}                       WOR[D_WRAPPED] |
+   COLSEP {_|text}                             TRU[NCATED]}]
+   CON[CAT] {.|c|ON|OFF}                   *SHIFT[INOUT] {VIS[IBLE] |
+   COPYC[OMMIT] {0|n}                         INV[ISIBLE]}
+   COPYTYPECHECK {ON|OFF}                  *SHOW[MODE] {OFF|ON}
+   DEF[INE] {&|c|ON|OFF}                   *SQLBL[ANKLINES] {OFF|ON}
+   DESCRIBE [DEPTH {1|n|ALL}]               SQLC[ASE] {MIX[ED] |
+     [LINENUM {OFF|ON}] [INDENT {OFF|ON}]     LO[WER] | UP[PER]}
+   ECHO {OFF|ON}                           *SQLCO[NTINUE] {> | text}
+  *EDITF[ILE] file_name[.ext]              *SQLN[UMBER] {ON|OFF}
+   EMB[EDDED] {OFF|ON}                      SQLPLUSCOMPAT[IBILITY] {x.y[.z]}
+   ESC[APE] {\|c|OFF|ON}                   *SQLPRE[FIX] {#|c}
+   FEED[BACK] {6|n|ON|OFF}                 *SQLP[ROMPT] {SQL>|text}
+   FLAGGER {OFF|ENTRY|INTERMED[IATE]|FULL}  SQLT[ERMINATOR] {;|c|ON|OFF}
+  *FLU[SH] {ON|OFF}                        *SUF[FIX] {SQL|text}
+   HEA[DING] {ON|OFF}                      *TAB {ON|OFF}
+   HEADS[EP] {||c|ON|OFF}                  *TERM[OUT] {ON|OFF}
+   INSTANCE [instance_path|LOCAL]          *TI[ME] {OFF|ON}
+   LIN[ESIZE] {80|n} ({150|n} iSQL*Plus)    TIMI[NG] {OFF|ON}
+   LOBOF[FSET] {1|n}                       *TRIM[OUT] {ON|OFF}
+   LOGSOURCE [pathname]                    *TRIMS[POOL] {OFF|ON}
+   LONG {80|n}                              UND[ERLINE] {-|c|ON|OFF}
+   LONGC[HUNKSIZE] {80|n}                   VER[IFY] {ON|OFF}
+   MARK[UP] HTML [OFF|ON]                   WRA[P] {ON|OFF}
+     [HEAD text] [BODY text] [TABLE text]   XQUERY {BASEURI text|
+     [ENTMAP {ON|OFF}]                        ORDERING{UNORDERED|
+     [SPOOL {OFF|ON}]                                  ORDERED|DEFAULT}|
+     [PRE[FORMAT] {OFF|ON}]                   NODE{BYVALUE|BYREFERENCE|
+   NEWP[AGE] {1|n|NONE}                            DEFAULT}|
+   NULL text                                  CONTEXT text}
+   NUMF[ORMAT] format
+
+
+ An asterisk (*) indicates the SET option is not supported in iSQL*Plus.
+
+
+SQL> select * from client_master
+  2  ;
+
+CLIENT_NO NAME                           ADDR                                                       
+--------- ------------------------------ --------------------------------------------------         
+CITY                                 PIN STATE                            BAL_DUE                   
+------------------------------ --------- ------------------------------ ---------                   
+        1 Argo                           56 Chimera Street, Near Water tank                         
+Orlando                           560002 Arizona                            150.5                   
+                                                                                                    
+        2 Muthhu                         78 Ramanna Res., Near Rama Temple                          
+Yedurappa                         780802 Kerala                             875.5                   
+                                                                                                    
+        3 Neel                           502 Saimilan Res., Sudama Chowk                            
+Surat                             394101 Gujarat                          1103.75                   
+                                                                                                    
+        4 Horuka                         5 Henzu Street                                             
+Fukusha                           126007 ShiYen                            367.25                   
+                                                                                                    
+        5 Kartik                         12 Shyamsundar nagar, Near Moti Kacheri                    
+Ahmedabad                         780890 Gujarat                              993                   
+                                                                                                    
+
+SQL> set width 500;
+SP2-0158: unknown SET option "width"
+SQL> set display 500;
+SP2-0158: unknown SET option "display"
+SQL> help set;
+
+ SET
+ ---
+
+ Sets a system variable to alter the SQL*Plus environment settings
+ for your current session. For example, to:
+     -   set the display width for data
+     -   customize HTML formatting
+     -   enable or disable printing of column headings
+     -   set the number of lines per page
+ In iSQL*Plus, you can also use the Preferences screen to set
+ system variables.
+
+ SET system_variable value
+
+ where system_variable and value represent one of the following clauses:
+
+   APPI[NFO]{OFF|ON|text}                   NUM[WIDTH] {10|n}
+   ARRAY[SIZE] {15|n}                       PAGES[IZE] {14|n}
+   AUTO[COMMIT] {OFF|ON|IMM[EDIATE]|n}      PAU[SE] {OFF|ON|text}
+   AUTOP[RINT] {OFF|ON}                     RECSEP {WR[APPED]|EA[CH]|OFF}
+   AUTORECOVERY {OFF|ON}                    RECSEPCHAR {_|c}
+   AUTOT[RACE] {OFF|ON|TRACE[ONLY]}         SERVEROUT[PUT] {ON|OFF}
+     [EXP[LAIN]] [STAT[ISTICS]]               [SIZE {n | UNLIMITED}] [FOR[MAT]
+   BLO[CKTERMINATOR] {.|c|ON|OFF}             {WRA[PPED] |
+   CMDS[EP] {;|c|OFF|ON}                       WOR[D_WRAPPED] |
+   COLSEP {_|text}                             TRU[NCATED]}]
+   CON[CAT] {.|c|ON|OFF}                   *SHIFT[INOUT] {VIS[IBLE] |
+   COPYC[OMMIT] {0|n}                         INV[ISIBLE]}
+   COPYTYPECHECK {ON|OFF}                  *SHOW[MODE] {OFF|ON}
+   DEF[INE] {&|c|ON|OFF}                   *SQLBL[ANKLINES] {OFF|ON}
+   DESCRIBE [DEPTH {1|n|ALL}]               SQLC[ASE] {MIX[ED] |
+     [LINENUM {OFF|ON}] [INDENT {OFF|ON}]     LO[WER] | UP[PER]}
+   ECHO {OFF|ON}                           *SQLCO[NTINUE] {> | text}
+  *EDITF[ILE] file_name[.ext]              *SQLN[UMBER] {ON|OFF}
+   EMB[EDDED] {OFF|ON}                      SQLPLUSCOMPAT[IBILITY] {x.y[.z]}
+   ESC[APE] {\|c|OFF|ON}                   *SQLPRE[FIX] {#|c}
+   FEED[BACK] {6|n|ON|OFF}                 *SQLP[ROMPT] {SQL>|text}
+   FLAGGER {OFF|ENTRY|INTERMED[IATE]|FULL}  SQLT[ERMINATOR] {;|c|ON|OFF}
+  *FLU[SH] {ON|OFF}                        *SUF[FIX] {SQL|text}
+   HEA[DING] {ON|OFF}                      *TAB {ON|OFF}
+   HEADS[EP] {||c|ON|OFF}                  *TERM[OUT] {ON|OFF}
+   INSTANCE [instance_path|LOCAL]          *TI[ME] {OFF|ON}
+   LIN[ESIZE] {80|n} ({150|n} iSQL*Plus)    TIMI[NG] {OFF|ON}
+   LOBOF[FSET] {1|n}                       *TRIM[OUT] {ON|OFF}
+   LOGSOURCE [pathname]                    *TRIMS[POOL] {OFF|ON}
+   LONG {80|n}                              UND[ERLINE] {-|c|ON|OFF}
+   LONGC[HUNKSIZE] {80|n}                   VER[IFY] {ON|OFF}
+   MARK[UP] HTML [OFF|ON]                   WRA[P] {ON|OFF}
+     [HEAD text] [BODY text] [TABLE text]   XQUERY {BASEURI text|
+     [ENTMAP {ON|OFF}]                        ORDERING{UNORDERED|
+     [SPOOL {OFF|ON}]                                  ORDERED|DEFAULT}|
+     [PRE[FORMAT] {OFF|ON}]                   NODE{BYVALUE|BYREFERENCE|
+   NEWP[AGE] {1|n|NONE}                            DEFAULT}|
+   NULL text                                  CONTEXT text}
+   NUMF[ORMAT] format
+
+
+ An asterisk (*) indicates the SET option is not supported in iSQL*Plus.
+
+
+SQL> set pages 50;
+SQL> select * from client_master;
+
+CLIENT_NO NAME                           ADDR                                                       
+--------- ------------------------------ --------------------------------------------------         
+CITY                                 PIN STATE                            BAL_DUE                   
+------------------------------ --------- ------------------------------ ---------                   
+        1 Argo                           56 Chimera Street, Near Water tank                         
+Orlando                           560002 Arizona                            150.5                   
+                                                                                                    
+        2 Muthhu                         78 Ramanna Res., Near Rama Temple                          
+Yedurappa                         780802 Kerala                             875.5                   
+                                                                                                    
+        3 Neel                           502 Saimilan Res., Sudama Chowk                            
+Surat                             394101 Gujarat                          1103.75                   
+                                                                                                    
+        4 Horuka                         5 Henzu Street                                             
+Fukusha                           126007 ShiYen                            367.25                   
+                                                                                                    
+        5 Kartik                         12 Shyamsundar nagar, Near Moti Kacheri                    
+Ahmedabad                         780890 Gujarat                              993                   
+                                                                                                    
+
+SQL> set pages 150;
+SQL> select * from client_master;
+
+CLIENT_NO NAME                           ADDR                                                       
+--------- ------------------------------ --------------------------------------------------         
+CITY                                 PIN STATE                            BAL_DUE                   
+------------------------------ --------- ------------------------------ ---------                   
+        1 Argo                           56 Chimera Street, Near Water tank                         
+Orlando                           560002 Arizona                            150.5                   
+                                                                                                    
+        2 Muthhu                         78 Ramanna Res., Near Rama Temple                          
+Yedurappa                         780802 Kerala                             875.5                   
+                                                                                                    
+        3 Neel                           502 Saimilan Res., Sudama Chowk                            
+Surat                             394101 Gujarat                          1103.75                   
+                                                                                                    
+        4 Horuka                         5 Henzu Street                                             
+Fukusha                           126007 ShiYen                            367.25                   
+                                                                                                    
+        5 Kartik                         12 Shyamsundar nagar, Near Moti Kacheri                    
+Ahmedabad                         780890 Gujarat                              993                   
+                                                                                                    
+
+SQL> insert into product_master values(1,'15R-014TX HP Laptop','Geeta',5,48000,35000);
+
+1 row created.
+
+SQL> insert into product_master values(2,'Red-Mi 2','Ashok',15,7000,4000);
+
+1 row created.
+
+SQL> insert into product_master values(3,'JBL Model 5.x Earphones','Sandeep',12,1700,1200);
+
+1 row created.
+
+SQL> insert into product_master values(4,'HP 8GB Pendrive','Mahesh',45,400,350);
+
+1 row created.
+
+SQL> insert into product_master values(5,'WesternDigital HDD 1TB','Hardik',8,6000,5300);
+
+1 row created.
+
+SQL> select * from product_master;
+
+PRODUCT_NO DESCRIPTION                                        PROFIT_PERSON                         
+---------- -------------------------------------------------- ------------------------------        
+     UNIT SELL_PRICE COST_PRICE                                                                     
+--------- ---------- ----------                                                                     
+         1 15R-014TX HP Laptop                                Geeta                                 
+        5      48000      35000                                                                     
+                                                                                                    
+         2 Red-Mi 2                                           Ashok                                 
+       15       7000       4000                                                                     
+                                                                                                    
+         3 JBL Model 5.x Earphones                            Sandeep                               
+       12       1700       1200                                                                     
+                                                                                                    
+         4 HP 8GB Pendrive                                    Mahesh                                
+       45        400        350                                                                     
+                                                                                                    
+         5 WesternDigital HDD 1TB                             Hardik                                
+        8       6000       5300                                                                     
+                                                                                                    
+
+SQL> insert_into salesman_master values(1,'Geeta','45 Shyamal Soc. Shyamal','Ahmedabad',356214,'Gujarat',144000,240000,'Good');
+insert_into salesman_master values(1,'Geeta','45 Shyamal Soc. Shyamal','Ahmedabad',356214,'Gujarat',144000,240000,'Good')
+*
+ERROR at line 1:
+ORA-00900: invalid SQL statement 
+
+
+SQL> insert_into salesman_master values(2,'Ashok','13 Swaminarayan Soc. Bapunagar','Ahmedabad',365478,'Gujarat',70000,105000,'Good');
+insert_into salesman_master values(2,'Ashok','13 Swaminarayan Soc. Bapunagar','Ahmedabad',365478,'Gujarat',70000,105000,'Good')
+*
+ERROR at line 1:
+ORA-00900: invalid SQL statement 
+
+
+SQL> insert_into salesman_master values(3,'Sandeep','5 Safal Vivan, Gota','Ahmedabad',365214,'Gujarat',3400,17000,'Medium');
+insert_into salesman_master values(3,'Sandeep','5 Safal Vivan, Gota','Ahmedabad',365214,'Gujarat',3400,17000,'Medium')
+*
+ERROR at line 1:
+ORA-00900: invalid SQL statement 
+
+
+SQL> insert_into salesman_master values(4,'Mahesh','404 Adani Bgw. Chandlodiya','Ahmedabad',369751,'Gujarat',18000,18000,'V.Good');
+insert_into salesman_master values(4,'Mahesh','404 Adani Bgw. Chandlodiya','Ahmedabad',369751,'Gujarat',18000,18000,'V.Good')
+*
+ERROR at line 1:
+ORA-00900: invalid SQL statement 
+
+
+SQL> insert_into salesman_master values(5,'Hardik','29 Satyam Soc. Hiraroad','Ahmedabad',321546,'Gujarat',36000,48000,'Good');
+insert_into salesman_master values(5,'Hardik','29 Satyam Soc. Hiraroad','Ahmedabad',321546,'Gujarat',36000,48000,'Good')
+*
+ERROR at line 1:
+ORA-00900: invalid SQL statement 
+
+
+SQL> desc salesman_master;
+ Name                                                  Null?    Type
+ ----------------------------------------------------- -------- ------------------------------------
+ SALESMAN_NO                                           NOT NULL NUMBER(10)
+ SALESMAN_NAME                                                  VARCHAR2(30)
+ ADDR                                                           VARCHAR2(50)
+ CITY                                                           VARCHAR2(30)
+ PINCODE                                                        NUMBER(7)
+ STATE                                                          VARCHAR2(30)
+ SELL_AMT                                                       NUMBER(8,2)
+ TARGET                                                         NUMBER(8,2)
+ REMARKS                                                        VARCHAR2(50)
+
+SQL> insert into salesman_master values(1,'Geeta','45 Shyamal Soc. Shyamal','Ahmedabad',356214,'Gujarat',144000,240000,'Good');
+
+1 row created.
+
+SQL> insert into salesman_master values(2,'Ashok','13 Swaminarayan Soc. Bapunagar','Ahmedabad',365478,'Gujarat',70000,105000,'Good');
+
+1 row created.
+
+SQL> insert into salesman_master values(3,'Sandeep','5 Safal Vivan, Gota','Ahmedabad',365214,'Gujarat',3400,17000,'Medium');
+
+1 row created.
+
+SQL> insert into salesman_master values(4,'Mahesh','404 Adani Bgw. Chandlodiya','Ahmedabad',369751,'Gujarat',18000,18000,'V.Good');
+
+1 row created.
+
+SQL> insert into salesman_master values(5,'Hardik','29 Satyam Soc. Hiraroad','Ahmedabad',321546,'Gujarat',36000,48000,'Good');
+
+1 row created.
+
+SQL> select * from salesman_master;
+
+SALESMAN_NO SALESMAN_NAME                  ADDR                                                     
+----------- ------------------------------ --------------------------------------------------       
+CITY                             PINCODE STATE                           SELL_AMT    TARGET         
+------------------------------ --------- ------------------------------ --------- ---------         
+REMARKS                                                                                             
+--------------------------------------------------                                                  
+          1 Geeta                          45 Shyamal Soc. Shyamal                                  
+Ahmedabad                         356214 Gujarat                           144000    240000         
+Good                                                                                                
+                                                                                                    
+          2 Ashok                          13 Swaminarayan Soc. Bapunagar                           
+Ahmedabad                         365478 Gujarat                            70000    105000         
+Good                                                                                                
+                                                                                                    
+          3 Sandeep                        5 Safal Vivan, Gota                                      
+Ahmedabad                         365214 Gujarat                             3400     17000         
+Medium                                                                                              
+                                                                                                    
+          4 Mahesh                         404 Adani Bgw. Chandlodiya                               
+Ahmedabad                         369751 Gujarat                            18000     18000         
+V.Good                                                                                              
+                                                                                                    
+          5 Hardik                         29 Satyam Soc. Hiraroad                                  
+Ahmedabad                         321546 Gujarat                            36000     48000         
+Good                                                                                                
+                                                                                                    
+
+SQL> SET LIN[ESIZE] 200
+SP2-0268: linesize option not a valid number
+SQL> 
+SQL> set lin 200;
+SQL> select * from salesman_master;
+
+SALESMAN_NO SALESMAN_NAME                  ADDR                                               CITY                             PINCODE STATE                           SELL_AMT    TARGET               
+----------- ------------------------------ -------------------------------------------------- ------------------------------ --------- ------------------------------ --------- ---------               
+REMARKS                                                                                                                                                                                                 
+--------------------------------------------------                                                                                                                                                      
+          1 Geeta                          45 Shyamal Soc. Shyamal                            Ahmedabad                         356214 Gujarat                           144000    240000               
+Good                                                                                                                                                                                                    
+                                                                                                                                                                                                        
+          2 Ashok                          13 Swaminarayan Soc. Bapunagar                     Ahmedabad                         365478 Gujarat                            70000    105000               
+Good                                                                                                                                                                                                    
+                                                                                                                                                                                                        
+          3 Sandeep                        5 Safal Vivan, Gota                                Ahmedabad                         365214 Gujarat                             3400     17000               
+Medium                                                                                                                                                                                                  
+                                                                                                                                                                                                        
+          4 Mahesh                         404 Adani Bgw. Chandlodiya                         Ahmedabad                         369751 Gujarat                            18000     18000               
+V.Good                                                                                                                                                                                                  
+                                                                                                                                                                                                        
+          5 Hardik                         29 Satyam Soc. Hiraroad                            Ahmedabad                         321546 Gujarat                            36000     48000               
+Good                                                                                                                                                                                                    
+                                                                                                                                                                                                        
+
+SQL> set lin 400;
+SQL> select * from client_master;
+
+CLIENT_NO NAME                           ADDR                                               CITY                                 PIN STATE                            BAL_DUE                                                                                                                                                                                                                                   
+--------- ------------------------------ -------------------------------------------------- ------------------------------ --------- ------------------------------ ---------                                                                                                                                                                                                                                   
+        1 Argo                           56 Chimera Street, Near Water tank                 Orlando                           560002 Arizona                            150.5                                                                                                                                                                                                                                   
+        2 Muthhu                         78 Ramanna Res., Near Rama Temple                  Yedurappa                         780802 Kerala                             875.5                                                                                                                                                                                                                                   
+        3 Neel                           502 Saimilan Res., Sudama Chowk                    Surat                             394101 Gujarat                          1103.75                                                                                                                                                                                                                                   
+        4 Horuka                         5 Henzu Street                                     Fukusha                           126007 ShiYen                            367.25                                                                                                                                                                                                                                   
+        5 Kartik                         12 Shyamsundar nagar, Near Moti Kacheri            Ahmedabad                         780890 Gujarat                              993                                                                                                                                                                                                                                   
+
+SQL> set lin 300
+SQL> select * from client_master;
+
+CLIENT_NO NAME                           ADDR                                               CITY                                 PIN STATE                            BAL_DUE                                                                                                                               
+--------- ------------------------------ -------------------------------------------------- ------------------------------ --------- ------------------------------ ---------                                                                                                                               
+        1 Argo                           56 Chimera Street, Near Water tank                 Orlando                           560002 Arizona                            150.5                                                                                                                               
+        2 Muthhu                         78 Ramanna Res., Near Rama Temple                  Yedurappa                         780802 Kerala                             875.5                                                                                                                               
+        3 Neel                           502 Saimilan Res., Sudama Chowk                    Surat                             394101 Gujarat                          1103.75                                                                                                                               
+        4 Horuka                         5 Henzu Street                                     Fukusha                           126007 ShiYen                            367.25                                                                                                                               
+        5 Kartik                         12 Shyamsundar nagar, Near Moti Kacheri            Ahmedabad                         780890 Gujarat                              993                                                                                                                               
+
+SQL> set lin 200;
+SQL> select * from client_master;
+
+CLIENT_NO NAME                           ADDR                                               CITY                                 PIN STATE                            BAL_DUE                           
+--------- ------------------------------ -------------------------------------------------- ------------------------------ --------- ------------------------------ ---------                           
+        1 Argo                           56 Chimera Street, Near Water tank                 Orlando                           560002 Arizona                            150.5                           
+        2 Muthhu                         78 Ramanna Res., Near Rama Temple                  Yedurappa                         780802 Kerala                             875.5                           
+        3 Neel                           502 Saimilan Res., Sudama Chowk                    Surat                             394101 Gujarat                          1103.75                           
+        4 Horuka                         5 Henzu Street                                     Fukusha                           126007 ShiYen                            367.25                           
+        5 Kartik                         12 Shyamsundar nagar, Near Moti Kacheri            Ahmedabad                         780890 Gujarat                              993                           
+
+SQL> set lin 100
+SQL> select * from client_master;
+
+CLIENT_NO NAME                           ADDR                                                       
+--------- ------------------------------ --------------------------------------------------         
+CITY                                 PIN STATE                            BAL_DUE                   
+------------------------------ --------- ------------------------------ ---------                   
+        1 Argo                           56 Chimera Street, Near Water tank                         
+Orlando                           560002 Arizona                            150.5                   
+                                                                                                    
+        2 Muthhu                         78 Ramanna Res., Near Rama Temple                          
+Yedurappa                         780802 Kerala                             875.5                   
+                                                                                                    
+        3 Neel                           502 Saimilan Res., Sudama Chowk                            
+Surat                             394101 Gujarat                          1103.75                   
+                                                                                                    
+        4 Horuka                         5 Henzu Street                                             
+Fukusha                           126007 ShiYen                            367.25                   
+                                                                                                    
+        5 Kartik                         12 Shyamsundar nagar, Near Moti Kacheri                    
+Ahmedabad                         780890 Gujarat                              993                   
+                                                                                                    
+
+SQL> set lin 175
+SQL> select * from client_master;
+
+CLIENT_NO NAME                           ADDR                                               CITY                                 PIN STATE                            BAL_DUE  
+--------- ------------------------------ -------------------------------------------------- ------------------------------ --------- ------------------------------ ---------  
+        1 Argo                           56 Chimera Street, Near Water tank                 Orlando                           560002 Arizona                            150.5  
+        2 Muthhu                         78 Ramanna Res., Near Rama Temple                  Yedurappa                         780802 Kerala                             875.5  
+        3 Neel                           502 Saimilan Res., Sudama Chowk                    Surat                             394101 Gujarat                          1103.75  
+        4 Horuka                         5 Henzu Street                                     Fukusha                           126007 ShiYen                            367.25  
+        5 Kartik                         12 Shyamsundar nagar, Near Moti Kacheri            Ahmedabad                         780890 Gujarat                              993  
+
+SQL> set lin 150
+SQL> select * from client_master;
+
+CLIENT_NO NAME                           ADDR                                               CITY                                 PIN                  
+--------- ------------------------------ -------------------------------------------------- ------------------------------ ---------                  
+STATE                            BAL_DUE                                                                                                              
+------------------------------ ---------                                                                                                              
+        1 Argo                           56 Chimera Street, Near Water tank                 Orlando                           560002                  
+Arizona                            150.5                                                                                                              
+                                                                                                                                                      
+        2 Muthhu                         78 Ramanna Res., Near Rama Temple                  Yedurappa                         780802                  
+Kerala                             875.5                                                                                                              
+                                                                                                                                                      
+        3 Neel                           502 Saimilan Res., Sudama Chowk                    Surat                             394101                  
+Gujarat                          1103.75                                                                                                              
+                                                                                                                                                      
+        4 Horuka                         5 Henzu Street                                     Fukusha                           126007                  
+ShiYen                            367.25                                                                                                              
+                                                                                                                                                      
+        5 Kartik                         12 Shyamsundar nagar, Near Moti Kacheri            Ahmedabad                         780890                  
+Gujarat                              993                                                                                                              
+                                                                                                                                                      
+
+SQL> select * from salesman_master;
+
+SALESMAN_NO SALESMAN_NAME                  ADDR                                               CITY                             PINCODE                
+----------- ------------------------------ -------------------------------------------------- ------------------------------ ---------                
+STATE                           SELL_AMT    TARGET REMARKS                                                                                            
+------------------------------ --------- --------- --------------------------------------------------                                                 
+          1 Geeta                          45 Shyamal Soc. Shyamal                            Ahmedabad                         356214                
+Gujarat                           144000    240000 Good                                                                                               
+                                                                                                                                                      
+          2 Ashok                          13 Swaminarayan Soc. Bapunagar                     Ahmedabad                         365478                
+Gujarat                            70000    105000 Good                                                                                               
+                                                                                                                                                      
+          3 Sandeep                        5 Safal Vivan, Gota                                Ahmedabad                         365214                
+Gujarat                             3400     17000 Medium                                                                                             
+                                                                                                                                                      
+          4 Mahesh                         404 Adani Bgw. Chandlodiya                         Ahmedabad                         369751                
+Gujarat                            18000     18000 V.Good                                                                                             
+                                                                                                                                                      
+          5 Hardik                         29 Satyam Soc. Hiraroad                            Ahmedabad                         321546                
+Gujarat                            36000     48000 Good                                                                                               
+                                                                                                                                                      
+
+SQL> spool off

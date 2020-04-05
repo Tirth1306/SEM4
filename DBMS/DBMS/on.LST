@@ -1,0 +1,8 @@
+;
+    );
+     *
+ERROR at line 15:
+ORA-00911: invalid character 
+
+
+SQL> 

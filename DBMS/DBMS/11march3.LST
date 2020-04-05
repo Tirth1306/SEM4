@@ -1,0 +1,656 @@
+SQL> ed
+Wrote file afiedt.buf
+
+  1* commit
+SQL> select * from student natural join jee;
+
+ROLL_NO  NAME                            SEM        OS        CA      DBMS BA CITY           MARKS  
+-------- ------------------------- --------- --------- --------- --------- -- ---------- ---------  
+18BCE259 Shrey Viradiya                    4        86        89        92 3  Banglore         208  
+18BCE258 Dhvanik Viradiya                  4        88        76        82 4  Manglore         232  
+18BCE257 Gunjan Vinzuda                    4        75        98        75 2  Banglore          99  
+18BCE260 Vishva Patel                      4        80        83        90 3  Chennai          -22  
+18BCE261 Mohamad Asim                      4        85        45        65 3  Mumabi           -67  
+18BCE263 Yash Chelani                      4        86        71        42 3  Banglore         270  
+18BCE264 Vivek Zalariya                    4        74        71        62 2  Chennai          282  
+18BCE256 Sagar Vasoya                      4        85        63        45 2  Banglore         -79  
+17BCE152 Sindhant Molhotra                 6        75        15        26 1  Manglore         -17  
+17BCE254 Meera Kumari                      6        72        75        56 4  Chennai            6  
+17BCE099 Rajat singh                       6        85        86        92 4  Banglore         349  
+17BCE011 Mohil Patel                       6        85        76        65 1  Chennai          214  
+17BCE000 Ghost Rider                       6        76        65        85 2  Mumabi           302  
+18BCE220 Bula Beyer                        4        54        54        76 2  Manglore          39  
+18BCE250 Raymond Ramaya                    4        25        36        85 4  Mumabi           331  
+17BCE215 Detra Deets                       4        54        66        62 4  Banglore         102  
+18BCE103 Yadira Yarman                     4        94        50        77 3  Mumabi           300  
+17BCE201 Elfriede Enyeart                  4        10        96        23 4  Mumabi           -36  
+17BCE221 Cordell Curci                     4        73        60        27 1  Manglore         194  
+
+19 rows selected.
+
+SQL> select * from student natural join jee order by city;
+
+ROLL_NO  NAME                            SEM        OS        CA      DBMS BA CITY           MARKS  
+-------- ------------------------- --------- --------- --------- --------- -- ---------- ---------  
+17BCE215 Detra Deets                       4        54        66        62 4  Banglore         102  
+18BCE259 Shrey Viradiya                    4        86        89        92 3  Banglore         208  
+18BCE256 Sagar Vasoya                      4        85        63        45 2  Banglore         -79  
+18BCE263 Yash Chelani                      4        86        71        42 3  Banglore         270  
+17BCE099 Rajat singh                       6        85        86        92 4  Banglore         349  
+18BCE257 Gunjan Vinzuda                    4        75        98        75 2  Banglore          99  
+18BCE260 Vishva Patel                      4        80        83        90 3  Chennai          -22  
+18BCE264 Vivek Zalariya                    4        74        71        62 2  Chennai          282  
+17BCE254 Meera Kumari                      6        72        75        56 4  Chennai            6  
+17BCE011 Mohil Patel                       6        85        76        65 1  Chennai          214  
+17BCE152 Sindhant Molhotra                 6        75        15        26 1  Manglore         -17  
+17BCE221 Cordell Curci                     4        73        60        27 1  Manglore         194  
+18BCE258 Dhvanik Viradiya                  4        88        76        82 4  Manglore         232  
+18BCE220 Bula Beyer                        4        54        54        76 2  Manglore          39  
+18BCE250 Raymond Ramaya                    4        25        36        85 4  Mumabi           331  
+18BCE261 Mohamad Asim                      4        85        45        65 3  Mumabi           -67  
+18BCE103 Yadira Yarman                     4        94        50        77 3  Mumabi           300  
+17BCE201 Elfriede Enyeart                  4        10        96        23 4  Mumabi           -36  
+17BCE000 Ghost Rider                       6        76        65        85 2  Mumabi           302  
+
+19 rows selected.
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select * from student natural join jee order by city,marks
+  2  ;
+
+ROLL_NO  NAME                            SEM        OS        CA      DBMS BA CITY           MARKS  
+-------- ------------------------- --------- --------- --------- --------- -- ---------- ---------  
+18BCE256 Sagar Vasoya                      4        85        63        45 2  Banglore         -79  
+18BCE257 Gunjan Vinzuda                    4        75        98        75 2  Banglore          99  
+17BCE215 Detra Deets                       4        54        66        62 4  Banglore         102  
+18BCE259 Shrey Viradiya                    4        86        89        92 3  Banglore         208  
+18BCE263 Yash Chelani                      4        86        71        42 3  Banglore         270  
+17BCE099 Rajat singh                       6        85        86        92 4  Banglore         349  
+18BCE260 Vishva Patel                      4        80        83        90 3  Chennai          -22  
+17BCE254 Meera Kumari                      6        72        75        56 4  Chennai            6  
+17BCE011 Mohil Patel                       6        85        76        65 1  Chennai          214  
+18BCE264 Vivek Zalariya                    4        74        71        62 2  Chennai          282  
+17BCE152 Sindhant Molhotra                 6        75        15        26 1  Manglore         -17  
+18BCE220 Bula Beyer                        4        54        54        76 2  Manglore          39  
+17BCE221 Cordell Curci                     4        73        60        27 1  Manglore         194  
+18BCE258 Dhvanik Viradiya                  4        88        76        82 4  Manglore         232  
+18BCE261 Mohamad Asim                      4        85        45        65 3  Mumabi           -67  
+17BCE201 Elfriede Enyeart                  4        10        96        23 4  Mumabi           -36  
+18BCE103 Yadira Yarman                     4        94        50        77 3  Mumabi           300  
+17BCE000 Ghost Rider                       6        76        65        85 2  Mumabi           302  
+18BCE250 Raymond Ramaya                    4        25        36        85 4  Mumabi           331  
+
+19 rows selected.
+
+SQL> select roll_no, student.city, jee.marks from student natural join jee where (student.city, jee.marks) in (select student.city, max(jee.marks) from student natural join jee where (student.city, jee.marks) not in (select student.city,max(jee.marks) from stud
+  2  
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select roll_no, student.city, jee.marks from student natural join jee where (student.city, jee.marks) in (select student.city, max(jee.marks) from student natural join jee where (student.city, jee.marks) not in (select student.city,max(jee.marks) from stud
+SQL> /
+select roll_no, student.city, jee.marks from student natural join jee where (student.city, jee.marks) in (select student.city, max(jee.marks) from student natural join jee where (student.city, jee.marks) not in (select student.city,max(jee.marks) from stud
+                                                                                                                                                                                                                                                               *
+ERROR at line 1:
+ORA-00920: invalid relational operator 
+
+
+SQL> select * from student natural join jee order by city,marks;
+
+ROLL_NO  NAME                            SEM        OS        CA      DBMS BA CITY           MARKS  
+-------- ------------------------- --------- --------- --------- --------- -- ---------- ---------  
+18BCE256 Sagar Vasoya                      4        85        63        45 2  Banglore         -79  
+18BCE257 Gunjan Vinzuda                    4        75        98        75 2  Banglore          99  
+17BCE215 Detra Deets                       4        54        66        62 4  Banglore         102  
+18BCE259 Shrey Viradiya                    4        86        89        92 3  Banglore         208  
+18BCE263 Yash Chelani                      4        86        71        42 3  Banglore         270  
+17BCE099 Rajat singh                       6        85        86        92 4  Banglore         349  
+18BCE260 Vishva Patel                      4        80        83        90 3  Chennai          -22  
+17BCE254 Meera Kumari                      6        72        75        56 4  Chennai            6  
+17BCE011 Mohil Patel                       6        85        76        65 1  Chennai          214  
+18BCE264 Vivek Zalariya                    4        74        71        62 2  Chennai          282  
+17BCE152 Sindhant Molhotra                 6        75        15        26 1  Manglore         -17  
+18BCE220 Bula Beyer                        4        54        54        76 2  Manglore          39  
+17BCE221 Cordell Curci                     4        73        60        27 1  Manglore         194  
+18BCE258 Dhvanik Viradiya                  4        88        76        82 4  Manglore         232  
+18BCE261 Mohamad Asim                      4        85        45        65 3  Mumabi           -67  
+17BCE201 Elfriede Enyeart                  4        10        96        23 4  Mumabi           -36  
+18BCE103 Yadira Yarman                     4        94        50        77 3  Mumabi           300  
+17BCE000 Ghost Rider                       6        76        65        85 2  Mumabi           302  
+18BCE250 Raymond Ramaya                    4        25        36        85 4  Mumabi           331  
+
+19 rows selected.
+
+SQL> select roll_no, student.city, jee.marks from student natural join jee where (student.city, jee.marks) in (select student.city, max(jee.marks) from student natural join jee where (student.city, jee.marks) not in (select student.city,max(jee.marks) from stud
+  2  
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select roll_no, student.city, jee.marks from student natural join jee where (student.city, jee.marks) in (select student.city, max(jee.marks) from student natural join jee where (student.city, jee.marks) not in (select student.city,max(jee.marks) from stud
+SQL> select roll_no, student.city, jee.marks from student natural join jee where (student.city, jee.marks) in (select student.city, max(jee.marks) from student natural join jee where (student.city, jee.marks) not in (select student.city,max(jee.marks) from stud
+  2  ;
+
+*
+ERROR at line 2:
+ORA-00920: invalid relational operator 
+
+
+SQL> select roll_no, student.city, jee.marks from student natural join jee where (student.city, jee.marks) in (select student.city, max(jee.marks) from student natural join jee where (student.city, jee.marks) not in (select student.city,max(jee.marks) from stud
+  2  ;
+
+*
+ERROR at line 2:
+ORA-00920: invalid relational operator 
+
+
+SQL> select roll_no, student.city, jee.marks from student natural join jee where (student.city, jee.marks) in (select student.city, max(jee.marks) from student natural join jee where (student.city, jee.marks) not in (select student.city,max(jee.marks) from stud
+  2  ;
+
+*
+ERROR at line 2:
+ORA-00920: invalid relational operator 
+
+
+SQL> @test.sql
+
+ROLL_NO  CITY           MARKS                                                                       
+-------- ---------- ---------                                                                       
+18BCE263 Banglore         270                                                                       
+17BCE011 Chennai          214                                                                       
+17BCE000 Mumabi           302                                                                       
+17BCE221 Manglore         194                                                                       
+
+SQL> select * from student natural join jee order by city,marks;
+
+ROLL_NO  NAME                            SEM        OS        CA      DBMS BA CITY           MARKS  
+-------- ------------------------- --------- --------- --------- --------- -- ---------- ---------  
+18BCE256 Sagar Vasoya                      4        85        63        45 2  Banglore         -79  
+18BCE257 Gunjan Vinzuda                    4        75        98        75 2  Banglore          99  
+17BCE215 Detra Deets                       4        54        66        62 4  Banglore         102  
+18BCE259 Shrey Viradiya                    4        86        89        92 3  Banglore         208  
+18BCE263 Yash Chelani                      4        86        71        42 3  Banglore         270  
+17BCE099 Rajat singh                       6        85        86        92 4  Banglore         349  
+18BCE260 Vishva Patel                      4        80        83        90 3  Chennai          -22  
+17BCE254 Meera Kumari                      6        72        75        56 4  Chennai            6  
+17BCE011 Mohil Patel                       6        85        76        65 1  Chennai          214  
+18BCE264 Vivek Zalariya                    4        74        71        62 2  Chennai          282  
+17BCE152 Sindhant Molhotra                 6        75        15        26 1  Manglore         -17  
+18BCE220 Bula Beyer                        4        54        54        76 2  Manglore          39  
+17BCE221 Cordell Curci                     4        73        60        27 1  Manglore         194  
+18BCE258 Dhvanik Viradiya                  4        88        76        82 4  Manglore         232  
+18BCE261 Mohamad Asim                      4        85        45        65 3  Mumabi           -67  
+17BCE201 Elfriede Enyeart                  4        10        96        23 4  Mumabi           -36  
+18BCE103 Yadira Yarman                     4        94        50        77 3  Mumabi           300  
+17BCE000 Ghost Rider                       6        76        65        85 2  Mumabi           302  
+18BCE250 Raymond Ramaya                    4        25        36        85 4  Mumabi           331  
+
+19 rows selected.
+
+SQL> select roll_no, student.city, jee.marks from student natural join jee where (student.city, jee.marks) in (select student.city, max(jee.marks) from student natural join jee where (student.city, jee.marks) not in (select student.city,max(jee.marks) from stud
+  2  /
+select roll_no, student.city, jee.marks from student natural join jee where (student.city, jee.marks) in (select student.city, max(jee.marks) from student natural join jee where (student.city, jee.marks) not in (select student.city,max(jee.marks) from stud
+                                                                                                                                                                                                                                                               *
+ERROR at line 1:
+ORA-00920: invalid relational operator 
+
+
+SQL> select roll_no, student.city, jee.marks from student natural join jee where (student.city, jee.marks) in (select student.city, max(jee.marks) from student natural join jee where (student.city, jee.marks) not in (select student.city,max(jee.marks) from stud
+  2  /
+select roll_no, student.city, jee.marks from student natural join jee where (student.city, jee.marks) in (select student.city, max(jee.marks) from student natural join jee where (student.city, jee.marks) not in (select student.city,max(jee.marks) from stud
+                                                                                                                                                                                                                                                               *
+ERROR at line 1:
+ORA-00920: invalid relational operator 
+
+
+SQL> select roll_no, student.city, jee.marks from student natural join jee where (student.city, jee.marks) in (select student.city, max(jee.marks) from student natural join jee where (student.city, jee.marks) not in (select student.city,max(jee.marks) from stud
+  2  ;
+
+*
+ERROR at line 2:
+ORA-00920: invalid relational operator 
+
+
+SQL> @test.sql
+
+ROLL_NO  CITY           MARKS                                                                       
+-------- ---------- ---------                                                                       
+18BCE263 Banglore         270                                                                       
+17BCE011 Chennai          214                                                                       
+17BCE000 Mumabi           302                                                                       
+17BCE221 Manglore         194                                                                       
+
+SQL> select roll_no, student.city, jee.marks from student natural join jee where (student.city, jee.marks) in (select student.city, max(jee.marks) from student natural join jee where (student.city, jee.marks) not in (select student.city,max(jee.marks) from stud
+  2  /
+select roll_no, student.city, jee.marks from student natural join jee where (student.city, jee.marks) in (select student.city, max(jee.marks) from student natural join jee where (student.city, jee.marks) not in (select student.city,max(jee.marks) from stud
+                                                                                                                                                                                                                                                               *
+ERROR at line 1:
+ORA-00920: invalid relational operator 
+
+
+SQL> select roll_no, student.city, jee.marks from student natural join jee where (student.city, jee.marks) in (select student.city, max(jee.marks) from student natural join jee where (student.city, jee.marks) not in (select student.city,max(jee.marks) from stud
+  2  
+SQL> /
+select roll_no, student.city, jee.marks from student natural join jee where (student.city, jee.marks) in (select student.city, max(jee.marks) from student natural join jee where (student.city, jee.marks) not in (select student.city,max(jee.marks) from stud
+                                                                                                                                                                                                                                                               *
+ERROR at line 1:
+ORA-00920: invalid relational operator 
+
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select roll_no, student.city, jee.marks from student natural join jee where (student.city, jee.marks) in (select student.city, max(jee.marks) from student natural join jee where (student.city, jee.marks) not in (select student.city,max(jee.marks) from student natural join jee group by student.city) group by student.city)
+  2  ;
+
+ROLL_NO  CITY           MARKS                                                                       
+-------- ---------- ---------                                                                       
+18BCE263 Banglore         270                                                                       
+17BCE011 Chennai          214                                                                       
+17BCE000 Mumabi           302                                                                       
+17BCE221 Manglore         194                                                                       
+
+SQL> select * from student natural join jee order by city,marks;
+
+ROLL_NO  NAME                            SEM        OS        CA      DBMS BA CITY           MARKS  
+-------- ------------------------- --------- --------- --------- --------- -- ---------- ---------  
+18BCE256 Sagar Vasoya                      4        85        63        45 2  Banglore         -79  
+18BCE257 Gunjan Vinzuda                    4        75        98        75 2  Banglore          99  
+17BCE215 Detra Deets                       4        54        66        62 4  Banglore         102  
+18BCE259 Shrey Viradiya                    4        86        89        92 3  Banglore         208  
+18BCE263 Yash Chelani                      4        86        71        42 3  Banglore         270  
+17BCE099 Rajat singh                       6        85        86        92 4  Banglore         349  
+18BCE260 Vishva Patel                      4        80        83        90 3  Chennai          -22  
+17BCE254 Meera Kumari                      6        72        75        56 4  Chennai            6  
+17BCE011 Mohil Patel                       6        85        76        65 1  Chennai          214  
+18BCE264 Vivek Zalariya                    4        74        71        62 2  Chennai          282  
+17BCE152 Sindhant Molhotra                 6        75        15        26 1  Manglore         -17  
+18BCE220 Bula Beyer                        4        54        54        76 2  Manglore          39  
+17BCE221 Cordell Curci                     4        73        60        27 1  Manglore         194  
+18BCE258 Dhvanik Viradiya                  4        88        76        82 4  Manglore         232  
+18BCE261 Mohamad Asim                      4        85        45        65 3  Mumabi           -67  
+17BCE201 Elfriede Enyeart                  4        10        96        23 4  Mumabi           -36  
+18BCE103 Yadira Yarman                     4        94        50        77 3  Mumabi           300  
+17BCE000 Ghost Rider                       6        76        65        85 2  Mumabi           302  
+18BCE250 Raymond Ramaya                    4        25        36        85 4  Mumabi           331  
+
+19 rows selected.
+
+SQL> select roll_no, os from student where os not in (select max(os) from student);
+
+ROLL_NO         OS                                                                                  
+-------- ---------                                                                                  
+18BCE259        86                                                                                  
+18BCE258        88                                                                                  
+18BCE257        75                                                                                  
+18BCE260        80                                                                                  
+18BCE261        85                                                                                  
+18BCE263        86                                                                                  
+18BCE264        74                                                                                  
+18BCE256        85                                                                                  
+17BCE152        75                                                                                  
+17BCE254        72                                                                                  
+17BCE099        85                                                                                  
+17BCE011        85                                                                                  
+17BCE000        76                                                                                  
+18BCE220        54                                                                                  
+18BCE68          3                                                                                  
+17BCE215        54                                                                                  
+18BCE64         15                                                                                  
+18BCE61         76                                                                                  
+17BCE201        10                                                                                  
+17BCE221        73                                                                                  
+17BCE94         69                                                                                  
+
+ROLL_NO         OS                                                                                  
+-------- ---------                                                                                  
+18BCE12         63                                                                                  
+18BCE250        25                                                                                  
+
+23 rows selected.
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select roll_no, max(os) from student where os not in (select max(os) from student)
+  2  ;
+select roll_no, max(os) from student where os not in (select max(os) from student)
+       *
+ERROR at line 1:
+ORA-00937: not a single-group group function 
+
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select max(os) from student where os not in (select max(os) from student)
+  2  ;
+
+  MAX(OS)                                                                                           
+---------                                                                                           
+       88                                                                                           
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select max(os) from student where os not in (select max(os) from student) group by roll_no
+  2  ;
+
+  MAX(OS)                                                                                           
+---------                                                                                           
+       74                                                                                           
+       63                                                                                           
+       80                                                                                           
+       15                                                                                           
+       86                                                                                           
+       54                                                                                           
+       76                                                                                           
+       69                                                                                           
+       88                                                                                           
+       54                                                                                           
+       25                                                                                           
+       86                                                                                           
+       85                                                                                           
+        3                                                                                           
+       10                                                                                           
+       85                                                                                           
+       75                                                                                           
+       72                                                                                           
+       76                                                                                           
+       75                                                                                           
+       85                                                                                           
+
+  MAX(OS)                                                                                           
+---------                                                                                           
+       85                                                                                           
+       73                                                                                           
+
+23 rows selected.
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select max(os) from student where os not in (select max(os) from student)
+  2  ;
+
+  MAX(OS)                                                                                           
+---------                                                                                           
+       88                                                                                           
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select * from student where os = (select max(os) from student where os not in (select max(os) from student))
+  2  ;
+
+ROLL_NO  NAME                            SEM        OS        CA      DBMS BA CITY                  
+-------- ------------------------- --------- --------- --------- --------- -- ----------            
+18BCE258 Dhvanik Viradiya                  4        88        76        82 4  Manglore              
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select roll_no,os,city from student where os = (select max(os) from student where os not in (select max(os) from student))
+  2  ;
+
+ROLL_NO         OS CITY                                                                             
+-------- --------- ----------                                                                       
+18BCE258        88 Manglore                                                                         
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select roll_no,sem,city from student where os = (select max(os) from student where os not in (select max(os) from student))
+  2  ;
+
+ROLL_NO        SEM CITY                                                                             
+-------- --------- ----------                                                                       
+18BCE258         4 Manglore                                                                         
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select roll_no,sem,city from student where os = (select max(os) from student where os not in (select max(os) from student))
+  2  ;
+
+ROLL_NO        SEM CITY                                                                             
+-------- --------- ----------                                                                       
+18BCE258         4 Manglore                                                                         
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select roll_no,sem,os from student where os = (select max(os) from student where os not in (select max(os) from student))
+  2  ;
+
+ROLL_NO        SEM        OS                                                                        
+-------- --------- ---------                                                                        
+18BCE258         4        88                                                                        
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select roll_no,sem,ca from student where ca = (select max(ca) from student where ca not in (select max(ca) from student))
+  2  ;
+
+ROLL_NO        SEM        CA                                                                        
+-------- --------- ---------                                                                        
+17BCE201         4        96                                                                        
+
+SQL> select * from student order by ca;
+
+ROLL_NO  NAME                            SEM        OS        CA      DBMS BA CITY                  
+-------- ------------------------- --------- --------- --------- --------- -- ----------            
+18BCE61  Ann Alexis                        6        76         4        80 2  Manglore              
+17BCE152 Sindhant Molhotra                 6        75        15        26 1  Manglore              
+18BCE68  Hyacinth Hoyos                    6         3        18         9 1  Mumabi                
+17BCE94  Elina Edelstein                   4        69        19        17 4  Manglore              
+18BCE64  Tana Tramel                       6        15        28        45 3  Manglore              
+18BCE12  Delois Danielson                  6        63        33        89 4  Banglore              
+18BCE250 Raymond Ramaya                    4        25        36        85 4  Mumabi                
+18BCE261 Mohamad Asim                      4        85        45        65 3  Mumabi                
+18BCE103 Yadira Yarman                     4        94        50        77 3  Mumabi                
+18BCE220 Bula Beyer                        4        54        54        76 2  Manglore              
+17BCE221 Cordell Curci                     4        73        60        27 1  Manglore              
+18BCE256 Sagar Vasoya                      4        85        63        45 2  Banglore              
+17BCE000 Ghost Rider                       6        76        65        85 2  Mumabi                
+17BCE215 Detra Deets                       4        54        66        62 4  Banglore              
+18BCE263 Yash Chelani                      4        86        71        42 3  Banglore              
+18BCE264 Vivek Zalariya                    4        74        71        62 2  Chennai               
+17BCE254 Meera Kumari                      6        72        75        56 4  Chennai               
+17BCE011 Mohil Patel                       6        85        76        65 1  Chennai               
+18BCE258 Dhvanik Viradiya                  4        88        76        82 4  Manglore              
+18BCE260 Vishva Patel                      4        80        83        90 3  Chennai               
+17BCE099 Rajat singh                       6        85        86        92 4  Banglore              
+
+ROLL_NO  NAME                            SEM        OS        CA      DBMS BA CITY                  
+-------- ------------------------- --------- --------- --------- --------- -- ----------            
+18BCE259 Shrey Viradiya                    4        86        89        92 3  Banglore              
+17BCE201 Elfriede Enyeart                  4        10        96        23 4  Mumabi                
+18BCE257 Gunjan Vinzuda                    4        75        98        75 2  Banglore              
+
+24 rows selected.
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select * from student order by os
+SQL> ;
+  1* select * from student order by os
+SQL> /
+
+ROLL_NO  NAME                            SEM        OS        CA      DBMS BA CITY                  
+-------- ------------------------- --------- --------- --------- --------- -- ----------            
+18BCE68  Hyacinth Hoyos                    6         3        18         9 1  Mumabi                
+17BCE201 Elfriede Enyeart                  4        10        96        23 4  Mumabi                
+18BCE64  Tana Tramel                       6        15        28        45 3  Manglore              
+18BCE250 Raymond Ramaya                    4        25        36        85 4  Mumabi                
+18BCE220 Bula Beyer                        4        54        54        76 2  Manglore              
+17BCE215 Detra Deets                       4        54        66        62 4  Banglore              
+18BCE12  Delois Danielson                  6        63        33        89 4  Banglore              
+17BCE94  Elina Edelstein                   4        69        19        17 4  Manglore              
+17BCE254 Meera Kumari                      6        72        75        56 4  Chennai               
+17BCE221 Cordell Curci                     4        73        60        27 1  Manglore              
+18BCE264 Vivek Zalariya                    4        74        71        62 2  Chennai               
+17BCE152 Sindhant Molhotra                 6        75        15        26 1  Manglore              
+18BCE257 Gunjan Vinzuda                    4        75        98        75 2  Banglore              
+17BCE000 Ghost Rider                       6        76        65        85 2  Mumabi                
+18BCE61  Ann Alexis                        6        76         4        80 2  Manglore              
+18BCE260 Vishva Patel                      4        80        83        90 3  Chennai               
+17BCE099 Rajat singh                       6        85        86        92 4  Banglore              
+18BCE256 Sagar Vasoya                      4        85        63        45 2  Banglore              
+18BCE261 Mohamad Asim                      4        85        45        65 3  Mumabi                
+17BCE011 Mohil Patel                       6        85        76        65 1  Chennai               
+18BCE263 Yash Chelani                      4        86        71        42 3  Banglore              
+
+ROLL_NO  NAME                            SEM        OS        CA      DBMS BA CITY                  
+-------- ------------------------- --------- --------- --------- --------- -- ----------            
+18BCE259 Shrey Viradiya                    4        86        89        92 3  Banglore              
+18BCE258 Dhvanik Viradiya                  4        88        76        82 4  Manglore              
+18BCE103 Yadira Yarman                     4        94        50        77 3  Mumabi                
+
+24 rows selected.
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select * from student order by os
+SQL> ;
+  1* select * from student order by os
+SQL> /
+
+ROLL_NO  NAME                            SEM        OS        CA      DBMS BA CITY                  
+-------- ------------------------- --------- --------- --------- --------- -- ----------            
+18BCE68  Hyacinth Hoyos                    6         3        18         9 1  Mumabi                
+17BCE201 Elfriede Enyeart                  4        10        96        23 4  Mumabi                
+18BCE64  Tana Tramel                       6        15        28        45 3  Manglore              
+18BCE250 Raymond Ramaya                    4        25        36        85 4  Mumabi                
+18BCE220 Bula Beyer                        4        54        54        76 2  Manglore              
+17BCE215 Detra Deets                       4        54        66        62 4  Banglore              
+18BCE12  Delois Danielson                  6        63        33        89 4  Banglore              
+17BCE94  Elina Edelstein                   4        69        19        17 4  Manglore              
+17BCE254 Meera Kumari                      6        72        75        56 4  Chennai               
+17BCE221 Cordell Curci                     4        73        60        27 1  Manglore              
+18BCE264 Vivek Zalariya                    4        74        71        62 2  Chennai               
+17BCE152 Sindhant Molhotra                 6        75        15        26 1  Manglore              
+18BCE257 Gunjan Vinzuda                    4        75        98        75 2  Banglore              
+17BCE000 Ghost Rider                       6        76        65        85 2  Mumabi                
+18BCE61  Ann Alexis                        6        76         4        80 2  Manglore              
+18BCE260 Vishva Patel                      4        80        83        90 3  Chennai               
+17BCE099 Rajat singh                       6        85        86        92 4  Banglore              
+18BCE256 Sagar Vasoya                      4        85        63        45 2  Banglore              
+18BCE261 Mohamad Asim                      4        85        45        65 3  Mumabi                
+17BCE011 Mohil Patel                       6        85        76        65 1  Chennai               
+18BCE263 Yash Chelani                      4        86        71        42 3  Banglore              
+
+ROLL_NO  NAME                            SEM        OS        CA      DBMS BA CITY                  
+-------- ------------------------- --------- --------- --------- --------- -- ----------            
+18BCE259 Shrey Viradiya                    4        86        89        92 3  Banglore              
+18BCE258 Dhvanik Viradiya                  4        88        76        82 4  Manglore              
+18BCE103 Yadira Yarman                     4        94        50        77 3  Mumabi                
+
+24 rows selected.
+
+SQL> insert into student values('18BCE123','Unknown Unknown',4,88,96,90,3,'Mumbai');
+
+1 row created.
+
+SQL> select roll_no,sem,ca from student where ca = (select max(ca) from student where ca not in (select max(ca) from student));
+
+ROLL_NO        SEM        CA                                                                        
+-------- --------- ---------                                                                        
+18BCE123         4        96                                                                        
+17BCE201         4        96                                                                        
+
+SQL> select roll_no,sem,os from student where os = (select max(os) from student where os not in (select max(os) from student));
+
+ROLL_NO        SEM        OS                                                                        
+-------- --------- ---------                                                                        
+18BCE123         4        88                                                                        
+18BCE258         4        88                                                                        
+
+SQL> select roll_no,sem,ca from student where ca = (select max(ca) from student where ca not in (select max(ca) from student)) union select roll_no,sem,os from student where os = (select max(os) from student where os not in (select max(os) from student));
+
+ROLL_NO        SEM        CA                                                                        
+-------- --------- ---------                                                                        
+17BCE201         4        96                                                                        
+18BCE123         4        88                                                                        
+18BCE123         4        96                                                                        
+18BCE258         4        88                                                                        
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select * from student where ca = (select max(ca) from student where ca not in (select max(ca) from student)) union select *from student where os = (select max(os) from student where os not in (select max(os) from student))
+SQL> ;
+  1* select * from student where ca = (select max(ca) from student where ca not in (select max(ca) from student)) union select *from student where os = (select max(os) from student where os not in (select max(os) from student))
+SQL> /
+
+ROLL_NO  NAME                            SEM        OS        CA      DBMS BA CITY                  
+-------- ------------------------- --------- --------- --------- --------- -- ----------            
+17BCE201 Elfriede Enyeart                  4        10        96        23 4  Mumabi                
+18BCE123 Unknown Unknown                   4        88        96        90 3  Mumbai                
+18BCE258 Dhvanik Viradiya                  4        88        76        82 4  Manglore              
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select * from student where ca = (select max(ca) from student where ca not in (select max(ca) from student)) intersect select *from student where os = (select max(os) from student where os not in (select max(os) from student))
+SQL> ;
+  1* select * from student where ca = (select max(ca) from student where ca not in (select max(ca) from student)) intersect select *from student where os = (select max(os) from student where os not in (select max(os) from student))
+SQL> /
+
+ROLL_NO  NAME                            SEM        OS        CA      DBMS BA CITY                  
+-------- ------------------------- --------- --------- --------- --------- -- ----------            
+18BCE123 Unknown Unknown                   4        88        96        90 3  Mumbai                
+
+SQL> commit;
+
+Commit complete.
+
+SQL> select roll_no,sem,ca from student where ca = (select max(ca) from student where ca not in (select max(ca) from student));
+
+ROLL_NO        SEM        CA                                                                        
+-------- --------- ---------                                                                        
+18BCE123         4        96                                                                        
+17BCE201         4        96                                                                        
+
+SQL>  select roll_no,sem,os from student where os = (select max(os) from student where os not in (select max(os) from student));
+
+ROLL_NO        SEM        OS                                                                        
+-------- --------- ---------                                                                        
+18BCE123         4        88                                                                        
+18BCE258         4        88                                                                        
+
+SQL> select * from student where ca = (select max(ca) from student where ca not in (select max(ca) from student)) intersect select *from student where os = (select max(os) from student where os not in (select max(os) from student));
+
+ROLL_NO  NAME                            SEM        OS        CA      DBMS BA CITY                  
+-------- ------------------------- --------- --------- --------- --------- -- ----------            
+18BCE123 Unknown Unknown                   4        88        96        90 3  Mumbai                
+
+SQL>  select * from student where ca = (select max(ca) from student where ca not in (select max(ca) from student)) union select *from student where os = (select max(os) from student where os not in (select max(os) from student));
+
+ROLL_NO  NAME                            SEM        OS        CA      DBMS BA CITY                  
+-------- ------------------------- --------- --------- --------- --------- -- ----------            
+17BCE201 Elfriede Enyeart                  4        10        96        23 4  Mumabi                
+18BCE123 Unknown Unknown                   4        88        96        90 3  Mumbai                
+18BCE258 Dhvanik Viradiya                  4        88        76        82 4  Manglore              
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1*  select * from student where ca = (select max(ca) from student minus (select max(ca) from student)) union select *from student where os = (select max(os) from student minus (select max(os) from student))
+  2  ;
+
+no rows selected
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1*  select * from student where ca = (select max(ca) from student minus (select max(ca) from student)) union select *from student where os = (select max(os) from student minus (select max(os) from student))
+  2  /
+
+no rows selected
+
+SQL> spool off

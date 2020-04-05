@@ -1,0 +1,323 @@
+SQL> show * from tab;
+SP2-0158: unknown SHOW option "*"
+SP2-0158: unknown SHOW option "from"
+tab ON
+SQL> select * from tab;
+
+TNAME                          TABTYPE CLUSTERID                                                    
+------------------------------ ------- ---------                                                    
+STUDENT                        TABLE                                                                
+
+SQL> password
+Changing password for BCE18259
+Password changed
+SQL> describe student
+ Name                                                  Null?    Type
+ ----------------------------------------------------- -------- ------------------------------------
+ ROLL_NO                                                        CHAR(8)
+ NAME                                                           VARCHAR2(25)
+ SEM                                                            NUMBER(1)
+ MOBILE                                                         NUMBER(10)
+
+SQL> select * from student
+  2  ;
+
+ROLL_NO  NAME                            SEM    MOBILE                                              
+-------- ------------------------- --------- ---------                                              
+18BCE259 Shrey Viradiya                    4 1.111E+09                                              
+18BCE263 Yash Chelani                      4 1.111E+09                                              
+18BCE260 Vishva Patel                      4 1.111E+09                                              
+18BCE258 Dhvanik Viradiya                  4 1.111E+09                                              
+
+SQL> insert into student value('18BCE257','Gunjan Vinzuda',4,4152415241);
+insert into student value('18BCE257','Gunjan Vinzuda',4,4152415241)
+                          *
+ERROR at line 1:
+ORA-00928: missing SELECT keyword 
+
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* insert into tab student value('18BCE257','Gunjan Vinzuda',4,4152415241)
+SQL> ;
+  1* insert into tab student value('18BCE257','Gunjan Vinzuda',4,4152415241)
+SQL> select * from student;
+
+ROLL_NO  NAME                            SEM    MOBILE                                              
+-------- ------------------------- --------- ---------                                              
+18BCE259 Shrey Viradiya                    4 1.111E+09                                              
+18BCE263 Yash Chelani                      4 1.111E+09                                              
+18BCE260 Vishva Patel                      4 1.111E+09                                              
+18BCE258 Dhvanik Viradiya                  4 1.111E+09                                              
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select * from student
+SQL> ;
+  1* select * from student
+SQL> 
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select * from student;
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select * from student;
+SQL> insert into tab student values('18BCE259','Gunjan Vinzuda',4,4152415241);
+insert into tab student values('18BCE259','Gunjan Vinzuda',4,4152415241)
+            *
+ERROR at line 1:
+ORA-00913: too many values 
+
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* insert into tab student values('18BCE257','Gunjan Vinzuda',4,4152415241)
+SQL> ;
+  1* insert into tab student values('18BCE257','Gunjan Vinzuda',4,4152415241)
+SQL> ;
+  1* insert into tab student values('18BCE257','Gunjan Vinzuda',4,4152415241)
+SQL> ;
+  1* insert into tab student values('18BCE257','Gunjan Vinzuda',4,4152415241)
+SQL>  insert into tab student values('18BCE257','Gunjan Vinzuda',4,4152415241);
+ insert into tab student values('18BCE257','Gunjan Vinzuda',4,4152415241)
+             *
+ERROR at line 1:
+ORA-00913: too many values 
+
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* insert into student values('18BCE257','Gunjan Vinzuda',4,4152415241)
+SQL> ;
+  1* insert into student values('18BCE257','Gunjan Vinzuda',4,4152415241)
+SQL> select * from student;
+
+ROLL_NO  NAME                            SEM    MOBILE                                              
+-------- ------------------------- --------- ---------                                              
+18BCE259 Shrey Viradiya                    4 1.111E+09                                              
+18BCE263 Yash Chelani                      4 1.111E+09                                              
+18BCE260 Vishva Patel                      4 1.111E+09                                              
+18BCE258 Dhvanik Viradiya                  4 1.111E+09                                              
+
+SQL> insert into student values('18BCE257','Gunjan Vinzuda',4,4152415241);
+
+1 row created.
+
+SQL> select * from student;
+
+ROLL_NO  NAME                            SEM    MOBILE                                              
+-------- ------------------------- --------- ---------                                              
+18BCE257 Gunjan Vinzuda                    4 4.152E+09                                              
+18BCE259 Shrey Viradiya                    4 1.111E+09                                              
+18BCE263 Yash Chelani                      4 1.111E+09                                              
+18BCE260 Vishva Patel                      4 1.111E+09                                              
+18BCE258 Dhvanik Viradiya                  4 1.111E+09                                              
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select * from student
+SQL> insert into student values('17BCE099','Rajat Singh',6,7485123654);
+
+1 row created.
+
+SQL> ed]
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* insert into student values('17BCE254','Voldemort',6,7485123654);
+SQL> select * from student;
+
+ROLL_NO  NAME                            SEM    MOBILE                                              
+-------- ------------------------- --------- ---------                                              
+18BCE257 Gunjan Vinzuda                    4 4.152E+09                                              
+17BCE099 Rajat Singh                       6 7.485E+09                                              
+18BCE259 Shrey Viradiya                    4 1.111E+09                                              
+18BCE263 Yash Chelani                      4 1.111E+09                                              
+18BCE260 Vishva Patel                      4 1.111E+09                                              
+18BCE258 Dhvanik Viradiya                  4 1.111E+09                                              
+
+6 rows selected.
+
+SQL> insert into student values('17BCE254','Voldemort',6,7485123654);
+
+1 row created.
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* insert into student values('17BCE299','Harry Potter',6,8648444412)
+SQL> ;
+  1* insert into student values('17BCE299','Harry Potter',6,8648444412)
+SQL> edit
+Wrote file afiedt.buf
+
+  1* insert into student values('17BCE299','Harry Potter',6,8648444412)
+SQL> ;
+  1* insert into student values('17BCE299','Harry Potter',6,8648444412)
+SQL> )insert into student values('17BCE299','Harry Potter',6,8648444412);
+SP2-0042: unknown command beginning ")insert in..." - rest of line ignored.
+SQL> insert into student values('17BCE299','Harry Potter',6,8648444412);
+
+1 row created.
+
+SQL> insert into student values('19BCE201','Krunal Patel',2,7485963214);
+
+1 row created.
+
+SQL> describe student
+ Name                                                  Null?    Type
+ ----------------------------------------------------- -------- ------------------------------------
+ ROLL_NO                                                        CHAR(8)
+ NAME                                                           VARCHAR2(25)
+ SEM                                                            NUMBER(1)
+ MOBILE                                                         NUMBER(10)
+
+SQL> select ROLL_NO, Name from student where sem > 3
+  2  ;
+
+ROLL_NO  NAME                                                                                       
+-------- -------------------------                                                                  
+18BCE257 Gunjan Vinzuda                                                                             
+17BCE099 Rajat Singh                                                                                
+17BCE254 Voldemort                                                                                  
+17BCE299 Harry Potter                                                                               
+18BCE259 Shrey Viradiya                                                                             
+18BCE263 Yash Chelani                                                                               
+18BCE260 Vishva Patel                                                                               
+18BCE258 Dhvanik Viradiya                                                                           
+
+8 rows selected.
+
+SQL> insert into student value('19BCE256','Pankaj Udas',2,5252525252);
+insert into student value('19BCE256','Pankaj Udas',2,5252525252)
+                          *
+ERROR at line 1:
+ORA-00928: missing SELECT keyword 
+
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* insert into student values('19BCE256','Pankaj Udas',2,5252525252)
+SQL> insert into student values('19BCE256','Pankaj Udas',2,5252525252);
+
+1 row created.
+
+SQL> select * from student;
+
+ROLL_NO  NAME                            SEM    MOBILE                                              
+-------- ------------------------- --------- ---------                                              
+18BCE257 Gunjan Vinzuda                    4 4.152E+09                                              
+17BCE099 Rajat Singh                       6 7.485E+09                                              
+17BCE254 Voldemort                         6 7.485E+09                                              
+17BCE299 Harry Potter                      6 8.648E+09                                              
+19BCE201 Krunal Patel                      2 7.486E+09                                              
+19BCE256 Pankaj Udas                       2 5.253E+09                                              
+18BCE259 Shrey Viradiya                    4 1.111E+09                                              
+18BCE263 Yash Chelani                      4 1.111E+09                                              
+18BCE260 Vishva Patel                      4 1.111E+09                                              
+18BCE258 Dhvanik Viradiya                  4 1.111E+09                                              
+
+10 rows selected.
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select * from student;
+  2  ;
+select * from student;
+                     *
+ERROR at line 1:
+ORA-00911: invalid character 
+
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select * from student;
+  2  
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select * from student
+  2  ;
+
+ROLL_NO  NAME                            SEM    MOBILE                                              
+-------- ------------------------- --------- ---------                                              
+18BCE257 Gunjan Vinzuda                    4 4.152E+09                                              
+17BCE099 Rajat Singh                       6 7.485E+09                                              
+17BCE254 Voldemort                         6 7.485E+09                                              
+17BCE299 Harry Potter                      6 8.648E+09                                              
+19BCE201 Krunal Patel                      2 7.486E+09                                              
+19BCE256 Pankaj Udas                       2 5.253E+09                                              
+18BCE259 Shrey Viradiya                    4 1.111E+09                                              
+18BCE263 Yash Chelani                      4 1.111E+09                                              
+18BCE260 Vishva Patel                      4 1.111E+09                                              
+18BCE258 Dhvanik Viradiya                  4 1.111E+09                                              
+
+10 rows selected.
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select * from student
+  2  ;
+
+ROLL_NO  NAME                            SEM    MOBILE                                              
+-------- ------------------------- --------- ---------                                              
+18BCE257 Gunjan Vinzuda                    4 4.152E+09                                              
+17BCE099 Rajat Singh                       6 7.485E+09                                              
+17BCE254 Voldemort                         6 7.485E+09                                              
+17BCE299 Harry Potter                      6 8.648E+09                                              
+19BCE201 Krunal Patel                      2 7.486E+09                                              
+19BCE256 Pankaj Udas                       2 5.253E+09                                              
+18BCE259 Shrey Viradiya                    4 1.111E+09                                              
+18BCE263 Yash Chelani                      4 1.111E+09                                              
+18BCE260 Vishva Patel                      4 1.111E+09                                              
+18BCE258 Dhvanik Viradiya                  4 1.111E+09                                              
+
+10 rows selected.
+
+SQL> select roll_no,name from student where sem > 4
+  2  ;
+
+ROLL_NO  NAME                                                                                       
+-------- -------------------------                                                                  
+17BCE099 Rajat Singh                                                                                
+17BCE254 Voldemort                                                                                  
+17BCE299 Harry Potter                                                                               
+
+SQL> select * from student where name like 's%';
+
+no rows selected
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select * from student where name like 'S%'
+  2  ;
+
+ROLL_NO  NAME                            SEM    MOBILE                                              
+-------- ------------------------- --------- ---------                                              
+18BCE259 Shrey Viradiya                    4 1.111E+09                                              
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select * from student where name like 'V%'
+  2  ;
+
+ROLL_NO  NAME                            SEM    MOBILE                                              
+-------- ------------------------- --------- ---------                                              
+17BCE254 Voldemort                         6 7.485E+09                                              
+18BCE260 Vishva Patel                      4 1.111E+09                                              
+
+SQL> spool off

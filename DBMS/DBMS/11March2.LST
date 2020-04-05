@@ -1,0 +1,880 @@
+SQL> select * from tab;
+
+TNAME                          TABTYPE CLUSTERID                                                    
+------------------------------ ------- ---------                                                    
+BIN$RIy6qNwoQX2L78Ik3LhxFg==$0 TABLE                                                                
+BIN$ZZ7YruzuTemrVc6fYaHK6g==$0 TABLE                                                                
+CLIENTS                        TABLE                                                                
+EMPLOYEES                      TABLE                                                                
+PRODUCT                        TABLE                                                                
+SALES                          TABLE                                                                
+SALESMAN                       TABLE                                                                
+STUDENT                        TABLE                                                                
+
+8 rows selected.
+
+SQL> desc student;
+ Name                                                  Null?    Type
+ ----------------------------------------------------- -------- ------------------------------------
+ ROLL_NO                                               NOT NULL VARCHAR2(8)
+ NAME                                                           VARCHAR2(25)
+ SEM                                                            NUMBER(12)
+ OS                                                             NUMBER(3)
+ CA                                                             NUMBER(3)
+ DBMS                                                           NUMBER(3)
+ BATCH                                                          VARCHAR2(2)
+ CITY                                                           VARCHAR2(10)
+
+SQL> create table JEE(roll_no varchar2(8) primary key,
+  2  marks number check (marks between -90 and 360));
+
+Table created.
+
+SQL> desc marks;
+ERROR:
+ORA-04043: object marks does not exist 
+
+
+SQL> desc jee;
+ Name                                                  Null?    Type
+ ----------------------------------------------------- -------- ------------------------------------
+ ROLL_NO                                               NOT NULL VARCHAR2(8)
+ MARKS                                                          NUMBER
+
+SQL> commit;
+
+Commit complete.
+
+SQL> select * from student;
+
+ROLL_NO  NAME                            SEM        OS        CA      DBMS BA CITY                  
+-------- ------------------------- --------- --------- --------- --------- -- ----------            
+18BCE259 Shrey Viradiya                    4        86        89        92 3  Banglore              
+18BCE258 Dhvanik Viradiya                  4        88        76        82 4  Manglore              
+18BCE257 Gunjan Vinzuda                    4        75        98        75 2  Banglore              
+18BCE260 Vishva Patel                      4        80        83        90 3  Chennai               
+18BCE261 Mohamad Asim                      4        85        45        65 3  Mumabi                
+18BCE263 Yash Chelani                      4        86        71        42 3  Banglore              
+18BCE264 Vivek Zalariya                    4        74        71        62 2  Chennai               
+18BCE256 Sagar Vasoya                      4        85        63        45 2  Banglore              
+17BCE152 Sindhant Molhotra                 6        75        15        26 1  Manglore              
+17BCE254 Meera Kumari                      6        72        75        56 4  Chennai               
+17BCE099 Rajat singh                       6        85        86        92 4  Banglore              
+17BCE011 Mohil Patel                       6        85        76        65 1  Chennai               
+17BCE000 Ghost Rider                       6        76        65        85 2  Mumabi                
+18BCE220 Bula Beyer                        4        54        54        76 2  Manglore              
+18BCE68  Hyacinth Hoyos                    6         3        18         9 1  Mumabi                
+17BCE215 Detra Deets                       4        54        66        62 4  Banglore              
+18BCE64  Tana Tramel                       6        15        28        45 3  Manglore              
+18BCE61  Ann Alexis                        6        76         4        80 2  Manglore              
+18BCE103 Yadira Yarman                     4        94        50        77 3  Mumabi                
+17BCE201 Elfriede Enyeart                  4        10        96        23 4  Mumabi                
+17BCE221 Cordell Curci                     4        73        60        27 1  Manglore              
+
+ROLL_NO  NAME                            SEM        OS        CA      DBMS BA CITY                  
+-------- ------------------------- --------- --------- --------- --------- -- ----------            
+17BCE94  Elina Edelstein                   4        69        19        17 4  Manglore              
+18BCE12  Delois Danielson                  6        63        33        89 4  Banglore              
+18BCE250 Raymond Ramaya                    4        25        36        85 4  Mumabi                
+
+24 rows selected.
+
+SQL> 18BCE259
+SP2-0042: unknown command "18BCE259" - rest of line ignored.
+SQL> 18BCE258
+SP2-0042: unknown command "18BCE258" - rest of line ignored.
+SQL> 18BCE257
+SP2-0042: unknown command "18BCE257" - rest of line ignored.
+SQL> 18BCE260
+SP2-0042: unknown command "18BCE260" - rest of line ignored.
+SP2-0044: For a list of known commands enter HELP
+and to leave enter EXIT.
+SQL> 18BCE261
+SP2-0042: unknown command "18BCE261" - rest of line ignored.
+SQL> 18BCE263
+SP2-0042: unknown command "18BCE263" - rest of line ignored.
+SQL> 18BCE264
+SP2-0042: unknown command "18BCE264" - rest of line ignored.
+SQL> 18BCE256
+SP2-0042: unknown command "18BCE256" - rest of line ignored.
+SP2-0044: For a list of known commands enter HELP
+and to leave enter EXIT.
+SQL> 17BCE152
+SP2-0042: unknown command "17BCE152" - rest of line ignored.
+SQL> 17BCE254
+SP2-0042: unknown command "17BCE254" - rest of line ignored.
+SQL> 17BCE099
+SP2-0042: unknown command "17BCE099" - rest of line ignored.
+SQL> 17BCE011
+SP2-0042: unknown command "17BCE011" - rest of line ignored.
+SP2-0044: For a list of known commands enter HELP
+and to leave enter EXIT.
+SQL> 17BCE000
+SP2-0042: unknown command "17BCE000" - rest of line ignored.
+SQL> 18BCE220
+SP2-0042: unknown command "18BCE220" - rest of line ignored.
+SQL> 18BCE68
+SP2-0042: unknown command "18BCE68" - rest of line ignored.
+SQL> 17BCE215
+SP2-0042: unknown command "17BCE215" - rest of line ignored.
+SP2-0044: For a list of known commands enter HELP
+and to leave enter EXIT.
+SQL> 18BCE64
+SP2-0042: unknown command "18BCE64" - rest of line ignored.
+SQL> 18BCE61
+SP2-0042: unknown command "18BCE61" - rest of line ignored.
+SQL> 18BCE103
+SP2-0042: unknown command "18BCE103" - rest of line ignored.
+SQL> 17BCE201
+SP2-0042: unknown command "17BCE201" - rest of line ignored.
+SP2-0044: For a list of known commands enter HELP
+and to leave enter EXIT.
+SQL> 17BCE221
+SP2-0042: unknown command "17BCE221" - rest of line ignored.
+SQL> 
+SQL> ROLL_NO
+Rollback complete.
+SQL> --------
+SQL> 17BCE94
+SP2-0042: unknown command "17BCE94" - rest of line ignored.
+SQL> 18BCE12
+SP2-0042: unknown command "18BCE12" - rest of line ignored.
+SQL> select * from student;
+
+ROLL_NO  NAME                            SEM        OS        CA      DBMS BA CITY                  
+-------- ------------------------- --------- --------- --------- --------- -- ----------            
+18BCE259 Shrey Viradiya                    4        86        89        92 3  Banglore              
+18BCE258 Dhvanik Viradiya                  4        88        76        82 4  Manglore              
+18BCE257 Gunjan Vinzuda                    4        75        98        75 2  Banglore              
+18BCE260 Vishva Patel                      4        80        83        90 3  Chennai               
+18BCE261 Mohamad Asim                      4        85        45        65 3  Mumabi                
+18BCE263 Yash Chelani                      4        86        71        42 3  Banglore              
+18BCE264 Vivek Zalariya                    4        74        71        62 2  Chennai               
+18BCE256 Sagar Vasoya                      4        85        63        45 2  Banglore              
+17BCE152 Sindhant Molhotra                 6        75        15        26 1  Manglore              
+17BCE254 Meera Kumari                      6        72        75        56 4  Chennai               
+17BCE099 Rajat singh                       6        85        86        92 4  Banglore              
+17BCE011 Mohil Patel                       6        85        76        65 1  Chennai               
+17BCE000 Ghost Rider                       6        76        65        85 2  Mumabi                
+18BCE220 Bula Beyer                        4        54        54        76 2  Manglore              
+18BCE68  Hyacinth Hoyos                    6         3        18         9 1  Mumabi                
+17BCE215 Detra Deets                       4        54        66        62 4  Banglore              
+18BCE64  Tana Tramel                       6        15        28        45 3  Manglore              
+18BCE61  Ann Alexis                        6        76         4        80 2  Manglore              
+18BCE103 Yadira Yarman                     4        94        50        77 3  Mumabi                
+17BCE201 Elfriede Enyeart                  4        10        96        23 4  Mumabi                
+17BCE221 Cordell Curci                     4        73        60        27 1  Manglore              
+
+ROLL_NO  NAME                            SEM        OS        CA      DBMS BA CITY                  
+-------- ------------------------- --------- --------- --------- --------- -- ----------            
+17BCE94  Elina Edelstein                   4        69        19        17 4  Manglore              
+18BCE12  Delois Danielson                  6        63        33        89 4  Banglore              
+18BCE250 Raymond Ramaya                    4        25        36        85 4  Mumabi                
+
+24 rows selected.
+
+SQL> @addmarks.sql
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+SQL> select * from jee
+  2  ;
+
+ROLL_NO      MARKS                                                                                  
+-------- ---------                                                                                  
+18BCE259       208                                                                                  
+18BCE258       232                                                                                  
+18BCE257        99                                                                                  
+18BCE260       -22                                                                                  
+18BCE261       -67                                                                                  
+18BCE263       270                                                                                  
+18BCE264       282                                                                                  
+18BCE256       -79                                                                                  
+17BCE152       -17                                                                                  
+17BCE254         6                                                                                  
+17BCE099       349                                                                                  
+17BCE011       214                                                                                  
+17BCE000       302                                                                                  
+18BCE220        39                                                                                  
+18BCE68        166                                                                                  
+17BCE94        -86                                                                                  
+18BCE12        114                                                                                  
+18BCE250       331                                                                                  
+17BCE215       102                                                                                  
+18BCE64        -69                                                                                  
+18BCE61         34                                                                                  
+
+ROLL_NO      MARKS                                                                                  
+-------- ---------                                                                                  
+18BCE103       300                                                                                  
+17BCE201       -36                                                                                  
+17BCE221       194                                                                                  
+
+24 rows selected.
+
+SQL> desc students;
+ERROR:
+ORA-04043: object students does not exist 
+
+
+SQL> commit;
+
+Commit complete.
+
+SQL> desc student;
+ Name                                                  Null?    Type
+ ----------------------------------------------------- -------- ------------------------------------
+ ROLL_NO                                               NOT NULL VARCHAR2(8)
+ NAME                                                           VARCHAR2(25)
+ SEM                                                            NUMBER(12)
+ OS                                                             NUMBER(3)
+ CA                                                             NUMBER(3)
+ DBMS                                                           NUMBER(3)
+ BATCH                                                          VARCHAR2(2)
+ CITY                                                           VARCHAR2(10)
+
+SQL> desc jee;]
+SP2-0565: Illegal identifier.
+SQL> desc jee;
+ Name                                                  Null?    Type
+ ----------------------------------------------------- -------- ------------------------------------
+ ROLL_NO                                               NOT NULL VARCHAR2(8)
+ MARKS                                                          NUMBER
+
+SQL> select student.city, jee.marks from student natural join jee;
+
+CITY           MARKS                                                                                
+---------- ---------                                                                                
+Mumabi           302                                                                                
+Chennai          214                                                                                
+Banglore         349                                                                                
+Manglore         -17                                                                                
+Mumabi           -36                                                                                
+Banglore         102                                                                                
+Manglore         194                                                                                
+Chennai            6                                                                                
+Mumabi           300                                                                                
+Manglore          39                                                                                
+Mumabi           331                                                                                
+Banglore         -79                                                                                
+Banglore          99                                                                                
+Manglore         232                                                                                
+Banglore         208                                                                                
+Chennai          -22                                                                                
+Mumabi           -67                                                                                
+Banglore         270                                                                                
+Chennai          282                                                                                
+
+19 rows selected.
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select student.roll_no,student.city, jee.marks from student natural join jee
+  2  ;
+select student.roll_no,student.city, jee.marks from student natural join jee
+       *
+ERROR at line 1:
+ORA-25155: column used in NATURAL join cannot have qualifier 
+
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select roll_no,student.city, jee.marks from student natural join jee
+  2  ;
+
+ROLL_NO  CITY           MARKS                                                                       
+-------- ---------- ---------                                                                       
+17BCE000 Mumabi           302                                                                       
+17BCE011 Chennai          214                                                                       
+17BCE099 Banglore         349                                                                       
+17BCE152 Manglore         -17                                                                       
+17BCE201 Mumabi           -36                                                                       
+17BCE215 Banglore         102                                                                       
+17BCE221 Manglore         194                                                                       
+17BCE254 Chennai            6                                                                       
+18BCE103 Mumabi           300                                                                       
+18BCE220 Manglore          39                                                                       
+18BCE250 Mumabi           331                                                                       
+18BCE256 Banglore         -79                                                                       
+18BCE257 Banglore          99                                                                       
+18BCE258 Manglore         232                                                                       
+18BCE259 Banglore         208                                                                       
+18BCE260 Chennai          -22                                                                       
+18BCE261 Mumabi           -67                                                                       
+18BCE263 Banglore         270                                                                       
+18BCE264 Chennai          282                                                                       
+
+19 rows selected.
+
+SQL> select roll_no, student.city, max(jee.marks) from student natural join jee group by student.city;
+select roll_no, student.city, max(jee.marks) from student natural join jee group by student.city
+       *
+ERROR at line 1:
+ORA-00979: not a GROUP BY expression 
+
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select roll_no, max(jee.marks) from student natural join jee group by student.city
+  2  ;
+select roll_no, max(jee.marks) from student natural join jee group by student.city
+       *
+ERROR at line 1:
+ORA-00979: not a GROUP BY expression 
+
+
+SQL> commit;
+
+Commit complete.
+
+SQL> select max(jee.marks) from student natural join jee group by student.city;
+
+MAX(JEE.MARKS)                                                                                      
+--------------                                                                                      
+           331                                                                                      
+           282                                                                                      
+           349                                                                                      
+           232                                                                                      
+
+SQL> select roll_no, max(jee.marks) from student natural join jee group by student.city;
+select roll_no, max(jee.marks) from student natural join jee group by student.city
+       *
+ERROR at line 1:
+ORA-00979: not a GROUP BY expression 
+
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select student.city, max(jee.marks) from student natural join jee group by student.city
+  2  ;
+
+CITY       MAX(JEE.MARKS)                                                                           
+---------- --------------                                                                           
+Mumabi                331                                                                           
+Chennai               282                                                                           
+Banglore              349                                                                           
+Manglore              232                                                                           
+
+SQL> select student.city, max(jee.marks) from student natural join jee where jee.marks not in (select max(jee.marks) from student natural join jee group by student.city);
+select student.city, max(jee.marks) from student natural join jee where jee.marks not in (select max(jee.marks) from student natural join jee group by student.city)
+       *
+ERROR at line 1:
+ORA-00937: not a single-group group function 
+
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select student.city, max(jee.marks) from student natural join jee where jee.marks not in (select max(jee.marks) from student natural join jee group by student.city) group by student.city
+  2  ;
+
+CITY       MAX(JEE.MARKS)                                                                           
+---------- --------------                                                                           
+Mumabi                302                                                                           
+Chennai               214                                                                           
+Manglore              194                                                                           
+Banglore              270                                                                           
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select roll_no,student.city, max(jee.marks) from student natural join jee where jee.marks not in (select max(jee.marks) from student natural join jee group by student.city) group by student.city
+  2  ;
+select roll_no,student.city, max(jee.marks) from student natural join jee where jee.marks not in (select max(jee.marks) from student natural join jee group by student.city) group by student.city
+       *
+ERROR at line 1:
+ORA-00979: not a GROUP BY expression 
+
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select student.roll_no,student.city, max(jee.marks) from student natural join jee where jee.marks not in (select max(jee.marks) from student natural join jee group by student.city) group by student.city
+  2  ;
+select student.roll_no,student.city, max(jee.marks) from student natural join jee where jee.marks not in (select max(jee.marks) from student natural join jee group by student.city) group by student.city
+       *
+ERROR at line 1:
+ORA-25155: column used in NATURAL join cannot have qualifier 
+
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select *, max(jee.marks) from student natural join jee where jee.marks not in (select max(jee.marks) from student natural join jee group by student.city) group by student.city
+  2  ;
+select *, max(jee.marks) from student natural join jee where jee.marks not in (select max(jee.marks) from student natural join jee group by student.city) group by student.city
+        *
+ERROR at line 1:
+ORA-00923: FROM keyword not found where expected 
+
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select student.city, max(jee.marks) from student natural join jee where jee.marks not in (select max(jee.marks) from student natural join jee group by student.city) group by student.city
+  2  ;
+
+CITY       MAX(JEE.MARKS)                                                                           
+---------- --------------                                                                           
+Mumabi                302                                                                           
+Chennai               214                                                                           
+Manglore              194                                                                           
+Banglore              270                                                                           
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select roll_no, student.city, max(jee.marks) from student natural join jee where jee.marks not in (select max(jee.marks) from student natural join jee group by student.city) group by student.city
+  2  ;
+select roll_no, student.city, max(jee.marks) from student natural join jee where jee.marks not in (select max(jee.marks) from student natural join jee group by student.city) group by student.city
+       *
+ERROR at line 1:
+ORA-00979: not a GROUP BY expression 
+
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select roll_no, student.city, max(jee.marks) from student natural join jee where jee.marks not in (select max(jee.marks) from student natural join jee group by student.city) group by student.city
+  2  ;
+select roll_no, student.city, max(jee.marks) from student natural join jee where jee.marks not in (select max(jee.marks) from student natural join jee group by student.city) group by student.city
+       *
+ERROR at line 1:
+ORA-00979: not a GROUP BY expression 
+
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select roll_no, student.city, max(jee.marks) from student natural join jee where jee.marks not in (select max(jee.marks) from student natural join jee group by student.city) group by student.city, roll_no
+  2  ;
+
+ROLL_NO  CITY       MAX(JEE.MARKS)                                                                  
+-------- ---------- --------------                                                                  
+17BCE000 Mumabi                302                                                                  
+18BCE256 Banglore              -79                                                                  
+18BCE261 Mumabi                -67                                                                  
+18BCE263 Banglore              270                                                                  
+17BCE215 Banglore              102                                                                  
+17BCE011 Chennai               214                                                                  
+18BCE103 Mumabi                300                                                                  
+17BCE152 Manglore              -17                                                                  
+17BCE221 Manglore              194                                                                  
+17BCE254 Chennai                 6                                                                  
+18BCE220 Manglore               39                                                                  
+18BCE259 Banglore              208                                                                  
+17BCE201 Mumabi                -36                                                                  
+18BCE257 Banglore               99                                                                  
+18BCE260 Chennai               -22                                                                  
+
+15 rows selected.
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select roll_no, student.city, max(jee.marks) from student natural join jee where jee.marks not in (select max(jee.marks) from student natural join jee group by student.city) group by student.city
+  2  ;
+select roll_no, student.city, max(jee.marks) from student natural join jee where jee.marks not in (select max(jee.marks) from student natural join jee group by student.city) group by student.city
+       *
+ERROR at line 1:
+ORA-00979: not a GROUP BY expression 
+
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select student.city, max(jee.marks) from student natural join jee where jee.marks not in (select max(jee.marks) from student natural join jee group by student.city) group by student.city
+  2  ;
+
+CITY       MAX(JEE.MARKS)                                                                           
+---------- --------------                                                                           
+Mumabi                302                                                                           
+Chennai               214                                                                           
+Manglore              194                                                                           
+Banglore              270                                                                           
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select student.city, max(jee.marks) from student natural join jee where jee.marks not in (select max(jee.marks) from student natural join jee group by student.city) group by roll_no
+  2  ;
+select student.city, max(jee.marks) from student natural join jee where jee.marks not in (select max(jee.marks) from student natural join jee group by student.city) group by roll_no
+       *
+ERROR at line 1:
+ORA-00979: not a GROUP BY expression 
+
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select roll_no, max(jee.marks) from student natural join jee where jee.marks not in (select max(jee.marks) from student natural join jee group by student.city) group by roll_no
+  2  ;
+
+ROLL_NO  MAX(JEE.MARKS)                                                                             
+-------- --------------                                                                             
+18BCE260            -22                                                                             
+18BCE263            270                                                                             
+17BCE215            102                                                                             
+18BCE220             39                                                                             
+18BCE103            300                                                                             
+18BCE259            208                                                                             
+18BCE256            -79                                                                             
+17BCE201            -36                                                                             
+18BCE261            -67                                                                             
+17BCE152            -17                                                                             
+17BCE254              6                                                                             
+17BCE000            302                                                                             
+18BCE257             99                                                                             
+17BCE011            214                                                                             
+17BCE221            194                                                                             
+
+15 rows selected.
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select student.city, max(jee.marks) from student natural join jee where jee.marks not in (select max(jee.marks) from student natural join jee group by student.city) group by student.city
+  2  ;
+
+CITY       MAX(JEE.MARKS)                                                                           
+---------- --------------                                                                           
+Mumabi                302                                                                           
+Chennai               214                                                                           
+Manglore              194                                                                           
+Banglore              270                                                                           
+
+SQL> desc student;
+ Name                                                  Null?    Type
+ ----------------------------------------------------- -------- ------------------------------------
+ ROLL_NO                                               NOT NULL VARCHAR2(8)
+ NAME                                                           VARCHAR2(25)
+ SEM                                                            NUMBER(12)
+ OS                                                             NUMBER(3)
+ CA                                                             NUMBER(3)
+ DBMS                                                           NUMBER(3)
+ BATCH                                                          VARCHAR2(2)
+ CITY                                                           VARCHAR2(10)
+
+SQL> alter table jee drop primary key;
+
+Table altered.
+
+SQL> select * from jee;
+
+ROLL_NO      MARKS                                                                                  
+-------- ---------                                                                                  
+18BCE259       208                                                                                  
+18BCE258       232                                                                                  
+18BCE257        99                                                                                  
+18BCE260       -22                                                                                  
+18BCE261       -67                                                                                  
+18BCE263       270                                                                                  
+18BCE264       282                                                                                  
+18BCE256       -79                                                                                  
+17BCE152       -17                                                                                  
+17BCE254         6                                                                                  
+17BCE099       349                                                                                  
+17BCE011       214                                                                                  
+17BCE000       302                                                                                  
+18BCE220        39                                                                                  
+18BCE68        166                                                                                  
+17BCE94        -86                                                                                  
+18BCE12        114                                                                                  
+18BCE250       331                                                                                  
+17BCE215       102                                                                                  
+18BCE64        -69                                                                                  
+18BCE61         34                                                                                  
+
+ROLL_NO      MARKS                                                                                  
+-------- ---------                                                                                  
+18BCE103       300                                                                                  
+17BCE201       -36                                                                                  
+17BCE221       194                                                                                  
+
+24 rows selected.
+
+SQL> alter table student drop primary key;
+
+Table altered.
+
+SQL> select student.city, max(jee.marks) from student natural join jee where jee.marks not in (select max(jee.marks) from student natural join jee group by student.city) group by student.city;
+
+CITY       MAX(JEE.MARKS)                                                                           
+---------- --------------                                                                           
+Mumabi                302                                                                           
+Banglore              270                                                                           
+Chennai               214                                                                           
+Manglore              194                                                                           
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select roll_no,student.city, max(jee.marks) from student natural join jee where jee.marks not in (select max(jee.marks) from student natural join jee group by student.city) group by student.city
+  2  ;
+select roll_no,student.city, max(jee.marks) from student natural join jee where jee.marks not in (select max(jee.marks) from student natural join jee group by student.city) group by student.city
+       *
+ERROR at line 1:
+ORA-00979: not a GROUP BY expression 
+
+
+SQL> ed]
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select roll_no,student.city, max(jee.marks) from student natural join jee where jee.marks not in (select max(jee.marks) from student natural join jee group by student.city) group by student.city
+  2  ;
+select roll_no,student.city, max(jee.marks) from student natural join jee where jee.marks not in (select max(jee.marks) from student natural join jee group by student.city) group by student.city
+       *
+ERROR at line 1:
+ORA-00979: not a GROUP BY expression 
+
+
+SQL> commit;
+
+Commit complete.
+
+SQL> select student.city, max(jee.marks) from student natural join jee where jee.marks not in (select max(jee.marks) from student natural join jee group by student.city) group by student.city;
+
+CITY       MAX(JEE.MARKS)                                                                           
+---------- --------------                                                                           
+Mumabi                302                                                                           
+Banglore              270                                                                           
+Chennai               214                                                                           
+Manglore              194                                                                           
+
+SQL> select max(jee.marks) from student natural join jee group by student.city;
+
+MAX(JEE.MARKS)                                                                                      
+--------------                                                                                      
+           331                                                                                      
+           349                                                                                      
+           232                                                                                      
+           282                                                                                      
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select roll_no,max(jee.marks) from student natural join jee group by student.city
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select roll_no,max(jee.marks) from student natural join jee group by student.city
+  2  ;
+select roll_no,max(jee.marks) from student natural join jee group by student.city
+       *
+ERROR at line 1:
+ORA-00979: not a GROUP BY expression 
+
+
+SQL> select student.city, max(jee.marks) from student natural join jee where jee.marks not in (select max(jee.marks) from student natural join jee group by student.city) group by student.city;
+
+CITY       MAX(JEE.MARKS)                                                                           
+---------- --------------                                                                           
+Mumabi                302                                                                           
+Banglore              270                                                                           
+Chennai               214                                                                           
+Manglore              194                                                                           
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select student.city, max(jee.marks) from student natural join jee where jee.marks,student.city not in (select max(jee.marks) from student natural join jee group by student.city) group by student.city
+SQL> ;
+  1* select student.city, max(jee.marks) from student natural join jee where jee.marks,student.city not in (select max(jee.marks) from student natural join jee group by student.city) group by student.city
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select student.city, max(jee.marks) from student natural join jee where jee.marks,student.city not in (select max(jee.marks) from student natural join jee group by student.city) group by student.city
+  2  ;
+select student.city, max(jee.marks) from student natural join jee where jee.marks,student.city not in (select max(jee.marks) from student natural join jee group by student.city) group by student.city
+                                                                                 *
+ERROR at line 1:
+ORA-00920: invalid relational operator 
+
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select student.city, max(jee.marks) from student natural join jee where jee.marks not in (select max(jee.marks) from student natural join jee group by student.city) group by student.city
+  2  ;
+
+CITY       MAX(JEE.MARKS)                                                                           
+---------- --------------                                                                           
+Mumabi                302                                                                           
+Banglore              270                                                                           
+Chennai               214                                                                           
+Manglore              194                                                                           
+
+SQL> select max(jee.marks) from student natural join jee group by student.city;
+
+MAX(JEE.MARKS)                                                                                      
+--------------                                                                                      
+           331                                                                                      
+           349                                                                                      
+           232                                                                                      
+           282                                                                                      
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select roll_no,max(jee.marks) from student natural join jee group by student.city
+SQL> ;
+  1* select roll_no,max(jee.marks) from student natural join jee group by student.city
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select roll_no,max(jee.marks) from student natural join jee group by student.city
+  2  ;
+select roll_no,max(jee.marks) from student natural join jee group by student.city
+       *
+ERROR at line 1:
+ORA-00979: not a GROUP BY expression 
+
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select roll_no,max(jee.marks) from student natural join jee group by student.city
+  2  ;
+select roll_no,max(jee.marks) from student natural join jee group by student.city
+       *
+ERROR at line 1:
+ORA-00979: not a GROUP BY expression 
+
+
+SQL> select student.city, max(jee.marks) from student natural join jee where jee.marks not in (select max(jee.marks) from student natural join jee group by student.city) group by student.city;
+
+CITY       MAX(JEE.MARKS)                                                                           
+---------- --------------                                                                           
+Mumabi                302                                                                           
+Banglore              270                                                                           
+Chennai               214                                                                           
+Manglore              194                                                                           
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select student.city, max(jee.marks) from student natural join jee where (stdudent.city, jee.marks) not in (select max(jee.marks) from student natural join jee group by student.city) group by student.city
+  2  ;
+select student.city, max(jee.marks) from student natural join jee where (stdudent.city, jee.marks) not in (select max(jee.marks) from student natural join jee group by student.city) group by student.city
+                                                                         *
+ERROR at line 1:
+ORA-00904: "STDUDENT"."CITY": invalid identifier 
+
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select student.city, max(jee.marks) from student natural join jee where (student.city, jee.marks) not in (select max(jee.marks) from student natural join jee group by student.city) group by student.city
+  2  ;
+select student.city, max(jee.marks) from student natural join jee where (student.city, jee.marks) not in (select max(jee.marks) from student natural join jee group by student.city) group by student.city
+                                                                                                          *
+ERROR at line 1:
+ORA-00947: not enough values 
+
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select student.city, max(jee.marks) from student natural join jee where (student.city, jee.marks) not in (select student.city,max(jee.marks) from student natural join jee group by student.city) group by student.city
+  2  ;
+
+CITY       MAX(JEE.MARKS)                                                                           
+---------- --------------                                                                           
+Mumabi                302                                                                           
+Banglore              270                                                                           
+Chennai               214                                                                           
+Manglore              194                                                                           
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select roll_no, student.city, jee.marks from student natural join jee where (student.city, jee.marks) in (select student.city, max(jee.marks) from student natural join jee where (student.city, jee.marks) not in (select student.city,max(jee.marks) from student natural join jee group by student.city) group by student.city)
+  2  ;
+
+ROLL_NO  CITY           MARKS                                                                       
+-------- ---------- ---------                                                                       
+18BCE263 Banglore         270                                                                       
+17BCE011 Chennai          214                                                                       
+17BCE000 Mumabi           302                                                                       
+17BCE221 Manglore         194                                                                       
+
+SQL> commit;
+
+Commit complete.
+
+SQL> spool off

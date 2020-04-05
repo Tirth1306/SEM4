@@ -1,0 +1,127 @@
+SQL> select * from tab;
+
+TNAME                          TABTYPE CLUSTERID                                                    
+------------------------------ ------- ---------                                                    
+ABC                            TABLE                                                                
+BIN$ZZ7YruzuTemrVc6fYaHK6g==$0 TABLE                                                                
+CLIENTS                        TABLE                                                                
+EMPLOYEES                      TABLE                                                                
+PRODUCT                        TABLE                                                                
+SALESMAN                       TABLE                                                                
+STUDENT                        TABLE                                                                
+
+7 rows selected.
+
+SQL> select * from clients
+  2  ;
+
+CLIE NAME                      CITY                   PINCODE STATE                        BALDUE   
+---- ------------------------- -------------------- --------- ------------------------- ---------   
+C00  Bula Beyer                Mumabi                  400054 Maharastra                     6115   
+C01  Hyacinth Hoyos            Manglore                560050 Karnataka                      6849   
+C02  Detra Deets               Chennai                 780001 Tamil nadu                     9556   
+C03  Tana Tramel               Chennai                 780001 Tamil nadu                        0   
+C04  Ann Alexis                Chennai                 780001 Tamil nadu                     9185   
+C05  Yadira Yarman             Chennai                 780001 Tamil nadu                     7191   
+C06  Elfriede Enyeart          Mumabi                  400054 Maharastra                     7389   
+C07  Cordell Curci             Manglore                560050 Karnataka                      5210   
+C08  Elina Edelstein           Mumabi                  400054 Maharastra                        0   
+
+9 rows selected.
+
+SQL> select * from abc;
+
+no rows selected
+
+SQL> drop table abc;
+
+Table dropped.
+
+SQL> select * from product;
+
+PRODUCT_NO DESCRIPTION          PROFITE_PERCENT UNIT_MEASURE         QTY_ON_HAND REORDER_LEVEL      
+---------- -------------------- --------------- -------------------- ----------- -------------      
+SELL_PRICE COST_PRICE                                                                               
+---------- ----------                                                                               
+         1 1.44 Floppies                      5 Piece                        100            20      
+       525        500                                                                               
+                                                                                                    
+      3453 Monitors                           6 Piece                         10             3      
+     12000      11200                                                                               
+                                                                                                    
+      6734 Mouse                              5 Piece                         20             5      
+      1050        500                                                                               
+                                                                                                    
+      7865 1.22 Floppies                      5 Piece                        100            20      
+       525        500                                                                               
+                                                                                                    
+      7868 Keyboards                          2 Piece                         10             3      
+      3150       3050                                                                               
+                                                                                                    
+
+SQL> set linesize 200;
+SQL> select * from product;
+
+PRODUCT_NO DESCRIPTION          PROFITE_PERCENT UNIT_MEASURE         QTY_ON_HAND REORDER_LEVEL SELL_PRICE COST_PRICE                                                                                    
+---------- -------------------- --------------- -------------------- ----------- ------------- ---------- ----------                                                                                    
+         1 1.44 Floppies                      5 Piece                        100            20        525        500                                                                                    
+      3453 Monitors                           6 Piece                         10             3      12000      11200                                                                                    
+      6734 Mouse                              5 Piece                         20             5       1050        500                                                                                    
+      7865 1.22 Floppies                      5 Piece                        100            20        525        500                                                                                    
+      7868 Keyboards                          2 Piece                         10             3       3150       3050                                                                                    
+
+SQL> select * from customers;
+select * from customers
+              *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+SQL> select * from tab;
+
+TNAME                          TABTYPE CLUSTERID                                                                                                                                                        
+------------------------------ ------- ---------                                                                                                                                                        
+BIN$RIy6qNwoQX2L78Ik3LhxFg==$0 TABLE                                                                                                                                                                    
+BIN$ZZ7YruzuTemrVc6fYaHK6g==$0 TABLE                                                                                                                                                                    
+CLIENTS                        TABLE                                                                                                                                                                    
+EMPLOYEES                      TABLE                                                                                                                                                                    
+PRODUCT                        TABLE                                                                                                                                                                    
+SALESMAN                       TABLE                                                                                                                                                                    
+STUDENT                        TABLE                                                                                                                                                                    
+
+7 rows selected.
+
+SQL> select * from clients
+  2  ;
+
+CLIE NAME                      CITY                   PINCODE STATE                        BALDUE                                                                                                       
+---- ------------------------- -------------------- --------- ------------------------- ---------                                                                                                       
+C00  Bula Beyer                Mumabi                  400054 Maharastra                     6115                                                                                                       
+C01  Hyacinth Hoyos            Manglore                560050 Karnataka                      6849                                                                                                       
+C02  Detra Deets               Chennai                 780001 Tamil nadu                     9556                                                                                                       
+C03  Tana Tramel               Chennai                 780001 Tamil nadu                        0                                                                                                       
+C04  Ann Alexis                Chennai                 780001 Tamil nadu                     9185                                                                                                       
+C05  Yadira Yarman             Chennai                 780001 Tamil nadu                     7191                                                                                                       
+C06  Elfriede Enyeart          Mumabi                  400054 Maharastra                     7389                                                                                                       
+C07  Cordell Curci             Manglore                560050 Karnataka                      5210                                                                                                       
+C08  Elina Edelstein           Mumabi                  400054 Maharastra                        0                                                                                                       
+
+9 rows selected.
+
+SQL> select * from product;
+
+PRODUCT_NO DESCRIPTION          PROFITE_PERCENT UNIT_MEASURE         QTY_ON_HAND REORDER_LEVEL SELL_PRICE COST_PRICE                                                                                    
+---------- -------------------- --------------- -------------------- ----------- ------------- ---------- ----------                                                                                    
+         1 1.44 Floppies                      5 Piece                        100            20        525        500                                                                                    
+      3453 Monitors                           6 Piece                         10             3      12000      11200                                                                                    
+      6734 Mouse                              5 Piece                         20             5       1050        500                                                                                    
+      7865 1.22 Floppies                      5 Piece                        100            20        525        500                                                                                    
+      7868 Keyboards                          2 Piece                         10             3       3150       3050                                                                                    
+
+SQL> select * from salesman;
+
+SALESMAN_NO NAME                 ADDRESS1             ADDRESS2             CITY                        PINCODE STATE                        SALAMT  TGTTOGET  YTDSALES REMARKS                          
+----------- -------------------- -------------------- -------------------- ------------------------- --------- ------------------------- --------- --------- --------- ---------------                  
+          1 Rushi                A-54                 Worli                Mumbai                       400002 Maharashtra                    3000       100        50 Good                             
+          2 Omkar                65                   Nariman              Mumbai                       400001 Maharashtra                    3000       200       100 Good                             
+          3 Raj                  P-7                  Bandra               Mumbai                       400032 Maharashtra                    3000       200     

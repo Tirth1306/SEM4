@@ -1,0 +1,284 @@
+SQL> select * from sales;
+
+PRODUCT_NO CLIE  QUANTITY                                                                                                                                                                                                                                 
+---------- ---- ---------                                                                                                                                                                                                                                 
+      7868 C02          1                                                                                                                                                                                                                                 
+         1 C00         25                                                                                                                                                                                                                                 
+         2 C01         85                                                                                                                                                                                                                                 
+         3 C00          5                                                                                                                                                                                                                                 
+      3453 C07         20                                                                                                                                                                                                                                 
+      6734 C05        100                                                                                                                                                                                                                                 
+      3453 C03         10                                                                                                                                                                                                                                 
+      7865 C04       1200                                                                                                                                                                                                                                 
+
+8 rows selected.
+
+SQL> select * from clients natural join sales join product;
+select * from clients natural join sales join product
+                                                    *
+ERROR at line 1:
+ORA-00905: missing keyword 
+
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select * from clients natural join sales natural join product
+  2  ;
+
+PRODUCT_NO CLIE NAME                      CITY                   PINCODE STATE                        BALDUE  QUANTITY DESCRIPTION          PROFITE_PERCENT UNIT_MEASURE         QTY_ON_HAND REORDER_LEVEL SELL_PRICE COST_PRICE                          
+---------- ---- ------------------------- -------------------- --------- ------------------------- --------- --------- -------------------- --------------- -------------------- ----------- ------------- ---------- ----------                          
+         1 C00  Bula Beyer                Mumabi                  400054 Maharastra                     6115        25 1.44 Floppies                      5 Piece                        100            20        525        500                          
+      7868 C02  Detra Deets               Chennai                 780001 Tamil nadu                     9556         1 Keyboards                          2 Piece                         10             3       3150       3050                          
+      3453 C03  Tana Tramel               Chennai                 780001 Tamil nadu                        0        10 Monitors                           6 Piece                         10             3      12000      11200                          
+      7865 C04  Ann Alexis                Chennai                 780001 Tamil nadu                     9185      1200 1.22 Floppies                      5 Piece                        100            20        525        500                          
+      6734 C05  Yadira Yarman             Chennai                 780001 Tamil nadu                     7191       100 Mouse                              5 Piece                         20             5       1050        500                          
+      3453 C07  Cordell Curci             Manglore                560050 Karnataka                      5210        20 Monitors                           6 Piece                         10             3      12000      11200                          
+
+6 rows selected.
+
+SQL> select * from sales;
+
+PRODUCT_NO CLIE  QUANTITY                                                                                                                                                                                                                                 
+---------- ---- ---------                                                                                                                                                                                                                                 
+      7868 C02          1                                                                                                                                                                                                                                 
+         1 C00         25                                                                                                                                                                                                                                 
+         2 C01         85                                                                                                                                                                                                                                 
+         3 C00          5                                                                                                                                                                                                                                 
+      3453 C07         20                                                                                                                                                                                                                                 
+      6734 C05        100                                                                                                                                                                                                                                 
+      3453 C03         10                                                                                                                                                                                                                                 
+      7865 C04       1200                                                                                                                                                                                                                                 
+
+8 rows selected.
+
+SQL> select * from clients;
+
+CLIE NAME                      CITY                   PINCODE STATE                        BALDUE                                                                                                                                                         
+---- ------------------------- -------------------- --------- ------------------------- ---------                                                                                                                                                         
+C00  Bula Beyer                Mumabi                  400054 Maharastra                     6115                                                                                                                                                         
+C01  Hyacinth Hoyos            Manglore                560050 Karnataka                      6849                                                                                                                                                         
+C02  Detra Deets               Chennai                 780001 Tamil nadu                     9556                                                                                                                                                         
+C03  Tana Tramel               Chennai                 780001 Tamil nadu                        0                                                                                                                                                         
+C04  Ann Alexis                Chennai                 780001 Tamil nadu                     9185                                                                                                                                                         
+C05  Yadira Yarman             Chennai                 780001 Tamil nadu                     7191                                                                                                                                                         
+C06  Elfriede Enyeart          Mumabi                  400054 Maharastra                     7389                                                                                                                                                         
+C07  Cordell Curci             Manglore                560050 Karnataka                      5210                                                                                                                                                         
+C08  Elina Edelstein           Mumabi                  400054 Maharastra                        0                                                                                                                                                         
+
+9 rows selected.
+
+SQL> select * from clients natural join sales natural join product;
+
+PRODUCT_NO CLIE NAME                      CITY                   PINCODE STATE                        BALDUE  QUANTITY DESCRIPTION          PROFITE_PERCENT UNIT_MEASURE         QTY_ON_HAND REORDER_LEVEL SELL_PRICE COST_PRICE                          
+---------- ---- ------------------------- -------------------- --------- ------------------------- --------- --------- -------------------- --------------- -------------------- ----------- ------------- ---------- ----------                          
+         1 C00  Bula Beyer                Mumabi                  400054 Maharastra                     6115        25 1.44 Floppies                      5 Piece                        100            20        525        500                          
+      7868 C02  Detra Deets               Chennai                 780001 Tamil nadu                     9556         1 Keyboards                          2 Piece                         10             3       3150       3050                          
+      3453 C03  Tana Tramel               Chennai                 780001 Tamil nadu                        0        10 Monitors                           6 Piece                         10             3      12000      11200                          
+      7865 C04  Ann Alexis                Chennai                 780001 Tamil nadu                     9185      1200 1.22 Floppies                      5 Piece                        100            20        525        500                          
+      6734 C05  Yadira Yarman             Chennai                 780001 Tamil nadu                     7191       100 Mouse                              5 Piece                         20             5       1050        500                          
+      3453 C07  Cordell Curci             Manglore                560050 Karnataka                      5210        20 Monitors                           6 Piece                         10             3      12000      11200                          
+
+6 rows selected.
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select * from clients natural join sales natural join product where clients.name = "Bula Beyer"
+  2  ;'
+  3  
+SQL> select * from clients natural join sales natural join product where clients.name = "Bula Beyer";
+select * from clients natural join sales natural join product where clients.name = "Bula Beyer"
+                                                                                   *
+ERROR at line 1:
+ORA-00904: "Bula Beyer": invalid identifier 
+
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select * from clients natural join sales natural join product where clients.name = 'Bula Beyer'
+SQL> ;
+  1* select * from clients natural join sales natural join product where clients.name = 'Bula Beyer'
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select * from clients natural join sales natural join product where clients.name = 'Bula Beyer'
+  2  ;
+
+PRODUCT_NO CLIE NAME                      CITY                   PINCODE STATE                        BALDUE  QUANTITY DESCRIPTION          PROFITE_PERCENT UNIT_MEASURE         QTY_ON_HAND REORDER_LEVEL SELL_PRICE COST_PRICE                          
+---------- ---- ------------------------- -------------------- --------- ------------------------- --------- --------- -------------------- --------------- -------------------- ----------- ------------- ---------- ----------                          
+         1 C00  Bula Beyer                Mumabi                  400054 Maharastra                     6115        25 1.44 Floppies                      5 Piece                        100            20        525        500                          
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select * from clients natural join sales natural join product where clients.name = 'Bula Beyer' or clients.name ='Detra Deets'
+  2  ;
+
+PRODUCT_NO CLIE NAME                      CITY                   PINCODE STATE                        BALDUE  QUANTITY DESCRIPTION          PROFITE_PERCENT UNIT_MEASURE         QTY_ON_HAND REORDER_LEVEL SELL_PRICE COST_PRICE                          
+---------- ---- ------------------------- -------------------- --------- ------------------------- --------- --------- -------------------- --------------- -------------------- ----------- ------------- ---------- ----------                          
+         1 C00  Bula Beyer                Mumabi                  400054 Maharastra                     6115        25 1.44 Floppies                      5 Piece                        100            20        525        500                          
+      7868 C02  Detra Deets               Chennai                 780001 Tamil nadu                     9556         1 Keyboards                          2 Piece                         10             3       3150       3050                          
+
+SQL> select * from clients;
+
+CLIE NAME                      CITY                   PINCODE STATE                        BALDUE                                                                                                                                                         
+---- ------------------------- -------------------- --------- ------------------------- ---------                                                                                                                                                         
+C00  Bula Beyer                Mumabi                  400054 Maharastra                     6115                                                                                                                                                         
+C01  Hyacinth Hoyos            Manglore                560050 Karnataka                      6849                                                                                                                                                         
+C02  Detra Deets               Chennai                 780001 Tamil nadu                     9556                                                                                                                                                         
+C03  Tana Tramel               Chennai                 780001 Tamil nadu                        0                                                                                                                                                         
+C04  Ann Alexis                Chennai                 780001 Tamil nadu                     9185                                                                                                                                                         
+C05  Yadira Yarman             Chennai                 780001 Tamil nadu                     7191                                                                                                                                                         
+C06  Elfriede Enyeart          Mumabi                  400054 Maharastra                     7389                                                                                                                                                         
+C07  Cordell Curci             Manglore                560050 Karnataka                      5210                                                                                                                                                         
+C08  Elina Edelstein           Mumabi                  400054 Maharastra                        0                                                                                                                                                         
+
+9 rows selected.
+
+SQL> commit
+  2  ;
+
+Commit complete.
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* commit
+  2  ;
+
+Commit complete.
+
+SQL> select * from clients natural join sales natural join product where clients.name = 'Bula Beyer' or clients.name ='Detra Deets';
+
+PRODUCT_NO CLIE NAME                      CITY                   PINCODE STATE                        BALDUE  QUANTITY DESCRIPTION          PROFITE_PERCENT UNIT_MEASURE         QTY_ON_HAND REORDER_LEVEL SELL_PRICE COST_PRICE                          
+---------- ---- ------------------------- -------------------- --------- ------------------------- --------- --------- -------------------- --------------- -------------------- ----------- ------------- ---------- ----------                          
+         1 C00  Bula Beyer                Mumabi                  400054 Maharastra                     6115        25 1.44 Floppies                      5 Piece                        100            20        525        500                          
+      7868 C02  Detra Deets               Chennai                 780001 Tamil nadu                     9556         1 Keyboards                          2 Piece                         10             3       3150       3050                          
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select * from clients natural join sales natural join product where clients.name = 'Bula Beyer' or clients.name ='Detra Deets'
+  2  ;
+
+PRODUCT_NO CLIE NAME                      CITY                   PINCODE STATE                        BALDUE  QUANTITY DESCRIPTION          PROFITE_PERCENT UNIT_MEASURE         QTY_ON_HAND REORDER_LEVEL SELL_PRICE COST_PRICE                          
+---------- ---- ------------------------- -------------------- --------- ------------------------- --------- --------- -------------------- --------------- -------------------- ----------- ------------- ---------- ----------                          
+         1 C00  Bula Beyer                Mumabi                  400054 Maharastra                     6115        25 1.44 Floppies                      5 Piece                        100            20        525        500                          
+      7868 C02  Detra Deets               Chennai                 780001 Tamil nadu                     9556         1 Keyboards                          2 Piece                         10             3       3150       3050                          
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select product.product_no, clients.namem, product.description, sales.quantity from clients natural join sales natural join product where clients.name = 'Bula Beyer' or clients.name ='Detra Deets'
+  2  ;
+select product.product_no, clients.namem, product.description, sales.quantity from clients natural join sales natural join product where clients.name = 'Bula Beyer' or clients.name ='Detra Deets'
+                           *
+ERROR at line 1:
+ORA-00904: "CLIENTS"."NAMEM": invalid identifier 
+
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select product.product_no, clients.name, product.description, sales.quantity from clients natural join sales natural join product where clients.name = 'Bula Beyer' or clients.name ='Detra Deets'
+  2  ;
+select product.product_no, clients.name, product.description, sales.quantity from clients natural join sales natural join product where clients.name = 'Bula Beyer' or clients.name ='Detra Deets'
+       *
+ERROR at line 1:
+ORA-25155: column used in NATURAL join cannot have qualifier 
+
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select clients.name, product.description, sales.quantity from clients natural join sales natural join product where clients.name = 'Bula Beyer' or clients.name ='Detra Deets'
+  2  ;
+
+NAME                      DESCRIPTION           QUANTITY                                                                                                                                                                                                  
+------------------------- -------------------- ---------                                                                                                                                                                                                  
+Detra Deets               1.44 Floppies                1                                                                                                                                                                                                  
+Detra Deets               Monitors                     1                                                                                                                                                                                                  
+Detra Deets               Mouse                        1                                                                                                                                                                                                  
+Detra Deets               1.22 Floppies                1                                                                                                                                                                                                  
+Detra Deets               Keyboards                    1                                                                                                                                                                                                  
+Bula Beyer                1.44 Floppies               25                                                                                                                                                                                                  
+Bula Beyer                Monitors                    25                                                                                                                                                                                                  
+Bula Beyer                Mouse                       25                                                                                                                                                                                                  
+Bula Beyer                1.22 Floppies               25                                                                                                                                                                                                  
+Bula Beyer                Keyboards                   25                                                                                                                                                                                                  
+Bula Beyer                1.44 Floppies                5                                                                                                                                                                                                  
+Bula Beyer                Monitors                     5                                                                                                                                                                                                  
+Bula Beyer                Mouse                        5                                                                                                                                                                                                  
+Bula Beyer                1.22 Floppies                5                                                                                                                                                                                                  
+Bula Beyer                Keyboards                    5                                                                                                                                                                                                  
+
+15 rows selected.
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select * from clients natural join sales natural join product where clients.name = 'Bula Beyer' or clients.name ='Detra Deets'
+  2  ;
+
+PRODUCT_NO CLIE NAME                      CITY                   PINCODE STATE                        BALDUE  QUANTITY DESCRIPTION          PROFITE_PERCENT UNIT_MEASURE         QTY_ON_HAND REORDER_LEVEL SELL_PRICE COST_PRICE                          
+---------- ---- ------------------------- -------------------- --------- ------------------------- --------- --------- -------------------- --------------- -------------------- ----------- ------------- ---------- ----------                          
+         1 C00  Bula Beyer                Mumabi                  400054 Maharastra                     6115        25 1.44 Floppies                      5 Piece                        100            20        525        500                          
+      7868 C02  Detra Deets               Chennai                 780001 Tamil nadu                     9556         1 Keyboards                          2 Piece                         10             3       3150       3050                          
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select * from clients natural join sales natural join product where sales.quantity < 5 and product.description = '1.44 Floppies'
+  2  ;
+
+no rows selected
+
+SQL> select * from sales;
+
+PRODUCT_NO CLIE  QUANTITY                                                                                                                                                                                                                                 
+---------- ---- ---------                                                                                                                                                                                                                                 
+      7868 C02          1                                                                                                                                                                                                                                 
+         1 C00         25                                                                                                                                                                                                                                 
+         2 C01         85                                                                                                                                                                                                                                 
+         3 C00          5                                                                                                                                                                                                                                 
+      3453 C07         20                                                                                                                                                                                                                                 
+      6734 C05        100                                                                                                                                                                                                                                 
+      3453 C03         10                                                                                                                                                                                                                                 
+      7865 C04       1200                                                                                                                                                                                                                                 
+
+8 rows selected.
+
+SQL> select * from products;
+select * from products
+              *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select * from product
+  2  ;
+
+PRODUCT_NO DESCRIPTION          PROFITE_PERCENT UNIT_MEASURE         QTY_ON_HAND REORDER_LEVEL SELL_PRICE COST_PRICE                                                                                                                                      
+---------- -------------------- --------------- -------------------- ----------- ------------- ---------- ----------                                                                                                                                      
+         1 1.44 Floppies                      5 Piece                        100            20        525        500                                                                                                                                      
+      3453 Monitors                           6 Piece                         10             3      12000      11200                                                                                                                                      
+      6734 Mouse                              5 Piece                         20             5       1050        500                                                                                                                                      
+      7865 1.22 Floppies                      5 Piece                        100            20        525        500                                                                                                                                      
+      7868 Keyboards                          2 Piece                         10             3       3150       3050                                                                                                                                      
+
+SQL> insert into sales values(1,'C04',3);
+
+1 row created.
+
+SQL> select * from clients natural join sales natural join product where sales.quantity < 5 and product.description = '1.44 Floppies';
+
+PRODUCT_NO CLIE NAME                      CITY                   PINCODE STATE                        BALDUE  QUANTITY DESCRIPTION          PROFITE_PERCENT UNIT_MEASURE         QTY_ON_HAND REORDER_LEVEL SELL_PRICE COST_PRICE                          
+---------- ---- ------------------------- -------------------- --------- ------------------------- --------- --------- -------------------- --------------- -------------------- ----------- ------------- ---------- ----------                          
+         1 C04  Ann Alexis                Chennai                 780001 Tamil nadu                     9185         3 1.44 Floppies                      5 Piece                        100            20        525        500                          
+
+SQL> spool of

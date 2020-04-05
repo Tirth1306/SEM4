@@ -1,0 +1,339 @@
+SQL> select * from student where name not like 'V%';
+
+ROLL_NO  NAME                            SEM    MOBILE                                              
+-------- ------------------------- --------- ---------                                              
+18BCE257 Gunjan Vinzuda                    4 4.152E+09                                              
+17BCE099 Rajat Singh                       6 7.485E+09                                              
+17BCE299 Harry Potter                      6 8.648E+09                                              
+19BCE201 Krunal Patel                      2 7.486E+09                                              
+19BCE256 Pankaj Udas                       2 5.253E+09                                              
+18BCE259 Shrey Viradiya                    4 1.111E+09                                              
+18BCE263 Yash Chelani                      4 1.111E+09                                              
+18BCE258 Dhvanik Viradiya                  4 1.111E+09                                              
+
+8 rows selected.
+
+SQL> select name from student;
+
+NAME                                                                                                
+-------------------------                                                                           
+Gunjan Vinzuda                                                                                      
+Rajat Singh                                                                                         
+Voldemort                                                                                           
+Harry Potter                                                                                        
+Krunal Patel                                                                                        
+Pankaj Udas                                                                                         
+Shrey Viradiya                                                                                      
+Yash Chelani                                                                                        
+Vishva Patel                                                                                        
+Dhvanik Viradiya                                                                                    
+
+10 rows selected.
+
+SQL> select distinct name from student;
+
+NAME                                                                                                
+-------------------------                                                                           
+Vishva Patel                                                                                        
+Voldemort                                                                                           
+Pankaj Udas                                                                                         
+Rajat Singh                                                                                         
+Shrey Viradiya                                                                                      
+Yash Chelani                                                                                        
+Krunal Patel                                                                                        
+Dhvanik Viradiya                                                                                    
+Gunjan Vinzuda                                                                                      
+Harry Potter                                                                                        
+
+10 rows selected.
+
+SQL> select sem from student;
+
+      SEM                                                                                           
+---------                                                                                           
+        4                                                                                           
+        6                                                                                           
+        6                                                                                           
+        6                                                                                           
+        2                                                                                           
+        2                                                                                           
+        4                                                                                           
+        4                                                                                           
+        4                                                                                           
+        4                                                                                           
+
+10 rows selected.
+
+SQL> select distinct sem from student;
+
+      SEM                                                                                           
+---------                                                                                           
+        6                                                                                           
+        2                                                                                           
+        4                                                                                           
+
+SQL> select * from student where sem > 4 and like 'R%';
+select * from student where sem > 4 and like 'R%'
+                                        *
+ERROR at line 1:
+ORA-00936: missing expression 
+
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select * from student where sem > 4 and name like 'R%'
+  2  ;
+
+ROLL_NO  NAME                            SEM    MOBILE                                              
+-------- ------------------------- --------- ---------                                              
+17BCE099 Rajat Singh                       6 7.485E+09                                              
+
+SQL> select name from student where sem > 6 or name not like 'R%';
+
+NAME                                                                                                
+-------------------------                                                                           
+Gunjan Vinzuda                                                                                      
+Voldemort                                                                                           
+Harry Potter                                                                                        
+Krunal Patel                                                                                        
+Pankaj Udas                                                                                         
+Shrey Viradiya                                                                                      
+Yash Chelani                                                                                        
+Vishva Patel                                                                                        
+Dhvanik Viradiya                                                                                    
+
+9 rows selected.
+
+SQL> select * from student order by name;
+
+ROLL_NO  NAME                            SEM    MOBILE                                              
+-------- ------------------------- --------- ---------                                              
+18BCE258 Dhvanik Viradiya                  4 1.111E+09                                              
+18BCE257 Gunjan Vinzuda                    4 4.152E+09                                              
+17BCE299 Harry Potter                      6 8.648E+09                                              
+19BCE201 Krunal Patel                      2 7.486E+09                                              
+19BCE256 Pankaj Udas                       2 5.253E+09                                              
+17BCE099 Rajat Singh                       6 7.485E+09                                              
+18BCE259 Shrey Viradiya                    4 1.111E+09                                              
+18BCE260 Vishva Patel                      4 1.111E+09                                              
+17BCE254 Voldemort                         6 7.485E+09                                              
+18BCE263 Yash Chelani                      4 1.111E+09                                              
+
+10 rows selected.
+
+SQL> update student mobile = 9632587410 where roll_no = 18BCE259
+  2  ;
+update student mobile = 9632587410 where roll_no = 18BCE259
+                      *
+ERROR at line 1:
+ORA-00971: missing SET keyword 
+
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* update student set mobile = 9632587410 where roll_no = 18BCE259
+  2  ;
+update student set mobile = 9632587410 where roll_no = 18BCE259
+                                                         *
+ERROR at line 1:
+ORA-00933: SQL command not properly ended 
+
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* update student set mobile = 9632587410 where roll_no = '18BCE259'
+  2  ;
+
+1 row updated.
+
+SQL> select mobile from student where name = 'Shrey Viradiya';
+
+   MOBILE                                                                                           
+---------                                                                                           
+9.633E+09                                                                                           
+
+SQL> set numwidth 15;
+SQL> select * from student;
+
+ROLL_NO  NAME                                  SEM          MOBILE                                  
+-------- ------------------------- --------------- ---------------                                  
+18BCE257 Gunjan Vinzuda                          4      4152415241                                  
+17BCE099 Rajat Singh                             6      7485123654                                  
+17BCE254 Voldemort                               6      7485123654                                  
+17BCE299 Harry Potter                            6      8648444412                                  
+19BCE201 Krunal Patel                            2      7485963214                                  
+19BCE256 Pankaj Udas                             2      5252525252                                  
+18BCE259 Shrey Viradiya                          4      9632587410                                  
+18BCE263 Yash Chelani                            4      1111111111                                  
+18BCE260 Vishva Patel                            4      1111111111                                  
+18BCE258 Dhvanik Viradiya                        4      1111111111                                  
+
+10 rows selected.
+
+SQL> update student set mobile = 7447821365 where roll_no = '18BCE263';
+
+1 row updated.
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* update student set mobile = 8541236521 where roll_no = '18BCE260'
+  2  ;
+
+1 row updated.
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* update student set mobile = 7417415289 where roll_no = '18BCE258'
+  2  ;
+
+1 row updated.
+
+SQL> select mobile from student;
+
+         MOBILE                                                                                     
+---------------                                                                                     
+     4152415241                                                                                     
+     7485123654                                                                                     
+     7485123654                                                                                     
+     8648444412                                                                                     
+     7485963214                                                                                     
+     5252525252                                                                                     
+     9632587410                                                                                     
+     7447821365                                                                                     
+     8541236521                                                                                     
+     7417415289                                                                                     
+
+10 rows selected.
+
+SQL> select * from student where ROWNUM <=3;
+
+ROLL_NO  NAME                                  SEM          MOBILE                                  
+-------- ------------------------- --------------- ---------------                                  
+18BCE257 Gunjan Vinzuda                          4      4152415241                                  
+17BCE099 Rajat Singh                             6      7485123654                                  
+17BCE254 Voldemort                               6      7485123654                                  
+
+SQL> select max(name) from student;
+
+MAX(NAME)                                                                                           
+-------------------------                                                                           
+Yash Chelani                                                                                        
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select min(name) from student
+  2  ;
+
+MIN(NAME)                                                                                           
+-------------------------                                                                           
+Dhvanik Viradiya                                                                                    
+
+SQL> select avg(mobile) from student sem = 4;
+select avg(mobile) from student sem = 4
+                                    *
+ERROR at line 1:
+ORA-00933: SQL command not properly ended 
+
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select avg(mobile) from student where sem = 4
+  2  ;
+
+    AVG(MOBILE)                                                                                     
+---------------                                                                                     
+   7438295165.2                                                                                     
+
+SQL> select sum(mobile) from student where sem = 4;
+
+    SUM(MOBILE)                                                                                     
+---------------                                                                                     
+    37191475826                                                                                     
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select sum(name) from student where sem = 4
+  2  ;
+select sum(name) from student where sem = 4
+           *
+ERROR at line 1:
+ORA-01722: invalid number 
+
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select sum(roll_no) from student where sem = 4
+  2  ;
+select sum(roll_no) from student where sem = 4
+           *
+ERROR at line 1:
+ORA-01722: invalid number 
+
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select sum(sem) from student where sem = 4
+  2  ;
+
+       SUM(SEM)                                                                                     
+---------------                                                                                     
+             20                                                                                     
+
+SQL> select count(sem) from student where sem = 4;
+
+     COUNT(SEM)                                                                                     
+---------------                                                                                     
+              5                                                                                     
+
+SQL> select * from student where name in (
+  2  'Shrey Viradiya',
+  3  'Yash Chelani');
+
+ROLL_NO  NAME                                  SEM          MOBILE                                  
+-------- ------------------------- --------------- ---------------                                  
+18BCE259 Shrey Viradiya                          4      9632587410                                  
+18BCE263 Yash Chelani                            4      7447821365                                  
+
+SQL> select * from student where sem between 2 and 6;
+
+ROLL_NO  NAME                                  SEM          MOBILE                                  
+-------- ------------------------- --------------- ---------------                                  
+18BCE257 Gunjan Vinzuda                          4      4152415241                                  
+17BCE099 Rajat Singh                             6      7485123654                                  
+17BCE254 Voldemort                               6      7485123654                                  
+17BCE299 Harry Potter                            6      8648444412                                  
+19BCE201 Krunal Patel                            2      7485963214                                  
+19BCE256 Pankaj Udas                             2      5252525252                                  
+18BCE259 Shrey Viradiya                          4      9632587410                                  
+18BCE263 Yash Chelani                            4      7447821365                                  
+18BCE260 Vishva Patel                            4      8541236521                                  
+18BCE258 Dhvanik Viradiya                        4      7417415289                                  
+
+10 rows selected.
+
+SQL> select * from student where sem not between 4 and 6;
+
+ROLL_NO  NAME                                  SEM          MOBILE                                  
+-------- ------------------------- --------------- ---------------                                  
+19BCE201 Krunal Patel                            2      7485963214                                  
+19BCE256 Pankaj Udas                             2      5252525252                                  
+
+SQL> select * from student where name like '%a';
+
+ROLL_NO  NAME                                  SEM          MOBILE                                  
+-------- ------------------------- --------------- ---------------                                  
+18BCE257 Gunjan Vinzuda                          4      4152415241                                  
+18BCE259 Shrey Viradiya                          4      9632587410                                  
+18BCE258 Dhvanik Viradiya                        4      7417415289                                  
+
+SQL> spool off
