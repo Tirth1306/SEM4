@@ -4,7 +4,7 @@ selectData(){
 	cat $table
 }
 n=0
-while [ $n -ne 5 ] 
+while [ $n -ne 5 ]
 do
 	echo "-=-=-=-=-=-=:- Operations -:=-=-=-=-=-="
 	echo "1.Fetch data"
@@ -25,10 +25,10 @@ do
 		echo "Enter Division:"
 		read div
 		echo "$sid	$name	   $div" >> $table
-		echo "record saved." 		
+		echo "record saved."
 		selectData
 		;;
-		
+
 		4)
 		selectData
 		temp='temp.txt'
