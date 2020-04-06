@@ -1,0 +1,5 @@
+1,Shrey,Nathdwara,20,M,Good,A+
+2,Manish,CenterPoint,20,M,Good,A+
+3,Urvashi,Bhuj,20,F,Good,A+
+5,Tirth Patek,Khush,20,M,Good,A+
+4,Sunidhi,MB,20,F,Good,A

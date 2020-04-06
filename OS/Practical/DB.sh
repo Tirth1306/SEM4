@@ -217,7 +217,7 @@ while [ 1 ]; do
 					fi
 			;;
 
-			6 )
+			7 )
 				echo -n "Enter Roll Number: "
 				read rollNumber
 				rn=`grep $rollNumber db.txt | cut -d ',' -f1`
@@ -245,14 +245,104 @@ while [ 1 ]; do
 		;;
 
         4 )
-            echo "The contents of file are:- "
-            while read -r line
-            do
-                echo $line
-            done < db.txt
-            ;;
+						echo "Enter the type of query:"
+						echo "1) Fetch by rollNumber"
+						echo "2) Fetch by Gender"
+						echo "3) Fetch by Behaviour (Good, Bad)"
+						echo "4) Fetch by Result"
+						echo "5) Fetch by Age"
+						echo "6) Fetch All data"
 
-				5)
+						read ch5
+
+						case $ch5 in
+
+							1 )
+								echo "Enter Roll Number: "
+								read rollNumber
+								rn=`grep $rollNumber db.txt | cut -d ',' -f1`
+								if [ "$rn" = "$rollNumber" ]
+								then
+									grep $rollNumber db.txt
+								else
+										echo "Enter a valid rollNumber!"
+								fi
+								;;
+
+							2 )
+								echo "Enter Gender: "
+								read g
+
+								grep $g db.txt > temp.txt
+								while read line
+								do
+									x=`echo $line | cut -d ',' -f5`
+									if [ "$x" = "$g" ]
+									then
+										echo $line
+									fi
+								done < temp.txt
+								rm temp.txt
+							;;
+
+							3 )
+								echo "Enter Behaviour: "
+								read b
+
+								grep $b db.txt > temp.txt
+								while read line
+								do
+									x=`echo $line | cut -d ',' -f6`
+									if [ "$x" = "$b" ]
+									then
+										echo "$line"
+									fi
+								done < temp.txt
+								rm temp.txt
+							;;
+
+							4 )
+								echo "Enter Result: "
+								read r
+
+								grep $r db.txt > temp.txt
+								while read line
+								do
+									x=`echo $line | cut -d ',' -f7`
+									if [ "$x" = "$r" ]
+									then
+										echo "$line"
+									fi
+								done < temp.txt
+								rm temp.txt
+							;;
+
+							5 )
+								echo "Enter Age: "
+								read a
+
+								grep $a db.txt > temp.txt
+								while read line
+								do
+									x=`echo $line | cut -d ',' -f4`
+									if [ "$a" = "$x" ]
+									then
+										echo $line
+									fi
+								done < temp.txt
+							;;
+
+							6 )
+		            echo "The contents of file are:- "
+		            while read -r line
+		            do
+		                echo $line
+		            done < db.txt
+							 ;;
+						 esac
+						 ;;
+
+				5 )
 					echo "Number of Records are: "
 					echo "========================"
 					wc -l < db.txt
